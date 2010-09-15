@@ -1,0 +1,16 @@
+<!ATTR order_id type_id faculty !>
+<*/header_mini*>
+		<h2>Создать новый приказ: Выбор факультета</h2>
+		
+		<form>
+			<input type="hidden" name="type_id" value="<&type_id&>"/>
+			<table>
+				<tr>
+					<td>По факультету:</td>
+					<td><**/widgets/classifier/simple|place_faculty**></td>
+				</tr>
+			</table>
+			<input type="submit" value="Создать" />
+			<input type="button" onClick="document.location.href = 'index.rb';" value="Отмена" />
+		</form>
+<*/footer_mini*>

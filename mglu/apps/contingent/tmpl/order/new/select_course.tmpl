@@ -1,0 +1,20 @@
+<!ATTR order_id !>
+<*/header_mini*>
+		<h2>Создать новый приказ: Переводной приказ</h2>
+
+		<form>
+			<input type="hidden" name="new_order_id" value="<&order_id&>"/>
+			<table>
+				<tr>
+					<td>Курс:</td>
+					<td>
+						<select name="course">
+							<**/widgets/classifier/option|add_course**>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<input type="submit" value="Создать" />
+			<input type="button" onClick="document.location.href = 'index.rb';" value="Отмена" />
+		</form>
+<*/footer_mini*>

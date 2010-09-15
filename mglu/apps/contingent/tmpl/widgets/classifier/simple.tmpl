@@ -1,0 +1,54 @@
+<!ATTR display_empty wide custom !>
+<-- METHODS START -->
+
+def init classifier, editable = true, has_custom = false
+	@classifier, @editable, @has_custom, @selected = classifier, editable, has_custom, classifier.selected
+
+	for entry in @classifier do
+		add_option entry[:id], entry[:name], entry[:id] == @selected[:id]
+	end if @editable
+
+	@display_empty, @wide = true, false
+
+	return self
+end
+
+<-- METHODS END -->
+<% if @has_custom then %>
+<script language="javascript"><!--
+	function checkClassifier_<&@classifier.name&>()
+	{
+		document.getElementById("custom_<&@classifier.name&>").style.visibility = 
+			((document.mf.<&@classifier.name&>_<&@classifier.class.key_postfix&>.value == "0") ? "visible" : "hidden");
+	}
+//--></script>
+<% end %>
+<% if @editable then %>
+	<select name="<&@classifier.name&>_<&@classifier.class.key_postfix&>"<%
+		if @has_custom %> onChange="javascript:checkClassifier_<&@classifier.name&>()"<% end
+		if @wide then %> style="width: 100%"<% end
+	%>>
+<%	if @display_empty then %>
+		<option<% unless @selected or @custom then %> selected="1"<% end %>/>
+<%	end %>
+		<**option|add_option**>
+<%	if @has_custom then %>
+		<option value="0"<% if not @selected and @custom then %> selected="1"<% end %>>(еще...)</option>
+<%	end %>
+	</select><br/>
+<% if @has_custom %>
+	<input name="custom_<&@classifier.name&>" id="custom_<&@classifier.name&>" value="<&custom&>"/>
+	<script language="javascript"><!--
+	checkClassifier_<&@classifier.name&>();
+	//--></script>
+<% end %>
+<% else %>
+	<b><%
+	if @selected then;
+		%><&@selected[:name]&><%
+	elsif not @selected and @custom then
+		%><&custom&><%
+	elsif not @selected and not @custom then ''
+		%>НЕ УСТАНОВЛЕНО<%
+	end %></b>
+<% end %>

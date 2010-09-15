@@ -1,0 +1,6 @@
+DELETE FROM student;
+INSERT INTO student SELECT group_id*10, 'Иван', 'Иванов', 'Иванович', group_id*10, group_id, 2, 1, 1, 1, 0, NULL, NULL, NOW(), NULL, 0, SUBSTRING(speciality_code, 1, 6), SUBSTRING(speciality_code, 7, 2), SUBSTRING(speciality_code, 9, 2), '', NULL, 0 FROM `group`;
+INSERT INTO student SELECT group_id*10+1, 'Петр', 'Петров', 'Петрович', group_id*10+1, group_id, 2, 1, 1, 1, 0, NULL, NULL, NOW(), NULL, 0, SUBSTRING(speciality_code, 1, 6), SUBSTRING(speciality_code, 7, 2), SUBSTRING(speciality_code, 9, 2), '', NULL, 0 FROM `group`;
+INSERT INTO student SELECT group_id*10+2, 'Сидор', 'Сидоров', 'Сидорович', group_id*10+2, group_id, 2, 1, 1, 1, 0, NULL, NULL, NOW(), NULL, 0, SUBSTRING(speciality_code, 1, 6), SUBSTRING(speciality_code, 7, 2), SUBSTRING(speciality_code, 9, 2), '', NULL, 0 FROM `group`;
+INSERT INTO student SELECT group_id*10+3, 'Семён', 'Семёнов', 'Семёнович', group_id*10+3, group_id, 2, 1, 1, 1, 0, NULL, NULL, NOW(), NULL, 0, SUBSTRING(speciality_code, 1, 6), SUBSTRING(speciality_code, 7, 2), SUBSTRING(speciality_code, 9, 2), '', NULL, 0 FROM `group`;
+INSERT INTO student SELECT group_id*10+4, 'Кирилл', 'Кириллов', 'Кириллович', group_id*10+4, group_id, 2, 1, 1, 1, 0, NULL, NULL, NOW(), NULL, 0, SUBSTRING(speciality_code, 1, 6), SUBSTRING(speciality_code, 7, 2), SUBSTRING(speciality_code, 9, 2), '', NULL, 0 FROM `group`;

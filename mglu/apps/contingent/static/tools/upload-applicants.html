@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<title>Upload applicants</title>
+	</head>
+	<body>
+		<p>Upload applicants archive</p>
+		<form action="process-applicants.rb" method="post" enctype="multipart/form-data">
+			<table>
+				<tr><td>Archive (DAT or XML):</td><td><input type="file" name="data"/></td></tr>
+				<tr><td></td><td><input type="submit" value="Submit"/></td></tr>
+			</table>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE radicalConf SYSTEM "radical-conf.dtd">
+<radicalConf>
+	<Plugins>
+		<Load name="radical-templating">
+			<Param name="default_templates_dir" value="tmpl" />
+		</Load>
+		<Load name="radical-session-mysql" />
+		<Load name="radical-handlers" />
+		<Load name="rportal-core" />
+		<Load name="radical-cache" />
+		<Load name="radical-service" />
+	</Plugins>
+
+	<Authenticators/>
+
+	<Services>
+		<Service id="HTTP_Service" type="http">
+			<Param name="minWorkers" value="1" />
+			<Param name="maxWorkers" value="30" />
+			<Param name="host" value="contingent.bmstu.ru" />
+			<Param name="port" value="7004" />
+		</Service>
+
+		<!-- uncomment this to enable FastCGI
+		<Service id="FastCGI" type="fastcgi">
+			<Param name="socketType" value="UNIX" />
+			<Param name="address" value="/tmp/radical_fastcgi" />
+		</Service>
+		-->
+	</Services>
+
+	<Handlers>
+		<!-- TODO: move outside radical.xml { -->
+		<Handler id="contingent_static" type="general" >
+			<Param name="rootdir" value="apps/contingent/static" />
+		</Handler>
+		<Handler id="contingent_scripts" type="webruby">
+			<Param name="rootdir" value="apps/contingent/scripts" />
+			<Param name="load_path" value="apps/contingent/share:apps/contingent/scripts:apps/contingent" />
+			<Param name="tmpldir" value="apps/contingent/tmpl" />
+		</Handler>
+		<Handler id="contingent_xmlrpc" type="xmlrpc">
+			<Param name="init" value="apps/contingent/xmlrpc/_init.rb" />
+			<Param name="load_path" value="apps/contingent/share" />
+		</Handler>
+		<Handler id="contingent_soap" type="soap">
+			<Param name="class" value="StudentsSrvPort" />
+			<Param name="load_path" value="apps/contingent/soap" />
+			<Param name="namespace" value="urn:webservices.bmstu.org" />
+		</Handler>
+	</Handlers>
+
+	<Mapping>
+		<Host>
+			<!-- TODO: move outside radical.xml { -->
+			<Uri target="/" handler="contingent_static">
+				<File ext="rb" handler="contingent_scripts" />
+				<File ext="rbx" handler="contingent_scripts" />
+<!--				<Uri target="RPC2" handler="contingent_xmlrpc" />-->
+				<Uri target="SOAP" handler="contingent_soap" />
+			</Uri>
+			<!-- } -->
+		</Host>
+	</Mapping>
+</radicalConf>

@@ -1,0 +1,22 @@
+<*/header_mini2*>
+		<script language="javascript"><!--
+			function exportURL(target)
+			{
+				// avfix: parent.list != parent.getElementById('list') in IE
+				
+				var list = parent.list.document;
+				var target = list.getElementById('export').action + '&target=' + target;
+				window.open(target);
+			}
+		//--></script>
+	</head>
+	<body class="header">
+		<div class="toolbar">
+<!--
+			<a href="javascript:exportURL('msword');"><img src="/img/wordprocessing.png" width="22" height="22" alt="Сохранить список" title="Сохранить список" border="0"/></a>
+-->
+		</div>
+		<div class="win_buttons">
+			<*/widgets/button_help*>
+		</div>
+<*/footer_mini*>

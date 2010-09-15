@@ -1,0 +1,78 @@
+<!INIT order !>
+<!ATTR conditions !>
+<html>
+<head>
+<title>Система &laquo;Электронный университет&raquo;</title>
+<link rel="Stylesheet" href="print.css" />
+</head>
+<body>
+
+<table width="100%">
+<tr>
+<td style="width: 6cm">&nbsp;</td>
+<td class="org-header">
+<div align="center"><br/><br/>
+Государственное образовательное учреждение<br/>
+высшего профессионального образования<br/>
+&laquo;Московский государственный лингвистический университет&raquo;
+</div>
+</td>
+<td style="width: 6cm">
+	<table width="100%">
+	<tr><td></td><td align="center">Код</td></tr>
+	<tr><td align="right">Форма по ОКУД</td><td class="boxed">&nbsp;</td></tr>
+	<tr><td align="right">по ОКПО</td><td class="boxed">&nbsp;</td></tr>
+	</table>
+</td>
+</tr>
+<tr><td>
+	<table width="100%" cellspacing="0" style="width: 6cm">
+	<tr>
+	<td class="boxed" width="60%">Номер документа</td>
+	<td class="boxed" width="40%">Дата</td>
+	</tr>
+	<tr>
+	<td class="boxed">&#x2116; <&order.number&></td>
+	<td class="boxed"><u><&order.date_activated&></u>&nbsp;</td>
+	</td>
+	</tr>
+	</table>
+</td><td>&nbsp;</td></tr>
+<tr><td align="center" colspan="3">
+<h1>ПРИКАЗ</h1><h2><&order.title&></h2>
+<&order.faculty.class::NAME&> &laquo;<&order.faculty.full_name&>&raquo; (<&order.faculty.name&>)
+
+<%
+if not @order.attributes['hide_disabled']
+	if not @order.attributes['category'].nil?
+		if not @order.attributes['category'].empty?
+%>
+<!-- <br/>ГУИМЦ -->
+<%
+		end
+	else
+		if conditions['disabled']
+%>
+<br/>ГУИМЦ
+<%
+		end
+	end
+end
+%>
+
+<% study_type_id = nil
+unless @order.attributes['hide_study_type']
+	study_type_id ||= @order.attributes['shown_study_type_id']
+	@order.each_student :all, %w( study_type_id ) do |stid|
+		study_type_id ||= stid
+		break
+	end
+	study_type_id ||= @order.attributes['study_type_id']
+	study_type_id ||= (conditions['contract'] ? Classifier::StudyType::CONTRACT : Classifier::StudyType::BUDGET)
+end
+if study_type_id %>
+<br/>Форма (основа) обучения: <%= Classifier::StudyType[study_type_id][:name] %>
+<% end %>
+
+</td></tr>
+</table>

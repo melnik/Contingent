@@ -1,0 +1,130 @@
+*** BBCode.rb.org	Wed May  7 21:44:15 2003
+--- BBCode.rb	Wed May  7 22:42:29 2003
+***************
+*** 274,281 ****
+          quote = 0
+  
+          ## Iterate over lines
+-         string.split("\n").each do |line|
+              styles = { "b" => "strong", "i" => "em", "u" => "u" }
+  
+              ## preserve B, I, U
+              styles.each do |code,html|
+--- 274,281 ----
+          quote = 0
+  
+          ## Iterate over lines
+  	styles = { "b" => "strong", "i" => "em", "u" => "u" }
++         string.split("\n").each do |line|
+  	   
+              ## preserve B, I, U
+              styles.each do |code,html|
+***************
+*** 284,302 ****
+              end
+              
+              ## COLOR => font color=... (TODO: should be numeric!)
+!             line.gsub!(/\[COLOR=(.*?)\]/i, "<font color=\"\\1\">")
+!             line.gsub!(/\[\/COLOR\]/i,     "</font>")
+  
+              ## SIZE => font size=...
+!             line.gsub!(/\[SIZE=(.*?)\]/i, "<font size=\"\\1\">")
+!             line.gsub!(/\[\/SIZE\]/i,     "</font>")
+  
+              ## URL   
+!             line.gsub!(/\[URL\]([^\[]+?)\[\/URL\]/i, "<a href=\"\\1\">\\1</a>")
+!             line.gsub!(/\[URL=(.*?)\](.+?)\[\/URL\]/i, "<a href=\"\\1\">\\2</a>")
+  
+              ## IMG
+!             line.gsub!(/\[IMG=(.*?)\]/i, "<img src=\"\\1\" />")
+  
+              ## ALIGN=center (TODO: right, left)
+              line.gsub!(/\[ALIGN=center\]/i, "<center>")
+--- 284,344 ----
+              end
+              
+              ## COLOR => font color=... (TODO: should be numeric!)
+!             line.gsub!(/\[COLOR=(.*?)\]/i) do
+! 	       if $1=~ /^[a-z]{10}$/ or  $1=~ /^#[0-9A-F]{6}$/
+! 		  "<span style='color: #{$1}'>"
+! 	       else
+! 		  "<span>"
+! 	       end
+! 	    end
+!             line.gsub!(/\[\/COLOR\]/i,     "</span>")
+  
+              ## SIZE => font size=...
+!             line.gsub!(/\[SIZE=(.*?)\]/i) do
+! 	       if $1=~ /^[0-9]{3}$/
+! 		  "<span style='font-size: #{$1}'>"
+! 	       else
+! 		  "<span>"
+! 	       end
+! 	    end
+!             line.gsub!(/\[\/SIZE\]/i,"</span>")
+  
+              ## URL   
+!             line.gsub!(/\[URL\]([^\[]+?)\[\/URL\]/i) do
+! 	       if $1=~/^(ftp|http|mailto|gopher):\/\//
+! 		  $1.gsub!('"','&quot;')
+! 		  $1.gsub!('>','&lt;')
+! 		  $1.gsub!('<','&amp;')
+! 		  "<a href=\"#{$1}\"></a>"
+! 	       else
+! 		  ""
+! 	       end
+! 	    end
+!             line.gsub!(/\[URL=([^\[]*?)\]([^\[]+?)\[\/URL\]/i) do
+! 	       if $2=~/^(ftp|http|mailto|gopher):\/\//
+! 		  $2.gsub!('"','&quot;')
+! 		  $2.gsub!('>','&lt;')
+! 		  $2.gsub!('<','&amp;')
+! 		  $1.gsub!('"','&quot;')
+! 		  $1.gsub!('>','&lt;')
+! 		  $1.gsub!('<','&amp;')
+! 		  "<a href=\"#{$2}\">#{$1}</a>"
+! 	       else
+! 		  ""
+! 	       end
+! 	    end
+  
+              ## IMG
+!             line.gsub!(/\[IMG=(.*?)\]/i) do
+! 	       if $1=~/^(ftp|http|gopher):\/\//
+! 		  $1.gsub!('"','&quot;')
+! 		  $1.gsub!('>','&lt;')
+! 		  $1.gsub!('<','&amp;')
+! 		  "<img src=\"#{$1}\" />"
+! 	       else
+! 		  ""
+! 	       end
+! 	    end
+  
+              ## ALIGN=center (TODO: right, left)
+              line.gsub!(/\[ALIGN=center\]/i, "<center>")
+***************
+*** 312,318 ****
+              line.gsub!(/^/, "&#62;"*quote) if quote > 0
+  
+              ## EMAIL
+!             line.gsub!(/\[EMAIL\](.*?)\[\/EMAIL\]/i, "<a href=\"mailto:\\1\">\\1</a>")
+  
+              ## LIST (TODO: LIST=1, LIST=A)
+              line.gsub!(/\[LIST(?:=(.*?))?\]/i, "\n<ul>\n")
+--- 354,369 ----
+              line.gsub!(/^/, "&#62;"*quote) if quote > 0
+  
+              ## EMAIL
+!             line.gsub!(/\[EMAIL\]([^\[]*?)\[\/EMAIL\]/i) do
+! 	       if $1=~/.+?@.+?/
+! 		  $1.gsub!('"','&quot;')
+! 		  $1.gsub!('>','&lt;')
+! 		  $1.gsub!('<','&amp;')
+! 		  "<a href=\"mailto:#{$1}\">#{$1}</a>"
+! 	       else
+! 		  ""
+! 	       end
+! 	    end
+  
+              ## LIST (TODO: LIST=1, LIST=A)
+              line.gsub!(/\[LIST(?:=(.*?))?\]/i, "\n<ul>\n")

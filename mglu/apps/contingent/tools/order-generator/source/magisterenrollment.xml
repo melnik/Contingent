@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<order classname="MagisterEnrollmentOrder" base="StudentsOrder">
+
+	<type>О зачислении в МГЛУ на образовательные программы подготовки магистров</type>
+
+	<qualified_students class="Hash">
+		<student_state class="String">studying</student_state>
+		<degree_code class="Fixnum">62</degree_code>
+	</qualified_students>
+	
+	<template entity="order">
+
+		<input type="document" name="resolution" title="Протокол решения отборочной комиссии факультета" />
+
+		<input type="document" name="approval" title="Протокол заседания Приемной комиссии МГЛУ" />
+		
+		<input type="date" name="enrollment_date" title="Дата зачисления" />
+
+		<classifier type="study_type" title="Форма (основа) обучения" />
+
+	</template>
+
+	
+	<template entity="student">
+	
+		<classifier type="profession" title="Направление подготовки/специальность.специализация.квалификация" default="Student.load(eid).profession_code"/>
+
+		<const type="text" name="degree_code" value="'68'" /> <!-- TODO: Remove this magic number -->
+		
+		<input type="text" name="specialization_code" title="Код специализации" default="'00'"/>
+		
+		<input type="text" name="graduation_thesis" title="Тема" />
+		
+		<input type="text" name="tutor" title="Руководитель" />
+		
+		<input type="document" name="reference" title="Рекомендация ГАК" />
+
+
+		<input type="document" name="agreement" title="Договор/контракт" condition="contract"/>
+		
+		<classifier type="country" title="Страна" condition="foreign" />
+
+	</template>
+
+	<printable>
+
+		<preamble><![CDATA[
+<p>
+На основании решения отборочной комиссии факультета "<&order.faculty.name&>"
+от <&order.attributes['resolution'][:date]&> протокол &#x2116; <&order.attributes['resolution'][:num]&>,
+утвержденного на заседании Приемной комиссии МГЛУ
+от <&order.attributes['approval'][:date]&> протокол &#x2116;<&order.attributes['approval'][:num]&>,
+</p>
+		]]></preamble>
+
+		<p><![CDATA[
+		Зачислить в МГЛУ с <&order.attributes['enrollment_date']&>
+		на образовательные программы подготовки магистров факультета &quot;<&order.faculty.name&>&quot;
+		для обучения по указанным направлениям <%=
+		case order.attributes['study_type_id']
+		when 1 then 'на места, финансируемые из федерального бюджета,'
+		when 2 then 'на основе договоров с оплатой стоимости обучения'
+		when 3 then 'по направлению Министерства образования и науки'
+		end
+		%> нижеперечисленных лиц:
+		]]></p>
+
+		<list style="text">
+			<column source="student" name="name" />
+			<column source="student" name="student_status" />
+			<column source="student" name="gender" />
+			<column source="student" name="birth_date" />
+			<column source="student" name="citizenship" />
+			<column source="order" name="country_id"/>
+			<column source="student" name="card_number" />
+			<column source="order" name="agreement" title="договор (контракт) о предоставлении платных образовательных услуг" />
+			<column source="student" name="group" />
+			<column source="order" name="profession_code" />
+			<column source="order" name="graduation_thesis" />
+			<column source="order" name="tutor" />
+			<column><![CDATA[
+				Основание приказа: личное заявление с резолюцией проректора по учебной
+				работе<% unless attributes['reference'].empty? then %>, рекомендация ГАК <& attributes['reference'] &><% end %>,
+				протокол собеседования
+			]]></column>
+		</list>
+
+		<signatures>
+			<signature name="rector" />
+			<signature name="prorector"/>
+			<signature name="personnel"/>
+			<signature name="prorector-international" condition="foreign" />
+			<signature name="prorector-security" condition="foreign" />
+			<signature name="legal-councilor"/>
+			<signature name="enrollment"/>
+			<signature name="selection"/>
+			<signature name="marketing" condition="contract and not foreign" />
+			<signature name="financing" condition="contract and not foreign"/>
+			<signature name="foreign" condition="foreign" />
+		</signatures>
+
+	</printable>
+
+</order>

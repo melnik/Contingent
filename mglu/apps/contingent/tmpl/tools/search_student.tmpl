@@ -1,0 +1,115 @@
+<!ATTR faculty_id return_url restricted !>
+<*/header_mini*>
+		<style>
+			body {
+				background: #95b8e2;
+			}
+		</style>
+		<form action="<&return_url&>" target="list" method="post">
+			<table width="100%">
+				<tr>
+					<td width="1">Ф.И.О.</td>
+					<td><input name="name" type="text" class="text" style="width: 100%;" /></td>
+				</tr>
+				<tr>
+					<td width="1">Пол</td>
+					<td><**/widgets/classifier/simple|place_gender**></td>
+				</tr>
+				<tr><td colspan="2"><hr/></td></tr>
+				<tr>
+					<td width="1">Группа</td>
+					<td><input name="group" type="text" class="text" style="width: 100%;" /></td>
+				</tr>
+				<tr>
+					<td width="1">Л.&nbsp;д.&nbsp;&#x2116;</td>
+					<td><input name="card_number" type="text" class="text" style="width: 100%;" /></td>
+				</tr>
+				<tr><td colspan="2"><hr/></td></tr>
+<% if restricted then %>
+				<tr>
+					<td width="1">Обучается</td>
+					<td>
+						<select name="student_state" style="width: 100%;">
+							<option/>
+							<option value="studying">да</option>
+							<option value="quit">нет</option>
+						</select>
+					</td>
+				</tr>
+<% else %>
+				<tr>
+					<td width="1">Состояние</td>
+					<td><**/widgets/classifier/simple|place_student_state**></td>
+				</tr>
+				<tr>
+					<td width="1">Основа обучения</td>
+					<td><**/widgets/classifier/simple|place_study_type**></td>
+				</tr>
+				<tr><td colspan="2"><hr/></td></tr>
+				<tr>
+					<td width="1">Код специальности</td>
+					<td><table width="100%" cellpadding="0" cellspacing="0"><tr>
+						<td><input id="profession_id" name="profession_code" type="text" class="text" style="width: 100%"/></td>
+						<td width="22" style="text-align: center"><a href="/widgets/classifier/popup.rb?classifier=profession" target="classifier" onClick="javascript:window.open(this.href + '&selected_id=' + document.getElementById('profession_id').value, 'classifier', 'toolbar=0,menubar=0,width=600,height=400,scrollbars=1');return false;">
+							<img class="opaque" src="/img/view_text.png" width="16" height="16" border="0" alt="Классификатор" title="Классификатор" />
+						</a></td>
+					</tr></table></td>
+				</tr>
+				<tr>
+					<td width="1">Ступень образования</td>
+					<td><**/widgets/classifier/simple|place_degree**></td>
+				</tr>
+				<tr><td colspan="2"><hr/></td></tr>
+				<tr>
+					<td width="1">Форма образования</td>
+					<td><**/widgets/classifier/simple|place_study_form**></td>
+				</tr>
+	<% if false then %>
+				<tr>
+					<td width="1">Статус</td>
+					<td><**/widgets/classifier/simple|place_student_status**></td>
+				</tr>
+				<tr><td colspan="2"><hr/></td></tr>
+				<tr>
+					<td width="1">Задолженности</td>
+					<td>
+						<select name="liabilities" style="width: 100%;">
+							<option/>
+							<option value="0">нет</option>
+							<option value="1">есть</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td width="1">Общежитие</td>
+					<td>
+						<select name="dormitory" style="width: 100%;">
+							<option/>
+							<option value="0">нет</option>
+							<option value="1">есть</option>
+						</select>
+					</td>
+				</tr>
+				<tr><td colspan="2"><hr/></td></tr>
+				<tr>
+					<td width="1">Подразделение</td>
+					<td>
+						<select name="category" style="width: 100%;">
+							<option/>
+							<option value="foreign">ФОИГ</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td width="1">Военное обучение</td>
+					<td><**/widgets/classifier/simple|place_military**></td>
+				</tr>
+	<% end %>
+<% end %>
+			</table>
+
+			<hr/>
+
+			<div align="center"><input type="submit" value="Найти"/></div>
+		</form>
+<*/footer_mini*>

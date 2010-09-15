@@ -1,0 +1,161 @@
+#!/usr/bin/env ruby
+
+##
+# generate-students-history
+#
+# В существующей БД генерирует для каждого студента недостающую часть истории обучения.
+# Все сгенерированные приказы являются фиктивными (не соответствуют реальным) и предназначены только для получения предыдущих состояний студента при отмене последующих (реальных) приказов.
+
+require "#{Dir.pwd.gsub(/\/apps.*$/, '')}/apps/contingent/tools/context"
+
+require 'data/order'
+require 'data/student'
+
+GENERATED_NUMBER = ' [generated] '
+
+class Order
+	def activate date = Date.today
+		$sql.execute "UPDATE `order`
+		              SET order_status_id = #{Classifier::OrderStatus::ACTIVATED}
+		                , date_activated  = #{date.quote}
+		                , number          = #{GENERATED_NUMBER.quote}
+		              WHERE order_id = #{@oid}"
+	end
+end
+
+begin
+	$stderr << 'Preparing...'
+
+	total, count = Student.list({ 'name' => '%' })[:total], 0
+
+	$stderr << "\r" + ' ' * 'Preparing...'.length
+
+	Student.list( { 'name' => '%' }, %w( student_id ) ) do | student_id |
+		s = Student.load student_id
+
+		row = $sql.execute("SELECT *
+		                    FROM order_student os INNER JOIN `order` o USING (order_id)
+		                    WHERE student_id = #{s.oid} AND order_status_id = #{Classifier::OrderStatus::ACTIVATED} AND order_type_id IN (#{Order.type_id EnrollmentOrder}, #{Order.type_id EnrollmentTransitionOrder}, #{Order.type_id BeginVacationOrder}, #{Order.type_id EndVacationOrder}, #{Order.type_id ExpelationOrder}, #{Order.type_id RestorationOrder})
+		                    ORDER BY date_activated").fetch(true)
+		s_attributes, o_attributes = row['os.attributes'].to_h, row['o.attributes'].to_h
+
+		unless [Order.type_id(EnrollmentOrder), Order.type_id(EnrollmentTransitionOrder)].include? type_id = row['o.order_type_id'].to_i then # требуется создавать историю приказов
+			$student_id = student_id
+
+			faculty_id = if Faculty::VIRTUAL.include? s.faculty.name then
+				s.faculty.instance_variable_get '@faculty_id'
+			else
+				s.faculty.oid.to_i
+			end
+
+			study_type_id = if $sql.execute("SELECT *
+			                                 FROM order_student os INNER JOIN `order` o USING (order_id)
+			                                 WHERE student_id = #{s.oid} AND order_type_id = #{Order.type_id(StudyTypeSwitchingOrder)} AND order_status_id = #{Classifier::OrderStatus::ACTIVATED}").num_rows > 0 then
+				2 # TODO: replace numbers with enums
+			else
+				s.study_type_id
+			end
+
+			##
+			# Создаем приказ о зачислении
+
+			# Создаем сам приказ
+			o = Order.create Order.type_id(EnrollmentOrder), faculty_id
+
+			$order_id = o.oid
+
+			# Заполняем атрибуты самого приказа
+			o.attributes['study_type_id']   = study_type_id
+
+			o.attributes['enrollment_date'] = if s.card_number =~ /^(\d+)(\D)(\d+)$/ then
+				Date.new $1.to_i.year, 9, 1
+			else
+				Date.new Date.today.year - (s.group.term_number || 2) / 2, 9, 1
+			end
+
+			o.save
+
+			# Заполняем атрибуты приказа для студента
+			$sql.execute "INSERT INTO order_student (order_id, student_id, attributes)
+			              VALUES (#{o.oid}, #{s.oid}, #{{
+				'name' => {
+					'last'   => s.last_name,
+					'first'  => s.first_name,
+					'father' => s.father_name,
+				},
+
+				'gender_id'      => s.gender_id,
+
+				'birth_date'     => s.birth_date,
+				'citizenship_id' => s.citizenship_id,
+
+				'card_number'    => s.card_number,
+				'group_id'       => s.group_id,
+				'dormitory'      => s.dormitory,
+			}.quote})"
+
+			# Помечаем приказ как "введенный в действие"
+			o.activate last_date = o.attributes['enrollment_date']
+
+			if s.state_id == Classifier::StudentState::VACATION and type_id != Order.type_id(BeginVacationOrder) or type_id == Order.type_id(EndVacationOrder) then # требуется приказ о предоставлении а/о
+				##
+				# Создаем приказ о предоставлении а/о
+
+				# Создаем сам приказ
+				o = Order.create Order.type_id(BeginVacationOrder), faculty_id
+
+				$order_id = o.oid
+
+				# Заполняем атрибуты самого приказа
+				o.attributes['study_type'] = study_type_id
+
+				o.save
+
+				# Добавляем студента в приказ
+				o << [ s.oid ]
+
+				# Помечаем приказ как "введенный в действие"
+				o.activate last_date += ((row['o.date_activated'].to_d || Date.today) - last_date) / 2
+			end
+
+			if s.state_id == Classifier::StudentState::EXPELLED and type_id != Order.type_id(ExpelationOrder) or type_id == Order.type_id(RestorationOrder) then # требуется приказ об отчислении
+				##
+				# Создаем приказ об отчислении
+
+				# Создаем сам приказ
+				o = Order.create Order.type_id(ExpelationOrder), faculty_id
+
+				$order_id = o.oid
+
+				# Заполняем атрибуты самого приказа
+				o.attributes['study_type'] = study_type_id
+
+				o.save
+
+				# Добавляем студента в приказ
+				o << [ s.oid ]
+
+				# Помечаем приказ как "введенный в действие"
+				o.activate last_date += ((row['o.date_activated'].to_d || Date.today) - last_date) / 2
+			end
+
+			if s.state_id == Classifier::StudentState::GRADUATED then # требуется приказ об окончании
+				# TODO: нет у нас пока такого приказа 8(
+			end
+
+			$student_id, $order_id = nil, nil
+		end
+
+		$stderr << "\r#{(count += 1) * 100 / total}% done"
+	end
+rescue Interrupt
+	$sql.execute "DELETE `order`.*, order_student.*
+	              FROM `order` INNER JOIN `order_student` USING (order_id)
+	              WHERE number = '[generated]' AND student_id = #{$student_id.quote}"
+
+	$sql.execute "DELETE FROM `order` WHERE order_id = #{$order_id.quote}"
+
+	$stderr.puts ". Interrupted."
+else
+	$stderr.puts ". Finished."
+end

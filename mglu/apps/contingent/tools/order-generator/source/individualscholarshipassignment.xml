@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<details classname="IndividualScholarshipAssignmentOrder" base="StudentsOrder">
+
+	<!-- TODO: переименовать -->
+	<type>О назначении на индивидуальную стипендию</type>
+
+	<qualified_students class="Hash">
+		<student_state class="String">studying</student_state>
+	</qualified_students>
+
+	<condition name="grant">
+		<order__scholarship_id class="Fixnum">13</order__scholarship_id>
+	</condition>
+
+	<condition name="high_courses">
+		<course class="Array">
+			<item class="Fixnum">3</item>
+			<item class="Fixnum">4</item>
+			<item class="Fixnum">5</item>
+			<item class="Fixnum">6</item>
+		</course>
+	</condition>
+
+	<title condition="not grant">О назначении на стипендию</title>
+	<title condition="grant">О назначении на грант</title>
+
+	<template entity="order">
+		<classifier type="scholarship" title="Вид стипендии" custom="1"/>
+
+		<input type="text" name="year" title="Учебный год" default="(Date.today.year).to_s + '/' + (Date.today.year + 1).to_s"/>
+
+		<input type="daterange" name="period" title="Срок" />
+
+		<input type="document" name="basics" title="Протокол заседания стипендиальной комиссии"/>
+	</template>
+
+	<template entity="student"/>
+
+	<printable>
+
+		<p><![CDATA[
+			<% if order.attributes['scholarship_id'] == 10 then %>
+			Следующих студентов, обучающихся за счет средств федерального бюджета и не имеющих
+			академических задолженностей на момент подачи заявлений
+			<% else %>
+			Студентов, сдавших все экзамены и зачеты <& Term.current.even?? 'зимней' : 'летней' &> экзаменационной сессии
+			<%= Term.prev.academic_year.begin %>/<%= Term.prev.academic_year.end %> учебного года
+			<% end %>, назначить на
+			<& (if order.attributes['scholarship_id'] == 0 then
+				order.attributes['custom_scholarship_id']
+			else
+				Classifier::Scholarship[order.attributes['scholarship_id']][:name]
+			end).gsub('ая ', 'ую ').gsub('типендия', 'типендию') &>
+			в <& Term.current.academic_year.begin &>/<& Term.current.academic_year.end &> учебном году
+			(<& order.attributes['period'] &>):
+		]]></p>
+
+		<group by="group">
+
+			<p><![CDATA[ <h3>По группе <& group &></h3> ]]></p>
+
+			<list style="list">
+				<column source="student" name="name" />
+				<column source="student" name="group_id" hidden="1"/>
+				<column source="student" name="start_year" hidden="1"/>
+			</list>
+		</group>
+
+		<p><![CDATA[
+			<% if order.attributes['scholarship_id'] == 10 then %>
+			Основания приказа: личное заявление студента, справка установленного образца
+			из государственных органов социальной защиты населения.
+			<% else %>
+			Основание приказа:
+			протокол заседания стипендиальной комиссии <& order.attributes['basics'] &>.
+			<% end %>
+		]]></p>
+
+		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector"/>
+			<signature name="personnel"/>
+			<signature name="dean" condition="not (disabled and high_courses)"/>
+			<signature name="deputy_dean" condition="not (disabled and high_courses)"/>
+			<signature name="rehabilitation_dean" condition="disabled and high_courses"/>
+			<signature name="rehabilitation_deputy_dean" condition="disabled and high_courses"/>
+			<signature name="financing"/>
+			<signature name="accountant"/>
+			<signature name="rehabilitation" condition="disabled and not high_courses"/>
+			<signature name="foreign" condition="foreign"/>
+		</signatures>
+	</printable>
+
+</details>

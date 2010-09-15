@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<details classname="TransitionOrder">
+
+	<template entity="order">
+		<const type="int" name="hide_study_type" value="1"/>
+		<const type="int" name="hide_disabled" value="1"/>
+		
+		<input type="bool" name="vacations" title="Отправить студентов без задолженностей на каникулы" />
+	</template>
+
+	<template entity="student" paragraph="1">
+
+		<![CDATA[ <table width="100%"><tr><td style="border-right: black 2px solid; vertical-align: top"> ]]>
+
+		<list name="liabilities" title="Академические задолженности">
+			<input type="text" name="subject" title="Название" />
+			<select type="text" name="type" title="Отчетность">
+				<option title="зачет" />
+				<option title="экзамен" />
+			</select>
+		</list>
+
+		<![CDATA[ </td><td style="vertical-align: top"><br/> ]]>
+
+		<select type="text" name="excuse" title="Причина">
+			<option title="уважительная" />
+			<option title="неуважительная" />
+		</select>
+
+		<![CDATA[ <br/> ]]>
+
+		<input type="date" name="deadline" title="Срок сдачи" />
+
+		<![CDATA[ </td></tr></table> ]]>
+
+	</template>
+
+	<template entity="group">
+
+		<dselect type="int" name="monitor" title="Старостой назначить"><![CDATA[
+			$sql.execute("SELECT student_id, first_name, last_name, father_name FROM student WHERE group_id=#{eid} ORDER BY last_name, first_name, father_name").fetch { |row|
+				yield row['student_id'].to_i, "#{row['last_name']} #{row['first_name']} #{row['father_name']}"
+			}
+		]]></dselect>
+
+	</template>
+	
+	<printable>
+		<group by="group">
+			<p><![CDATA[
+				<% _group = @groups.find(:group => group) %>
+				<h3>Группа <%= _group[:group] %></h3>
+			]]></p>
+			
+			<section source="order" paragraph="0">
+				<p><![CDATA[
+					<%= section_index %>. Перевести нижеперечисленных студентов,
+					полностью выполнивших учебный план <& _group[:current_term_number] &> семестра
+					и сдавших все экзамены и зачеты, на <& _group[:current_term_number].to_i + 1 &> семестр.
+					Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}#{_group[:group_num]}" &>.
+				]]></p>
+				
+				<list style="table">
+					<column name="number"/>
+					<column source="student" name="name"/>
+					<column source="student" name="card_number"/>
+					
+					<column source="student" name="category" hidden="1"/>
+					<column source="student" name="study_type" hidden="1"/>
+					<column title="Форма (основа) обучения"><![CDATA[ <%
+						r = [study_type]
+						r << 'ОРИСА' if category.include? :foreign
+						r << 'ГУИМЦ' if category.include? :disabled
+						print r.join(', ')
+					%> ]]></column>
+				</list>
+			</section>
+			
+			<p><![CDATA[
+				<% if order.attributes['vacations'] then %><%= (section_index += 1) %>. Направить студентов, перечисленных
+				в п.1 настоящего приказа, на каникулы в соответствии с годовым учебным планом.<% end %>
+			]]></p>
+						
+			<section source="order" paragraph="1">
+				<p><![CDATA[
+					<%= section_index %>. Перевести нижеперечисленных студентов, не сдавших академические задолженности
+					в дополнительную экзаменационную сессию, условно на <& _group[:current_term_number].to_i + 1 &> семестр,
+					установив индивидуальный срок сдачи задолженностей.
+					Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}#{_group[:group_num]}" &>.
+				]]></p>
+				
+				<list style="table">
+					<column name="number"/>
+					<column source="student" name="name"/>
+					<column source="student" name="card_number"/>
+					
+					<column source="student" name="category" hidden="1"/>
+					<column source="student" name="study_type" hidden="1"/>
+					<column title="Форма (основа) обучения"><![CDATA[ <%
+						r = [study_type]
+						r << 'ОРИСА' if category.include? :foreign
+						r << 'ГУИМЦ' if category.include? :disabled
+						print r.join(', ')
+					%> ]]></column>
+					
+					<column source="order" name="liabilities" title="Академические задолженности"/>
+					<column source="order" name="excuse"/>
+					<column source="order" name="deadline"/>
+				</list>
+			</section>
+		
+			<section source="order" paragraph="2">
+				<p><![CDATA[
+					<%= section_index %>. Считать нижеперечисленных студентов находящимися в академическом отпуске.
+					Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}#{_group[:group_num]}" &>.
+				]]></p>
+				
+				<list style="table">
+					<column name="number"/>
+					<column source="student" name="name"/>
+					<column source="student" name="card_number"/>
+					
+					<column source="student" name="category" hidden="1"/>
+					<column source="student" name="study_type" hidden="1"/>
+					<column title="Форма (основа) обучения"><![CDATA[ <%
+						r = [study_type]
+						r << 'ОРИСА' if category.include? :foreign
+						r << 'ГУИМЦ' if category.include? :disabled
+						print r.join(', ')
+					%> ]]></column>
+				</list>
+			</section>
+
+			<section source="order" paragraph="3">
+				<p><![CDATA[
+					<%= section_index %>. Считать нижеперечисленных студентов находящимися на стажировке.
+					Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}#{_group[:group_num]}" &>.
+				]]></p>
+				
+				<list style="table">
+					<column name="number"/>
+					<column source="student" name="name"/>
+					<column source="student" name="card_number"/>
+					
+					<column source="student" name="category" hidden="1"/>
+					<column source="student" name="study_type" hidden="1"/>
+					<column title="Форма (основа) обучения"><![CDATA[ <%
+						r = [study_type]
+						r << 'ОРИСА' if category.include? :foreign
+						r << 'ГУИМЦ' if category.include? :disabled
+						print r.join(', ')
+					%> ]]></column>
+				</list>
+			</section>
+			
+			<p><![CDATA[
+				<% if _group[:attributes]['monitor'] and (monitor = @students.find(:student_id => _group[:attributes]['monitor']))%>
+				<%= section_index + 1 %>. Назначить старостой группы <%= monitor[:name] %>.
+				<% end %>
+			]]></p>
+						
+		</group>
+		
+		<p>Основания приказа: положение о зачетах и экзменах в МГЛУ.</p>
+		
+		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector"/>
+			<signature name="personnel"/>
+			<signature name="dean"/>
+			<signature name="marketing" condition="contract"/>
+			<signature name="financing" condition="contract"/>
+			<!-- signature name="foreign" condition="foreign"/ -->
+		</signatures>
+	</printable>
+
+</details>

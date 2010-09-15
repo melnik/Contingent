@@ -1,0 +1,16 @@
+<!ATTR faculty_id student_view !>
+<html>
+	<head>
+		<link rel="Stylesheet" href="/main.css" />
+		<frameset cols="25%,*" border="0">
+			<frame name="nav" src="/tools.rb?faculty_id=<&faculty_id&>&target=student&return_url=%2Fstudent%2Flist.rb" scrolling="no" />
+			<frameset rows="26,<% if student_view then %>0,<% end %>*" border="5">
+				<frame name="toolbar" src="list_toolbar.rb" scrolling="no" noresize="true" />
+<% if student_view %>
+				<frame name="details" />
+<% end %>
+				<frame name="list" id="list" src="list.rb" />
+			</frameset>
+		</frameset>
+	</head>
+</html>

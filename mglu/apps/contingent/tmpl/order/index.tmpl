@@ -1,0 +1,13 @@
+<!ATTR faculty_id !>
+<html>
+	<head>
+		<link rel="Stylesheet" href="/main.css" />
+		<frameset cols="25%,*" border="0">
+			<frame name="nav" src="/tools.rb?faculty_id=<&faculty_id&>&target=order&return_url=%2Forder%2Flist.rb" scrolling="no" />
+			<frameset rows="26,*" border="0">
+				<frame name="toolbar" src="list_toolbar.rb" scrolling="no" noresize="true" />
+				<frame name="list" id="list" src="list.rb" />
+			</frameset>
+		</frameset>
+	</head>
+</html>

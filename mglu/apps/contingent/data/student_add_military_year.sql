@@ -1,0 +1,2 @@
+
+ALTER TABLE student ADD COLUMN military_year INT NOT NULL DEFAULT 0;

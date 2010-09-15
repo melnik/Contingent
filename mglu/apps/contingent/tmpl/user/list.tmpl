@@ -1,0 +1,25 @@
+<!ATTR total !>
+<*/widgets/list/header*>
+		<div class="list_header">
+			<table class="list_header">
+				<tr>
+					<th style="width: 10em">Login</th>
+					<th style="width: 15em">Роль</th>
+					<th>Имя</th>
+				</tr>
+			</table>
+		</div>
+		<div id="content">
+			<table cellpadding="0" cellspacing="0" width="100%">
+				<**row|add_row**>
+			</table>
+		</div>
+		<table class="status_bar">
+			<tr>
+				<td class="status_bar">
+					<b>Всего:</b> <&total&>
+				</td>
+				<**/widgets/list/stats|add_stats**>
+			</tr>
+		</table>
+<*/widgets/list/footer*>

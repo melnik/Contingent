@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<order classname="BeginTraineeOrder" base="StudentsOrder">
+
+	<type>О направлении на стажировку</type>
+
+	<qualified_students class="Hash">
+		<student_state_id class="Expression">Classifier::StudentState::STUDYING</student_state_id>
+	</qualified_students>
+
+	<template entity="order">
+		<const type="int" name="student_state_id" value="Classifier::StudentState::TRAINEE"/>
+	</template>
+
+	<template entity="student">
+		<input type="date" name="start_at" title="Считать на стажировке с" />
+		<input type="document" name="order" title="Приказ" />
+	</template>
+
+	<printable>
+
+		<p>Считать нижеперечисленных лиц, обучающихся в МГЛУ, находящимися на стажировке за границей:</p>
+
+		<list style="text">
+			<column source="student" name="name"/>
+			<column source="student" name="card_number"/>
+			<column source="student" name="group"/>
+			<column source="order" name="start_at"/>
+			<column source="order" name="order"/>
+		</list>
+
+	</printable>
+
+</order>

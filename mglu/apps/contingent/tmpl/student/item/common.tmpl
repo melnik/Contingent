@@ -1,0 +1,113 @@
+<!ATTR student_id state gender birth_date birth_country birth_region citizenship identity_document_type documents contacts dormitory photo_url !>
+<html>
+	<head>
+		<link rel="Stylesheet" href="/main.css" />
+		<script language="javascript" src="/tools/datecontrol.js"></script>
+		<script language="javascript" src="/studcard.js"></script>
+		<script language="javascript"><!--
+
+		function checkCountry()
+		{
+			var region    = document.getElementById('birth_region');
+			var region_id = document.getElementById('birth_region_id');
+
+			if (region == null) return;
+
+			if (document.getElementById('birth_country_id').value == '150:643') {
+				region.style.visibility = 'visible';
+			} else {
+				region_id.value = ':';
+				checkClassifier_birth_region();
+				region.style.visibility = 'hidden';
+			}
+		}
+
+		function submit_form()
+		{
+			document.main_form.submit();
+		}
+		
+		function checkPhoto()
+		{
+			var img = document.getElementById("face-photo");
+			if (!img.complete || (typeof img.naturalWidth != "undefined" && img.naturalWidth == 0)) {
+				img.src = "/img/no_photo_<%= gender == 1 ? 'male' : 'female' %>.png";
+			}
+		}
+
+		//--></script>
+	</head>
+
+	<body onload="javascript:checkPhoto()">
+		<form name="main_form" method="post">
+			<input type="hidden" name="student_id" value="<&student_id&>"/>
+			<input type="hidden" name="save" value="" />
+
+			<table width="100%">
+			<tr>
+			<td valign="top"><img id="face-photo" src="<&photo_url&>"/></td>
+			<td valign="top">
+			<h2>Общие сведения</h2>
+			<div class="panel">
+				<nobr>Состояние: <b><&state&></b></nobr><br/>
+				<nobr>&#x2116; страхового свидетельства ГПС: <input type="text" class="text" name="social_security_number" value="<&documents['social_security']['number']&>"/></nobr>
+				<nobr>ИНН: <input type="text" class="text" name="taxpayer_identity" value="<&documents['taxpayer_identity']&>"/></nobr>
+				<nobr>Пол: <**/widgets/classifier/coded_select|place_gender**></nobr>
+			</div>
+
+			<h2>Карточка медицинского страхования</h2>
+			<div class="panel">
+				<nobr>Страховая компания: <input type="text" class="text" name="health_insurance_company" value="<&documents['health_insurance']['company']&>"/></nobr>
+				Карточка:
+					<nobr>серия <input type="text" class="text" name="health_insurance_serial" value="<&documents['health_insurance']['serial']&>"/></nobr>
+					<nobr>номер <input type="text" class="text" name="health_insurance_number" value="<&documents['health_insurance']['number']&>"/></nobr>
+			</div>
+			</td>
+			</tr>
+			</table>
+
+			<h2>Место рождения</h2>
+			<div class="panel">
+				<nobr>Страна: <**/widgets/classifier/coded_select|place_birth_country**></nobr>
+				<nobr>Регион: <**/widgets/classifier/coded_select|place_birth_region**></nobr>
+				<script language="javascript"><!--
+					checkCountry();
+				--></script>
+				<nobr>Дата рождения: <**/widgets/date|place_birth_date**></nobr>
+				<nobr>Гражданство: <**/widgets/classifier/coded_select|place_citizenship**></nobr>
+			</div>
+			
+
+			<h2>Документ, удостоверяющий личность</h2>
+			<div class="panel">
+				<nobr>Вид документа: <**/widgets/classifier/simple|place_identity_document_type**></nobr>
+				<nobr>Серия <input type="text" class="text" name="identity_document_serial" value="<&documents['identity_document']['serial']&>"/></nobr>
+				<nobr>&#x2116; <input type="text" class="text" name="identity_document_number" value="<&documents['identity_document']['number']&>"/></nobr>
+				<nobr>Дата выдачи <**/widgets/date|place_identity_document_date**></nobr>
+				<nobr>Кем выдан <input type="text" class="text" name="identity_document_issuer" value="<&documents['identity_document']['issuer']&>"/></nobr>
+			</div>
+
+			<h2>Место жительства</h2>
+			<div class="panel">
+				<input type="text" class="text" id="address_stationary" name="address_stationary" style="display: none" />
+				<input type="text" class="text" id="address_stationary_okato" name="address_stationary_okato" style="display: none" />
+				<iframe name="stationary_frame" style="width: 97%; height: 4em; border: none;" src="address.rb?type=stationary&address=<&contacts['addresses']['stationary']['string']&>&okato=<&contacts['addresses']['stationary']['okato']&>"></iframe>
+			</div>
+
+			<h2>Место регистрации</h2>
+			<div class="panel">
+				Проживает в общежитии: <input type="checkbox" name="dormitory" <%=dormitory ? 'checked="1"' :''%>/>
+				<input type="text" class="text" id="address_temporary" name="address_temporary" style="display: none" />
+				<input type="text" class="text" id="address_temporary_okato" name="address_temporary_okato" style="display: none" />
+				<iframe name="temporary_frame" style="width: 97%; height: 4em; border: none;" src="address2.rb?type=temporary&address=<&contacts['addresses']['temporary']['string']&>&okato=<&contacts['addresses']['temporary']['okato']&>"></iframe>
+				<nobr>Дата окончания регистрации: <**/widgets/date|place_address_temporary_expires**></nobr>
+			</div>
+
+			<h2>Номер телефона</h2>
+			<div class="panel">
+				<nobr>Домашний: <input type="text" class="text" name="phone_home" value="<&contacts['phones']['home']&>"/></nobr>
+				<nobr>Мобильный: <input type="text" class="text" name="phone_cell" value="<&contacts['phones']['cell']&>"/></nobr>
+			</div>
+		</form>
+	</body>
+</html>

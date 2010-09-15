@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<details classname="ScholarshipAssignmentOrder"> <!-- base="StudentsOrder" -->
+
+	<!--
+	<type>О назначении на стипендию</type>
+
+	<qualified_students class="Hash">
+		<student_state class="String">studying</student_state>
+		<liabilities class="FalseClass"/>
+	</qualified_students>
+
+	<paragraph_names>
+		<para>На повышенную стипендию</para>
+		<para>На стипендию</para>
+	</paragraph_names>
+	-->
+
+	<condition name="high_courses">
+		<course class="Array">
+			<item class="Fixnum">3</item>
+			<item class="Fixnum">4</item>
+			<item class="Fixnum">5</item>
+			<item class="Fixnum">6</item>
+		</course>
+	</condition>
+
+	<template entity="order">
+		<input type="document" name="basics" title="Протокол заседания стипендиальной комиссии"/>
+	</template>
+
+	<template entity="student" paragraph="0">
+		<const type="int" name="scholarship_id" value="1"/>
+	</template>
+
+	<template entity="student" paragraph="1">
+		<const type="int" name="scholarship_id" value="2"/>
+	</template>
+
+	<printable>
+
+		<p><![CDATA[
+			Студентов, сдавших все экзамены и зачеты <& Term.current.even? ? 'зимней' : 'летней' &> экзаменационной
+			сессии, назначить на государственные академические стипендии в
+			<& Term.current.academic_year.begin &>/<& Term.current.academic_year.end &> учебном году (<& Term.current &>):
+		]]></p>
+
+		<group by="group">
+
+			<p><![CDATA[ <h3>По группе <& group &></h3> ]]></p>
+
+			<section source="order" paragraph="0">
+				<p>&lt;%= section_index %&gt;. Студентов, имеющих по итогам сессии только
+				отличные оценки, назначить на повышенную государственную академическую стипендию:</p>
+
+				<list style="list">
+					<column source="student" name="group_id" hidden="1"/>
+					<column source="student" name="name"/>
+				</list>
+			</section>
+
+			<section source="order" paragraph="1">
+				<p>&lt;%= section_index %&gt;. Студентов, имеющих по итогам сессии только
+				отличные и хорошие оценки, назначить на государственную академическую стипендию:</p>
+
+				<list style="list">
+					<column source="student" name="name"/>
+				</list>
+			</section>
+
+		</group>
+
+		<p><![CDATA[
+			Основание приказа: протокол заседания стипендиальной
+			комиссии <& order.attributes['basics'] &>.
+		]]></p>
+
+		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector"/>
+			<signature name="personnel"/>
+			<signature name="dean" condition="not (disabled and high_courses)"/>
+			<signature name="deputy_dean" condition="not (disabled and high_courses)"/>
+			<signature name="rehabilitation_dean" condition="disabled and high_courses"/>
+			<signature name="rehabilitation_deputy_dean" condition="disabled and high_courses"/>
+			<signature name="financing"/>
+			<signature name="accountant"/>
+			<signature name="rehabilitation" condition="disabled and not high_courses"/>
+			<signature name="foreign" condition="foreign"/>
+		</signatures>
+	</printable>
+
+</details>

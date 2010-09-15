@@ -1,0 +1,3 @@
+#!/bin/sh
+
+./export.rb | iconv -f koi8-r -t cp1251 >dept.rb

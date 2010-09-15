@@ -1,0 +1,64 @@
+<!ATTR student_id enrollment expelation reserve_category rank profile speciality fitness registration !>
+<html>
+	<head>
+		<script language="javascript" src="/tools/datecontrol.js"></script>
+		<script language="javascript" src="/studcard.js"></script>
+		<script language="javascript"><!--
+		function submit_form()
+		{
+			document.main_form.submit();
+		}
+		//--></script>
+		<link rel="Stylesheet" href="/main.css" />
+	</head>
+	<body>
+		<form name="main_form" method="post">
+			<input type="hidden" name="student_id" value="<&student_id&>"/>
+			<input type="hidden" name="save" value="" />
+
+			<div class="panel">
+				<div>Категория запаса: <input name="reserve_category" value="<&reserve_category&>" class="text"/></div>
+				<div>Воинское звание: <input name="rank" value="<&rank&>" class="text"/></div>
+				<div>Состав (профиль): <input name="profile" value="<&profile&>" class="text"/></div>
+				<div>Полное кодовое обозначение ВУС: <input name="speciality" value="<&speciality&>" class="text"/></div>
+				<div>Категория годности к военной службе: <input name="fitness_name" value="<& fitness['name'] &>" class="text"/> Код <input name="fitness_code" value="<& fitness['code'] &>" class="text"/></div>
+			</div>
+
+			<h2>Состоит на воинском учете</h2>
+			<div class="panel">
+				<div>Серия и номер воинского документа: <input name="registration_document" value="<& registration['document'] &>" class="text"/></div>
+				<div>общем (номер команды, партии): <input name="registration_general" value="<& registration['general'] &>" class="text"/></div>
+				<div>специальном: <input name="registration_special" value="<& registration['special'] &>" class="text"/></div>
+			</div>
+
+			<h2>Отметка о снятии с воинского учета</h2>
+			<div class="panel">
+				<div>Основание: <input name="takeoff_reason" value="<& registration['takeoff']['reason'] &>" class="text"/></div>
+				<div>Дата: <**/widgets/date|place_takeoff_date**></div>
+			</div>
+<% if enrollment then %>
+			<h2>Военное обучение</h2>
+			<div class="panel">
+				<div>Год начала обучения: <b><&enrollment.date_activated.year&></b></div>
+<%	if expelation then %>
+				<div>Год окончания: <b><&expelation.date_activated.year&></b></div>
+<%	end %>
+				<br/>
+
+				<div>Дата заключения контракта о военном обучении: <b><&enrollment.date_activated&></b></div>
+				<div>Зачисление на военное обучение: приказ от&nbsp;<b><&enrollment.date_activated&></b>&nbsp;&#x2116;<b><&enrollment.number&></b></div>
+<%	if expelation then %>
+				<div>Отчисление с военного обучения: приказ от&nbsp;<b><&expelation.date_activated&></b>&nbsp;&#x2116;<b><&expelation.number&></b></div>
+<%	end %>
+			</div>
+
+			<div class="panel">
+				<div>Дата оформления справки ф. 26:</div>
+				<ul>
+					<**certificate26_year|add_certificate26_year**>
+				</ul>
+			</div>
+<% end %>
+		</form>
+	</body>
+</html>

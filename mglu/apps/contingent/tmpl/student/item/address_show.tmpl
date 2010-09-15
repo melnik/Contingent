@@ -1,0 +1,35 @@
+<!ATTR address_type address okato !>
+
+<html>
+	<head>
+		<script language="javascript"><!--
+		
+		function get_elem(name)
+		{
+			var retval;
+			
+			if (window.parent.document.getElementById)
+				return window.parent.document.getElementById(name);
+			else {
+				eval("retval = document.parent.main_form." + name + ";");
+				return retval;
+			}
+		}
+		
+		get_elem("address_<&address_type&>").value = "<&address&>";
+		get_elem("address_<&address_type&>_okato").value = "<&okato&>";
+		
+		//--></script>
+		
+		<link rel="Stylesheet" href="/main.css" />
+	</head>
+	<body style="margin-top: 3px; margin-bottom: 3px">
+		<form>
+			<input type="hidden" name="type" value="<&address_type&>"/>
+
+			<&address&>
+			<input type="submit" name="reset" value="Изменить"/><br/>
+			Код по ОКАТО: <&okato&>
+		</form>
+	</body>
+</html>

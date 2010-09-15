@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+puts 'DELETE FROM `group`;'
+gets
+
+$stdin.each_line { |l|
+	c = l.split(/\t/)
+	c[10] = '00' if c[10].empty?
+	spec = c[5] + c[10] + c[8]
+	puts "INSERT INTO `group` (faculty_id, group_name, speciality_code, current_term_number) VALUES (#{c[1]}, '#{c[2]}', '#{spec}', #{c[3].to_i * 2});"
+}

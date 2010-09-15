@@ -1,0 +1,56 @@
+<!ATTR display_empty wide on_change custom !>
+<-- METHODS START -->
+
+def init classifier, editable = true, has_custom = false
+	@classifier, @editable, @has_custom, @selected = classifier, editable, has_custom, classifier.selected
+
+	for entry in @classifier do
+		add_option "#{entry[:id]}:#{entry[:code]}", entry[:name], entry[:id] == @selected[:id]
+	end if @editable
+
+	@display_empty, @wide = true, false
+
+	return self
+end
+
+<-- METHODS END -->
+<script language="javascript"><!--
+	function checkClassifier_<&@classifier.name&>()
+	{
+		document.getElementById("<&@classifier.name&>_code").value = document.getElementById("<&@classifier.name&>_id").value.split(':')[1];
+		document.getElementById("custom_<&@classifier.name&>").style.visibility = 
+			((document.mf.<&@classifier.name&>_<&@classifier.class.key_postfix&>.value == "0:") ? "visible" : "hidden");
+		<&on_change&>
+	}
+--></script>
+<div id="<&@classifier.name&>" style="display: inline; white-space: nowrap;<% if @wide then %> width: 100%<% end %>">
+<% if @editable then %>
+	<select name="<&@classifier.name&>_id" id="<&@classifier.name&>_id" onChange="javascript:checkClassifier_<&@classifier.name&>()"<% if @wide then %> style="width: 100%"<% end %>>
+<%	if @display_empty then %>
+		<option value=":"<% unless @selected then %> selected="1"<% end %>/>
+<%	end %>
+		<**option|add_option**>
+<%	if @has_custom then %>
+		<option value="0:"<% if not @selected and @custom then %> selected="1"<% end %>>(еще...)</option>
+<%	end %>
+	</select>
+<% if @has_custom %>
+	<input name="custom_<&@classifier.name&>" id="custom_<&@classifier.name&>" value="<&custom&>"/>
+<% end %>
+<% else %>
+	<input name="<&@classifier.name&>_id" id="<&@classifier.name&>_id" type="hidden" value="<& @selected[:id] &>:<& @selected[:code] &>"/>
+	<b><%
+	if @selected then;
+		%><&@selected[:name]&><%
+	elsif not @selected and @custom then
+		%><&custom&><%
+	elsif not @selected and not @custom then ''
+		%>НЕ УСТАНОВЛЕНО<%
+	end %></b>
+<% end %>
+	Код по <&@classifier.class::NAME&>
+	<input type="text" id="<&@classifier.name&>_code" style="width: 5em; border: none; background: transparent; font-weight: bold; color: black;" disabled="1"/>
+</div>
+<script language="javascript"><!--
+	checkClassifier_<&@classifier.name&>();
+--></script>

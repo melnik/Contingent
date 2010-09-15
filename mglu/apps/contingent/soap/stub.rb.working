@@ -1,0 +1,522 @@
+$KCODE = 'UTF8'
+
+require 'xml/libxml'
+
+class StudentsSrvPort
+	def execute(request_text)
+		parser = XML::Parser.new
+		parser.string = request_text
+		doc = parser.parse
+		reqxml = doc.root.child.child
+
+		p "Operation: #{reqxml.name}"
+
+		response = case reqxml.name
+		when 'getRequest'
+			get(reqxml)
+		when 'listStudentsRequest'
+			listStudents(reqxml)
+		when 'listOrdersRequest'
+			listOrders(reqxml)
+		when 'listClassifierRequest'
+			listClassifier(reqxml)
+		else
+			raise 'Unsupported method'
+		end
+
+#		doc.root.add_namespace('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
+#		doc.root.add_namespace('xmlns:ns1', 'http://contingent.bmstu.ru/')
+
+#		@ns_cont = @ns_xsi = nil
+		
+#		doc.root.attributes.each { |abbr, full|
+#			@ns_cont = abbr if full == 'http://contingent.bmstu.ru/'
+#			@ns_xsi = abbr if full == 'http://www.w3.org/2001/XMLSchema-instance'
+#			p abbr, full
+#		}
+
+#		doc.root.add_namespace(''
+
+		resxml = doc.root.child.child
+		resxml.name = resxml.name.gsub(/Request/, 'Response')
+		resxml.find('*').each { |c| c.remove! }
+
+		resxml['xsi:type'] = 'ns1:' + resxml.name
+		if response.is_a?(Array) then
+			p "Adding array"
+			response.each { |i| resxml << i }
+		else
+			p "Adding non-array"
+			resxml << response
+		end
+
+		return doc.to_s
+	end
+
+	def version
+		return 'Contingent Web Service v2.0'
+	end
+
+	def get(req)
+		parsed_id = nil
+		req.each_child { |c| parsed_id = c.content.to_id if c.name = 'id' }
+		raise 'Object ID not found' unless parsed_id
+		p parsed_id
+
+		obj = XML::Node.new('object')
+
+		case parsed_id[:entity]
+		when :student
+			s = Student.load(parsed_id[:id])
+
+			obj['xsi:type'] = 'ns1:Student'
+
+			obj << (t = XML::Node.new('id'))
+			t.content = s.oid.to_i.to_uuid(:student)
+			obj << (t = XML::Node.new('name'))
+			t.content = s.last_name.utf_encode + ' ' + s.first_name.utf_encode + ' ' + s.father_name.utf_encode
+			obj << (t = XML::Node.new('lastName'))
+			t.content = s.last_name.utf_encode
+			obj << (t = XML::Node.new('firstName'))
+			t.content = s.first_name.utf_encode
+			obj << (t = XML::Node.new('middleName'))
+			t.content = s.father_name.utf_encode
+
+			add_classifier(
+				obj,
+				'gender',
+				s.gender_id.to_uuid('gender'),
+				s.gender.utf_encode
+			)
+
+			obj << (t = XML::Node.new('birthDate'))
+			t.content = s.birth_date.to_s if s.birth_date
+
+#				false, # GREYFIX: s.group.monitor_id == s.oid,
+#				liabilities ? 1 : 0, # GREYFIX: return quantity?
+			obj << (t = XML::Node.new('cardNumber'))
+			t.content = s.card_number.utf_encode
+			add_classifier(
+				obj,
+				'studyType',
+				s.study_type_id.to_uuid('study_type'),
+				s.study_type.utf_encode
+			)
+			add_classifier(
+				obj,
+				'studentState',
+				s.state_id.to_uuid('student_state'),
+				s.state.utf_encode
+			)
+			obj << (t = XML::Node.new('dormitory'))
+			t.content = s.dormitory.to_s
+
+			grp = XML::Node.new('group')
+			export_group(s.group, grp)
+			obj << grp
+
+#			add_classifier(
+#				obj,
+#				'profession',
+#				s.state_id.to_uuid('profession'),
+#				s.state.utf_encode
+#			)
+			obj << (t = XML::Node.new('disabled'))
+			t.content = s.category[:disabled].to_s
+			obj << (t = XML::Node.new('foreign'))
+			t.content = s.category[:foreign].to_s
+			obj << (t = XML::Node.new('photo'))
+			t.content = "http://contingent.bmstu.ru:8080/photo/#{s.oid.to_s[-2..-1]}/#{s.oid}.jpg"
+
+		when :order
+			o = Order.load(parsed_id[:id])
+
+			obj['xsi:type'] = 'ns1:ContingentOrder'
+
+			# Collect basic order fields
+			obj << (t = XML::Node.new('id'))
+			t.content = o.oid.to_i.to_uuid(:order)
+			obj << (t = XML::Node.new('name'))
+			t.content = o.number.utf_encode if o.number
+			obj << (t = XML::Node.new('dateCreated'))
+			t.content = o.date_created.to_s
+			obj << (t = XML::Node.new('dateActivated'))
+			t.content = o.date_activated.to_s if o.date_activated
+			obj << (t = XML::Node.new('html'))
+			t.content = o.html.utf_encode
+
+			# Add students from the order
+			o.each_student(:all, %w( student_id last_name first_name father_name attributes )) { |student_id, last_name, first_name, father_name, attributes|
+				obj << (s = XML::Node.new('student'))
+				s['xsi:type'] = 'ns1:StudentInOrder'
+				s << (t = XML::Node.new('id'))
+				t.content = student_id.to_uuid(:student)
+				s << (t = XML::Node.new('name'))
+				t.content = [first_name.utf_encode, father_name.utf_encode, last_name.utf_encode].join(' ')
+				s << (t = XML::Node.new('attributes'))
+				t.content = preprocess(attributes)
+			}
+
+			# GREYFIX: todo - add groups
+
+			# Add order specific XML attributes
+			obj << (t = XML::Node.new('attributes'))
+			t.content = preprocess(o.attributes)
+		when :group
+			g = Group.load(parsed_id[:id])
+			export_group(g, obj)
+
+		when :department
+			d = Department.load(parsed_id[:id])
+			export_department(d, obj)
+		when :faculty
+			f = Faculty.load(parsed_id[:id])
+
+			obj['xsi:type'] = 'ns1:Faculty'
+
+			obj << (t = XML::Node.new('id'))
+t.content = f.oid.to_uuid(:faculty)
+			obj << (t = XML::Node.new('name'))
+t.content = f.name.utf_encode
+			obj << (t = XML::Node.new('fullName'))
+t.content = f.full_name.utf_encode
+		else
+			if parsed_id.nil?
+				raise 'Unknown entity'
+			else
+				raise 'Not implemented'
+			end
+		end
+
+		return obj
+	end
+
+	def listOrders(req)
+		result = []
+
+		# Build search criteria from request
+		criteria = {
+			'order_status_id' => Classifier::OrderStatus::ACTIVATED
+		}
+		req.each { |e|
+			next if e.content.empty?
+			case e.name
+			when 'type'
+				parsed_id = e.content.to_id
+				raise 'Wrong order type' if parsed_id[:entity] != 'order_type'
+				criteria['order_type_id'] = parsed_id[:id]
+			when 'dateStart'
+				criteria['min_date_activated'] = e.content
+			when 'dateEnd'
+				criteria['max_date_activated'] = e.content
+			else
+				p "Wrong criteria name: #{e.name}"			
+			end
+		}
+
+		p "Starting orders search. Criteria: " + criteria.inspect
+
+		Order.list(criteria, [ 'order_id', 'number', 'date_created', 'date_activated' ]) { |oid, number, date_created, date_activated|
+			obj = XML::Node.new('order')
+			obj << (t = XML::Node.new('id'))
+t.content = oid.to_i.to_uuid(:order)
+			obj << (t = XML::Node.new('name'))
+t.content = number.utf_encode
+			obj << (t = XML::Node.new('dateCreated'))
+t.content = date_created.to_s
+			obj << (t = XML::Node.new('dateActivated'))
+t.content = date_activated.to_s			
+			result << obj
+		}
+		return result
+	end
+
+	ALLOWED_CLASSIFIERS = %w(
+		Gender OrderType StudentState
+	)
+
+	def listClassifier(req)
+		cname = nil
+		req.each_child { |c| cname = c.content if c.name = 'type' }
+
+		# Check if we support this classifier
+		raise 'Classifier not found' if ALLOWED_CLASSIFIERS.grep(cname).empty?
+
+		# Create a classifier object using name given
+		cl = (Classifier::const_get(cname)).new
+
+		# Iterate over all classifier contents and output them all
+		result = []
+		cl.each { |ent|
+			result << add_classifier(
+				nil,
+				'classifier',
+				ent[:id].to_uuid(cl.name),
+				ent[:name].utf_encode,
+				ent[:code] ? ent[:code].utf_encode : nil
+			)
+		}
+		return result
+	end
+
+	def listOrderTypes(listOrderTypes)
+		arr = []
+		Classifier::OrderType.new.each { |ent|
+			arr << ContingentSOAP::OrderType.new(ent[:id], ent[:name].utf_encode)
+		}
+		return [ContingentSOAP::ArrayOfOrderTypes.new(arr)]
+	end
+
+	CRITERIA_MAPPING = {
+		'lastName' => 'last_name',
+		'firstName' => 'first_name',
+		'middleName' => 'father_name',
+		'faculty' => 'faculty',
+		'department' => 'department',
+		'group' => 'group',
+		'dormitory' => 'dormitory',
+		'gender' => 'gender',
+		'cardNumber' => 'card_number',
+		'studentState' => 'student_state',
+	}
+
+	def listStudents(req)
+		criteria = {}
+		req.each_child { |e|
+			if CRITERIA_MAPPING[e.name]
+				if not e.content.empty?
+					q = e.content.utf_decode
+					parsed_id = q.to_id
+					if parsed_id then
+						criteria[CRITERIA_MAPPING[e.name] + '_id'] = parsed_id[:id]
+						p "processing #{e.name} - UUID search"
+					else
+						criteria[CRITERIA_MAPPING[e.name]] = q
+						p "processing #{e.name} - normal string search"
+					end	
+				else
+					p "processing #{e.name} - empty, skipping"
+				end
+			else
+				p "processing #{e.name} - not supported, skipping"
+			end
+		}
+		p criteria
+		raise "Would not list all students - criteria needed" if criteria.empty?
+		return get_students_by_criteria(criteria)
+	end
+
+	def listByFaculty(listByFaculty)
+		return ContingentSOAP::ListByFacultyReturn.new(
+			get_students_by_criteria({ 'faculty' => listByFaculty.faculty.utf_decode })
+		)
+	end
+
+	def listByDepartment(listByDepartment)
+		return ContingentSOAP::ListByDepartmentReturn.new(
+			get_students_by_criteria({ 'department' => listByDepartment.department.utf_decode })
+		)
+	end
+
+	def listByGroup(listByGroup)
+		return ContingentSOAP::ListByGroupReturn.new(
+			get_students_by_criteria({ 'group' => listByGroup.group.utf_decode })
+		)
+	end
+	
+	private
+	def get_students_by_criteria(criteria)
+		arr = []
+		$KCODE = 'NONE'
+		Student.list(
+			criteria,
+			%w(student_id first_name father_name last_name faculty department group group_id dormitory gender_id gender study_type_id study_type liabilities card_number student_state_id student_state category)
+		) { |student_id, first_name, father_name, last_name, faculty, department, group, group_id, dormitory, gender_id, gender, study_type_id, study_type, liabilities, card_number, student_state_id, student_state, category|
+
+			obj = XML::Node.new('student')
+			obj['xsi:type'] = 'ns1:Student'
+
+			obj << (t = XML::Node.new('id'))
+			t.content = student_id.to_i.to_uuid(:student)
+			obj << (t = XML::Node.new('name'))
+			t.content = last_name.utf_encode + ' ' + first_name.utf_encode + ' ' + father_name.utf_encode
+			obj << (t = XML::Node.new('firstName'))
+			t.content = first_name.utf_encode
+			obj << (t = XML::Node.new('middleName'))
+			t.content = father_name.utf_encode
+			obj << (t = XML::Node.new('lastName'))
+			t.content = last_name.utf_encode
+			add_classifier(
+				obj,
+				'gender',
+				gender_id.to_uuid('gender'),
+				gender.utf_encode
+			) if gender_id and gender
+
+#				false, # GREYFIX: s.group.monitor_id == s.oid,
+#				liabilities ? 1 : 0, # GREYFIX: return quantity?
+			obj << (t = XML::Node.new('cardNumber'))
+			t.content = card_number.utf_encode if card_number
+			add_classifier(
+				obj,
+				'studyType',
+				study_type_id.to_uuid('study_type'),
+				study_type.utf_encode
+			) if study_type_id
+			add_classifier(
+				obj,
+				'studentState',
+				student_state_id.to_uuid('student_state'),
+				student_state.utf_encode
+			) if student_state_id
+
+			obj << (t = XML::Node.new('dormitory'))
+			t.content = dormitory.to_s
+
+			if group_id then
+				obj << (grp = XML::Node.new('group'))
+				grp['xsi:type'] = 'ns1:Group'
+				grp << (t = XML::Node.new('id'))
+				t.content = group_id.to_uuid(:group)
+				grp << (t = XML::Node.new('name'))
+				t.content = group.utf_encode
+			end
+
+#			s.profession_code.utf_encode
+
+			obj << (t = XML::Node.new('disabled'))
+			t.content = category[:disabled].to_s
+			obj << (t = XML::Node.new('foreign'))
+			t.content = category[:foreign].to_s
+
+			arr << obj
+		}
+		$KCODE = 'UTF-8'
+		return arr
+	end
+
+	def reportGraduated(reportGraduatedRequest)
+		p 'reportGraduated'
+		p reportGraduatedRequest
+
+		year = reportGraduatedRequest.year.to_i
+		dept = reportGraduatedRequest.department.utf_decode
+
+		$KCODE = 'NONE'
+		faculty = dept.gsub(/\d/, '')
+
+		arr = ContingentSOAP::ArrayOfReportGraduatedPerson.new
+		Order.list({
+			:faculty => faculty,
+			:order_type_id => GraduationOrder.type_id,
+			:min_date_activated => Date.new(year, 1, 1),
+			:max_date_activated => Date.new(year, 12, 31),
+			:order_status_id => Classifier::OrderStatus::ACTIVATED,
+		}, ['order_id']) { |oid|
+			o = Order.load(oid)
+			o.each_student(:all,
+				%w(student_id first_name father_name last_name department attributes profession profession_code)
+			) { |student_id, first_name, father_name, last_name, department, attr, profession, profession_code|
+				next unless department == dept
+				s = ContingentSOAP::ReportGraduatedPerson.new
+				s.id = student_id.to_i.to_uuid(:student)
+				s.firstName = first_name.utf_encode if first_name
+				s.fatherName = father_name.utf_encode if father_name
+				s.lastName = last_name.utf_encode if last_name
+				s.profession = profession.utf_encode if profession
+				s.professionCode = profession_code.utf_encode if profession_code
+				s.qualification = attr['qualification'].utf_encode if attr['qualification']
+				s.qualificationCode = 65
+				# case attr['qualification']
+#				when /Бакалавр/ then 62
+#				when /Инженер/ then 65
+#				when /Магистр/ then 68					
+#				end
+				s.diplomaType = attr['diploma_type']
+				if attr['protocol']
+					s.protocolDate = attr['protocol'].date
+					s.protocolNumber = attr['protocol'].num.utf_encode if attr['protocol'].num
+				end
+				s.orderNumber = o.number.utf_encode if o.number
+				arr << s
+			}
+		}
+		$KCODE = 'UTF-8'
+		arr.sort! { |a, b| a.lastName <=> b.lastName }
+
+		p arr
+		return ContingentSOAP::ArrayOfReportGraduatedPerson.new([arr])
+	end
+
+	def preprocess(xml)
+		res = xml.to_xml
+
+		# Remove all type information
+		res.gsub!(/ class="(.*?)"/, '')
+
+		# Process known classifiers to UUIDs
+		res.gsub!(/<student_state_id>(.*?)<\/student_state_id>/) {
+			'<studentState>' + $1.to_i.to_uuid('student_state') + '</studentState>'
+		}
+		res.gsub!(/<group_id>(.*?)<\/group_id>/) {
+			'<group>' + $1.to_i.to_uuid(:group) + '</group>'
+		}
+
+		# Convert the rest of identifiers to camelCase
+		res.gsub!(/<(.*?)>(.*?)<\/(\1)>/) { |orig|
+			content = $2
+			tag = $1.gsub(/_(.)/) { $1.upcase }
+			"<#{tag}>#{content}</#{tag}>"
+		}
+		return res.utf_encode
+	end
+
+	def add_classifier(obj, type, id, name, code = nil)
+		cl = XML::Node.new(type)
+		obj << cl if obj
+		cl['xsi:type'] = 'ns1:Classifier'
+		cl << (t = XML::Node.new('id'))
+		t.content = id
+		cl << (t = XML::Node.new('name'))
+		t.content = name
+		cl << (t = XML::Node.new('code'))
+		t.content = code if code
+		return cl
+	end
+
+	def export_group(g, obj)
+		obj['xsi:type'] = 'ns1:Group'
+
+		obj << (t = XML::Node.new('id'))
+		t.content = g.oid.to_uuid(:group)
+		obj << (t = XML::Node.new('name'))
+		t.content = g.name.utf_encode
+
+		obj << (dept = XML::Node.new('department'))
+		dept << (t = XML::Node.new('id'))
+		t.content = g.department_id.to_i.to_uuid(:department)
+
+		obj << (t = XML::Node.new('currentTermNumber'))
+		t.content = g.term_number.to_s
+		obj << (t = XML::Node.new('seqNumber'))
+		t.content = g.number.to_s
+	end
+
+	def export_department(d, obj)
+		obj['xsi:type'] = 'ns1:Department'
+		obj << (t = XML::Node.new('id'))
+		t.content = d.oid.to_uuid(:department)
+		obj << (t = XML::Node.new('name'))
+		t.content = d.name.utf_encode
+		obj << (t = XML::Node.new('fullName'))
+		t.content = d.full_name.utf_encode
+		obj << (t = XML::Node.new('number'))
+		t.content = d.number.to_s
+
+		obj << (dept = XML::Node.new('faculty'))
+		dept << (t = XML::Node.new('id'))
+		t.content = d.faculty.oid.to_uuid(:faculty)
+	end
+end
+
+$KCODE = 'NONE'

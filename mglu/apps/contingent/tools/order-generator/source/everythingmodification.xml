@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<order classname="EverythingModificationOrder" base="StudentsOrder">
+
+	<type>Об изменении учетных данных обучающегося</type>
+
+	<qualified_students class="Hash">
+		<student_state class="String">studying</student_state>
+	</qualified_students>
+
+	<template entity="student">
+
+		<input type="name" name="name" title="Ф.И.О." default="s = Student.load(eid); { 'last' => s.last_name, 'first' => s.first_name, 'father' => s.father_name }"/>
+		<input type="text" name="name_basics" title="Основания"/>
+		
+		<classifier type="gender" title="Пол" default="Student.load(eid).gender_id"/>
+		<input type="text" name="gender_basics" title="Основания"/>
+		
+		<input type="text" name="card_number" title="Л.д. &amp;#x2116;" default="Student.load(eid).card_number"/>
+		<input type="text" name="card_number_basics" title="Основания"/>
+		
+		<input type="group" name="group_id" title="Группа" default="Student.load(eid).group_id"/>
+		<input type="text" name="group_basics" title="Основания"/>
+		
+		<input type="date" name="birth_date" title="Дата рождения"/>
+		<input type="text" name="birth_date_basics" title="Основания"/>
+		
+		<classifier type="citizenship" title="Гражданство"/>
+		<input type="text" name="citizenship_basics" title="Основания"/>
+		
+		<classifier type="profession" title="Код направления/специальности" />
+		<input type="text" name="profession_basics" title="Основания"/>
+		
+		<classifier type="degree" title="Ступень образования" />
+		<input type="text" name="degree_basics" title="Основания"/>
+
+		<input type="document" name="agreement" title="Договор/контракт" />
+		<input type="text" name="agreement_basics" title="Основания"/>
+
+	</template>
+
+	<printable>
+
+		<p>Старые учетные данные нижеперечисленных лиц считать утратившими силу,
+		а новые учетные данные обучающихся в МГЛУ признать:</p>
+
+		<list style="text">
+			<column source="student" name="student_id" hidden="1" />
+			<column source="student" name="name" hidden="1" />
+			<column source="student" name="gender_id" hidden="1" />
+			<column source="student" name="card_number" hidden="1" />
+			<column source="student" name="group_id" hidden="1" />
+			<column source="student" name="birth_date" hidden="1" />
+			<column source="student" name="citizenship_id" hidden="1" />
+			<column source="student" name="profession_code" hidden="1" />
+			<column source="student" name="specialization_code" hidden="1" />
+			<column source="student" name="degree_code" hidden="1" />
+			
+			<column><![CDATA[
+				<table class="printable" cellspacing="0">
+					<tr>
+						<th class="printleft">Перечень учетных данных</th>
+						<th>Старые учетные данные</th>
+						<th>Новые учетные данные</th>
+						<th>Основания</th>
+					</tr>
+				
+					<tr>
+						<td class="printleft">Ф.И.О.</td>
+						<td><& name &>&nbsp;</td>
+						<% if name != "#{attributes['name']['last']} #{attributes['name']['first']} #{attributes['name']['father']}" %>
+							<td><& attributes['name']['last'] &> <& attributes['name']['first'] &> <& attributes['name']['father'] &>&nbsp;</td>
+							<td><& attributes['name_basics'] &>&nbsp;</td>
+						<% else %>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						<% end %>
+					</tr>
+				
+				<% if gender_id != attributes['gender_id'] %>
+					<% cl = Classifier::Gender.new %>
+					<tr>
+						<td class="printleft">Пол</td>
+						<td><& cl[gender_id][:name] &>&nbsp;</td>
+						<td><& cl[attributes['gender_id']][:name] &>&nbsp;</td>
+						<td><& attributes['gender_basics'] &>&nbsp;</td>
+					</tr>
+				<% end %>
+			
+				<% if card_number != attributes['card_number'] %>
+					<tr>
+						<td class="printleft">Л.д. &#x2116;</td>
+						<td><& card_number &>&nbsp;</td>
+						<td><& attributes['card_number'] &>&nbsp;</td>
+						<td><& attributes['card_number_basics'] &>&nbsp;</td>
+					</tr>
+				<% end %>
+
+				<% if group_id != attributes['group_id'] %>
+					<tr>
+						<td class="printleft">Группа</td>
+						<td><& Group.load(group_id) &>&nbsp;</td>
+						<td><& Group.load(attributes['group_id']) &>&nbsp;</td>
+						<td><& attributes['group_basics'] &>&nbsp;</td>
+					</tr>
+				<% end %>
+				
+				<% if birth_date != attributes['birth_date'] %>
+					<tr>
+						<td class="printleft">Дата рождения</td>
+						<td><& birth_date &>&nbsp;</td>
+						<td><& attributes['birth_date'] &>&nbsp;</td>
+						<td><& attributes['birth_date_basics'] &>&nbsp;</td>
+					</tr>
+				<% end %>
+
+				<% if citizenship_id != attributes['citizenship_id'] %>
+					<% cl = Classifier::Citizenship.new %>
+					<tr>
+						<td class="printleft">Гражданство</td>
+						<td><& cl[citizenship_id][:name] &>&nbsp;</td>
+						<td><& cl[attributes['citizenship_id']][:name] &>&nbsp;</td>
+						<td><& attributes['citizenship_basics'] &>&nbsp;</td>
+					</tr>
+				<% end %>
+				
+				<% if profession_code != attributes['profession_code'] %>
+					<tr>
+						<td class="printleft">Код направления / специальности</td>
+						<td><& profession_code &><& specialization_code || '00' &><& degree_code || '00' &>&nbsp;</td>
+						<td><& attributes['profession_code'] &><& specialization_code || '00' &><& attributes['degree_code'] || degree_code || '00' &>&nbsp;</td>
+						<td><& attributes['profession_basics'] &>&nbsp;</td>
+					</tr>
+				<% end %>
+
+				<% if degree_code != attributes['degree_code'] %>
+					<% cl = Classifier::Degree.new %>
+					<tr>
+						<td class="printleft">Ступень образования</td>
+						<td><& cl[degree_code][:name] &>&nbsp;</td>
+						<td><& cl[attributes['degree_code']][:name] &>&nbsp;</td>
+						<td><& attributes['degree_basics'] &>&nbsp;</td>
+					</tr>
+				<% end %>
+				
+				<% if attributes['agreement'] && (agreement = Student.load(student_id).enrollment['agreement']) != attributes['agreement'] %>
+					<tr>
+						<td class="printleft">Договор/контракт</td>
+						<td><& agreement &>&nbsp;</td>
+						<td><& attributes['agreement'] &>&nbsp;</td>
+						<td><& attributes['agreement_basics'] &>&nbsp;</td>
+					</tr>
+				<% end %>
+			
+				</table>
+			
+			]]></column>
+		</list>
+
+		<signatures>
+			<signature name="personnel"/>
+		</signatures>
+
+	</printable>
+
+</order>

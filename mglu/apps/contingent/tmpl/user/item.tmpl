@@ -1,0 +1,84 @@
+<!ATTR user_id name login role faculty status !>
+<html>
+	<head>
+		<link rel="Stylesheet" href="/main.css" />
+		<link rel="Stylesheet" href="/list.css" />
+
+<!--[if gte IE 5.5000]>
+<script type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+
+		<!--
+		Yeah, I do not have any ideas about how this works, but it really does
+		av
+		-->
+
+		<!--[if IE]>
+		<style type="text/css" media="screen">
+
+		body {
+			overflow-y: hidden;
+		}
+
+		div.content {
+			height: 100%;
+			overflow: auto;
+		}
+		</style>
+		<![endif]-->
+
+		<script language="javascript" src="/panel.js"></script>
+
+		<script language="javascript"><!--
+			function del_user()
+			{
+				if (confirm('Заблокировать пользователя?'))
+					parent.document.location.href = 'delete.rb?user_id=<&user_id&>';
+			}
+		//--></script>
+	</head>
+
+	<body class="tab_body" style="padding-bottom: 0px;">
+		<script language="javascript"><!--
+			show_panel('details', false, 150);
+<% if status == :failed then %>
+			alert('Не удалось создать пользователя с таким именем. Попробуйте еще раз.');
+<% end %>
+		//--></script>
+
+		<div class="list_header">
+			<div class="toolbar">
+				<!--input type="image" src="/img/filesave2.png" width="22" height="22" alt="Сохранить" title="Сохранить"/--><!-- BlackFix -->
+				<a href="javascript:document.mf.submit();"><img src="/img/filesave2.png" width="22" height="22" alt="Сохранить" title="Сохранить" border="0"/></a>
+<% if user_id then %>
+				<a href="password.rb?user_id=<&user_id&>" target="_blank" onClick="javascript: window.open(this.href, 'new', 'toolbar=0,menubar=0,top=240,left=272,width=480,height=160,scrollbars=1'); return false;"><img src="/img/password.png" width="22" height="22" alt="Изменить пароль" title="Изменить пароль" border="0"/></a>
+				<a href="javascript:del_user();"><img src="/img/remove.png" width="22" height="22" alt="Заблокировать" title="Заблокировать" border="0"/></a>
+<% end %>
+			</div>
+			<div class="win_buttons">
+				<*/widgets/button_help*>
+				<a href="javascript:hide_panel('details');"><img src="/img/fileclose.png" width="16" height="16" alt="Закрыть" title="Закрыть" border="0"/></a>
+			</div>
+			<div style="padding-top: 2px;">
+<% if user_id then %>
+				Пользователь <b><&login&></b> (<&name&>)
+<% else %>
+				Создание нового пользователя
+<% end %>
+			</div>
+		</div>
+		<div style="padding: 0.5em; padding-bottom: 0px;">
+			<form name="mf" method="post"<% if status == :ok then %> action="item.rb?user_id=<&user_id&>"<% end %>>
+				<input type="hidden" name="save" value="1" />
+
+				<div class="panel" style="padding-top: 0.5em;">
+					Login: <input name="login" value="<&login&>" type="text" class="text">
+					Имя: <input name="name" value="<&name&>" type="text" class="text">
+					<br/><br/>
+					Роль: <**/widgets/classifier/simple|place_role**>
+					Факультет: <**/widgets/classifier/simple|place_faculty**>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

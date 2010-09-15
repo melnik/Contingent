@@ -1,0 +1,50 @@
+<!ATTR student_id status full_name card_number group_name status tabs_count tabs editable !>
+<html>
+	<head>
+		<link rel="Stylesheet" href="/main.css" />
+		<link rel="Stylesheet" href="/tabs.css" />
+
+<!--[if gte IE 5.5000]>
+<script type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+
+		<script language="javascript" src="/panel.js"></script>
+
+		<script language="javascript"><!--
+
+			function saveform()
+			{
+				var i;
+				var o;
+
+				for (i = 1; i <= <&tabs_count&>; i++) {
+					eval("tab" + i + ".submit_form();");
+				}
+			}
+
+		//--></script>
+	</head>
+
+	<body class="header" style="height: 98%">
+		<script language="javascript"><!--
+			show_panel('details', false, 250);
+		//--></script>
+
+		<table cellpadding="0" cellspacing="0" style="width: 100%; height: 100%;"><tr style="height: 1px"><td style="height: 1px">
+			<div class="toolbar">
+<% if editable then %>
+				<a href="javascript:saveform();"><img src="/img/save_all.png" width="22" height="22" alt="Сохранить" title="Сохранить" border="0"/></a>
+<% end %>
+			</div>
+			<div class="win_buttons">
+				<*/widgets/button_help*>
+				<a href="javascript:hide_panel('details');"><img src="/img/fileclose.png" width="16" height="16" alt="Закрыть" title="Закрыть" border="0"/></a>
+			</div>
+			<div style="padding-top: 2px; height: 26px;">
+				<nobr><&status.capitalize&> <b><&full_name&></b></nobr> |
+				<nobr>Л.д. &#x2116; <b><&card_number&></b></nobr> |
+				<nobr>Группа: <b><&group_name&></b></nobr>
+			</div>
+		</td></tr><tr><td><%= tabs[103..-18].gsub(/\t<\/head>.+?<table/m, "\n\t\t<table") %><!-- BlackFix --></td></tr></table>
+	</body>
+</html>

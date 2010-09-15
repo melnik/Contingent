@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+##
+# get_group_id
+#
+# Выдает на $stdout ID группы с заданным именем или "nil" - если такой группы в БД нет.
+# Имя группы может быть задано как параметром, так и передано на $stdin.
+
+require "#{Dir.pwd.gsub(/\/apps.*$/, '')}/apps/contingent/tools/context"
+
+require 'extensions'
+
+puts $sql.execute("SELECT group_id
+                   FROM `group` g INNER JOIN department d USING (department_id) INNER JOIN faculty f USING (faculty_id)
+                   WHERE #{convert_search_params({ 'group' => ARGV[0] || $stdin.read }).compact.join ' AND '}").fetch_array[0]

@@ -1,0 +1,95 @@
+<!ATTR order_id total paragraph switch_to refresh can_add can_move can_select can_remove !>
+<*/widgets/list/header*>
+		<script language="javascript"><!--
+		function mass_select(v)
+		{
+			var e = document.mf.s;
+			var len = e.length;
+
+			if (len) {
+				for (var i = 0; i < len; i++) {
+					e[i].checked = v;
+				}
+			} else {
+				e.checked = v;
+			}
+		}
+
+		function add_students()
+		{
+			document.mf.destination.value = 'add';
+			document.mf.submit();
+		}
+
+		function move_students()
+		{
+			document.mf.destination.value = document.destination_selector.destination.value;
+			document.mf.submit();
+		}
+
+		function remove_students()
+		{
+			document.mf.destination.value = 'remove';
+			document.mf.submit();
+		}
+<% if @refresh then %>
+		parent.tab_reload('<&refresh&>');
+<% end %>
+<% if @switch_to then %>
+		parent.switch_tab('<&switch_to&>');
+<% end %>
+
+		//--></script>
+
+		<div class="list_header">
+			<table class="list_header" style="background: rgb(206, 211, 204)"><!-- BlackFix -->
+				<tr>
+					<th class="list_item_checkbox" style="text-align: left;"><input type="checkbox" name="mcb" onChange="javascript:mass_select(this.checked);"/></th>
+					<th>Ф.&nbsp;И.&nbsp;О.</th>
+					<th style="width: 5em">Группа</th>
+					<th style="width: 6em">Личное&nbsp;дело</th>
+				</tr>
+			</table>
+		</div>
+		<div id="content">
+			<form name="mf" action="move.rb" method="post">
+				<input type="hidden" name="order_id" value="<&order_id&>" />
+				<input type="hidden" name="source" value="<&paragraph&>" />
+				<input type="hidden" name="destination" />
+				<table cellpadding="0" cellspacing="0" width="100%" border="0">
+					<**row|add_row**>
+				</table>
+			</form>
+		</div>
+		<table class="status_bar">
+			<tr>
+				<td class="status_bar">
+					<b>Всего:</b> <&total&>
+					<**/widgets/list/stats|add_stats**>
+				</td>
+
+				<!-- TODO: place this somewhere else -->
+				<td class="status_bar_command">
+					<form name="destination_selector">
+						<nobr>
+<% if can_add then %>
+						<a href="javascript:add_students();"><img src="/img/add.png" width="22" height="22" alt="Добавить" title="Добавить" border="0"/></a>
+<% end %>
+<% if can_move then %>
+<%	if can_select then %>
+						<select name="destination"><**destination|add_destination**></select>
+						<a href="javascript:move_students();"><img src="/img/move.png" width="22" height="22" alt="Переместить" title="Переместить" border="0"/></a>
+<%	else %>
+						<input type="hidden" name="destination" value="<%=1-paragraph%>" />
+						<a href="javascript:move_students();"><img src="/img/move.png" width="22" height="22" alt="Переместить в другой параграф" title="Переместить в другой параграф" border="0"/></a>
+<%	end %>
+<% end %>
+<% if can_remove then %>
+						<a href="javascript:remove_students();"><img src="/img/remove.png" width="22" height="22" alt="Удалить" title="Удалить" border="0"/></a>
+<% end %>
+						</nobr>
+					</form>
+				</td>
+			</tr>
+		</table>
+<*/widgets/list/footer*>

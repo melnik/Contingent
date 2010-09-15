@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<!-- TODO: maybe, fully reimplement this -->
+
+<order classname="GroupCreationOrder">
+
+	<type>О создании группы</type>
+	
+	<template entity="order">
+	
+		<const type="int" name="hide_study_type" value="1" />
+	
+		<list name="groups" title="Создаваемые группы">
+			<input type="text" name="name"/>
+		</list>
+	
+	</template>
+
+	<printable>
+
+		<p><![CDATA[
+		В связи со служебной необходимостью создать в Университете следующие группы:
+		<ol>
+		<% order.attributes['groups'].each { |group| %>
+			<li><& group['name'] &></li>
+		<% } %>
+		</ol>
+		]]></p>
+
+		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector"/>
+			<signature name="personnel"/>
+			<signature name="dean"/>
+			<signature name="educational"/>
+		</signatures>
+
+	</printable>
+
+</order>

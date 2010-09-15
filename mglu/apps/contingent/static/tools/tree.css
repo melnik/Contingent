@@ -1,0 +1,22 @@
+body {
+	background: #95b8e2;
+}
+
+div.tree {
+	margin: 0.5em;
+}
+
+p.tree {
+	font-size: 10pt;
+	color: black;
+	font-weight: bold;
+	margin: 0em 0em 0em 0em;
+	border: none;
+}
+
+.tree a { font-size: 10pt; }
+.tree a:hover { text-decoration: underline }
+
+.tree img { border: none }
+
+blockquote.tree { border: none; margin: 0em 0em 0em 1em; }

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+pushd order-generator
+for C in source/*.xml; do
+	echo $* $C
+	./generate-order $* < $C || exit 1
+done
+popd
+./kill-eol ../share/data/order/*
+./kill-eol ../share/interface/order/details/*

@@ -1,0 +1,30 @@
+Added `degree_code` & `profession_code` to students list.
+ * scripts/student/list.rb
+
+Made `birth_date` & `dormitory` editable.
+ * scripts/student/item/common.rb
+ * share/data/student.rb
+
+Removed specific logic for handling photos via SSH tunels.
+ * scripts/student/item/common.rb
+
+Added ''print versions'' for ''partials''.
+ * scripts/order/print_version.rb
+ * share/data/order.rb
+
+Made `student.category` & `faculty.category` apparent ('''obsolete''').
+ * share/data/student.rb
+
+Added `EverythingModificationOrder`.
+ * share/data/student.rb
+
+Fixed handling of missing attributes in `Student#recondition`.
+ * share/data/student.rb
+
+Added `Student#scholarship_id` (instance variable w/o a method?).
+ * share/data/student.rb
+
+Changed courses (terms) handling logic.
+ * share/data/order/courseorder.rb
+
+...to be continued!

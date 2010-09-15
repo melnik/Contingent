@@ -1,0 +1,35 @@
+<!ATTR faculty_id return_url !>
+<*/header_mini*>
+		<style>
+			body {
+				background: #95b8e2;
+			}
+		</style>
+		<form action="<&return_url&>" target="list" method="post">
+			<table width="100%">
+				<tr>
+					<td style="width: 1px">Login</td>
+					<td style="width: 100%"><input name="login" type="text" class="text" style="width: 100%;" /></td>
+				</tr>
+				<tr>
+					<td style="width: 1px">Имя</td>
+					<td style="width: 100%"><input name="user_name" type="text" class="text" style="width: 100%;" /></td>
+				</tr>
+				<tr><td colspan="2"><hr/></td></tr>
+				<tr>
+					<td style="width: 1px">Роль</td>
+					<td style="width: 100%"><**/widgets/classifier/simple|place_role**></td>
+				</tr>
+<% if faculty_id.empty? then %>
+				<tr>
+					<td style="width: 1px">Факультет</td>
+					<td style="width: 100%"><input name="faculty" type="text" class="text" style="width: 100%;" /></td>
+				</tr>
+<% end %>
+			</table>
+
+			<hr/>
+
+			<div align="center"><input type="submit" value="Найти"/></div>
+		</form>
+<*/footer_mini*>

@@ -1,0 +1,264 @@
+Wire dump:
+
+opening connection to 127.0.0.1...
+opened
+<- "POST /SOAP HTTP/1.1\r\nAccept: */*\r\nContent-Type: text/xml; charset=utf-8\r\nUser-Agent: SOAP4R/1.5.5\r\nSoapaction: \"urn:#reportGraduated\"\r\nContent-Length: 412\r\nHost: 127.0.0.1\r\n\r\n"
+<- "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<env:Envelope xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\"\n    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <env:Body>\n    <reportGraduatedRequest xmlns=\"urn:webservices.bmstu.org\">\n      <year>2006</year>\n      <department>\320\220\320\2321</department>\n    </reportGraduatedRequest>\n  </env:Body>\n</env:Envelope>"
+-> "HTTP/1.1 200 \r\n"
+-> "Content-type: text/xml; charset=\"utf-8\"\r\n"
+-> "Content-length: 11717\r\n"
+-> "Date: Sun, 24 Sep 2006 14:31:58 GMT\r\n"
+-> "Server: Radical HttpServer (Ruby 1.8.4)\r\n"
+-> "Connection: Keep-Alive\r\n"
+-> "\r\n"
+reading 11717 bytes...
+-> ""
+-> "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<env:Envelope xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\"\n    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <env:Body>\n    <reportGraduatedResponse xmlns=\"urn:webservices.bmstu.org\">\n      <reportGraduatedPerson>\n        <id>67b8a137-8636-4c20-9649-0000000156f1</id>\n        <firstName>\320\237\320\260\320\262\320\265\320\273</firstName>\n        <fatherName>\320\220\320\273\320\265\320\272\321\201\320\260\320\275\320\264\321\200\320\276\320\262\320\270\321\207</fatherName>\n        <lastName>\320\220\320\275\320\260\320\275\321\214\320\265\320\262</lastName>\n        <profession>\320\232\320\276\321\201\320\274\320\270\321\207\320\265\321\201\320\272\320\270\320\265 \320\273\320\265\321\202\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265 \320\260\320\277\320\277\320\260\321\200\320\260\321\202\321\213 \320\270 \321\200\320\260\320\267\320\263\320\276\320\275\320\275\321\213\320\265 \320\261\320\273\320\276\320\272\320\270</profession>\n        <professionCode>160802</professionCode>\n        <qualification>\320\270\320\275\320\266\320\265\320\275\320\265\321\200</qualification>\n        <qualificationCode>65</qualificationCode>\n        <diplomaType>2</diplomaType>\n        <protocolDate>2006-06-15Z</protocolDate>\n        <protocolNumber>12/\320\241\320\234-2</protocolNumber>\n        <orderNumber>1-04/1996 \320\220\320\232</orderNumber>\n        <faculty>\320\220\320\232</faculty>\n "
+-> "     </reportGraduatedPerson>\n      <reportGraduatedPerson>\n        <id>67b8a137-8636-4c20-9649-000000015741</id>\n        <firstName>\320\220\320\273\320\265\320\272\321\201\320\265\320\271</firstName>\n        <fatherName>\320\222\320\273\320\260\320\264\320\270\320\274\320\270\321\200\320\276\320\262\320\270\321\207</fatherName>\n        <lastName>\320\222\320\276\320\265\320\262\320\276\320\264\320\270\320\275</lastName>\n        <profession>\320\232\320\276\321\201\320\274\320\270\321\207\320\265\321\201\320\272\320\270\320\265 \320\273\320\265\321\202\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265 \320\260\320\277\320\277\320\260\321\200\320\260\321\202\321\213 \320\270 \321\200\320\260\320\267\320\263\320\276\320\275\320\275\321\213\320\265 \320\261\320\273\320\276\320\272\320\270</profession>\n        <professionCode>160802</professionCode>\n        <qualification>\320\270\320\275\320\266\320\265\320\275\320\265\321\200</qualification>\n        <qualificationCode>65</qualificationCode>\n        <diplomaType>1</diplomaType>\n        <protocolDate>2006-06-15Z</protocolDate>\n        <protocolNumber>11/\320\241\320\234-2</protocolNumber>\n        <orderNumber>1-04/1996 \320\220\320\232</orderNumber>\n        <faculty>\320\220\320\232</faculty>\n      </reportGraduatedPerson>\n      <reportGraduatedPerson>\n        <id>67b8a137-8636-4c20-9649-0000000156f2</id>\n        <firstName>\320\224\320\265\320\275\320\270\321\201</firstName>\n        <fatherName>\320\222\320\260\321\201\320\270\320\273\321\214\320\265\320\262\320\270\321\207</fatherName>\n        <lastName>\320\223\320\260\320\264\320\267\320\265\320\262\320\270\321\207</lastName>\n   "
+-> "     <profession>\320\232\320\276\321\201\320\274\320\270\321\207\320\265\321\201\320\272\320\270\320\265 \320\273\320\265\321\202\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265 \320\260\320\277\320\277\320\260\321\200\320\260\321\202\321\213 \320\270 \321\200\320\260\320\267\320\263\320\276\320\275\320\275\321\213\320\265 \320\261\320\273\320\276\320\272\320\270</profession>\n        <professionCode>160802</professionCode>\n        <qualification>\320\270\320\275\320\266\320\265\320\275\320\265\321\200</qualification>\n        <qualificationCode>65</qualificationCode>\n        <diplomaType>1</diplomaType>\n        <protocolDate>2006-06-21Z</protocolDate>\n        <protocolNumber>13/\320\241\320\234-2</protocolNumber>\n        <orderNumber>1-04/1996 \320\220\320\232</orderNumber>\n        <faculty>\320\220\320\232</faculty>\n      </reportGraduatedPerson>\n      <reportGraduatedPerson>\n        <id>67b8a137-8636-4c20-9649-0000000156f3</id>\n        <firstName>\320\222\321\217\321\207\320\265\321\201\320\273\320\260\320\262</firstName>\n        <fatherName>\320\235\320\270\320\272\320\276\320\273\320\260\320\265\320\262\320\270\321\207</fatherName>\n        <lastName>\320\232\320\260\321\200\320\260\321\203\320\273\320\276\320\262</lastName>\n        <profession>\320\232\320\276\321\201\320\274\320\270\321\207\320\265\321\201\320\272\320\270\320\265 \320\273\320\265\321\202\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265 \320\260\320\277\320\277\320\260\321\200\320\260\321\202\321\213 \320\270 \321\200\320\260\320\267\320\263\320\276\320\275\320\275\321\213\320\265 \320\261\320\273\320\276\320\272\320\270</profession>\n        <professionCode>160802</professionCode>\n        <qualification>\320\270\320\275\320\266\320\265\320\275\320\265\321\200</qualification>\n        <qualificationCode>65</qu"
+-> "alificationCode>\n        <diplomaType>1</diplomaType>\n        <protocolDate>2006-06-15Z</protocolDate>\n        <protocolNumber>3/\320\241\320\234-2</protocolNumber>\n        <orderNumber>1-04/1996 \320\220\320\232</orderNumber>\n        <faculty>\320\220\320\232</faculty>\n      </reportGraduatedPerson>\n      <reportGraduatedPerson>\n        <id>67b8a137-8636-4c20-9649-0000000156f4</id>\n        <firstName>\320\255\320\273\320\270\320\275\320\260</firstName>\n        <fatherName>\320\220\321\205\320\274\320\265\321\202\320\263\320\260\320\273\320\265\320\265\320\262\320\275\320\260</fatherName>\n        <lastName>\320\232\320\270\321\200\320\270\320\274\320\261\320\260\320\265\320\262\320\260</lastName>\n        <profession>\320\232\320\276\321\201\320\274\320\270\321\207\320\265\321\201\320\272\320\270\320\265 \320\273\320\265\321\202\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265 \320\260\320\277\320\277\320\260\321\200\320\260\321\202\321\213 \320\270 \321\200\320\260\320\267\320\263\320\276\320\275\320\275\321\213\320\265 \320\261\320\273\320\276\320\272\320\270</profession>\n        <professionCode>160802</professionCode>\n        <qualification>\320\270\320\275\320\266\320\265\320\275\320\265\321\200</qualification>\n        <qualificationCode>65</qualificationCode>\n        <diplomaType>2</diplomaType>\n        <protocolDate>2006-06-15Z</protocolDate>\n        <protocolNumber>2/\320\241\320\234-2</protocolNumber>\n        <orderNumber>1-04/1996 \320\220\320\232</orderNumber>\n        <faculty>\320\220\320\232</faculty>\n      </reportGraduated"
+-> "Person>\n      <reportGraduatedPerson>\n        <id>67b8a137-8636-4c20-9649-0000000156f5</id>\n        <firstName>\320\230\320\262\320\260\320\275</firstName>\n        <fatherName>\320\241\320\265\321\200\320\263\320\265\320\265\320\262\320\270\321\207</fatherName>\n        <lastName>\320\233\321\216\320\261\321\206\320\265\320\262</lastName>\n        <profession>\320\232\320\276\321\201\320\274\320\270\321\207\320\265\321\201\320\272\320\270\320\265 \320\273\320\265\321\202\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265 \320\260\320\277\320\277\320\260\321\200\320\260\321\202\321\213 \320\270 \321\200\320\260\320\267\320\263\320\276\320\275\320\275\321\213\320\265 \320\261\320\273\320\276\320\272\320\270</profession>\n        <professionCode>160802</professionCode>\n        <qualification>\320\270\320\275\320\266\320\265\320\275\320\265\321\200</qualification>\n        <qualificationCode>65</qualificationCode>\n        <diplomaType>1</diplomaType>\n        <protocolDate>2006-06-15Z</protocolDate>\n        <protocolNumber>9/\320\241\320\234-2</protocolNumber>\n        <orderNumber>1-04/1996 \320\220\320\232</orderNumber>\n        <faculty>\320\220\320\232</faculty>\n      </reportGraduatedPerson>\n      <reportGraduatedPerson>\n        <id>67b8a137-8636-4c20-9649-0000000156f6</id>\n        <firstName>\320\220\320\275\321\202\320\276\320\275</firstName>\n        <fatherName>\320\220\320\273\320\265\320\272\321\201\320\260\320\275\320\264\321\200\320\276\320\262\320\270\321\207</fatherName>\n        <lastName>\320\236\320\273\320\270\321\201\320\276\320\262</lastName>\n        <profession>\320\232\320\276\321\201\320\274\320\270\321\207\320\265\321\201\320\272\320\270"
+-> "\320\265 \320\273\320\265\321\202\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265 \320\260\320\277\320\277\320\260\321\200\320\260\321\202\321\213 \320\270 \321\200\320\260\320\267\320\263\320\276\320\275\320\275\321\213\320\265 \320\261\320\273\320\276\320\272\320\270</profession>\n        <professionCode>160802</professionCode>\n        <qualification>\320\270\320\275\320\266\320\265\320\275\320\265\321\200</qualification>\n        <qualificationCode>65</qualificationCode>\n        <diplomaType>1</diplomaType>\n        <protocolDate>2006-06-15Z</protocolDate>\n        <protocolNumber>7/\320\241\320\234-2</protocolNumber>\n        <orderNumber>1-04/1996 \320\220\320\232</orderNumber>\n        <faculty>\320\220\320\232</faculty>\n      </reportGraduatedPerson>\n      <reportGraduatedPerson>\n        <id>67b8a137-8636-4c20-9649-0000000156f7</id>\n        <firstName>\320\220\320\275\320\260\321\202\320\276\320\273\320\270\320\271</firstName>\n        <fatherName>\320\235\320\270\320\272\320\276\320\273\320\260\320\265\320\262\320\270\321\207</fatherName>\n        <lastName>\320\236\321\205\320\260\320\277\320\272\320\270\320\275</lastName>\n        <profession>\320\232\320\276\321\201\320\274\320\270\321\207\320\265\321\201\320\272\320\270\320\265 \320\273\320\265\321\202\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265 \320\260\320\277\320\277\320\260\321\200\320\260\321\202\321\213 \320\270 \321\200\320\260\320\267\320\263\320\276\320\275\320\275\321\213\320\265 \320\261\320\273\320\276\320\272\320\270</profession>\n        <professionCode>160802</professionCode>\n        <qualification>\320\270\320\275\320\266\320\265\320\275\320\265\321\200</qualification>\n        <qualificationCode>65</qualificationCode>\n        <diplomaType>1<"
+-> "/diplomaType>\n        <protocolDate>2006-06-21Z</protocolDate>\n        <protocolNumber>15/\320\241\320\234-2</protocolNumber>\n        <orderNumber>1-04/1996 \320\220\320\232</orderNumber>\n        <faculty>\320\220\320\232</faculty>\n      </reportGraduatedPerson>\n      <reportGraduatedPerson>\n        <id>67b8a137-8636-4c20-9649-0000000156f8</id>\n        <firstName>\320\230\320\262\320\260\320\275</firstName>\n        <fatherName>\320\234\320\270\321\205\320\260\320\271\320\273\320\276\320\262\320\270\321\207</fatherName>\n        <lastName>\320\237\321\200\320\276\320\272\320\276\321\204\321\214\320\265\320\262</lastName>\n        <profession>\320\232\320\276\321\201\320\274\320\270\321\207\320\265\321\201\320\272\320\270\320\265 \320\273\320\265\321\202\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265 \320\260\320\277\320\277\320\260\321\200\320\260\321\202\321\213 \320\270 \321\200\320\260\320\267\320\263\320\276\320\275\320\275\321\213\320\265 \320\261\320\273\320\276\320\272\320\270</profession>\n        <professionCode>160802</professionCode>\n        <qualification>\320\270\320\275\320\266\320\265\320\275\320\265\321\200</qualification>\n        <qualificationCode>65</qualificationCode>\n        <diplomaType>1</diplomaType>\n        <protocolDate>2006-06-15Z</protocolDate>\n        <protocolNumber>8/\320\241\320\234-2</protocolNumber>\n        <orderNumber>1-04/1996 \320\220\320\232</orderNumber>\n        <faculty>\320\220\320\232</faculty>\n      </reportGraduatedPerson>\n      <reportGraduatedPerson>\n        <id"
+-> ">67b8a137-8636-4c20-9649-0000000156f9</id>\n        <firstName>\320\232\320\270\321\200\320\270\320\273\320\273</firstName>\n        <fatherName>\320\220\320\275\320\264\321\200\320\265\320\265\320\262\320\270\321\207</fatherName>\n        <lastName>\320\237\321\203\320\263\320\270\320\275</lastName>\n        <profession>\320\232\320\276\321\201\320\274\320\270\321\207\320\265\321\201\320\272\320\270\320\265 \320\273\320\265\321\202\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265 \320\260\320\277\320\277\320\260\321\200\320\260\321\202\321\213 \320\270 \321\200\320\260\320\267\320\263\320\276\320\275\320\275\321\213\320\265 \320\261\320\273\320\276\320\272\320\270</profession>\n        <professionCode>160802</professionCode>\n        <qualification>\320\270\320\275\320\266\320\265\320\275\320\265\321\200</qualification>\n        <qualificationCode>65</qualificationCode>\n        <diplomaType>2</diplomaType>\n        <protocolDate>2006-06-15Z</protocolDate>\n        <protocolNumber>5/\320\241\320\234-2</protocolNumber>\n        <orderNumber>1-04/1996 \320\220\320\232</orderNumber>\n        <faculty>\320\220\320\232</faculty>\n      </reportGraduatedPerson>\n      <reportGraduatedPerson>\n        <id>67b8a137-8636-4c20-9649-0000000156fa</id>\n        <firstName>\320\220\320\273\320\265\320\272\321\201\320\260\320\275\320\264\321\200</firstName>\n        <fatherName>\320\256\321\200\321\214\320\265\320\262\320\270\321\207</fatherName>\n        <lastName>\320\241\320\260\320\275\320\266\320\260\321\200\320\276\320\262\321\201\320\272\320\270\320\271</lastName>\n        <profession>\320\232\320\276\321\201\320\274\320\270\321\207\320\265\321\201\320\272\320\270\320\265 \320\273\320\265\321\202\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265 \320\260\320\277\320\277\320\260\321\200\320\260\321"
+-> "\202\321\213 \320\270 \321\200\320\260\320\267\320\263\320\276\320\275\320\275\321\213\320\265 \320\261\320\273\320\276\320\272\320\270</profession>\n        <professionCode>160802</professionCode>\n        <qualification>\320\270\320\275\320\266\320\265\320\275\320\265\321\200</qualification>\n        <qualificationCode>65</qualificationCode>\n        <diplomaType>1</diplomaType>\n        <protocolDate>2006-06-15Z</protocolDate>\n        <protocolNumber>10/\320\241\320\234-2</protocolNumber>\n        <orderNumber>1-04/1996 \320\220\320\232</orderNumber>\n        <faculty>\320\220\320\232</faculty>\n      </reportGraduatedPerson>\n      <reportGraduatedPerson>\n        <id>67b8a137-8636-4c20-9649-0000000156fb</id>\n        <firstName>\320\220\320\275\321\202\320\276\320\275</firstName>\n        <fatherName>\320\241\320\265\321\200\320\263\320\265\320\265\320\262\320\270\321\207</fatherName>\n        <lastName>\320\241\320\262\320\270\321\200\320\270\320\264\320\276\320\262</lastName>\n        <profession>\320\232\320\276\321\201\320\274\320\270\321\207\320\265\321\201\320\272\320\270\320\265 \320\273\320\265\321\202\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265 \320\260\320\277\320\277\320\260\321\200\320\260\321\202\321\213 \320\270 \321\200\320\260\320\267\320\263\320\276\320\275\320\275\321\213\320\265 \320\261\320\273\320\276\320\272\320\270</profession>\n        <professionCode>160802</professionCode>\n        <qualification>\320\270\320\275\320\266\320\265\320\275\320\265\321\200</qualification>\n        <qualificationCode>65</qualificationCode>\n        <diplomaType>2</diplomaType>\n        <protocolDate>2006-06-"
+-> "15Z</protocolDate>\n        <protocolNumber>4/\320\241\320\234-2</protocolNumber>\n        <orderNumber>1-04/1996 \320\220\320\232</orderNumber>\n        <faculty>\320\220\320\232</faculty>\n      </reportGraduatedPerson>\n      <reportGraduatedPerson>\n        <id>67b8a137-8636-4c20-9649-0000000156fc</id>\n        <firstName>\320\220\320\275\320\264\321\200\320\265\320\271</firstName>\n        <fatherName>\320\256\321\200\321\214\320\265\320\262\320\270\321\207</fatherName>\n        <lastName>\320\242\321\203\320\277\320\270\320\272\320\276\320\262</lastName>\n        <profession>\320\232\320\276\321\201\320\274\320\270\321\207\320\265\321\201\320\272\320\270\320\265 \320\273\320\265\321\202\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265 \320\260\320\277\320\277\320\260\321\200\320\260\321\202\321\213 \320\270 \321\200\320\260\320\267\320\263\320\276\320\275\320\275\321\213\320\265 \320\261\320\273\320\276\320\272\320\270</profession>\n        <professionCode>160802</professionCode>\n        <qualification>\320\270\320\275\320\266\320\265\320\275\320\265\321\200</qualification>\n        <qualificationCode>65</qualificationCode>\n        <diplomaType>1</diplomaType>\n        <protocolDate>2006-06-21Z</protocolDate>\n        <protocolNumber>14/\320\241\320\234-2</protocolNumber>\n        <orderNumber>1-04/1996 \320\220\320\232</orderNumber>\n        <faculty>\320\220\320\232</faculty>\n      </reportGraduatedPerson>\n      <reportGraduatedPerson>\n        <id>67b8a137-8636-4c20-9649-0000000156fd</id>\n       "
+-> " <firstName>\320\220\320\275\320\275\320\260</firstName>\n        <fatherName>\320\241\320\265\321\200\320\263\320\265\320\265\320\262\320\275\320\260</fatherName>\n        <lastName>\320\247\321\203\321\200\321\201\320\270\320\275\320\260</lastName>\n        <profession>\320\232\320\276\321\201\320\274\320\270\321\207\320\265\321\201\320\272\320\270\320\265 \320\273\320\265\321\202\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265 \320\260\320\277\320\277\320\260\321\200\320\260\321\202\321\213 \320\270 \321\200\320\260\320\267\320\263\320\276\320\275\320\275\321\213\320\265 \320\261\320\273\320\276\320\272\320\270</profession>\n        <professionCode>160802</professionCode>\n        <qualification>\320\270\320\275\320\266\320\265\320\275\320\265\321\200</qualification>\n        <qualificationCode>65</qualificationCode>\n        <diplomaType>2</diplomaType>\n        <protocolDate>2006-06-15Z</protocolDate>\n        <protocolNumber>1/\320\241\320\234-2</protocolNumber>\n        <orderNumber>1-04/1996 \320\220\320\232</orderNumber>\n        <faculty>\320\220\320\232</faculty>\n      </reportGraduatedPerson>\n      <reportGraduatedPerson>\n        <id>67b8a137-8636-4c20-9649-0000000156fe</id>\n        <firstName>\320\220\320\273\320\265\320\272\321\201\320\265\320\271</firstName>\n        <fatherName>\320\235\320\270\320\272\320\276\320\273\320\260\320\265\320\262\320\270\321\207</fatherName>\n        <lastName>\320\250\320\270\321\200\320\276\320\272\320\270\321\205</lastName>\n        <profession>\320\232\320\276\321\201\320\274\320\270\321\207\320\265\321\201\320\272\320\270\320\265 \320\273\320\265\321\202\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265 \320\260\320\277\320\277\320\260\321\200\320\260\321\202\321\213 \320\270 \321\200\320\260\320\267\320\263\320\276\320\275\320\275\321\213\320\265 \320\261\320\273\320\276\320\272\320\270</profession>\n        "
+-> "<professionCode>160802</professionCode>\n        <qualification>\320\270\320\275\320\266\320\265\320\275\320\265\321\200</qualification>\n        <qualificationCode>65</qualificationCode>\n        <diplomaType>1</diplomaType>\n        <protocolDate>2006-06-15Z</protocolDate>\n        <protocolNumber>6/\320\241\320\234-2</protocolNumber>\n        <orderNumber>1-04/1996 \320\220\320\232</orderNumber>\n        <faculty>\320\220\320\232</faculty>\n      </reportGraduatedPerson>\n    </reportGraduatedResponse>\n  </env:Body>\n</env:Envelope>"
+read 11717 bytes
+Conn keep-alive
+<?xml version="1.0" encoding="utf-8" ?>
+<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <env:Body>
+    <reportGraduatedResponse xmlns="urn:webservices.bmstu.org">
+      <reportGraduatedPerson>
+        <id>67b8a137-8636-4c20-9649-0000000156f1</id>
+        <firstName>Павел</firstName>
+        <fatherName>Александрович</fatherName>
+        <lastName>Ананьев</lastName>
+        <profession>Космические летательные аппараты и разгонные блоки</profession>
+        <professionCode>160802</professionCode>
+        <qualification>инженер</qualification>
+        <qualificationCode>65</qualificationCode>
+        <diplomaType>2</diplomaType>
+        <protocolDate>2006-06-15Z</protocolDate>
+        <protocolNumber>12/СМ-2</protocolNumber>
+        <orderNumber>1-04/1996 АК</orderNumber>
+        <faculty>АК</faculty>
+      </reportGraduatedPerson>
+      <reportGraduatedPerson>
+        <id>67b8a137-8636-4c20-9649-000000015741</id>
+        <firstName>Алексей</firstName>
+        <fatherName>Владимирович</fatherName>
+        <lastName>Воеводин</lastName>
+        <profession>Космические летательные аппараты и разгонные блоки</profession>
+        <professionCode>160802</professionCode>
+        <qualification>инженер</qualification>
+        <qualificationCode>65</qualificationCode>
+        <diplomaType>1</diplomaType>
+        <protocolDate>2006-06-15Z</protocolDate>
+        <protocolNumber>11/СМ-2</protocolNumber>
+        <orderNumber>1-04/1996 АК</orderNumber>
+        <faculty>АК</faculty>
+      </reportGraduatedPerson>
+      <reportGraduatedPerson>
+        <id>67b8a137-8636-4c20-9649-0000000156f2</id>
+        <firstName>Денис</firstName>
+        <fatherName>Васильевич</fatherName>
+        <lastName>Гадзевич</lastName>
+        <profession>Космические летательные аппараты и разгонные блоки</profession>
+        <professionCode>160802</professionCode>
+        <qualification>инженер</qualification>
+        <qualificationCode>65</qualificationCode>
+        <diplomaType>1</diplomaType>
+        <protocolDate>2006-06-21Z</protocolDate>
+        <protocolNumber>13/СМ-2</protocolNumber>
+        <orderNumber>1-04/1996 АК</orderNumber>
+        <faculty>АК</faculty>
+      </reportGraduatedPerson>
+      <reportGraduatedPerson>
+        <id>67b8a137-8636-4c20-9649-0000000156f3</id>
+        <firstName>Вячеслав</firstName>
+        <fatherName>Николаевич</fatherName>
+        <lastName>Караулов</lastName>
+        <profession>Космические летательные аппараты и разгонные блоки</profession>
+        <professionCode>160802</professionCode>
+        <qualification>инженер</qualification>
+        <qualificationCode>65</qualificationCode>
+        <diplomaType>1</diplomaType>
+        <protocolDate>2006-06-15Z</protocolDate>
+        <protocolNumber>3/СМ-2</protocolNumber>
+        <orderNumber>1-04/1996 АК</orderNumber>
+        <faculty>АК</faculty>
+      </reportGraduatedPerson>
+      <reportGraduatedPerson>
+        <id>67b8a137-8636-4c20-9649-0000000156f4</id>
+        <firstName>Элина</firstName>
+        <fatherName>Ахметгалеевна</fatherName>
+        <lastName>Киримбаева</lastName>
+        <profession>Космические летательные аппараты и разгонные блоки</profession>
+        <professionCode>160802</professionCode>
+        <qualification>инженер</qualification>
+        <qualificationCode>65</qualificationCode>
+        <diplomaType>2</diplomaType>
+        <protocolDate>2006-06-15Z</protocolDate>
+        <protocolNumber>2/СМ-2</protocolNumber>
+        <orderNumber>1-04/1996 АК</orderNumber>
+        <faculty>АК</faculty>
+      </reportGraduatedPerson>
+      <reportGraduatedPerson>
+        <id>67b8a137-8636-4c20-9649-0000000156f5</id>
+        <firstName>Иван</firstName>
+        <fatherName>Сергеевич</fatherName>
+        <lastName>Любцев</lastName>
+        <profession>Космические летательные аппараты и разгонные блоки</profession>
+        <professionCode>160802</professionCode>
+        <qualification>инженер</qualification>
+        <qualificationCode>65</qualificationCode>
+        <diplomaType>1</diplomaType>
+        <protocolDate>2006-06-15Z</protocolDate>
+        <protocolNumber>9/СМ-2</protocolNumber>
+        <orderNumber>1-04/1996 АК</orderNumber>
+        <faculty>АК</faculty>
+      </reportGraduatedPerson>
+      <reportGraduatedPerson>
+        <id>67b8a137-8636-4c20-9649-0000000156f6</id>
+        <firstName>Антон</firstName>
+        <fatherName>Александрович</fatherName>
+        <lastName>Олисов</lastName>
+        <profession>Космические летательные аппараты и разгонные блоки</profession>
+        <professionCode>160802</professionCode>
+        <qualification>инженер</qualification>
+        <qualificationCode>65</qualificationCode>
+        <diplomaType>1</diplomaType>
+        <protocolDate>2006-06-15Z</protocolDate>
+        <protocolNumber>7/СМ-2</protocolNumber>
+        <orderNumber>1-04/1996 АК</orderNumber>
+        <faculty>АК</faculty>
+      </reportGraduatedPerson>
+      <reportGraduatedPerson>
+        <id>67b8a137-8636-4c20-9649-0000000156f7</id>
+        <firstName>Анатолий</firstName>
+        <fatherName>Николаевич</fatherName>
+        <lastName>Охапкин</lastName>
+        <profession>Космические летательные аппараты и разгонные блоки</profession>
+        <professionCode>160802</professionCode>
+        <qualification>инженер</qualification>
+        <qualificationCode>65</qualificationCode>
+        <diplomaType>1</diplomaType>
+        <protocolDate>2006-06-21Z</protocolDate>
+        <protocolNumber>15/СМ-2</protocolNumber>
+        <orderNumber>1-04/1996 АК</orderNumber>
+        <faculty>АК</faculty>
+      </reportGraduatedPerson>
+      <reportGraduatedPerson>
+        <id>67b8a137-8636-4c20-9649-0000000156f8</id>
+        <firstName>Иван</firstName>
+        <fatherName>Михайлович</fatherName>
+        <lastName>Прокофьев</lastName>
+        <profession>Космические летательные аппараты и разгонные блоки</profession>
+        <professionCode>160802</professionCode>
+        <qualification>инженер</qualification>
+        <qualificationCode>65</qualificationCode>
+        <diplomaType>1</diplomaType>
+        <protocolDate>2006-06-15Z</protocolDate>
+        <protocolNumber>8/СМ-2</protocolNumber>
+        <orderNumber>1-04/1996 АК</orderNumber>
+        <faculty>АК</faculty>
+      </reportGraduatedPerson>
+      <reportGraduatedPerson>
+        <id>67b8a137-8636-4c20-9649-0000000156f9</id>
+        <firstName>Кирилл</firstName>
+        <fatherName>Андреевич</fatherName>
+        <lastName>Пугин</lastName>
+        <profession>Космические летательные аппараты и разгонные блоки</profession>
+        <professionCode>160802</professionCode>
+        <qualification>инженер</qualification>
+        <qualificationCode>65</qualificationCode>
+        <diplomaType>2</diplomaType>
+        <protocolDate>2006-06-15Z</protocolDate>
+        <protocolNumber>5/СМ-2</protocolNumber>
+        <orderNumber>1-04/1996 АК</orderNumber>
+        <faculty>АК</faculty>
+      </reportGraduatedPerson>
+      <reportGraduatedPerson>
+        <id>67b8a137-8636-4c20-9649-0000000156fa</id>
+        <firstName>Александр</firstName>
+        <fatherName>Юрьевич</fatherName>
+        <lastName>Санжаровский</lastName>
+        <profession>Космические летательные аппараты и разгонные блоки</profession>
+        <professionCode>160802</professionCode>
+        <qualification>инженер</qualification>
+        <qualificationCode>65</qualificationCode>
+        <diplomaType>1</diplomaType>
+        <protocolDate>2006-06-15Z</protocolDate>
+        <protocolNumber>10/СМ-2</protocolNumber>
+        <orderNumber>1-04/1996 АК</orderNumber>
+        <faculty>АК</faculty>
+      </reportGraduatedPerson>
+      <reportGraduatedPerson>
+        <id>67b8a137-8636-4c20-9649-0000000156fb</id>
+        <firstName>Антон</firstName>
+        <fatherName>Сергеевич</fatherName>
+        <lastName>Свиридов</lastName>
+        <profession>Космические летательные аппараты и разгонные блоки</profession>
+        <professionCode>160802</professionCode>
+        <qualification>инженер</qualification>
+        <qualificationCode>65</qualificationCode>
+        <diplomaType>2</diplomaType>
+        <protocolDate>2006-06-15Z</protocolDate>
+        <protocolNumber>4/СМ-2</protocolNumber>
+        <orderNumber>1-04/1996 АК</orderNumber>
+        <faculty>АК</faculty>
+      </reportGraduatedPerson>
+      <reportGraduatedPerson>
+        <id>67b8a137-8636-4c20-9649-0000000156fc</id>
+        <firstName>Андрей</firstName>
+        <fatherName>Юрьевич</fatherName>
+        <lastName>Тупиков</lastName>
+        <profession>Космические летательные аппараты и разгонные блоки</profession>
+        <professionCode>160802</professionCode>
+        <qualification>инженер</qualification>
+        <qualificationCode>65</qualificationCode>
+        <diplomaType>1</diplomaType>
+        <protocolDate>2006-06-21Z</protocolDate>
+        <protocolNumber>14/СМ-2</protocolNumber>
+        <orderNumber>1-04/1996 АК</orderNumber>
+        <faculty>АК</faculty>
+      </reportGraduatedPerson>
+      <reportGraduatedPerson>
+        <id>67b8a137-8636-4c20-9649-0000000156fd</id>
+        <firstName>Анна</firstName>
+        <fatherName>Сергеевна</fatherName>
+        <lastName>Чурсина</lastName>
+        <profession>Космические летательные аппараты и разгонные блоки</profession>
+        <professionCode>160802</professionCode>
+        <qualification>инженер</qualification>
+        <qualificationCode>65</qualificationCode>
+        <diplomaType>2</diplomaType>
+        <protocolDate>2006-06-15Z</protocolDate>
+        <protocolNumber>1/СМ-2</protocolNumber>
+        <orderNumber>1-04/1996 АК</orderNumber>
+        <faculty>АК</faculty>
+      </reportGraduatedPerson>
+      <reportGraduatedPerson>
+        <id>67b8a137-8636-4c20-9649-0000000156fe</id>
+        <firstName>Алексей</firstName>
+        <fatherName>Николаевич</fatherName>
+        <lastName>Широких</lastName>
+        <profession>Космические летательные аппараты и разгонные блоки</profession>
+        <professionCode>160802</professionCode>
+        <qualification>инженер</qualification>
+        <qualificationCode>65</qualificationCode>
+        <diplomaType>1</diplomaType>
+        <protocolDate>2006-06-15Z</protocolDate>
+        <protocolNumber>6/СМ-2</protocolNumber>
+        <orderNumber>1-04/1996 АК</orderNumber>
+        <faculty>АК</faculty>
+      </reportGraduatedPerson>
+    </reportGraduatedResponse>
+  </env:Body>
+</env:Envelope>
+

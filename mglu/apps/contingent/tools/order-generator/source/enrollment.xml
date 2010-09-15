@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<order classname="EnrollmentOrder" base="VirtualStudentsOrder">
+
+	<type>О зачислении в МГЛУ</type>
+
+	<condition name="special">
+		<special_enrollment_code class="Empty">false</special_enrollment_code>
+	</condition>
+	
+	<title condition="special">О зачислении целевым приемом в МГЛУ</title>
+
+	<template entity="order">
+
+		<input type="document" name="resolution" title="Протокол решения отборочной комиссии факультета" />
+
+		<input type="document" name="approval" title="Протокол заседания Приемной комиссии МГЛУ" />
+
+		<input type="date" name="enrollment_date" title="Дата зачисления" />
+
+		<classifier type="study_type" title="Форма (основа) обучения" />
+
+		<classifier type="degree" title="Ступень высшего профессионального образования" />
+		
+		<!-- <classifier type="special_enrollment" title="Целевой набор" default="nil" display_empty="yes" /> -->
+		
+		<const type="int" name="student_state_id" value="Classifier::StudentState::STUDYING" />
+
+	</template>
+
+	<template entity="student" reload="true">
+
+		<input type="name" name="name" title="" />
+
+		<classifier type="gender" title="Пол" default="1"/>
+
+		<input type="date" name="birth_date" title="Дата рождения" />
+
+		<input type="text" name="passport" title="Паспорт" />
+		
+		<classifier type="citizenship" title="Гражданство" default="1"/>
+
+		<input type="text" name="card_number" title="Л.д. &#x2116;" />
+
+		<input type="group" name="group_id" title="Группа" />
+
+		<classifier type="profession" title="Направление / специальность" />
+		
+		<input type="text" name="specialization_code" title="Код специализации" default="'00'"/>
+		
+		<input type="document" name="agreement" title="Договор/контракт" condition="contract or foreign or special"/>
+
+		
+		<classifier type="country" title="Страна" condition="foreign"/>
+		
+		<input type="document" name="assignment" title="Направление Министерства образования и науки РФ" condition="foreign"/>
+		
+		<input type="text" name="special_assignment" title="Направление для поступления" condition="special"/>
+
+
+		<input type="text" name="note" title="Примечание"/>
+
+	</template>
+
+	<printable>
+
+		<preamble><![CDATA[
+
+<p>
+На основании решения отборочной комиссии факультета "<&order.faculty.name&>"
+от <&order.attributes['resolution'][:date]&> протокол &#x2116; <&order.attributes['resolution'][:num]&>,
+утвержденного на заседании Приемной комиссии МГЛУ
+от <&order.attributes['approval'][:date]&> протокол &#x2116;<&order.attributes['approval'][:num]&>,
+</p>
+
+		]]></preamble>
+		
+		<p><![CDATA[
+		Зачислить <% if conditions['special'] then %>целевым приемом<% end %>
+		в МГЛУ с <&order.attributes['enrollment_date']&>
+		студентами на <%
+			print (if @students.empty? then
+				print '1'
+			elsif @students[0][:group]=~ /.*-(\d+)(-)?\d$/ then
+				($1.to_i + 1) / 2
+			else
+				"?"
+			end)
+		%> курс факультета &quot;<&order.faculty.name&>&quot;
+		для обучения по указанным направлениям, специальностям и специализациям подготовки
+		<&Classifier::Degree[order.attributes['degree_code']][:name].to_s.gsub(/ый /, 'ых ')&>ов
+
+
+		<%=
+		spc_name = "" #unless order.attributes['special_enrollment_code'].empty? then ' ' + Classifier::SpecialEnrollment[order.attributes['special_enrollment_code']][:path][0] else '' end
+		case order.attributes['study_type_id']
+		when 1 then 'на ' + (order.attributes['special'] == 1 ? 'целевые ' : '') + "места, финансируемые из федерального бюджета#{spc_name},"
+		when 2 then "на основе договоров с оплатой стоимости обучения#{spc_name}"
+		when 3 then "по направлению Министерства образования и науки#{spc_name}"
+		end
+		%>
+
+		нижеперечисленных лиц:
+		]]></p>
+
+		<list style="text">
+			<column source="student" name="name"/>
+			<column source="order" name="passport"/>
+			<column source="order" name="gender_id"/>
+			<column source="student" name="birth_date"/>
+			<column source="order" name="citizenship_id" />
+			<column source="order" name="country_id" />
+			<column source="student" name="card_number"/>
+			<column source="order" name="agreement"/>
+			<column source="order" name="assignment"/>
+			<column source="student" name="group"/>
+			<column source="order" name="profession_code" title="Направление подготовки/специальность.специализация.квалификация"/>
+			<!--<column><![CDATA[ <% if conditions['special'] then %>
+				Направление для поступления: <%= Classifier::SpecialEnrollment[order.attributes['special_enrollment_code']][:agreement]
+				%><% unless attributes['special_assignment'].empty? then %>, <& attributes['special_assignment'] &><% end %>
+			<% end %> ]]></column>-->
+			<column><![CDATA[ <% if attributes['enrollment_type'] == 2 then %>
+				Основания приказа: личное заявление студента с визой декана факультета и
+				резолюцией проректора по учебной работе Университета<%
+				if order.attributes['study_type_id'] == 2 then %>, договор (контракт)
+				о предоставлении платных образовательных услуг <% end %>
+			<% end %> ]]></column>
+			<column><![CDATA[ <% unless attributes['note'].empty? then %>
+				<br/>Примечание: <& attributes['note'] &>
+			<% end %> ]]></column>
+		</list>
+
+		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector"/>
+			<signature name="personnel"/>
+			<signature name="legal-councilor"/>
+			<signature name="prorector-international" condition="foreign" />
+			<signature name="prorector-security" condition="foreign" />
+			<signature name="enrollment"/>
+			<signature name="selection"/>
+			<signature name="marketing" condition="contract and not foreign" />
+			<signature name="financing" condition="contract and not foreign"/>
+			<signature name="foreign" condition="foreign" />
+		</signatures>
+	</printable>
+
+</order>

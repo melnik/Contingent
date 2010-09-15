@@ -1,0 +1,18 @@
+<!ATTR news_id subject body !>
+<*/widgets/list/header*>
+		<h2>
+			<div class="win_buttons"><*/widgets/button_help*></div>
+			Новость
+		</h2>
+
+		<form name="mf" method="post" action="item.rb?news_id=<&news_id&>">
+			<input type="hidden" name="save" value="1" />
+
+			<div class="panel" style="padding-top: 0.5em;">
+				Тема: <input name="subject" value="<&subject&>" type="text" class="text"><br/>
+				Текст: <br/>
+				<textarea name="body" class="text" rows="10" style="width: 100%"><&body&></textarea>
+				<p><input type="submit" /></p>
+			</div>			
+		</form>
+<*/footer_mini*>

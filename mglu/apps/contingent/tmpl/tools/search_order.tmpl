@@ -1,0 +1,57 @@
+<!ATTR faculty_id return_url !>
+<*/header_mini*>
+		<style>
+			body {
+				background: #95b8e2;
+			}
+		</style>
+		<script language="javascript" src="/tools/datecontrol.js"></script>
+		<form action="<&return_url&>" target="list" method="post">
+			<table width="100%">
+				<tr>
+					<td width="1">Номер</td>
+					<td><input name="number" type="text" class="text" style="width: 100%;" /></td>
+				</tr>
+				<tr><td colspan="2"><hr/></td></tr>
+<% if faculty_id.to_i <= 0 then %>
+				<tr>
+					<td width="1">Факультет</td>
+					<td><input name="faculty" type="text" class="text" style="width: 100%;" /></td>
+				</tr>
+				<tr><td colspan="2"><hr/></td></tr>
+				<tr>
+					<td width="1">Пользователь</td>
+					<td><input name="login" type="text" class="text" style="width: 100%;" /></td>
+				</tr>
+				<tr><td colspan="2"><hr/></td></tr>
+<% end %>
+				<tr>
+					<td width="1">Ф.И.О.</td>
+					<td><input name="name" type="text" class="text" style="width: 100%;" /></td>
+				</tr>
+				<tr><td colspan="2"><hr/></td></tr>
+				<tr>
+					<td width="1">Тип</td>
+					<td><**/widgets/classifier/simple|place_order_type**></td>
+				</tr>
+				<tr>
+					<td width="1">Статус</td>
+					<td><**/widgets/classifier/simple|place_order_status**></td>
+				</tr>
+				<tr><td colspan="2"><hr/></td></tr>
+				<tr><td colspan="2">Дата</td></tr>
+				<tr>
+					<td align="right">с</td>
+					<td><**/widgets/date|add_min_date**></td>
+				</tr>
+				<tr>
+					<td align="right">по</td>
+					<td><**/widgets/date|add_max_date**></td>
+				</tr>
+			</table>
+
+			<hr/>
+
+			<div align="center"><input type="submit" value="Найти"/></div>
+		</form>
+<*/footer_mini*>

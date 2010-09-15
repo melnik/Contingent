@@ -1,0 +1,155 @@
+require 'singleton'
+begin
+   DBIEnabled=require 'dbi'
+rescue Exception
+   DBIEnabled=false
+end
+
+
+module Radical
+   
+   #This module provides Radical's database services
+   module DB
+      
+      class UndefinedDatabase < Exception
+	 def initialize()
+	    super("Requested database is not defined. Please look at the configuration")
+	 end
+      end
+      
+      Database=Struct.new(:url,:user,:auth,:params)
+      Databases=Hash.new
+      
+      class DBProxy
+	 def initialize(db)
+	    @db=db;
+	 end
+	 
+	 def transaction(&block)
+	    DBPool.instance.transaction(@db,&block)
+	 end
+	 
+	 def get()
+	    DBPool.instance.get(@db)
+	 end
+	 
+	 def put(dbh)
+	    DBPool.instance.put(@db,dbh)
+	 end
+      end
+       
+      # This class provides simple and primitive connection pooling
+      class DBPool
+	 include Singleton
+	
+	 def initialize()
+	    if not DBIEnabled
+	       print "Ruby's DBI could not be loaded, yet Radical DB poll is used. things will break!\n"
+	    end
+	    @pool=Hash.new
+	 end
+	 
+	 
+	 # This should be called with the database name(db) and a block
+	 # to make efficent and effective use of connection polling
+	 def transaction(db,&block)
+	    begin
+	       dbh=get(db)
+	       dbh.transaction &block
+	    ensure
+	       put(db,dbh)
+	    end
+	 end
+	 
+	 # Returns a DBProxy instance for db
+	 def proxy(db)
+	    return DBProxy.new(db)
+	 end
+	 
+	 def get(db)
+	    if not db.kind_of? Database
+	       db=Databases[db]
+	       raise UndefinedDatabase if db.nil?
+	    end
+	    @pool[db]=Array.new if @pool[db].nil?
+	    return @pool[db].pop if @pool[db].length > 0
+	    return DBI.connect(db.url,db.user,db.auth,db.params)
+	 end
+	 
+	 
+	 def put(db,dbh)
+	    if not db.kind_of? Database
+	       db=Databases[db]
+	       raise UndefinedDatabase if db.nil?
+	    end
+	    @poll[db] << dbh
+	 end
+      end
+      
+      DBPoll=DBPool
+      
+      class DBInterface < DBProxy
+	 private :transaction, :put,:get
+      end
+      
+      # DBManager is a more robust and intelligent replacement for DBPool/DBProxy
+      class DBManager
+	 attr_accessor :db
+	 def initialize(db,min=0,max=10)
+	    if not db.nil?
+	       if not db.kind_of? Database
+		  db=Databases[db]
+		  raise UndefinedDatabase if db.nil?
+	       end
+	    end
+	    @db=db
+	    @pool=[]
+	    # We reserve one connection for doing SELECT queries and other non-transactional stuff
+	    if @db
+	       @query_conn=conn()
+	    end
+	    @minconn=min
+	    @maxconn=max
+	 end
+	 
+	 def conn()
+	    DBI.connect(@db.url,@db.user,@db.auth,@db.params)
+	 end
+	 private :conn
+	 
+#	 def select(query,*args)
+#	    @query_conn.execute query,*args
+#	 end
+#	 
+#	 def select_all(query,*args)
+#	    @query_conn.select_all query,*args
+#	 end
+#	 
+#	 def select_one(query,*args)
+#	    @query_conn.select_one query,*args
+#	 end
+	 
+	 def execute(query,*args)
+	    get_db { |db|
+	        db.execute(query,*args) { |sth|
+	            yield sth if block_given?
+	        }
+	    }
+	 end
+
+	 def get_db
+	    if not db=@pool.pop
+	       db=conn()
+	    end
+	    yield db
+	    if @pool.length<@maxconn then
+	       @pool << db
+	    else
+	       db.close
+	    end
+	 end
+	 
+      end
+   end
+end
+Radical::DB::DBPool.instance

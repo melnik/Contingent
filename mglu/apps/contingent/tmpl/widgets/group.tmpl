@@ -1,0 +1,92 @@
+<!INIT id params !>
+<-- METHODS START -->
+
+attr_accessor :id, :faculty, :department, :term, :group, :fixed, :faculty_id, :department_id, :set
+
+def init(wid, params)
+	require 'db'
+	require 'extensions'
+
+	fixed = params['fixed']
+
+	unless params['group_id'].empty?
+		h = $sql.execute("SELECT f.short_name, d.department_num, g.current_term_number, g.group_id
+		                  FROM `group` g
+		                  INNER JOIN department d USING (department_id)
+		                  INNER JOIN faculty f USING (faculty_id)
+		                  WHERE group_id = #{params['group_id'].to_i}").fetch
+		@set = true
+
+		faculty = h['short_name']
+		department = h['department_num']
+		term = h['current_term_number'].to_i
+		group = h['group_id']
+	end
+
+	@id = wid
+	faculty_id = department_id = nil unless fixed['faculty']
+	department_id = nil unless fixed['department']
+
+	@faculty = faculty
+	@department = department
+	@term = term
+	@group = group
+	@fixed = fixed
+	@faculty_id = faculty_id
+	@department_id = department_id
+end
+
+<-- METHODS END -->
+
+<script language="javascript" src="/tools/groupcontrol.js"></script>
+
+<!-- script language="javascript" src="/tools/groups.rb"></script -->
+
+<script language="javascript"><!--
+var httpRequest;
+if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+	document.write('<script language="javascript" src="/tools/groups.rb"></script>');
+} else if (window.ActiveXObject) { // IE
+    httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+	httpRequest.onreadystatechange = function() {
+		if (httpRequest.readyState == 4)
+			eval(httpRequest.responseText);
+	}
+	httpRequest.open('POST', '/tools/groups.rb', false);
+	httpRequest.send(null);
+}
+//--></script>
+
+<% if @fixed['faculty'] then %>
+<select id="<&id&>_faculty" onChange="gc_fill('<&id&>', 3)" disabled="1"></select>
+<% else %>
+<select id="<&id&>_faculty" onChange="gc_fill('<&id&>', 3)"></select>
+<% end %>
+
+
+<% if @fixed['department'] then %>
+<select id="<&id&>_department" onChange="gc_fill('<&id&>', 2)" disabled="1"></select>
+<% else %>
+<select id="<&id&>_department" onChange="gc_fill('<&id&>', 2)"></select>
+<% end %>
+
+-
+
+<% if @fixed['course'] then %>
+<select id="<&id&>_term" style="text-align: right" onChange="gc_fill('<&id&>', 1)" disabled="1"></select>
+<% else %>
+<select id="<&id&>_term" style="text-align: right" onChange="gc_fill('<&id&>', 1)"></select>
+<% end %>
+
+<select id="<&id&>_group" name="<&id&>_group" onChange="gc_fill('<&id&>', 0)"></select>
+
+<input type="hidden" id="<&id&>" name="<&id&>" value=""/>
+
+<script language="javascript"><!--
+gc_fill_faculties('<&id&>');
+<% if @set %>
+gc_set('<&id&>', '<&faculty&>', '<&department&>', <&term.to_i&>, <&group.to_i&>);
+<% else %>
+gc_fill('<&id&>', 3);
+<% end %>
+//--></script>

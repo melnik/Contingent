@@ -1,0 +1,11 @@
+#!/bin/sh
+
+OID=`./merge-orders.rb $@`
+echo $OID
+
+for I in `seq 1 6`; do
+echo "INSERT INTO \`order\`
+      (order_type_id, order_status_id, faculty_id, number, date_created, date_activated, attributes, html, creator_id, __insert_id)
+SELECT order_type_id, order_status_id, faculty_id, number, date_created, date_activated, attributes, html, creator_id, __insert_id
+FROM \`order\` WHERE order_id=$OID" | mysql -ucontingent -pfaretheewell contingent
+done

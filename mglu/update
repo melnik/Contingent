@@ -1,0 +1,8 @@
+#!/bin/sh
+#kill `cat radical.pid`
+VER=`svn up | tail -1 | sed -ne '/revision/ s/^.*revision //; s/\.//g; p'`
+echo $VER
+cat index.tmpl | sed "s/%version%/$VER/" >apps/contingent/tmpl/index.tmpl
+#cd apps/contingent/tools
+#./generate-groups > ../static/groups.js
+#./radical.rb -d

@@ -1,0 +1,62 @@
+<!ATTR order_id number frozen type action fatal error_message student_ids group_ids !>
+<*/header_mini*>
+		<script language="javascript" src="/tools/datecontrol.js"></script>
+
+		<table cellspacing="0" cellpadding="0" width="100%" height="100%"><tr><td valign="top">
+			<div class="win_buttons">
+				<*/widgets/button_help*>
+				<a href="<% if @frozen then %>index.rb<% else %>item_fs.rb?order_id=<&order_id&><% end %>"><img src="/img/fileclose.png" width="16" height="16" alt="Закрыть" title="Закрыть" border="0"/></a>
+			</div>
+			<div class="header">
+				Приказ <b><&type&></b> &#x2116;&nbsp;<&order_id&>
+			</div>
+		</td></tr><tr><td align="center">
+<% unless @fatal then %>
+			<form method="post">
+				<table style="margin: 0.5em;">
+<%	if @action == :activate then %>
+					<tr>
+						<td>Дата:</td>
+						<td><**/widgets/date|place_date**></td>
+					</tr>
+					<tr>
+						<td>Номер:</td>
+						<td><input type="text" name="number" value="<&number&>" class="text"/></td>
+					</tr>
+					<tr><td colspan="2">
+						<hr/>
+						<div style="text-align: center"><input type="checkbox" name="auto_fix" value="1"/>&nbsp;исправлять ошибки автоматически</div>
+					</td></tr>
+					<tr><td colspan="2">
+						<hr/>
+						<div style="text-align: center">
+							<a target="_blank" href="print_version.rb?order_id=<&order_id&>">Предпросмотр печатной формы</a><br/><br/>
+							<input type="submit" value="Ввести в действие" style="padding-left: 0.5em; padding-right: 0.5em;"/>
+						</div>
+					</td></tr>
+<%	else %>
+					<tr><td>
+						<input type="hidden" name="auto_fix" value="1"/>
+						<input type="submit" value="Исправить ошибки"/>
+					</td></tr>
+<%	end %>
+				</table>
+			</form>
+<% end %>
+			<div style="width: 40%; border: 1px solid black; padding 0.5em; margin: 1em; text-align: center;">
+<% if @error_message then %>
+				<p style="font-size: 120%; font-weight: bold; color: red;">Приказ не может быть введен в действие</p>
+				<p><&error_message.capitalize&></p>
+<% elsif @frozen then %>
+				<p style="font-size: 120%; font-weight: bold; color: red;">Приказ заморожен</p>
+				<p><a href="thaw.rb?order_id=<&order_id&>">Разморозить</a></p>
+<% end %>
+			</div>
+<% if @student_ids then %>
+		</td></tr><tr><td height="100%">
+			<iframe src="/student/list.rb?show_details=no&<%={ 'student_id' => student_ids }.url_encode%>" style="width: 100%; height: 100%; border: none;"></iframe>
+<% elsif @group_ids then %>
+			<p><%= @group_ids.collect do |group_id| Group.load(group_id) end.join ', ' %></p>
+<% end %>
+		</td></tr></table>
+<*/footer_mini*>

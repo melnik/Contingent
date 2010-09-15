@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<conditions>
+
+	<condition name="contract">
+		<study_type_id class="Expression">Classifier::StudyType::CONTRACT</study_type_id>
+	</condition>
+	
+	<condition name="foreign">
+		<citizenship_id class="Array">
+			<value class="Fixnum">4</value>
+			<value class="Fixnum">5</value>
+			<value class="Fixnum">6</value>
+			<value class="Fixnum">7</value>
+		</citizenship_id>
+	</condition>
+	
+	<condition name="disabled">
+		<category class="Symbol">disabled</category>
+	</condition>
+
+</conditions>

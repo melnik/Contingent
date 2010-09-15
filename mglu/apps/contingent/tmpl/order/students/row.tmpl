@@ -1,0 +1,24 @@
+<!INIT order_id type id name group card_number para !>
+<% if @type == 'group' %>
+				<tr class="list_separator">
+					<td class="list_checkbox" style="text-align: center;"><!--input type="checkbox"/--></td><!-- BlackFix -->
+	<% if para then %>
+					<td colspan="3"><a href="details.rb?order_id=<&order_id&>&group_id=<&id&>&paragraph_id=<&para&>" target="details"><&group&></a></td>
+	<% else %>
+					<td colspan="3"><&group&></td>
+	<% end %>
+				</tr>
+<% else %>
+				<tr class="list_item">
+					<td class="list_checkbox" style="text-align: right;"><input type="checkbox" name="s" value="<&id&>"/></td>
+	<% if para then %>
+					<td                                        ><a href="details.rb?order_id=<&order_id&>&student_id=<&id&>&paragraph_id=<&para&>" target="details"><&name&></a></td>
+					<td style="width: 5em"                     ><a href="details.rb?order_id=<&order_id&>&student_id=<&id&>&paragraph_id=<&para&>" target="details"><nobr><&group&></nobr></a></td>
+					<td style="width: 6em; text-align: center;"><a href="details.rb?order_id=<&order_id&>&student_id=<&id&>&paragraph_id=<&para&>" target="details"><&card_number&></a></td>
+	<% else %>
+					<td                                        ><&name&></td>
+					<td style="width: 5em"                     ><nobr><&group&></nobr></td>
+					<td style="width: 6em; text-align: center;"><&card_number&></td>
+	<% end %>
+				</tr>
+<% end %>

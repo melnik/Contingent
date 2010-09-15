@@ -1,0 +1,69 @@
+<!ATTR student_id group_id order_id paragraph_id full_name data hide reload_tab !>
+<html>
+	<head>
+		<link rel="Stylesheet" href="/main.css" />
+		<link rel="Stylesheet" href="/list.css" />
+
+		<!--
+		Yeah, I do not have any ideas about how this works, but it really does
+		av
+		-->
+
+		<!--[if IE]>
+		<style type="text/css" media="screen">
+
+		body {
+			overflow-y: hidden;
+		}
+
+		div.content {
+			height: 100%;
+			overflow: auto;
+		}
+		</style>
+		<![endif]-->
+
+		<script language="javascript" src="/panel.js"></script>
+	</head>
+
+	<body class="tab_body" style="padding-bottom: 0;">
+		<script language="javascript"><!--
+<% if hide then %>
+			hide_panel('details')
+<% else %>
+			show_panel('details', false, 250);
+<% end %>
+
+<% unless reload_tab.nil? %>
+			parent.lists.tab_reload('<&reload_tab&>');
+<% end %>
+
+		//--></script>
+
+		<div class="list_header">
+<% unless hide then %>
+			<div class="toolbar">
+				<!--input type="image" src="/img/filesave2.png" width="22" height="22" alt="Сохранить" title="Сохранить"/--><!-- BlackFix -->
+				<a href="javascript:document.mf.submit();"><img src="/img/filesave2.png" width="22" height="22" alt="Сохранить" title="Сохранить" border="0"/></a>
+				<a target="_blank" href="print_version.rb?order_id=<%=order_id%>&amp;part=1"><img src="/img/fileprint.png" alt="Выписка по студенту" title="Выписка по студенту" border="0" height="22" width="22"></a>
+			</div>
+<% end %>
+			<div class="win_buttons">
+				<*/widgets/button_help*>
+				<a href="javascript:hide_panel('details');"><img src="/img/fileclose.png" width="16" height="16" alt="Закрыть" title="Закрыть" border="0"/></a>
+			</div>
+			<div style="padding-top: 2px;"><%=full_name%></div>
+		</div>
+		<div class="content" style="padding: 0.5em; padding-bottom: 0px">
+			<form name="mf" method="post">
+				<input type="hidden" name="save" value="1" />
+				<input type="hidden" name="__details_order_id" value="<&order_id&>" />
+				<% unless @student_id.empty? then %><input type="hidden" name="__details_student_id" value="<&student_id&>" /><% end %>
+				<% unless @group_id.empty? then %><input type="hidden" name="__details_group_id" value="<&group_id&>" /><% end %>
+				<% unless @paragraph_id.empty? then %><input type="hidden" name="__details_paragraph_id" value="<&paragraph_id&>" /><% end %>
+
+				<%=data%>
+			</form>
+		</div>
+	</body>
+</html>

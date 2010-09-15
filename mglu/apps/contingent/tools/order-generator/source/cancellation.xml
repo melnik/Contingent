@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<order classname="CancellationOrder">
+
+	<template entity="order">
+
+		<classifier type="study_type" title="Форма (основа) обучения" />
+
+	</template>
+
+	<template entity="student">
+		<input type="document" name="agreement" title="Договор/контракт" />
+		
+		<select type="int" name="basics" title="Основания приказа">
+			<option value="1" title="Л/з студента с визой декана и резолюцией проректора; подтверждающие документы" />
+			<option value="2" title="Л/з студента с визой декана и резолюцией проректора" />
+			<option value="3" title="Служебная записка декана с резолюцией проректора" />
+			<option value="4" title="Служебная записка декана ФОИГ с резолюцией проректора" />
+			<option value="5" title="Л/з студента с визой декана, декана ФОИГ и резолюцией проректора; подтверждающие документы" />
+			<option value="6" title="Л/з студента с визой декана, декана ФОИГ и резолюцией проректора" />
+			<option value="7" title="Служебная записка декана с визой декана ФОИГ с резолюцией проректора" />
+		</select>
+	</template>
+
+<!--
+	<printable>
+
+		<preamble><![CDATA[ <% o = Order.load order.attributes['order_id'] %> ]]></preamble>
+
+		<table select=":all">
+			<column><![CDATA[ Приказ по университету от <&o.date_activated&> &amp;#x2116;<&o.number&> <&o.class::TYPE&>: ]]></column>
+			<column source="student" name="name"/>
+			<column source="student" name="student_status"/>
+			<column source="student" name="card_number"/>
+			<column source="student" name="birth_date" />
+			<column source="student" name="course"/>
+			<column source="student" name="group"/>
+			<column>отменить в связи с вновь открывшимися обстоятельствами.</column>
+			<column source="order" name="agreement"/>
+			<column><![CDATA[
+
+				<% case o.class.to_s.intern
+				when :ExpelationOrder then %>
+					Декану факультета, при необходимости, установить  срок сдачи академических задолженностей своим распоряжением.
+				<% end %>
+
+			]]></column>
+			<column><![CDATA[
+				Основания приказа:
+				<% case o.class.to_s.intern
+				when :ExpelationOrder then %>
+					личное заявление отчисленного с визой руководителя НУК (декана факультета) и резолюцией первого проректора -
+					проректора по учебной работе Университета, документы, подтверждающие вновь открывшиеся обстоятельства
+				<% else %>
+					личное заявление студента
+				<% end %>
+			]]></column>
+		</table>
+
+		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector"/>
+			<signature name="personnel"/>
+			<signature name="dean"/>
+			<signature name="legal"/>
+			<signature name="marketing" condition="contract and not foreign" />
+		</signatures>
+
+	</printable>
+-->
+
+</order>

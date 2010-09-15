@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<order classname="AdjustVacationOrder"> <!-- base="StudentsOrder" -->
+	<type>О понижении номера курса для всех студентов, находящихся в академическом отпуске или на стажировке</type>
+
+	<qualified_students class="Hash">
+		<student_state_id class="Array">
+			<item class="Expression">Classifier::StudentState::VACATION</item>
+			<item class="Expression">Classifier::StudentState::TRAINEE</item>
+		</student_state_id>
+	</qualified_students>
+
+	<template entity="student">
+		<input type="group" name="group_id" title="Числить в группе" fixed="faculty,department,course" default="
+			g = Student.load(eid).group
+			Group.load(g.department.name + (g.term_number - 2).to_s + g.number.to_s)
+		"/>
+	</template>
+
+	<printable>
+		<group by="group">
+			<p><![CDATA[
+				<% 
+				#_group = @groups.find(:group => group)
+				%>
+				<h3>Группа <%= group %></h3>
+			]]></p>
+
+			<section source="order" paragraph="0">
+				<p>Понизить номер курса у нижеперечисленных студентов, находящихся в академическом отпуске или на стажировке.</p>
+
+				<list style="table">
+					<column name="number"/>
+					<column source="student" name="name"/>
+					<column source="student" name="card_number"/>
+
+					<column source="student" name="category" hidden="1"/>
+					<column source="student" name="study_type" hidden="1"/>
+					<column title="Форма (основа) обучения"><![CDATA[ <%
+						r = [study_type]
+						r << 'ОРИСА' if category.include? :foreign
+						r << 'ГУИМЦ' if category.include? :disabled
+						print r.join(', ')
+					%> ]]></column>
+					<column source="order" name="group_id"/>
+				</list>
+			</section>
+		</group>
+
+		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector"/>
+			<signature name="personnel"/>
+			<signature name="dean"/>
+		</signatures>
+	</printable>
+</order>

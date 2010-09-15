@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+gets
+
+$stdin.each_line { |l|
+	c = l.split(/\t/)
+	puts "INSERT INTO `faculties` (faculty_id, short_name) (#{c[1]}, '#{c[0]}');"
+}

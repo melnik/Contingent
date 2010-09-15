@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<wsdl:definitions xmlns:impl="urn:webservices.bmstu.org" xmlns:intf="urn:webservices.bmstu.org" xmlns:tns1="http://webservices.bmstu.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:webservices.bmstu.org">
+  <wsdl:types>
+<!-- BMSTU Contingent schema -->
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:webservices.bmstu.org">
+<!-- Base Object -->
+      <complexType name="Object">
+        <sequence>
+          <element name="id" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+        </sequence>
+      </complexType>
+      <element name="Object" type="impl:Object"/>
+<!-- Person -->
+      <complexType name="Person">
+        <complexContent>
+          <extension base="impl:Object">
+            <sequence>
+              <element name="firstName" type="xsd:string" minOccurs="0"/>
+              <element name="fatherName" type="xsd:string" minOccurs="0"/>
+              <element name="lastName" type="xsd:string" minOccurs="0"/>
+              <element name="birthDate" type="xsd:date" minOccurs="0"/>
+              <element name="gender" type="xsd:string" minOccurs="0"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+<!-- Student: Person -->
+      <complexType name="Student">
+        <complexContent>
+          <extension base="impl:Person">
+            <sequence>
+              <element name="faculty" type="xsd:string" minOccurs="0"/>
+              <element name="department" type="xsd:string" minOccurs="0"/>
+              <element name="group" type="xsd:string" minOccurs="0"/>
+              <element name="ishead" type="xsd:boolean" minOccurs="0"/>
+              <element name="dormitory" type="xsd:boolean" minOccurs="0"/>
+              <element name="chargeable" type="xsd:boolean" minOccurs="0"/>
+              <element name="liabilities" type="xsd:short" minOccurs="0"/>
+              <element name="cardNumber" type="xsd:string" minOccurs="0"/>
+              <element name="state" type="xsd:string" minOccurs="0"/>
+              <element name="speciality-code" type="xsd:string" minOccurs="0"/>
+              <element name="passportSeria" type="xsd:string" minOccurs="0"/>
+              <element name="passportNumber" type="xsd:string" minOccurs="0"/>
+              <element name="passportIssuer" type="xsd:string" minOccurs="0"/>
+              <element name="passportDate" type="xsd:date" minOccurs="0"/>
+              <element name="taxpayerIdentity" type="xsd:string" minOccurs="0"/>
+              <element name="socialSecurityNumber" type="xsd:string" minOccurs="0"/>
+              <element name="healthIsuranceSeria" type="xsd:string" minOccurs="0"/>
+              <element name="healthIsuranceNumber" type="xsd:string" minOccurs="0"/>
+              <element name="healthIsuranceCompany" type="xsd:string" minOccurs="0"/>
+              <element name="stationaryString" type="xsd:string" minOccurs="0"/>
+              <element name="stationaryOKATO" type="xsd:string" minOccurs="0"/>
+              <element name="temporalString" type="xsd:string" minOccurs="0"/>
+              <element name="temporalOKATO" type="xsd:string" minOccurs="0"/>
+              <element name="expires" type="xsd:date" minOccurs="0"/>
+              <element name="cellular" type="xsd:string" minOccurs="0"/>
+              <element name="phone" type="xsd:string" minOccurs="0"/>
+              <element name="citizenship" type="xsd:string" minOccurs="0"/>
+<!--						<element name="birthPlace" type="types:shortAddress" minOccurs="0"/>-->
+              <element name="contractNumber" type="xsd:string" minOccurs="0"/>
+              <element name="contractDate" type="xsd:date" minOccurs="0"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+<!--		
+  <xsd:complexType name="shortAddress">
+    <xsd:sequence>
+      <xsd:element name="country" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="countryCode" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="region" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="regionCode" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="zone" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="zoneCode" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="city" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="cityCode" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+-->
+<!-- Request / response for method "get" -->
+      <element name="getRequest">
+        <complexType>
+          <sequence>
+            <element name="id" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="getResponse">
+        <complexType>
+          <sequence>
+            <element name="Object" type="impl:Object" minOccurs="0" maxOccurs="1"/>
+          </sequence>
+        </complexType>
+      </element>
+<!-- Request / response for method "listStudents" -->
+      <element name="listStudentsRequest">
+        <complexType>
+          <sequence>
+            <element maxOccurs="1" minOccurs="0" name="firstName" type="xsd:string"/>
+            <element maxOccurs="1" minOccurs="0" name="lastName" type="xsd:string"/>
+            <element maxOccurs="1" minOccurs="0" name="fatherName" type="xsd:string"/>
+            <element maxOccurs="1" minOccurs="0" name="faculty" type="xsd:string"/>
+            <element maxOccurs="1" minOccurs="0" name="department" type="xsd:string"/>
+            <element maxOccurs="1" minOccurs="0" name="group" type="xsd:string"/>
+            <element maxOccurs="1" minOccurs="0" name="dormitory" type="xsd:string"/>
+            <element maxOccurs="1" minOccurs="0" name="gender" type="xsd:string"/>
+            <element maxOccurs="1" minOccurs="0" name="cardNumber" type="xsd:string"/>
+            <element maxOccurs="1" minOccurs="0" name="StudentState" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <complexType name="ArrayOfStudent">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="Student" type="impl:Student"/>
+        </sequence>
+      </complexType>
+      <element name="listStudentsResponse" type="impl:ArrayOfStudent"/>
+      <complexType name="listOrderTypes">
+        <sequence/>
+      </complexType>
+<!-- Request / response for method "listOrders" -->
+      <complexType name="listOrders">
+        <sequence/>
+      </complexType>
+      <element name="listOrders" type="impl:listOrders"/>
+      <complexType name="listOrdersResponse">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="order" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <element name="listOrdersResponse" type="impl:listOrdersResponse"/>
+<!-- Request / response for method "listOrderTypes" -->
+      <element name="listOrderTypes" type="impl:listOrderTypes"/>
+      <complexType name="orderType">
+        <sequence>
+          <element name="id" type="xsd:int"/>
+          <element maxOccurs="1" minOccurs="0" name="type" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfOrderTypes">
+        <sequence>
+          <element maxOccurs="unbounded" minOccurs="0" name="orderType" type="impl:orderType"/>
+        </sequence>
+      </complexType>
+      <element name="listOrderTypesResponse" type="impl:ArrayOfOrderTypes"/>
+    </schema>
+  </wsdl:types>
+<!-- Messages for "version" -->
+  <wsdl:message name="versionRequest"/>
+  <wsdl:message name="versionResponse">
+    <wsdl:part name="version" type="xsd:string"/>
+  </wsdl:message>
+<!-- Messages for "get" -->
+  <wsdl:message name="getRequest">
+    <wsdl:part element="impl:getRequest" name="getRequest"/>
+  </wsdl:message>
+  <wsdl:message name="getResponse">
+    <wsdl:part element="impl:getResponse" name="getResponse"/>
+  </wsdl:message>
+<!-- Messages for "listStudents" -->
+  <wsdl:message name="listStudentsRequest">
+    <wsdl:part element="impl:listStudentsRequest" name="listStudentsRequest"/>
+  </wsdl:message>
+  <wsdl:message name="listStudentsResponse">
+    <wsdl:part element="impl:listStudentsResponse" name="listStudentsResponse"/>
+  </wsdl:message>
+<!-- Messages for "listOrderTypes" -->
+  <wsdl:message name="listOrderTypesRequest">
+    <wsdl:part element="impl:listOrderTypes" name="listOrderTypes"/>
+  </wsdl:message>
+  <wsdl:message name="listOrderTypesResponse">
+    <wsdl:part element="impl:listOrderTypesResponse" name="listOrderTypesResponse"/>
+  </wsdl:message>
+<!-- Messages for "listOrders" -->
+  <wsdl:message name="listOrdersRequest">
+    <wsdl:part element="impl:listOrders" name="listOrders"/>
+  </wsdl:message>
+  <wsdl:message name="listOrdersResponse">
+    <wsdl:part element="impl:listOrdersResponse" name="listOrdersResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="StudentsSrvPort">
+    <wsdl:operation name="version" parameterOrder="version">
+<!--         <wsdl:input message="impl:versionRequest" name="versionRequest"/>-->
+      <wsdl:output message="impl:versionResponse" name="versionResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="get" parameterOrder="get">
+      <wsdl:input message="impl:getRequest" name="getRequest"/>
+      <wsdl:output message="impl:getResponse" name="getResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="listStudents" parameterOrder="listStudents">
+      <wsdl:input message="impl:listStudentsRequest" name="listStudentsRequest"/>
+      <wsdl:output message="impl:listStudentsResponse" name="listStudentsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="listOrders" parameterOrder="listOrders">
+      <wsdl:input message="impl:listOrdersRequest" name="listOrdersRequest"/>
+      <wsdl:output message="impl:listOrdersResponse" name="listOrdersResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="listOrderTypes" parameterOrder="listOrderTypes">
+      <wsdl:input message="impl:listOrderTypesRequest" name="listOrderTypesRequest"/>
+      <wsdl:output message="impl:listOrderTypesResponse" name="listOrderTypesResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StudentsServiceSoapBinding" type="impl:StudentsSrvPort">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="version">
+      <wsdlsoap:operation soapAction="urn:#version"/>
+<!--         <wsdl:input name="versionRequest">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:input>-->
+      <wsdl:output name="versionResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get">
+      <wsdlsoap:operation soapAction="urn:#get"/>
+      <wsdl:input name="getRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listOrderTypes">
+      <wsdlsoap:operation soapAction="urn:#listOrderTypes"/>
+      <wsdl:input name="listOrderTypesRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listOrderTypesResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listOrders">
+      <wsdlsoap:operation soapAction="urn:#listOrders"/>
+      <wsdl:input name="listOrdersRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listOrdersResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listStudents">
+      <wsdlsoap:operation soapAction="urn:#listStudents"/>
+      <wsdl:input name="listStudentsRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listStudentsResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StudentsWS">
+    <wsdl:port binding="impl:StudentsServiceSoapBinding" name="StudentsService">
+      <wsdlsoap:address location="http://contingent.bmstu.ru/SOAP"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

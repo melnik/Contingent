@@ -1,0 +1,14 @@
+<!INIT name date !>
+<%
+require 'extensions'
+
+if d = @date.to_s.to_d then
+	day, month, year = d.day, d.month, d.year
+end
+%>
+<div class="date"><input type="text" id="<&name&>_day" name="<&name&>_day" value="<%=day%>" class="date" onKeyUp="checkDate('<&name&>')" size="2" maxlength="2"/>.<input type="text" id="<&name&>_month" name="<&name&>_month" value="<%=month%>" class="date" onKeyUp="checkDate('<&name&>')" size="2" maxlength="2"/>.<input type="text" id="<&name&>_year" name="<&name&>_year" value="<%=year%>" class="date" onKeyUp="checkDate('<&name&>')" size="4" maxlength="4"/><input type="text" id="<&name&>_wday" name="<&name&>_wday" style="text-align: center; border: none; font-weight: bold; background: transparent;" size="2" readonly="1" disabled="1"/></div>
+<input type="hidden" id="<&name&>" name="<&name&>" />
+
+<script language="javascript"><!--
+checkDate('<&name&>');
+//--></script>

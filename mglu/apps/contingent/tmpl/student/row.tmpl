@@ -1,0 +1,20 @@
+<!INIT student_id name group card_number attributes !>
+				<tr class="list_item">
+					<td                                       ><a href="item.rb?student_id=<&student_id&>" target="details"><&name&></a></td>
+					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:foreign] %><img src="/img/foreign.png" width="16" height="16" border="0" title="ОРИСА"/><% end %></a></td>
+					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:disabled] %><img src="/img/disabled.png" width="16" height="16" border="0" title="ГУИМЦ"/><% end %></a></td>
+					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:military][:id].to_i != 0 %><img src="/img/military_<&attributes[:military][:id]&>.png" width="16" height="16" border="0" title="военное обучение: <&attributes[:military][:name]&>"/><% end %></a></td>
+					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:contract] %><img src="/img/contract.png" width="16" height="16" border="0" title="Контрактная форма обучения"/><% end %></a></td>
+					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:vacation] %><img src="/img/vacation.png" width="16" height="16" border="0" title="В академическом отпуске"/><% end %></a></td>
+					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:trainee] %><img src="/img/trainee.png" width="16" height="16" border="0" title="На стажировке"/><% end %></a></td>
+					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:expelled] %><img src="/img/expelled.png" width="16" height="16" border="0" title="Отчислен"/><% end %></a></td>
+					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:dormitory] %><img src="/img/dormitory.png" width="16" height="16" border="0" title="Проживает в общежитии"/><% end %></a></td>
+					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:scholarship] %><img src="/img/scholarship.png" width="16" height="16" border="0" title="<&attributes[:scholarship]&>"/><% end %></a></td>
+					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><%= case attributes[:degree_code]
+when '65' then "<span title=\"Специалист (#{ attributes[:profession_code] })\">С</span>"
+when '62' then "<span title=\"Бакалавр (#{attributes[:profession_code]})\">Б</span>"
+when '68' then "<span title=\"Магистр (#{attributes[:profession_code]})\">М</span>"
+end %></a></td>
+					<td style="width: 5em"                    ><a href="item.rb?student_id=<&student_id&>" target="details"><nobr><&group&></nobr></a></td>
+					<td style="width: 6em; text-align: center"><a href="item.rb?student_id=<&student_id&>" target="details"><&card_number&></a></td>
+				</tr>

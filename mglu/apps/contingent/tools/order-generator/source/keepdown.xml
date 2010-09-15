@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<order classname="KeepDownOrder" base="StudentsOrder">
+
+	<type>О предоставлении повторного обучения на платной основе</type>
+
+	<condition name="contract_now">
+		<student__citizenship_id class="Array">
+			<value class="Fixnum">1</value>
+			<value class="Fixnum">2</value>
+			<value class="Fixnum">3</value>
+		</student__citizenship_id>
+		<student__study_type_id class="Expression">Classifier::StudyType::CONTRACT</student__study_type_id>
+	</condition>
+
+	<qualified_students class="Hash">
+		<student_state_id class="Expression">Classifier::StudentState::STUDYING</student_state_id>
+	</qualified_students>
+
+	<template entity="order">
+		<const type="int" name="study_type_id" value="Classifier::StudyType::CONTRACT" />
+	</template>
+
+	<template entity="student">
+
+		<input type="group" name="group_id" title="Числить в группе" default="Student.load(eid).group.oid"/>
+
+		<input type="text" name="card_number" title="Присвоить номер л.д." default="Student.load(eid).card_number"/>
+
+		<select type="int" name="change_speciality" default="0">
+			<option value="0" title="Без смены специальности">
+				<classifier type="profession" title="Код направления / специальности (новый)" default="Student.load(eid).profession_code" hidden="1"/>
+				<classifier type="degree" title="Новая ступень образования" default="Student.load(eid).degree_code" hidden="1" />
+			</option>
+
+			<option value="1" title="Со сменой специальности">
+
+				<classifier type="profession" title="Код направления / специальности (новый)" default="Student.load(eid).profession_code" />
+
+				<classifier type="degree" title="Новая ступень образования" default="Student.load(eid).degree_code"/>
+
+			</option>
+		</select>
+
+		<input type="date" name="start_at" title="Начало повторного обучения с" />
+
+		<input type="document" name="agreement" title="Договор/контракт" />
+
+		<input type="document" name="additional_agreement" title="Доп. соглашение" />
+
+		<list name="liabilities" title="Академические задолженности">
+			<input type="text" name="subject" title="Название" />
+			<select type="text" name="type" title="Отчетность">
+				<option title="зачет" />
+				<option title="экзамен" />
+			</select>
+		</list>
+
+		<input type="date" name="deadline" title="Срок сдачи задолженностей" />
+
+	</template>
+
+	<printable>
+
+		<p><![CDATA[
+		<% unless conditions['contract_now'] then %>
+		Отчислить с бюджетной формы (основы) обучения и предоставить повторное обучение
+		на платной основе (форме) нижеперечисленным лицам, обучающимся в МГЛУ,
+		установить срок сдачи задолженностей, образовавшихся вследствие
+		расхождения учебных планов, в приведенные сроки:
+		<% else %>
+		Предоставить повторное обучение на платной форме (основе) нижеперечисленным
+		лицам, обучающимся в МГЛУ, и установить срок сдачи академических
+		задолженностей, образовавшихся вследствие расхождения учебных планов, в приведенные
+		сроки:
+		<% end %>
+		]]></p>
+
+		<list style="text">
+			<column source="student" name="name"/>
+			<column source="student" name="student_status"/>
+			<column source="student" name="card_number"/>
+			<column source="student" name="group"/>
+			<column soruce="student" name="study_type_id" hidden="1"/>
+			<column><![CDATA[
+				<% if attributes['start_at'] %>
+					<% unless conditions['contract_now'] then %>
+					Отчислить с бюджетной формы (основы) обучения и предоставить повторное
+					обучение с
+					<% else %>
+					Повторное обучение с
+					<% end %>
+					<&attributes['start_at']&>;
+				<% end %>
+			]]></column>
+			<column source="order" name="group_id"/>
+			<column source="order" name="agreement" title="Договор (контракт) о предоставлении платных образовательных услуг"/>
+			<column source="order" name="profession_code"/>
+			<column source="order" name="degree_code"/>
+			<column source="order" name="card_number"/>
+			<column><![CDATA[
+				<% unless attributes['additional_agreement'].empty? then %>
+				дополнительное соглашение <&attributes['additional_agreement']&>
+				к договору (контракту) о предоставлении платных образовательных услуг <&attributes['agreement']&>
+				<% end %>
+			]]></column>
+			<column source="order" name="liabilities" empty_text="академических задолженностей нет."/>
+			<column source="order" name="deadline"/>
+			<column title="Основания приказа"><![CDATA[
+личное заявление обучающегося с визой декана факультета<% if conditions['foreign'] then %>,
+декана ФОИГ <% end %> и резолюцией проректора по учебной работе Университета,
+договор/контракт о предоставлении платных образовательных услуг <&attributes['agreement']&>
+			]]></column>
+		</list>
+
+		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector"/>
+			<signature name="personnel"/>
+			<signature name="prorector-international" condition="foreign" />
+			<signature name="prorector-security" condition="foreign" />
+			<signature name="dean" condition="not disabled"/>
+			<signature name="rehabilitation" condition="disabled"/>
+			<signature name="deanreceiver"/>
+			<signature name="marketing" condition="contract and not foreign" />
+			<signature name="financing" condition="contract and not foreign"/>
+			<signature name="foreign" condition="foreign" />
+		</signatures>
+
+	</printable>
+
+</order>

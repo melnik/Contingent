@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<order classname="DormitoryOccupancyOrder" base="StudentsOrder">
+
+	<type>О поселении в общежитие</type>
+
+	<qualified_students class="Hash">
+		<student_state class="String">studying</student_state>
+		<dormitory class="Fixnum">0</dormitory>
+	</qualified_students>
+	
+	<condition name="first_term">
+		<student__current_term_number class="Fixnum">1</student__current_term_number>
+	</condition>
+
+	<template entity="order">
+
+		<const type="int" name="hide_study_type" value="1" />
+
+		<input type="document" name="resolution" title="Протокол решения отборочной комиссии" condition="first_term"/>
+
+		<const type="int" name="dormitory" value="1" />
+
+	</template>
+
+
+	<template entity="student">
+
+		<select type="int" name="dormitory_num" title="&#x2116; общежития" default="{ 'ИУ' => 5, 'РЛ' => 5, 'БМТ' => 5, 'МТ' => 4, 'РК' => 9, 'Э' => 10, 'СМ' => 11 }[o.faculty.name] || 5">
+			<option title="3"/>
+			<option title="4"/>
+			<option title="5"/>
+			<option title="6"/>
+			<option title="8"/>
+			<option title="9"/>
+			<option title="10"/>
+			<option title="11"/>
+			<option title="13"/>
+		</select>
+
+	</template>
+
+	<printable>
+	
+		<preamble><![CDATA[
+			<% if conditions['first_term'] then %>
+			<p>На основании решения отборочной комиссии факультета &laquo;<&order.faculty.name&>&raquo;
+			от <&order.attributes['resolution'][:date]&> протокол &#x2116;<&order.attributes['resolution'][:num]&>
+			о поселении в общежитие, утвержденного на заседании Приемной комиссии МГЛУ
+			от <&order.attributes['approval'][:date]&> протокол &#x2116;<&order.attributes['approval'][:num]&>,</p>
+			<% end %>
+		]]></preamble>
+		
+		<p><![CDATA[
+		Предоставить следующим студентам <%
+			print (if @students.empty? then
+				print '1'
+			elsif @students[0][:group]=~ /.*-(\d+)\d$/ then
+				($1.to_i + 1) / 2
+			else
+				"?"
+			end)
+		%> курса факультета &laquo;<%=order.faculty.name%>&raquo;
+		места в общежитии МГЛУ:
+		]]></p>
+		
+		<list style="table">
+			<column name="number"/>
+			<column source="student" name="name"/>
+			<column source="student" name="birth_date"/>
+			<column source="student" name="card_number"/>
+			<column source="student" name="group"/>
+			<column source="order" name="dormitory_num"/>
+		</list>
+		
+		<p><![CDATA[
+			Основание приказа:
+			<% if conditions['first_term'] then %>
+			протокол <& order.attributes['resolution'] &> заседания отборочной комиссии факультета
+			&laquo;<&order.faculty.name&>&raquo; о поселении в общежитие.
+			<% else %>
+			личное заявление студента(ов) с визой декана факультета<% if conditions['foreign'] then %>, декана ФОИГ <% end %>
+			и резолюцией проректора по учебной работе.
+			<% end %>
+		]]></p>
+
+		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector"/>
+			<signature name="prorector-international" condition="foreign"/>
+			<signature name="prorector-security" condition="foreign"/>
+			<signature name="personnel"/>
+			<signature name="enrollment" condition="first_term"/>
+			<signature name="selection" condition="first_term"/>
+			<signature name="dean" />
+			<signature name="dormitory"/>
+			<signature name="marketing" condition="contract and not foreign"/>
+			<signature name="financing" condition="contract and not foreign"/>
+			<signature name="foreign" condition="foreign"/>
+		</signatures>
+
+	</printable>
+</order>

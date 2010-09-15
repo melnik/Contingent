@@ -1,0 +1,13 @@
+<!ATTR order_id faculty_id !>
+<html>
+	<head>
+		<link rel="Stylesheet" href="/main.css" />
+		<frameset rows="26,*" border="0">
+			<frame name="toolbar" src="new/header.rb?order_id=<&order_id&>" scrolling="no" noresize="true" />
+			<frameset cols="25%,*" border="0">
+				<frame name="filter" src="/tools.rb?faculty_id=<&faculty_id&>&target=order&return_url=%2Forder%2Fnew%2Forder_list.rb%3Fnew_order_id%3D<&order_id&>" scrolling="no" />
+				<frame name="list" id="list" src="new/order_list.rb?new_order_id=<&order_id&>" />
+			</frameset>
+		</frameset>
+	</head>
+</html>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="urn:webservices.bmstu.org"
+ xmlns:apachesoap="http://xml.apache.org/xml-soap"
+ xmlns:impl="urn:webservices.bmstu.org"
+ xmlns:intf="urn:webservices.bmstu.org"
+ xmlns:tns1="http://webservices.bmstu.org"
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+ xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:types>
+
+	<schema elementFormDefault="qualified" targetNamespace="urn:webservices.bmstu.org" xmlns="http://www.w3.org/2001/XMLSchema">
+
+		<!-- Person for report on graduated persons -->
+		<complexType name="reportGraduatedPerson">
+			<sequence>
+				<element name="id" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+				<element name="firstName" type="xsd:string" minOccurs="0"/>
+				<element name="fatherName" type="xsd:string" minOccurs="0"/>
+				<element name="lastName" type="xsd:string" minOccurs="0"/>
+				<element name="profession" type="xsd:string" minOccurs="0"/>
+				<element name="professionCode" type="xsd:string" minOccurs="0"/>
+				<element name="qualification" type="xsd:string" minOccurs="0"/>
+				<element name="qualificationCode" type="xsd:string" minOccurs="0"/>
+				<element name="diplomaType" type="xsd:int" minOccurs="0"/>
+				<element name="protocolDate" type="xsd:date" minOccurs="0"/>
+				<element name="protocolNumber" type="xsd:string" minOccurs="0"/>
+				<element name="orderNumber" type="xsd:string" minOccurs="0"/>
+				<element name="faculty" type="xsd:string" minOccurs="0"/>
+			</sequence>
+		</complexType>
+		<element name="reportGraduatedPerson" type="impl:reportGraduatedPerson"/>
+
+		<!-- Request / response for method "reportGraduated" -->
+		<element name="reportGraduatedRequest">
+			<complexType>
+				<sequence>
+					<element name="year" type="xsd:int"/>
+					<element name="department" type="xsd:string"/>
+				</sequence>
+			</complexType>
+		</element>
+		<complexType name="ArrayOfReportGraduatedPerson">
+			<sequence>
+				<element maxOccurs="unbounded" minOccurs="0" name="reportGraduatedPerson" type="impl:reportGraduatedPerson"/>
+			</sequence>
+		</complexType>
+		<element name="reportGraduatedResponse" type="impl:ArrayOfReportGraduatedPerson"/>
+
+		</schema>
+	</wsdl:types>
+
+	<wsdl:message name="reportGraduatedRequest">
+		<wsdl:part element="impl:reportGraduatedRequest" name="reportGraduatedRequest"/>
+	</wsdl:message>
+	<wsdl:message name="reportGraduatedResponse">
+		<wsdl:part element="impl:reportGraduatedResponse" name="reportGraduatedResponse"/>
+	</wsdl:message>
+
+   <wsdl:portType name="StudentsSrvPort">
+
+      <wsdl:operation name="reportGraduated" parameterOrder="reportGraduated">
+         <wsdl:input message="impl:reportGraduatedRequest" name="reportGraduatedRequest"/>
+         <wsdl:output message="impl:reportGraduatedResponse" name="reportGraduatedResponse"/>
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="StudentsServiceSoapBinding" type="impl:StudentsSrvPort">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="reportGraduated">
+         <wsdlsoap:operation soapAction="urn:#reportGraduated"/>
+         <wsdl:input name="reportGraduatedRequest">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="reportGraduatedResponse">
+            <wsdlsoap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+
+	</wsdl:binding>
+
+	<wsdl:service name="StudentsWS">
+		<wsdl:port binding="impl:StudentsServiceSoapBinding" name="StudentsService">
+			<wsdlsoap:address location="http://contingent.bmstu.ru/SOAP"/>
+		</wsdl:port>
+	</wsdl:service>
+
+</wsdl:definitions>

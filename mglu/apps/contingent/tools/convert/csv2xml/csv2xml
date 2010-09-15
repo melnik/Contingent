@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+
+puts "<?xml version=\"1.0\" encoding=\"koi8-r\"?>
+<orders>
+<order num='99' faculty='Э'>
+<students class=\"Array\">"
+
+$stdin.each_line { |l|
+
+	c = l.split(/;/)
+	raise 'Bad date format' unless c[5] =~ /(..)\.(..)\.(....)/
+	bd = "#{$3}-#{$2}-#{$1}"
+
+	gender = nil
+	gender = 1 if c[4] =~ /ич$/
+	gender = 2 if c[4] =~ /на$/
+
+puts <<EOF
+<item class="Hash">
+<passport class="String"></passport>
+<name class="Hash">
+<last class="String">#{c[2]}</last>
+<first class="String">#{c[3]}</first>
+<father class="String">#{c[4]}</father>
+</name>
+<citizenship_id class="Fixnum">1</citizenship_id>
+<card_number class="String">#{c[1]}</card_number>
+<birth_date class="Date">#{bd}</birth_date>
+<gender_id class="Fixnum">#{gender}</gender_id>
+<group class="String">#{c[0]}</group>
+</item>
+EOF
+
+	raise 'Unable to do gender detection' if gender.nil?
+}
+
+puts "</students>\n</order>\n</orders>\n"

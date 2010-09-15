@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<order classname="GraduationOrder" base="StudentsOrder">
+
+	<type>О завершении обучения</type>
+
+	<qualified_students class="Hash">
+		<student_state class="String">studying</student_state>
+	</qualified_students>
+
+	<template entity="order">
+		<const type="int" name="student_state_id" value="Classifier::StudentState::GRADUATED" />
+	</template>
+
+	<template entity="student">
+
+		<input type="text" name="graduation_thesis" title="Тема выпускной квалификационной работы" html_style="width: 90%"/>
+		
+		<select type="int" name="mark" title="Оценка" default="4">
+			<option value="5" title="отлично" />
+			<option value="4" title="хорошо" />
+			<option value="3" title="удовлетворительно" />
+		</select>
+
+		<select type="text" name="qualification" title="Квалификация" default="'инженер'">
+			<option title="бакалавр журналистики" />
+			<option title="бакалавр культурологии" />
+			<option title="бакалавр лингвистики" />
+			<option title="бакалавр международных отношений" />
+			<option title="бакалавр менеджмента" />
+			<option title="бакалавр педагогики" />
+			<option title="бакалавр политологии" />
+			<option title="бакалавр психологии" />
+			<option title="бакалавр регионоведения" />
+			<option title="бакалавр социологии" />
+			<option title="бакалавр теологии" />
+			<option title="бакалавр туризма" />
+			<option title="бакалавр экономики" />
+			<option title="бакалавр юриспруденции" />
+			<option title="документовед" />
+			<option title="журналист" />
+			<option title="культуролог" />
+			<option title="лингвист" />
+			<option title="лингвист, переводчик" />
+			<option title="лингвист, преподаватель" />
+			<option title="магистр лингвистики" />
+			<option title="магистр экономики" />
+			<option title="маркетолог" />
+			<option title="менеджер" />
+			<option title="педагог-психолог" />
+			<option title="политолог" />
+			<option title="психолог" />
+			<option title="регионовед" />
+			<option title="социолог" />
+			<option title="специалист в области международных отношений" />
+			<option title="специалист по защите информации" />
+			<option title="специалист по связям с общественностью" />
+			<option title="специалист по туризму" />
+			<option title="теолог, преподаватель" />
+			<option title="экономист" />
+			<option title="юрист" />
+		</select>
+
+		<select type="int" name="diploma_type" title="Вид диплома" default="1">
+			<option value="1" title="Обычный" />
+			<option value="2" title="С отличием" />
+		</select>
+
+		<input type="document" name="protocol" title="Протокол заседания ГАК"/>
+		
+		
+		<input type="document" name="agreement" title="Договор/контракт" condition="contract or foreign" />
+		
+		<classifier type="country" title="Страна" condition="foreign" />
+		
+		<input type="text" name="passport" title="Паспорт" condition="foreign" />
+		
+		<input type="document" name="assignment" title="Направление Министерства образования и науки РФ" condition="foreign" />
+
+	</template>
+
+	<printable>
+
+		<p>Отчислить в связи с завершением обучения в МГЛУ:</p>
+
+		<list style="text">
+			<column source="student" name="name"/>
+			<column source="student" name="student_status"/>
+			<column source="student" name="group"/>
+			<column source="student" name="citizenship"/>
+			<column source="order" name="country_id"/>
+			<column source="order" name="passport" />
+			<column source="student" name="birth_date"/>
+			<column source="student" name="card_number"/>
+			<column source="student" name="course"/>
+			<column source="student" name="profession_code" title="Направление подготовки/специальность.специализация.квалификация"/>
+			<column source="order" name="graduation_thesis"/>
+			<column source="order" name="mark"/>
+			<column><![CDATA[
+				<% if degree_code != '65' then %>Присуждена степень<% else %>Квалификация<% end %>:
+				<& attributes['qualification'] &>
+			]]></column>
+			<column><![CDATA[
+				с выдачей диплома<% if attributes['diploma_type'] == 2 then %> с отличием<% end %>.
+			]]></column>
+			<column><![CDATA[ Основание приказа: протокол заседания ГАК <&attributes['protocol']&> ]]></column>
+			<column source="order" name="agreement" title="договор (контракт) о предоставлении платных образовательных услуг" />
+			<column source="order" name="assignment" />
+			<column source="student" name="dormitory" hidden="1" />
+			<column title="Общежитие"><![CDATA[<%= dormitory ? 'выселить установленным порядком' : 'в общежитии не проживал' %>;]]></column>
+		</list>
+
+		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector"/>
+			<signature name="personnel"/>
+			<signature name="prorector-international" condition="foreign" />
+			<signature name="prorector-security" condition="foreign" />
+			<signature name="legal-councilor"/>
+			<signature name="dean" condition="not disabled"/>
+			<signature name="rehabilitation" condition="disabled"/>
+			<signature name="marketing" condition="contract and not foreign" />
+			<signature name="financing" condition="contract and not foreign"/>
+			<signature name="foreign" condition="foreign" />
+		</signatures>
+
+	</printable>
+
+</order>

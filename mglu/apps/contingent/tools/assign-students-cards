@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+$KCODE = 'UTF8'
+
+require "#{Dir.pwd.gsub(/\/apps.*$/, '')}/apps/contingent/tools/context"
+
+require 'extensions'
+
+for line in $stdin do
+  name, card_number = line.strip.gsub(/(\s|\302\240)+/, ' ').match(/^(.*)\s+(\S+)$/)[1..-1]
+
+  last_name, first_name, father_name = name.split /\s+/, 3 rescue next
+
+  filter = %w( last_name first_name father_name ).map do |field|
+    value = eval(field) and "#{field} LIKE #{value.quote}"
+  end.compact.join ' AND '
+
+  case students_found = $sql.execute(
+    "SELECT COUNT(*) FROM student WHERE #{filter}"
+  ).fetch_array.first.to_i
+  when 0 then
+    $stderr.puts "WARNING! Unknown student: #{name}"
+  when 1 then
+    $sql.execute(
+      "UPDATE student SET card_number = #{card_number.quote} WHERE #{filter}"
+    )
+  else
+    $stderr.puts "WARNING! #{students_found} students found: #{name}"
+  end
+end

@@ -1,0 +1,68 @@
+<!ATTR links mode !>
+<html>
+	<head>
+		<style type="text/css"><!--
+			img {
+				border: none;
+			}
+
+			a {
+				color: rgb(205, 199, 127);
+				text-decoration: none;
+			}
+			a.current {
+				color: white;
+			}
+
+			#mainmenu {
+				margin-top: 42px;
+				float: left;
+				height: 25px;
+			}
+			#mainmenu td {
+				font-family: sans-serif;
+				font-size: 14px;
+				font-weight: bold;
+				border-left: 1px dotted rgb(255, 249, 177);
+				padding: 0em 1em;
+				vertical-align: bottom;
+			}
+		--></style>
+
+<!--[if gte IE 5.5000]>
+<script type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+
+		<script language="javascript"><!--
+		var current_mode = '<&mode&>';
+		function change_mode(new_mode)
+		{
+			var obj = document.getElementById('link_' + current_mode);
+			if (obj)
+				obj.className = '';
+			obj = document.getElementById('link_' + new_mode);
+			if (obj)
+				obj.className = 'current';
+			current_mode = new_mode;
+		}
+		//--></script>
+	</head>
+
+	<body style="margin: 0; background: rgb(96, 113, 182) url(/img/title-bg.gif) repeat-x">
+		<a href="http://www.linguanet.ru/" target="_blank" style="display: block; float: left; margin: 0 1em;">
+			<img src="/img/logo.png" alt="МГЛУ" style="float: left"/>
+			<!--div style="float: left; margin: 3px 20px; font-size: 20px; color: white; font-family: Calibri,Verdana,Arial; font-weight: bold; line-height: 19px; width: 0;">
+				Московский Государственный Лингвистический Университет
+			</div-->
+		</a>
+		<table id="mainmenu"><tr>
+<% links.each { |l| %>
+			<td>
+				<a href="<%= l['href'] %>" target="<%= l['target'] %>" id="link_<%= l['name'] %>"<% if l['name'] == mode then %> class="current"<% end %> onClick="<%= l['onClick'].empty? ? "javascript:change_mode('#{l['name']}')" : l['onClick'] %>">
+					<%= l['title'] %>
+				</a>
+			</td>
+<% } %>
+		</tr></table>
+	</body>
+</html>

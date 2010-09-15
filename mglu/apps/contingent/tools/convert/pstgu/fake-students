@@ -1,0 +1,2 @@
+#!/bin/sh
+mysql -upstgu -ppstgu pstgu <fake-students.sql

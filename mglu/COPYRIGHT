@@ -1,0 +1,45 @@
+All of the files in this package, unless stated otherwise in the the file,
+or at the exceptions section below, are covered by the following copyright
+statement:
+
+Copyright (C) 2003 Idan Sofer
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+Exceptions to this rule:
+plugins/HTTPServer/httpserver.rb
+
+The code in this file was originally written by Michael Neumann
+(neumann@s-direktnet.de), this includes the Request/Response/Table classes
+from plugins/radical-core/http.rb, which originate from there.
+
+I modified and added some code, but it's mostly his code. The file was
+extracted from the xmlrpc4r package, which is also stated to be licensed under
+the same terms of Ruby.
+
+plugins/BBCode/BBCode.rb
+
+This module is copyrighted by Thomas-Ivo Heinen, and is also distributed
+under the GPL terms(as stated in RAA)
+
+plugins/mimetypes/types.rb
+
+Copyrighted by Austin Ziegler, and is distributed under the terms of three
+licenses, Ruby, Perl and GPLv2(or later) 
+
+plugins/radical-core/multipart.rb
+
+Copyrighted by Shugo Maeda <shugo@modruby.net>, and distributed under BSD
+style license.

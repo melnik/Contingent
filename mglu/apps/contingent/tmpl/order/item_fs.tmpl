@@ -1,0 +1,20 @@
+<!ATTR order_id faculty_id target tree_required list_required !>
+<html>
+	<head>
+		<link rel="Stylesheet" href="/main.css" />
+<% if tree_required then %>
+		<frameset cols="25%,*" border="0">
+			<frame name="nav" src="/tools.rb?faculty_id=<&faculty_id&>&target=<&target&>&return_url=%2Forder%2Fstudents.rb%3Forder_id%3D<&order_id&>%26switch_to%3Dself" scrolling="no" />
+<% end %>
+			<frameset rows="30,0<% if list_required then %>,*<% end %>" border="5">
+				<frame name="header" src="header.rb?order_id=<&order_id&>" scrolling="no" noresize="true" />
+				<frame name="details" src="details.rb?order_id=<&order_id&>&hide=yes"/>
+<% if list_required then %>
+				<frame name="lists" src="tabs.rb?order_id=<&order_id&>" scrolling="no" />
+<% end %>
+			</frameset>
+<% if tree_required then %>
+		</frameset>
+<% end %>
+	</head>
+</html>

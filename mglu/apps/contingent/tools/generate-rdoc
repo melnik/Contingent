@@ -1,0 +1,4 @@
+#!/bin/sh
+pushd ..
+rdoc -d -c koi8-r --op /var/www/html/rdoc
+popd

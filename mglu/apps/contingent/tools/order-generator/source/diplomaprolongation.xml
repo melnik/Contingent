@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<order classname="DiplomaProlongationOrder" base="StudentsOrder">
+
+	<type>О переносе срока защиты дипломного проекта</type>
+
+	<qualified_students class="Hash">
+		<student_state_id class="Expression">Classifier::StudentState::STUDYING</student_state_id>
+		<!--<course class="Fixnum">6</course>-->
+	</qualified_students>
+
+	<template entity="student">
+
+		<input type="date" name="deadline" title="Новый срок защиты дипломного проекта" />
+
+	</template>
+
+	<printable>
+
+		<p>Перенести срок защиты дипломного проекта следующим лицам:</p>
+
+		<list style="text">
+			<column source="student" name="name"/>
+			<column source="student" name="student_status"/>
+			<column source="student" name="card_number"/>
+			<column source="student" name="group"/>
+			<column source="order" name="deadline"/>
+			<column><![CDATA[
+				Основание приказа: личное заявление студента с визой декана
+				факультета<% if conditions['foreign'] then %>, декана ФОИГ<% end %>
+				и резолюцией проректора по учебной работе
+			]]></column>
+		</list>
+
+		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector"/>
+			<signature name="personnel"/>
+			<signature name="prorector-international" condition="foreign"/>
+			<signature name="prorector-security" condition="foreign"/>
+			<signature name="dean" condition="not disabled"/>
+			<signature name="rehabilitation" condition="disabled"/>
+			<signature name="marketing" condition="contract and not foreign" />
+			<signature name="financing" condition="contract and not foreign"/>
+			<signature name="foreign" condition="foreign" />
+		</signatures>
+
+	</printable>
+
+</order>

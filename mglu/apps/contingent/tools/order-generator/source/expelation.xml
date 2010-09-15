@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<order classname="ExpelationOrder" base="StudentsOrder">
+
+	<type>Об отчислении</type>
+	
+	<condition name="rules_violation">
+		<order__reason class="Array">
+			<item class="Fixnum">3</item>
+			<item class="Fixnum">13</item>
+		</order__reason>
+	</condition>
+	
+	<condition name="dead">
+		<order__reason class="Fixnum">10</order__reason>
+	</condition>
+	
+	<title condition="dead">Об исключении из списочного состава</title>
+
+
+	<qualified_students class="Hash">
+		<student_state class="String">studying</student_state>
+	</qualified_students>
+
+	<template entity="order">
+		<const type="int" name="student_state_id" value="Classifier::StudentState::EXPELLED" />
+		<const type="int" name="hide_citizenship" value="1" />
+	</template>
+
+	<template entity="student">
+
+		<input type="date" name="expelation_date" title="Дата отчисления" default="Time.now.strftime(&quot;%Y-%m-%d&quot;)" html_size="50"/>
+
+		<select type="int" name="reason" title="Причина отчисления" html_style="width: 90%">
+
+			<option value="0" title="за академическую неуспеваемость">
+			
+				<select type="int" name="basics2" title="Основание приказа">
+					<option value="1" title="с/з декана"/>
+					<option value="2" title="невыполнение сроков сдачи задолженностей"/>
+				</select>
+				
+				<list name="liabilities" title="Академические задолженности">
+					<input type="text" name="subject" title="Название" />
+					<select type="text" name="type" title="Отчетность">
+						<option title="зачет" />
+						<option title="экзамен" />
+					</select>
+				</list>
+
+				за <input type="int" name="term" default="Student.load(eid).group.term_number"/> семестр
+				<input type="text" name="year" default="Term.current.academic_year.begin.to_s + '/' + (Term.current.academic_year.end.to_s"/> учебного года
+			</option>
+
+			<option value="2" title="как не приступившего к занятиям">
+				<input type="daterange" name="dnsa" title="Не приступил к занятиям" />
+			</option>
+			
+			<option value="3" title="за нарушение Правил внутреннего распорядка обучающихся в МГЛУ">
+				<select type="text" name="basics" title="Основание" html_style="width: 90%">
+
+					<option displayed="игра в карты и прочие азартные игры" printable="п. ст. Правил внутреннего распорядка - игра в карты, прочие азартные игры на территории Университета" />
+					<option displayed="распитие спиртных написков" printable="п. ст. Правил внутреннего распорядка - распитие спиртных и слабоалкогольных напитков на территории Университета" />
+					<option displayed="нахождение в состоянии опьянения" printable="п. ст. Правил внутреннего распорядка - нахождение на территории Университета в состоянии алкогольного, наркотического или иного токсического опьянения" />
+					<option displayed="умышленная порча или хищение имущества Университета" printable="п. ст. Правил внутреннего распорядка - умышленная порча или хищение имущества Университета" />
+					<option displayed="применение пиротехнических средств на территории Университета" printable="п. ст. Правил внутреннего распорядка - применение пиротехнических средств на территории Университета" />
+					<option displayed="нарушение Правил пожарной безопасности" printable="п. ст. Правил внутреннего распорядка - нарушение Правил пожарной безопасности, которое могло привести к тяжким последствиям" />
+					<option displayed="сквернословие" printable="п. ст. Правил внутреннего распорядка - сквернословие, употребление ненормативной лексики, в т.ч. в информационных сетях, а также в локальных сетях факультетов и студенческих общежитий" />
+					<option displayed="несанкционированный вход в электронную информационную сеть" printable="п. ст. Правил внутреннего распорядка - несанкционированный вход (взлом) в электронную информационную сеть Университета" />
+					<option displayed="неподчинение требованиям сотрудников отдела охраны" printable="п. ст. Правил внутреннего распорядка - злостное неподчинение законным требованиям сотрудников отдела охраны, отдела оперативного реагирования и противопожарной службы" />
+					<option displayed="передача пропуска в Университет или общежитие другому лицу" printable="п. ст. Правил внутреннего распорядка - передача пропуска в Университет или пропуска в общежитие другому лицу" />
+					<option displayed="подделка документов" printable="п. ст. Правил внутреннего распорядка - подделка документов, выдаваемых Университетом: пропусков на территорию и в здания Университета, зачетных и экзаменационных ведомостей, направлений, справок и др."/>
+					<option displayed="повторное задержание за курение в неположенном месте" printable="п. ст. Правил внутреннего распорядка - повторное задержание за курение в неположенном месте" />
+					<option displayed="нарушение правил проживания в общежитии" printable="п. ст. Правил внутреннего распорядка - нарушение Правил проживания в общежитии и (или) невыполнение обязательств по договору проживания" />
+				</select>
+			</option>
+
+			<option value="7" title="за систематические пропуски учебных занятий"/>
+
+			<option value="17" title="за невыполнение учебного плана без уважительной причины"/>
+
+			<option value="4" title="по собственному желанию"/>
+
+			<option value="5" title="по состоянию здоровья">
+				<input type="document" name="resolution" title="Заключение клинико-экспертной комиссии" />
+			</option>
+
+			<option value="6" title="в связи с призывом в Вооруженные силы РФ"/>
+
+			<option value="9" title="в связи с переводом">
+				<input type="text" name="to" title="Перевод в" />
+			</option>
+
+			<option value="10" title="в связи со смертью"/>
+
+			<option value="11" title="неисполнение обязательств по оплате образовательных услуг">
+				<input type="document" name="statement" title="Акт на закрытие договора/контракта" />
+			</option>
+
+			<option value="12" title="после академического отпуска, как не приступившего к занятиям">
+				<input type="daterange" name="dnsa" title="Не приступил к занятиям" />
+			</option>
+			
+			<option value="13" title="за нарушение Правил приема и обучения иностранных граждан">
+				<select type="text" name="basics" title="Основание" html_style="width: 90%">
+					<option displayed="нарушение правил регистрации" printable="п.п. 9.1, 9.2, 9.3 ст.9 Правил приема и обучения иностранных граждан в МГЛУ - нарушение правил регистрации иностранных граждан" />
+					<option displayed="нарушение правил выезда за пределы пункта проживания" printable="п.п. 8.5, 8.6, 8.7, 8.8 ст.8 Правил приема и обучения иностранных граждан в МГЛУ - нарушение правил выезда иностранного гражданина - учащегося Университета за пределы пункта проживания в Российской Федерации" />
+					<option displayed="нарушение правил пребывания в Университете" printable="п. 8.10 ст.8 Прави приема и обучения иностранных граждан в МГЛУ - нарушение правил пребывания иностранного гражданина в Университете" />
+					<option displayed="неисполнение или ненадлежащее исполнение обязанностей иностранных граждан" printable="ст.7. Правил приема и обучения иностранных граждан в МГЛУ - неисполнение или ненадлежащее исполнение обязанностей иностранных граждан - учащихся Университета" />
+				</select>
+			</option>
+			
+			<option value="14" title="за нарушение условий договора/контракта">
+				<const type="text" name="basics" value="" />
+			</option>
+
+			<option value="15" title="как не представивший к защите выпускную квалификационную работу"/>
+
+			<option value="16" title="как не прошедший итоговую государственную аттестацию"/>
+
+		</select>
+
+		<const type="group" name="group_id" value="nil" />
+		
+		
+		<input type="document" name="agreement" title="Договор/контракт" condition="contract or foreign"/>
+
+		<classifier type="country" title="Страна" condition="foreign" />
+		
+		<input type="document" name="assignment" title="Направление Министерства образования и науки РФ" condition="foreign" />
+
+	</template>
+
+	<printable>
+
+		<p><![CDATA[
+			<% if conditions['dead'] then %>
+				Исключить из списочного состава студентов:
+			<% else %>
+				Отчислить из МГЛУ нижеперечисленных лиц:
+			<% end %>
+		]]></p>
+
+		<list style="text">
+			<column source="student" name="name"/>
+			<column source="student" name="student_status"/>
+			<column source="student" name="card_number"/>
+			<column source="student" name="citizenship"/>
+			<column source="order" name="country_id" />
+			<column source="student" name="passport"/>
+			<column source="student" name="course"/>
+			<column source="student" name="group"/>
+			<column source="student" name="birth_date" />
+			<column source="order" name="expelation_date" condition="not dead"/>
+			<column source="order" name="expelation_date" title="Дата исключения" condition="dead"/>
+			<column source="student" name="current_term_number" hidden="1"/>
+			<column source="student" name="student_id" hidden="1"/>
+			<column><![CDATA[<%
+				unless attributes['agreement'].empty?
+					%>Договор (контракт) о предоставлении платных образовательных услуг: <& attributes['agreement'] &><%
+				end
+			%>]]></column>
+			<column source="order" name="assignment" />
+			<column title="Причина"><![CDATA[<%
+	case attributes['reason']
+	when 0
+		liab1 = []; liab2 = []
+		if attributes['liabilities'] then
+			attributes['liabilities'].each { |exam|
+				if exam['type'] == 'экзамен'
+					liab1 << exam['subject']
+				else
+					liab2 << exam['subject']
+				end
+			}
+		end
+%>за академическую неуспеваемость <&attributes['term']&> семестра <&(attributes['term'].to_i+1)/2&>
+курса <&attributes['year']&> учебного года.
+Имеет задолженности: экзамены - [<&liab1.join(', ')&>], зачеты - [<&liab2.join(', ')&>];<%
+	when 2
+%>как не приступившего к занятиям на <&course&> курсе <&attributes['dnsa']&>;<%
+	when 3
+%>за нарушение Правил внутреннего распорядка обучающихся в МГЛУ;<%
+	when 4
+%>по собственному желанию;<%
+	when 5
+%>по состоянию здоровья;<%
+	when 6
+%>в связи с призывом в Вооруженные Силы РФ;<%
+	when 7
+%>за систематические пропуски занятий без уважительных причин;<%
+	when 9
+%>в связи с переводом в <&attributes['to']&>;<%
+	when 10
+%>в связи со смертью;<%
+	when 11
+		if conditions['foreign'] then
+		
+		# оставлена авторская орфография
+%>за неисполнение обязательств по оплате образовательных услуг иностранным гражданином, предусмотренных контрактом<%
+		else
+%>за неисполнение обязательств по оплате образовательных услуг, предусмотренных договором/контрактом;<%
+		end
+	when 12
+%>после академического отпуска, как не приступившего к занятиям <&attributes['dnsa']&>;<%
+	when 13
+%>за нарушение Правил приема и обучения иностранных граждан в МГЛУ;<%
+	when 14
+%>неисполнение обязательств по договору (контракту);<%
+	when 15
+%>как не представивший к защите выпускную квалификационную работу<%
+	when 16
+%>как не прошедший итоговую государственную аттестацию<%
+	when 17
+%>за невыполнение учебного плана по направлению подготовки (специальности) в установленные сроки по неуважительной причине;<%
+	end
+%>]]>
+			</column>
+			
+			<column><![CDATA[<%
+unless [5,6,10].member? attributes['reason'] then
+
+	if conditions['dead'] then
+%>Основание исключения: <%
+	else
+%>Основание отчисления: <%
+	end
+	
+	case attributes['reason']
+	when 3,13
+%><%=attributes['basics']%>;<%
+	when 4,7,9,17
+%>Правила внутреннего распорядка обучающихся в МГЛУ;<%
+	when 11,14
+		if conditions['foreign'] then
+%>ст.7. Правил приема и обучения иностранных граждан в МГЛУ - неисполнение или ненадлежащее исполнение обязанностей иностранных граждан - учащихся Университета;<%
+		else
+%>Правила внутреннего распорядка обучающихся в МГЛУ<%
+		end
+	else
+%>Положение об организации учебного процесса в МГЛУ;<%
+	end
+%> ]]>
+			</column>
+						
+			<column source="student" name="dormitory" hidden="1"/>
+			<column title="Общежитие">&lt;%=dormitory ? 'Выселить установленным порядком' : 'В общежитии не проживал'%&gt;;</column>
+			<column title="Основания приказа"><![CDATA[<%
+	if conditions['foreign'] then
+		servnote = 'служебная записка декана ФОИГ с резолюцей проректора по международным связям'
+		visa = 'визой декана ФОИГ и'
+	else
+		servnote = 'служебная записка декана факультета с резолюцией проректора по учебной работе Университета'
+		visa = ''
+	end
+	case attributes['reason']
+
+	when 0
+		case attributes['basics2']
+		when 1
+%>служебная записка декана факультета с <%=visa%> резолюцией проректора по учебной работе Университета<%
+		when 2
+%>невыполнение сроков сдачи задолженностей в сроки, установленные переводным приказом<%
+		end
+	# По инициативе деканата
+	when 2, 7, 12, 15, 16
+%>служебная записка декана факультета с <%=visa%> резолюцией проректора по учебной работе Университета<%
+	when 17
+%>служебная записка декана факультета с указанием дисциплин и процента невыполнения учебного плана
+с <%=visa%> резолюцией проректора по учебной работе Университета<%
+
+	# За нарушение правил внутреннего распорядка
+	when 3
+%>акт о нарушении, объяснительная записка студента с резолюцией проректора по учебной работе Университета<%
+
+	# По инициативе студента
+	when 4
+%>личное заявление студента с визой декана факультета<% if conditions['foreign'] then %>, декана ФОИГ<% end
+%> и резолюцией проректора по учебной работе Университета <%
+	when 9
+%>личное заявление студента с визой декана факультета<% if conditions['foreign'] then %>, декана ФОИГ<% end
+%> и резолюцией проректора по учебной работе Университета; <%
+%>справка из учебного заведения, в которое переводится студент <%
+
+	# По инициативе подразделения, курирующего студента (деканат/ОРИСА)
+	when 5
+%>служебная записка декана факультета<% if conditions['foreign'] then %> с визой декана ФОИГ<% end %>,
+заключение клинико-экспертной комиссии <&attributes['resolution']&> <%
+	when 6
+%><%=servnote%>, <%
+%>копия повестки военного комиссариата о призыве на военную службу <%
+	when 10
+%>служебная записка декана факультета<% if conditions['foreign'] then %> с визой декана ФОИГ<% end %>,
+копия свидетельства о смерти <%
+	when 11, 14
+		if conditions['foreign'] then
+%>служебная записка декана ФОИГ с резолюцией проректора по международным связям, <%
+		else
+%>служебная записка руководителя ЦМОУ с резолюцией проректора по учебной работе, <%
+		end
+%>договор (контракт) о предоставлении платных образовательных услуг <&attributes['agreement']&><%
+		unless attributes['statement'].empty? then
+%>, копия Акта <&attributes['statement']&> на закрытие договора (контракта) о предоставлении платных образовательных услуг<%
+		end
+	when 13
+%><%=servnote%><%
+	end
+
+end
+%>; ]]>
+			</column>
+		</list>
+
+
+		<signatures>
+			<signature name="rector" />
+			<signature name="prorector"/>
+			<signature name="personnel"/>
+			<signature name="prorector-international" condition="foreign"/>
+			<signature name="prorector-security" condition="foreign"/>
+			<signature name="legal-councilor"/>
+			<signature name="dean" condition="not disabled"/>
+			<signature name="rehabilitation" condition="disabled"/>
+			<signature name="marketing" condition="contract and not foreign"/>
+			<signature name="financing" condition="contract and not foreign"/>
+			<signature name="foreign" condition="foreign"/>
+			<signature name="union" condition="rules_violation"/>
+		</signatures>
+
+	</printable>
+
+</order>

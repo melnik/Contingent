@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<order classname="BachelorGraduationOrder" base="StudentsOrder">
+
+	<type>О завершении обучения по образовательной программе подготовки бакалавра</type>
+
+	<qualified_students class="Hash">
+		<student_state_id class="Expression">Classifier::StudentState::STUDYING</student_state_id>
+		<degree_code class="Fixnum">62</degree_code>
+	</qualified_students>
+
+	<template entity="student">
+
+		<input type="text" name="graduation_thesis" title="Тема выпускной квалификационной работы" html_style="width: 90%"/>
+		
+		<select type="int" name="mark" title="Оценка" default="4">
+			<option value="5" title="отлично" />
+			<option value="4" title="хорошо" />
+			<option value="3" title="удовлетворительно" />
+		</select>
+
+		<select type="int" name="diploma_type" title="Вид диплома" default="1">
+			<option value="1" title="Обычный" />
+			<option value="2" title="С отличием" />
+		</select>
+
+		<select type="text" name="qualification" title="Квалификация" default="'бакалавр техники и технологи'">
+			<option title="бакалавр техники и технологии" />
+			<option title="бакалавр математики" />
+			<option title="бакалавр лингвистики" />
+			<option title="бакалавр экологии" />
+			<option title="бакалавр менеджмента" />
+			<option title="бакалавр информационных систем" />
+			<option title="бакалавр гидравлической, вакуумной и компрессорной техники" />
+		</select>
+
+		<input type="document" name="protocol" title="Протокол заседания ГАК"/>
+
+
+		<input type="document" name="agreement" title="Договор/контракт" condition="contract"/>
+		
+		<classifier type="country" title="Страна" condition="foreign" />
+		
+		<input type="text" name="passport" title="Паспорт" condition="foreign" />
+
+	</template>
+
+	<printable>
+
+		<p>Перечисленных ниже студентов, освоивших программу подготовки бакалавра, успешно прошедших
+		итоговую аттестацию и защитивших квалификационные работы, считать завершившими обучение
+		по образовательной программе подготовки бакалавра:</p>
+
+		<list style="text">
+			<column source="student" name="name"/>
+			<column source="student" name="student_status"/>
+			<column source="student" name="group"/>
+			<column source="student" name="citizenship"/>
+			<column source="order" name="country_id"/>
+			<column source="order" name="passport" />
+			<column source="student" name="birth_date"/>
+			<column source="student" name="card_number"/>
+			<column source="student" name="course"/>
+			<column source="student" name="profession_code" title="Направление / специальность"/>
+			<column source="order" name="graduation_thesis"/>
+			<column source="order" name="mark"/>
+			<column source="order" name="qualification" title="Присуждена степень" />
+			<column><![CDATA[
+				с выдачей диплома<% if attributes['diploma_type'] == 2 then %> с отличием<% end %>
+			]]></column>
+			<column title="Основание приказа"><![CDATA[
+				протокол заседания ГАК <& attributes['protocol'] &><%
+	
+				if conditions['contract'] then
+					%>, договор (контракт) <& attributes['agreement'] &><%
+				end %>
+			]]></column>
+		</list>
+
+		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector"/>
+			<signature name="personnel"/>
+			<signature name="prorector-international" condition="foreign"/>
+			<signature name="prorector-security" condition="foreign"/>
+			<signature name="dean" condition="not disabled"/>
+			<signature name="rehabilitation" condition="disabled"/>
+			<signature name="marketing" condition="contract and not foreign"/>
+			<signature name="financing" condition="contract and not foreign"/>
+			<signature name="foreign" condition="foreign"/>
+		</signatures>
+
+	</printable>
+
+</order>

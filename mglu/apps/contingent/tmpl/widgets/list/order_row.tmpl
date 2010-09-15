@@ -1,0 +1,11 @@
+<!INIT href target order_id number faculty order_type date_created date_activated !>
+<%
+	@anchor = "href=\"#{(href + if href =~ /\?/ then '&' else '?' end + "order_id=#{order_id}").to_html}\"#{ " target=\"#{target}\"" if target }" if href
+%>
+				<tr class="list_item">
+					<td style="width: 6em"><nobr><% if @anchor then %><a <%=@anchor%>><% end %><&number        &><% if @anchor then %></a><% end %></nobr></td>
+					<td style="width: 4em"><nobr><% if @anchor then %><a <%=@anchor%>><% end %><&faculty       &><% if @anchor then %></a><% end %></nobr></td>
+					<td                   >      <% if @anchor then %><a <%=@anchor%>><% end %><&order_type    &><% if @anchor then %></a><% end %>       </td>
+					<td style="width: 5em"><nobr><% if @anchor then %><a <%=@anchor%>><% end %><&date_created  &><% if @anchor then %></a><% end %></nobr></td>
+					<td style="width: 5em"><nobr><% if @anchor then %><a <%=@anchor%>><% end %><&date_activated&><% if @anchor then %></a><% end %></nobr></td>
+				</tr>

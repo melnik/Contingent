@@ -1,0 +1,12 @@
+<!INIT oid date subject body user editable !>
+<div class="news">
+<% if editable %>
+<div class="news_toolbar">
+<a href="item.rb?news_id=<&oid&>" target="main"><img src="/img/configure.png" width="22" height="22" alt="Изменить новость" title="Изменить новость" border="0"/></a>
+<a href="delete.rb?news_id=<&oid&>" target="main"><img src="/img/remove.png" width="22" height="22" alt="Удалить новость" title="Удалить новость" border="0"/></a>
+</div>
+<% end %>
+<h1><&date&>: <&subject&></h1>
+<p><%=body%></p>
+<div class="news_author"><&user&></div>
+</div>

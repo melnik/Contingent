@@ -1,0 +1,108 @@
+<!ATTR tabs !>
+<html>
+	<head>
+	<link rel="Stylesheet" href="/main.css" />
+	<link rel="Stylesheet" href="/tabs.css" />
+<!--[if gte IE 5.5000]>
+<script type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+	<script language="javascript"><!--
+<%
+active_tab = 0
+tabs.each_with_index { |tab, i|
+	tab['name'] = "tab#{i+1}" unless tab['name']
+	active_tab = i if tab['active']
+}
+%>
+
+	var oldtab = '<%=tabs[active_tab]['name']%>';
+
+	// Grrr... stupid IE does not support obj.setAttribute('class','...') :(
+	function is_ie()
+	{
+		return (document.all != null);
+	}
+	
+	function update_help()
+	{
+		var href = document.getElementById(oldtab).src;
+		
+		if (is_ie() && href.charAt(0) != '/') {
+			// IE strips directory from the URL, so we have to add it manually
+			var own_href = '' + document.location;
+			
+			var idx = own_href.indexOf('?');
+			if (idx != -1)
+				own_href = own_href.substring(0, idx);
+				
+			idx = own_href.lastIndexOf('/');
+			own_href = own_href.substring(0, idx+1);
+			href = own_href + href;
+		}
+		
+		document.getElementById('help').href = '/help.rb?referer=' + escape(href);
+	}
+
+	function switch_tab(newtab)
+	{
+		if (newtab == oldtab)
+			return;
+
+		var oldobj = document.getElementById(oldtab + '_header');
+		var newobj = document.getElementById(newtab + '_header');
+		var temp;
+
+		if (is_ie()) {
+			oldobj.className = 'inactive_tab';
+			newobj.className = 'active_tab';
+		} else {
+			oldobj.setAttribute('class', 'inactive_tab');
+			newobj.setAttribute('class', 'active_tab');
+		}
+
+		document.getElementById(newtab).style.display = '';
+		document.getElementById(oldtab).style.display = 'none';
+		
+		oldtab = newtab;
+
+		update_help();
+	}
+
+	function tab_go_to(tab, url)
+	{
+		document.getElementById(tab).setAttribute('src', url);
+	}
+
+	function tab_reload(tab)
+	{
+		var obj = document.getElementById(tab);
+		obj.setAttribute('src', obj.getAttribute('src'));
+	}
+	//--></script>
+	</head>
+
+	<body class="tab_body" onLoad="javascript:update_help();">
+		<table cellspacing="0" cellpadding="0" width="100%" height="100%">
+			<tr>
+<% tabs.each_with_index { |tab, i| %>
+				<td id="<%=tab['name']%>_header" class="<%= 'in' if i != active_tab %>active_tab" style="height: 1.2em;">
+					<a class="tab_link" href="javascript:switch_tab('<%=tab['name']%>');"><%=tab['title'].gsub(/\s+?/, '&nbsp;')%></a>
+				</td>
+				<td class="spacer">&nbsp;</td>
+<% } %>
+				<td class="spacer_last">
+					<div class="win_buttons">
+					<*/widgets/button_help*>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="tab_data_class" colspan="<%=tabs.length*2+1%>">
+<% tabs.each_with_index { |tab, i| %>
+					<iframe id="<%=tab['name']%>" name="<%=tab['name']%>" src="<%=tab['url']%>" frameborder="0" style="width: 100%; height: 100%; border: none; <%= 'display: none;' if i != active_tab %>"></iframe>
+<% } %>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

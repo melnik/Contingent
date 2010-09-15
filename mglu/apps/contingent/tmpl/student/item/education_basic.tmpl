@@ -1,0 +1,81 @@
+<!ATTR student_id organization document specialization cert_marks exam_marks !>
+<html>
+	<head>
+		<link rel="Stylesheet" href="/main.css" />
+		<script language="javascript" src="/tools/datecontrol.js"></script>
+		<script language="javascript" src="/studcard.js"></script>
+		<script language="javascript"><!--
+
+		function submit_form()
+		{
+			document.main_form.submit();
+		}
+
+		//--></script>
+	</head>
+
+	<body>
+		<form name="main_form" method="post">
+			<input type="hidden" name="student_id" value="<&student_id&>"/>
+			<input type="hidden" name="save" value="" />
+
+			<h2>Условия поступления</h2>
+			<div class="panel">
+				<div>Школа: <**/widgets/classifier/simple|place_abiturient_school**></div>
+				<div>Категория абитуриента: <**/widgets/classifier/simple|place_abiturient_category**></div>
+				<div>Медаль: <**/widgets/classifier/simple|place_abiturient_medal**></div>
+
+				<table width="90%"><tr>
+					<td width="50%" valign="top">
+						<b>Оценки аттестата:</b><br/>
+						алгебра &mdash; <b><& cert_marks['algebra'] || '(нет)' &></b>;<br/>
+						геометрия &mdash; <b><& cert_marks['geometry'] || '(нет)' &></b>;<br/>
+						физика &mdash; <b><& cert_marks['physics'] || '(нет)' &></b>;<br/>
+						русский язык &mdash; <b><& cert_marks['russian'] || '(нет)' &></b>.<br/>
+					</td>
+					<td width="50%" valign="top">
+						<b>Оценки вступительных экзаменов:</b><br/>
+						математика &mdash; <b><& exam_marks['math'] || '(нет)' &></b>;<br/>
+						физика &mdash; <b><& exam_marks['physics'] || '(нет)' &></b>;<br/>
+						русский язык и литература &mdash; <b><& exam_marks['russian'] || '(нет)' &></b>;<br/>
+					</td>
+				</tr></table>
+			</div>
+
+			<h2>Образование</h2>
+			<div class="panel">
+				<div>Образовательный уровень (ценз): <**/widgets/classifier/coded_select|place_level**></div>
+				<div>Тип образовательного учреждения: <**/widgets/classifier/coded_select|place_organization_type**></div>
+				<div>Вид образовательного учреждения: <**/widgets/classifier/coded_select|place_organization_kind**></div>
+				<div>Наименовение учреждения:
+					полное <input name="organization_name_full" value="<& organization['name_full'] &>" class="text"/>
+					сокращенное <input name="organization_name_short" value="<& organization['name_short'] &>" class="text"/>
+					&#x2116; <input name="organization_num" value="<& organization['num'] &>" class="text"/>
+				</div>
+				<br/>
+
+				<div>Местонахождение учреждения<br/>
+					<input id="address_organization" name="address_organization" value="<& organization['address'] &>" class="text" style="display: none" />
+					<input id="address_organization_okato" name="address_organization_okato" value="<& organization['okato'] &>" class="text" style="display: none" />
+					<iframe name="organization_address_frame" style="width: 97%; height: 4em; border: none;" src="address.rb?type=organization&address=<& organization['address'] &>&okato=<& organization['okato'] &>"></iframe>
+				</div>
+				<br/>
+
+				<div>Документ об образовании: <**/widgets/classifier/simple|place_document_type**></div>
+				<div>
+					Серия <input name="document_series" value="<& document['series'] &>" class="text"/>
+					&#x2116; <input name="document_num" value="<& document['num'] &>" class="text"/>
+					Регистрационный &#x2116; <input name="document_regnum" value="<& document['regnum'] &>" class="text"/>
+					Дата выдачи <**/widgets/date|place_document_date**>
+				</div>
+				<div>Наименование страны: <**/widgets/classifier/coded_select|place_document_country**></div>
+				<br/>
+
+				<div>Направление подготовки <input name="direction" value="<& specialization['direction'] &>" class="text"/></div>
+				<div>Специальность <input name="speciality" value="<& specialization['speciality'] &>" class="text"/></div>
+				<div>Профессия <input name="profession" value="<& specialization['profession'] &>" class="text"/></div>
+				<div>Квалификация <input name="qualification" value="<& specialization['qualification'] &>" class="text"/></div>
+			</div>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+INSERT INTO `profession` (profession_code, name) VALUES ('031001', 'Филология');
+INSERT INTO `profession` (profession_code, name) VALUES ('031401', 'Культурология');
+INSERT INTO `profession` (profession_code, name) VALUES ('031501', 'Искусствоведение');
+INSERT INTO `profession` (profession_code, name) VALUES ('031800', 'Религиоведение');
+INSERT INTO `profession` (profession_code, name) VALUES ('031901', 'Теология');
+INSERT INTO `profession` (profession_code, name) VALUES ('040200', 'Социология');
+INSERT INTO `profession` (profession_code, name) VALUES ('050708', 'Педагогика и методика начального образования');
+INSERT INTO `profession` (profession_code, name) VALUES ('050711', 'Социальная педагогика');
+INSERT INTO `profession` (profession_code, name) VALUES ('070100', 'Музыкальное искусство');
+INSERT INTO `profession` (profession_code, name) VALUES ('070105', 'Дирижирование (академическим хором)');
+INSERT INTO `profession` (profession_code, name) VALUES ('070111', 'Музыковедение');
+INSERT INTO `profession` (profession_code, name) VALUES ('070500', 'Реставрация');
+INSERT INTO `profession` (profession_code, name) VALUES ('070800', 'Декоративно-прикладное искусство и народные промыслы');
+INSERT INTO `profession` (profession_code, name) VALUES ('070900', 'Изобразительное искусство (графика, живопись и скульптура)');
+INSERT INTO `profession` (profession_code, name) VALUES ('070901', 'Живопись');
+INSERT INTO `profession` (profession_code, name) VALUES ('080100', 'Экономика');

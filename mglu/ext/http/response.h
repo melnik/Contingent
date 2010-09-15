@@ -1,0 +1,10 @@
+extern VALUE __response_ttl;
+extern  VALUE response_new(void);
+extern  VALUE response_init(int argc,VALUE *argv,VALUE self);
+extern  VALUE response_reset(VALUE self);
+extern  VALUE response_sendHeaders(VALUE self);
+extern  VALUE response_puts(VALUE self,VALUE data);
+extern  VALUE response_flush(VALUE self);
+extern  VALUE response_setCookie(VALUE self,VALUE key,VALUE val);
+extern  VALUE response_get_ttl(VALUE self);
+extern  VALUE response_close(VALUE self);

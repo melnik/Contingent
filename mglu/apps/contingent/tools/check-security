@@ -1,0 +1,42 @@
+#!/bin/sh
+
+if [ "$1" == '--help' ]; then
+	echo 'Contingent security checker'
+	echo
+	echo "$0 [--err] [--log] [--all]"
+fi
+
+if [ "$1" == '--err' ]; then
+	ERRORS=1
+fi
+
+if [ "$1" == '--log' ]; then
+	LOG=1
+fi
+
+if [ "$1" == '--all' ]; then
+	ERRORS=1
+	LOG=1
+fi
+
+for I in `find ../scripts -name \*.rb`; do
+	F=`echo $I | sed 's,../scripts/,,;'`
+	if ! ( head -3 $I | grep -q "require 'auth'" ); then
+		if [ "$ERRORS" ]; then
+			echo -n "$F: "
+			echo no require auth | csed '/.*/ C red'
+		fi
+	else
+		if ! ( head -3 $I | grep -q 'auth_user_current.*require_permissions' ); then
+			if [ "$ERRORS" ]; then
+				echo -n "$F: "
+				echo no require_permissions | csed '/.*/ C yellow'
+			fi
+		else
+			if [ "$LOG" ]; then
+				echo -n "$F: "
+				grep 'require_permissions' $I | sed 's/.*require_permissions//g;s/(//;s/)//g;' | csed '/.*/ C green'
+			fi
+		fi
+	fi
+done

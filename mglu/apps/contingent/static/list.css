@@ -1,0 +1,103 @@
+html, body {
+	height: 100%;
+}
+
+table.list_header {
+	width: 100%;
+	background: #ebe6d0;
+	border-bottom: 1px solid black;
+}
+
+#content {
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+#content table {
+	width: 100%;
+}
+
+tr.list_item:hover td, tr.list_item_selected:hover td, tr.list_separator:hover td {
+	background: #cbc6a0;
+}
+.list_item td a, .list_item_selected td a, .list_separator td a {
+	display: block; width: 100%; height: 100%;
+	color: black; text-decoration: none;
+	padding: 0 0.5em 0 0.5em
+}
+tr.list_item_selected td {
+	border-top: 2px solid black; border-bottom: 2px solid black;
+	background: rgb(184, 193, 181);
+}
+
+tr.list_separator {
+	background: #C0C0C0;
+}
+tr.list_separator td.list_checkbox {
+	width: 3em;
+	padding-left: 0em; padding-right: 0em;
+}
+tr.list_separator td a {
+	font-weight: bold;
+	padding-left: 1em;
+}
+
+table.status_bar {
+	background: #ebe6d0;
+	width: 100%;
+}
+td.status_bar {
+	padding-left: 0.5em; padding-right: 0.5em;
+	border: 1px inset grey;
+	font-size: small;
+	vertical-align: top;
+}
+td.status_bar div.title {
+	float: left;
+	font-weight: bold;
+}
+td.status_bar div {
+	float: right;
+}
+td.status_bar_command {
+	text-align: right;
+	vertical-align: top;
+	border: 1px inset grey;
+	padding-right: 0.5em;
+}
+
+th {
+	padding-left: 0.5em; padding-right: 0.5em;
+}
+/*
+@media screen {
+	body>div.list_header {
+		position: fixed;
+	}
+	body>div.status_bar {
+		position: fixed;
+	}
+}
+*/
+div.news {
+	border: 1px solid black;
+	padding: 0em 0.5em 0.5em;
+	background: #95b8e2;
+/* 	color: #203488; */
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 0.5em;
+}
+
+div.news h1 {
+	font-size: 120%;
+}
+
+div.news_author {
+	text-align: right;
+	font-style: italic;
+}
+
+div.news_toolbar {
+	padding-top: 0.5em;
+	float: right;
+}

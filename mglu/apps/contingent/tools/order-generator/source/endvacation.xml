@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<order classname="EndVacationOrder" base="StudentsOrder">
+
+	<type>О допуске к учебному процессу</type>
+
+	<qualified_students class="Hash">
+		<student_state_id class="Array">
+			<item class="Expression">Classifier::StudentState::VACATION</item>
+			<item class="Expression">Classifier::StudentState::TRAINEE</item>
+		</student_state_id>
+	</qualified_students>
+	
+	<template entity="order">
+		<const type="int" name="student_state_id" value="Classifier::StudentState::STUDYING" />
+	</template>
+
+	<template entity="student">
+
+		<select type="int" name="circumstance" title="Обстоятельство">
+			<option value="0" title="после академического отпуска (по медицинским показаниям)">
+				<input type="document" name="resolution" title="Заключение клинико-экспертной комиссии" />
+			</option>
+			<option value="1" title="после академического отпуска" />
+			<option value="3" title="после стажировки" />
+			<option value="4" title="после отпуска по беременности и родам" />
+			<option value="5" displayed="после отпуска по уходу за ребенком (1,5 лет)" printable="после отпуска по уходу за ребенком до достижения им возраста 1,5 лет" />
+			<option value="6" displayed="после отпуска по уходу за ребенком (3 года)" printable="после отпуска по уходу за ребенком до достижения им возраста 3 лет" />
+		</select>
+
+		<input type="group" name="group_id" title="Числить в группе" fixed="faculty,department" default="Student.load(eid).group.oid"/>
+
+		<input type="text" name="card_number" title="Присвоить &#x2116; л.д."  default="Student.load(eid).card_number" />
+
+		<input type="date" name="from" title="Приступить к занятиям с" />
+
+		<list name="liabilities" title="Академические задолженности">
+			<input type="text" name="subject" title="Название" />
+			<select type="text" name="type" title="Отчетность">
+				<option title="зачет" />
+				<option title="экзамен" />
+			</select>
+		</list>
+
+		<input type="date" name="deadline" title="Срок сдачи задолженностей" />
+
+		<input type="document" name="agreement" title="Договор/контракт" condition="contract or foreign"/>
+
+	</template>
+
+	<printable>
+
+		<p>Допустить к учебному процессу нижеперечисленных лиц и
+		установить индивидуальный график сдачи академических
+		задолженностей, образовавшихся вследствие расхождения
+		учебных планов:</p>
+
+		<list style="text">
+			<column source="student" name="name"/>
+			<column source="student" name="student_status"/>
+			<column source="student" name="card_number"/>
+			<column source="student" name="course"/>
+			<column source="student" name="group"/>
+			<column source="student" name="citizenship"/>
+			<column source="order" name="circumstance" />
+			<column source="order" name="group_id"/>
+			<column source="order" name="card_number" />
+			<column source="order" name="agreement"/>
+			<column source="order" name="from"/>
+			<column source="order" name="liabilities" empty_text="академических задолженностей нет."/>
+			<column source="order" name="deadline"/>
+			<column title="Основания приказа"><![CDATA[
+личное заявление обучающегося с визой декана факультета<%
+if conditions['foreign'] then %>, декана ФОИГ <% end%>
+и резолюцией проректора по учебной работе Университета
+<%
+	case attributes['circumstance']
+	when 0
+%>, заключение клинико-экспертной комиссии <&attributes['resolution']&> <%
+	end
+	if conditions['contract']
+%>, договор (контракт) о предоставлении платных образовательных услуг <%
+	end
+%>;
+]]>
+			</column>
+		</list>
+
+		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector"/>
+			<signature name="personnel"/>
+			<signature name="prorector-international" condition="foreign" />
+			<signature name="prorector-security" condition="foreign" />
+			<signature name="dean" condition="not disabled"/>
+			<signature name="rehabilitation" condition="disabled"/>
+			<signature name="marketing" condition="contract and not foreign"/>
+			<signature name="financing" condition="contract and not foreign"/>
+			<signature name="foreign" condition="foreign"/>
+		</signatures>
+
+	</printable>
+
+</order>

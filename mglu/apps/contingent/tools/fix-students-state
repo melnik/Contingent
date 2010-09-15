@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require "#{Dir.pwd.gsub(/\/apps.*$/, '')}/apps/contingent/tools/context"
+
+require 'data/student'
+
+student_states = {}; $sql.execute('SELECT * FROM student WHERE student_state_id IS NULL').fetch do |row|
+	( s = Student.load row['student_id'].to_i ).recondition
+	( student_states[s.state_id] ||= [] ) << s.oid
+end
+
+for state_id, student_ids in student_states do
+	puts "UPDATE student SET student_state_id = #{state_id} WHERE student_id IN (#{student_ids.join ', '});"
+end

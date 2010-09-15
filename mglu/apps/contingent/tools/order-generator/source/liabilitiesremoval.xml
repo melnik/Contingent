@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<order classname="LiabilitiesRemovalOrder" base="StudentsOrder">
+
+	<type>О признании факта ликвидации академических задолженностей</type>
+
+	<qualified_students class="Hash">
+		<liabilities class="Fixnum">1</liabilities>
+	</qualified_students>
+
+	<template entity="order">
+		<!-- TODO: find out how to deal with different liabilities handling rules -->
+		<const type="string" name="liabilities" value="" />
+	</template>
+
+	<template entity="student">
+
+		<list name="liabilities_list" title="Ликвидированы задолженности">
+			<input type="text" name="subject" title="Название" />
+			<select type="text" name="type" title="Отчетность">
+				<option title="зачет" />
+				<option title="экзамен" />
+			</select>
+		</list>
+
+	</template>
+
+	<printable>
+
+		<p>Признать факт ликвидации всех академических задолженностей нижеперечисленными лицами:</p>
+
+		<list style="text">
+			<column source="student" name="name"/>
+			<column source="student" name="student_status" />
+			<column source="student" name="card_number"/>
+			<column source="student" name="group"/>
+			<column source="student" name="study_type"/>
+			<column source="order" name="liabilities_list"/>
+			<column title="Основание приказа">
+				Журналы учета выполнения учебного плана и сдачи экзаменов и зачетов
+			</column>
+		</list>
+
+		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector"/>
+			<signature name="personnel"/>
+			<signature name="dean" condition="not disabled"/>
+			<signature name="rehabilitation" condition="disabled"/>
+			<signature name="marketing" condition="contract and not foreign"/>
+			<signature name="financing" condition="contract and not foreign"/>
+			<signature name="foreign" condition="foreign"/>
+		</signatures>
+
+	</printable>
+
+</order>

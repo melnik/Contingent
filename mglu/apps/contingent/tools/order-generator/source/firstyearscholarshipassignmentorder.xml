@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<details classname="FirstYearScholarshipAssignmentOrder" base="StudentsOrder">
+
+	<type>О назначении на стипендию студентов 1 семестра 1 курса</type>
+
+	<qualified_students class="Hash">
+		<student_state class="String">studying</student_state>
+		<liabilities class="FalseClass"/>
+	</qualified_students>
+	
+	<template entity="order"/>
+	
+	<template entity="student">
+		<const type="int" name="scholarship_id" value="7"/>				
+	</template>
+
+	<printable>
+	
+		<p><![CDATA[
+			Следующих студентов, сдавших вступительные экзамены и зачисленных на 1 курс,
+			назначить на государственную академическую стипендию для студентов 1 курса
+			1 семестра в осеннем семестре <& Term.current.academic_year.begin &>/<& Term.current.academic_year.begin &>
+			учебного года (<& Term.current &>):
+		]]></p>
+		
+		<group by="group">
+		
+			<p><![CDATA[ <h3>По группе <& group &></h3> ]]></p>
+			
+			<list style="list">
+				<column source="student" name="group_id" hidden="1"/>
+				<column source="student" name="name"/>
+				<column source="student" name="card_number"/>
+			</list>	
+
+		</group>
+		
+		<p>Основание приказа: приказ о зачислении в МГЛУ.</p>
+	
+		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector"/>
+			<signature name="personnel"/>
+			<signature name="dean"/>
+			<signature name="deputy_dean"/>
+			<signature name="financing"/> 
+			<signature name="accountant"/>
+			<signature name="foreign" condition="foreign"/>
+		</signatures>
+	</printable>
+
+</details>

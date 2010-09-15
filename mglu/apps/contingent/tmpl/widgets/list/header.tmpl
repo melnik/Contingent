@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<link rel="Stylesheet" href="/main.css" />
+		<link rel="Stylesheet" href="/list.css" />
+
+		<script language="javascript" src="/panel.js"></script>
+		<script language="javascript" src="/prototype.js"></script>
+		<script language="javascript"><!--
+			var adjust_dimensions = function()
+			{
+				var list = $('content');
+
+				if (list) {
+					if (list.up().getHeight()) {
+						list.style.height = list.up().getHeight() - (
+							list.previous().getHeight() + list.next().getHeight()
+						);
+					} else {
+						setTimeout('adjust_dimensions();', 100);
+					}
+				}
+			};
+		//--></script>
+	</head>
+
+	<body class="tab_body" onload="adjust_dimensions();" onresize="adjust_dimensions();">

@@ -1,0 +1,28 @@
+<-- METHODS START -->
+
+def init statistics = nil
+	if @statistics = statistics then
+		@total = @statistics.delete :total
+	else
+		@total = '0 (поиск не производился)'
+	end
+
+	return self
+end
+
+<-- METHODS END -->
+		<table class="status_bar">
+			<tr>
+				<td class="status_bar">
+					<b>Всего:</b> <&@total&>
+				</td>
+<% for category, totals in @statistics do %>
+				<td class="status_bar">
+					<b><&category&>:</b>
+<%	for title, summary in totals do %>
+					<&title&>&nbsp;&ndash; <b><&summary&></b>
+<%	end %>
+				</td>
+<% end if @statistics %>
+			</tr>
+		</table>

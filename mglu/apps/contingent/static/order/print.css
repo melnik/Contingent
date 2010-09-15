@@ -1,0 +1,86 @@
+.org_header {
+	font-weight: bold;
+	text-align: center;
+}
+
+.boxed {
+	border: 1px solid black;
+}
+
+.printable {
+	width: 100%;
+	margin-bottom: 2em;
+}
+
+.printable td {
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	vertical-align: top;
+}
+
+td.printleft {
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	vertical-align: top;
+}
+
+.printable th {
+	border-right: 1px solid black;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	vertical-align: top;
+}
+
+th.printleft {
+	border-left: 1px solid black;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	vertical-align: top;
+}
+
+.clean {
+	border: none !important;
+	width: 100%;
+}
+
+.clean_narrow {
+	border: none !important;
+}
+
+.signature {
+	border-bottom: 1px solid black;
+	width: 5cm;
+}
+
+.signspacer {
+	width: 1cm;
+}
+
+.holder {
+	text-align: center;
+}
+
+.holder-unknown {
+	border-bottom: 1px solid black;
+	width: 5cm;
+	text-align: center;
+}
+
+.small {
+	font-size: 75%;
+	text-align: center;
+}
+
+h1 {
+	font-size: 120%;
+}
+
+h2 {
+	font-size: 110%;
+	text-align: center;
+}
+
+h3 {
+	font-size: 100%;
+	text-align: center;
+}

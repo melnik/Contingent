@@ -1,0 +1,216 @@
+#!/usr/bin/env ruby
+
+$KCODE = 'UTF8'
+
+require "#{Dir.pwd.gsub(/\/apps.*$/, '')}/apps/contingent/tools/context"
+
+require 'extensions'
+
+FACULTIES = {
+	'ИМОСПН'                    => 'ИМО',
+	'Переводческий'             => 'ПФ',
+	'Немецкого языка'           => 'ФНЯ',
+	'Факультет немецкого языка' => 'ФНЯ',
+	'Заочного обучения'         => 'ФЗО',
+	'Заочного'                  => 'ФЗО',
+}
+
+DEGREES = {
+	'бак'          => '62', # бакалавр
+	'бак.'         => '62', # бакалавр
+	'бакалавр'     => '62', # бакалавр
+	'бакалавриат'  => '62', # бакалавр
+	'магистратура' => '68', # магистр
+}
+
+STUDY_FORMS = {
+	'очная'        => 1, # очная
+	'очно-заочная' => 2, # очно-заочная (вечернее)
+	'заочная'      => 3, # заочная
+	'ФЗО'          => 3, # заочная
+}
+
+STATES = {
+	'А/О' => 3, # академ. отпуск
+}
+
+CATEGORIES = {
+	'ФОИГ' => 'foreign', # иностранцы
+}
+
+LANGUAGES = {
+	'а'          => 'английский',
+	'А'          => 'английский',
+	'A'          => 'английский',
+	'Английский' => 'английский',
+	'англ'       => 'английский',
+	'араб'       => 'арабский',
+	'арм'        => 'армянский',
+	'болг'       => 'болгарский',
+	'груз'       => 'грузинский',
+	'исп'        => 'испанский',
+	'исп.'       => 'испанский',
+	'итал'       => 'итальянский',
+	'ит'         => 'итальянский',
+	'казах'      => 'казахский',
+	'кирг'       => 'киргизский',
+	'кит'        => 'китайский',
+	'кор'        => 'корейский',
+	'лит'        => 'литовский',
+	'молд'       => 'молдавский',
+	'н'          => 'немецкий',
+	'нем'        => 'немецкий',
+	'нем.'       => 'немецкий',
+	'Немецкий'   => 'немецкий',
+	'нидер'      => 'нидерландский',
+	'перс'       => 'персидский',
+	'перс.'      => 'персидский',
+	'пол'        => 'польский',
+	'порт'       => 'португальский',
+	'тур'        => 'турецкий',
+	'укр'        => 'украинский',
+	'ф'          => 'французский',
+	'фр'         => 'французский',
+	'фр.'        => 'французский',
+	'яп'         => 'японский',
+}
+
+def cleanup insert_id
+	$stderr.print "Cleaning insert_id #{insert_id}..." if ENV['DEBUG']
+	$sql.execute "DELETE FROM department WHERE __insert_id = #{insert_id.quote}"
+	$sql.execute "DELETE FROM `group`    WHERE __insert_id = #{insert_id.quote}"
+	$sql.execute "DELETE FROM student    WHERE __insert_id = #{insert_id.quote}"
+	$stderr.puts " Done." if ENV['DEBUG']
+end
+
+if ARGV[0] == '--insert-id' then
+	cleanup $insert_id = ARGV[1].to_i
+else
+	$insert_id = [
+		$sql.execute('SELECT MAX(__insert_id) FROM student   ').fetch_array.first.to_i,
+		$sql.execute('SELECT MAX(__insert_id) FROM `group`   ').fetch_array.first.to_i,
+		$sql.execute('SELECT MAX(__insert_id) FROM department').fetch_array.first.to_i,
+		$sql.execute('SELECT MAX(__insert_id) FROM `order`   ').fetch_array.first.to_i,
+	].max + 1
+end
+$stderr.puts "Using insert_id = #{$insert_id}" if ENV['DEBUG']
+
+for line in $stdin do
+	row = line.strip.gsub(/(\s|\302\240)+/, ' ').split /\s*,\s*/
+
+	case row[0]
+	when '' then
+		case row[1]
+		when 'Факультет' then
+			faculty_abbr = FACULTIES[row[2]] || row[2] || faculty_abbr
+			category      =  CATEGORIES[faculty_abbr]
+			study_form_id = STUDY_FORMS[faculty_abbr]
+
+			faculty_id = $sql.execute(
+				"SELECT faculty_id FROM faculty WHERE short_name = #{faculty_abbr.quote}"
+			).fetch_array.first.to_i rescue begin
+				$stderr.puts "FATAL! Unknown faculty: #{faculty_abbr}"
+				exit
+			end
+		when 'Специальность', 'Направление подготовки' then
+			profession_code, profession_name = row[2].split /\s+/, 2 rescue [ profession_code, profession_name ]
+			$stderr.puts "ERROR! Wrong profession code: #{profession_code}" unless profession_code =~ /^\d{6}$/
+
+			profession_name.sub! /\s*\((.*)\)$/, '' rescue next
+			degree_code   =     DEGREES[$1]
+			study_form_id = STUDY_FORMS[$1] || study_form_id
+			$stderr.puts "WARNING! Odd comment: #{$1}" unless degree_code or study_form_id or not $1
+
+			$sql.execute "INSERT INTO profession (profession_code, name) VALUES (#{profession_code.quote}, #{profession_name.quote})" rescue nil
+		when 'Курс' then
+			course = row[2].to_i
+		when '№ группы' then
+			group_name, *comments = row[2].to_s.split
+			$stderr.puts "WARNING! Odd group name: #{group_name}" unless group_name =~ /^\d{3}[AАанф]?$/
+
+			c, d_num, group_num, l = group_name.split // rescue nil
+			$stderr.puts "WARNING! Course mismatch: #{course} for #{group_name}" unless c.to_i == course
+
+			department_num = $sql.execute(
+				"SELECT department_num FROM department WHERE faculty_id = #{faculty_id} AND profession_code = #{profession_code.quote}"
+			).fetch_array.first.to_i rescue if d_num.to_i.zero? then
+				$sql.execute("SELECT MAX(department_num) FROM department WHERE faculty_id = #{faculty_id}").fetch_array.first.to_i + 1 rescue 1
+			else
+				d_num.to_i
+			end
+			$stderr.puts "WARNING! Department number mismatch: #{department_num} for #{group_name}" unless d_num.to_i == department_num
+
+			department_id = $sql.execute(
+				"SELECT department_id FROM department WHERE faculty_id = #{faculty_id} AND department_num = #{department_num.quote}"
+			).fetch_array.first rescue begin
+				$sql.execute "INSERT INTO department (faculty_id, department_num, name, profession_code, __insert_id) VALUES (#{faculty_id}, #{department_num.quote}, #{profession_name.quote}, #{profession_code.quote}, #{$insert_id})"
+				$sql.insert_id
+			end
+
+			if group = $sql.execute(
+				"SELECT * FROM `group` WHERE department_id = #{department_id} AND group_num = #{group_num.quote} AND current_term_number = #{Term.current.number course}"
+			).fetch then
+				$stderr.puts "WARNING! Duplicate group found: ID:#{group['group_id']} for #{group_name}"
+			end
+			group_id = begin
+				$sql.execute "INSERT INTO `group` (department_id, group_num, profession_code, current_term_number, __insert_id) VALUES (#{department_id}, #{group_num.quote}, #{profession_code.quote}, #{Term.current.number course}, #{$insert_id})"
+				$sql.insert_id
+			end
+		when 'Иностранный язык' then
+			languages = ([ l ] + row[2..-1].join('/').split(/\s*\/\s*/)).compact.collect do |language|
+				if ( language = LANGUAGES[language] || language ).any? and eval($sql.execute(
+					"SHOW COLUMNS FROM `group` WHERE field = 'language'"
+				).fetch['Type'].gsub(/.*\((.*)\)/, '[\\1]')).include? language then
+					language
+				else
+					$stderr.puts "WARNING! Odd language: #{language}"
+				end
+			end.compact
+			$stderr.puts "WARNING! Language mismatch: #{languages.join ' / '} for #{l}" if l and not languages.include? LANGUAGES[l]
+
+			$sql.execute "UPDATE `group` SET language = #{languages.join(',').quote} WHERE group_id = #{group_id}" if languages.any?
+		end
+	when /\d+/ then
+		next unless name = row[1]
+
+		student_state_id = 2 # обучается
+
+		name.sub! /(?:\s*\((.*)\))?[.]*$/, ''; if comment = $1 then
+			degree_code      =     DEGREES[comment] || degree_code
+			study_form_id    = STUDY_FORMS[comment] || study_form_id
+			student_state_id =      STATES[comment] || student_state_id
+			citizenship_id   = case ($sql.execute(
+				"SELECT name FROM country WHERE name = #{comment.quote}"
+			).fetch_array or []).first
+			when 'Россия'   then 1 # гражданин РФ
+			when 'Беларусь' then 3 # гражданин Республики Беларусь
+			when String     then 5 # иностранный гражданин, временно проживающий на территории РФ
+			end
+			$stderr.puts "WARNING! Odd comment: #{comment}" unless degree_code or study_form_id or citizenship_id
+		end
+
+		last_name, first_name, father_name = name.split /\s+/, 3
+		$stderr.puts "WARNING! Odd name: #{name}" if not father_name or father_name =~ /\s/
+
+		gender_id = nil
+		gender_id = 1 if last_name =~ /[ое]в$/
+		gender_id = 2 if last_name =~ /[ое]ва$/
+		gender_id = 1 if name =~ /ич$/
+		gender_id = 2 if name =~ /на$/
+		$stderr.puts "WARNING! Unknown gender: #{name}" unless gender_id
+
+		study_type_id = nil
+		study_type_id = 1 if row[2..3].to_s.empty?
+		study_type_id = 2 if row[2..3].to_s.any?
+		$stderr.puts "WARNING! Odd study type: #{row[2..3]}" unless row[2..3].to_s =~ /^([Кк]|[Дд](ог)?\.?|[Пп](овтор)?|\+|1)*$/i
+
+		student_status_id ||= 1    # студент
+		study_form_id     ||= 1    # очная
+		degree_code       ||= '65' # дипломированный специалист
+
+		$sql.execute(
+			"INSERT INTO student (last_name, first_name, father_name, group_id, student_state_id, student_status_id, study_type_id, study_form_id, gender_id, citizenship_id, profession_code, degree_code, category, __insert_id)"\
+			"VALUES (CONCAT(UPPER(SUBSTRING(#{last_name.quote}, 1, 1)), SUBSTRING(#{last_name.quote} FROM 2)), CONCAT(UPPER(SUBSTRING(#{first_name.quote}, 1, 1)), SUBSTRING(#{first_name.quote} FROM 2)), CONCAT(UPPER(SUBSTRING(#{father_name.quote}, 1, 1)), SUBSTRING(#{father_name.quote} FROM 2)), #{group_id.quote}, #{student_state_id.quote}, #{student_status_id.quote}, #{study_type_id.quote}, #{study_form_id.quote}, #{gender_id.quote}, #{citizenship_id.quote}, #{profession_code.quote}, #{degree_code.quote}, #{category.to_s.quote}, #{$insert_id.quote})"
+		)
+	end
+end

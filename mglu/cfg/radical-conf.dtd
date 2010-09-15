@@ -1,0 +1,53 @@
+<!ELEMENT Param EMPTY>
+<!ATTLIST Param
+  name CDATA #REQUIRED
+  value CDATA #REQUIRED
+>
+
+<!ELEMENT Load (Param*) >
+<!ATTLIST Load 
+  name CDATA #REQUIRED
+>
+
+<!ELEMENT Plugins (Load*) >
+<!ELEMENT Service (Param*) >
+<!ATTLIST Service
+  id CDATA #REQUIRED
+  type CDATA #REQUIRED
+ >
+ 
+<!ELEMENT Services (Service*) >
+
+<!ELEMENT Auth (Param*)>
+<!ATTLIST Auth
+  id CDATA #REQUIRED
+  type CDATA #REQUIRED
+ >
+ 
+<!ELEMENT Authenticators (Auth*) >
+
+<!ELEMENT Handler (Param*) >
+<!ATTLIST Handler
+  id CDATA #REQUIRED
+  type CDATA #REQUIRED
+ >
+<!ELEMENT Handlers (Handler*) >
+
+<!ELEMENT File EMPTY>
+<!ATTLIST File
+  handler CDATA #REQUIRED
+  ext CDATA #REQUIRED
+ >
+<!ELEMENT Uri (File*,Uri*) >
+<!ATTLIST Uri
+  remap (false|true) #IMPLIED
+  target CDATA #REQUIRED
+  handler CDATA #REQUIRED
+ >
+<!ELEMENT Host (Uri*) >
+<!ATTLIST Host
+  name CDATA #IMPLIED
+ >
+<!ELEMENT Mapping (Host*)>
+
+<!ELEMENT radicalConf (Plugins,Authenticators,Services,Handlers,Mapping) >

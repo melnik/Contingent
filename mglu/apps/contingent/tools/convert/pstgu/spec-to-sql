@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+gets
+
+$stdin.each_line { |l|
+	c = l.split(/\t/)
+	c[10] = '00' if c[10].empty?
+	spec = c[5]
+	puts "INSERT INTO `profession` (profession_code, name) VALUES ('#{spec}', '#{c[4]}');"
+}

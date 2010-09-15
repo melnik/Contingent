@@ -1,0 +1,34 @@
+<!ATTR count suffix title name state !>
+
+<html>
+	<head>
+		<link rel="Stylesheet" href="/main.css" />
+		<link rel="Stylesheet" href="tree.css" />
+
+<!--[if gte IE 5.5000]>
+<script type="text/javascript" src="/pngfix.js"></script>
+<![endif]-->
+
+	</head>
+
+	<script src="tree.js"></script>
+
+	<body>
+		<div id="/" class="tree">
+		</div>
+		<div class="tree">
+			<input type="checkbox" onChange="single_selection = this.checked;"/>
+			Раскрывать одну ветвь
+		</div>
+	</body>
+
+	<script language="javascript"><!--
+	initstate('<&state&>');
+	addnode("/", "<%=@name%>", "<&title&> (<&count&>)");
+	showhide("/<%=@name%>/");
+	<**root_option|add_option**>
+	<**root_leaf|add_leaf**>
+	//--></script>
+
+	<iframe name="service" id="service" src="nav.rb?level=-1" style="display: none"></iframe>
+</html>

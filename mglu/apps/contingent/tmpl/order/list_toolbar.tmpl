@@ -1,0 +1,21 @@
+<*/header_mini2*>
+		<script language="javascript"><!--
+			function do_export(target)
+			{
+				var list = parent.document.getElementById('list').contentDocument;
+
+				list.getElementById('target').value = target;
+
+				list.getElementById('export').submit();
+			}
+		//--></script>
+	</head>
+	<body class="header">
+		<div class="toolbar">
+			<a href="new.rb" target="main"><img src="/img/filenew2.png" width="22" height="22" alt="Создать проект приказа" title="Создать проект приказа" border="0"/></a>
+			<a href="" onClick="javascript:do_export('msword');"><img src="/img/wordprocessing.png" width="22" height="22" alt="Сохранить список" title="Сохранить список" border="0"/></a>
+		</div>
+		<div class="win_buttons">
+			<*/widgets/button_help*>
+		</div>
+<*/footer_mini*>

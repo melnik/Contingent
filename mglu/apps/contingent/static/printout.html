@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<h1>Выписки из приказов</h1>
+
+<form action="order/print_version.rb">
+
+<table>
+<tr>
+<th>Идентификатор электронной копии документа:</th>
+<td><input type="text" name="order_id" /></td>
+</tr>
+
+<tr>
+<td></td>
+<td>(см. внизу приказа)</td>
+</tr>
+
+<tr>
+<th>Номер параграфа:</th>
+<td><input type="text" name="part" value="all" /></td>
+</tr>
+
+<tr>
+<td></td>
+<td>(all = все параграфы)</td>
+</tr>
+
+<tr><td colspan="2"><input type="submit" value="Вывести выписку" style="width: 100%" /></td></tr>
+
+</table>
+</form>
+
+</body>
+</html>

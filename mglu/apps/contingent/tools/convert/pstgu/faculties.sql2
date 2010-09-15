@@ -1,0 +1,6 @@
+INSERT INTO `faculty` (faculty_id, short_name) VALUES (3, 'ПФ');
+INSERT INTO `faculty` (faculty_id, short_name) VALUES (4, 'СФ');
+INSERT INTO `faculty` (faculty_id, short_name) VALUES (5, 'ФФ');
+INSERT INTO `faculty` (faculty_id, short_name) VALUES (6, 'ФЦХ');
+INSERT INTO `faculty` (faculty_id, short_name) VALUES (8, 'ФЦП');
+INSERT INTO `faculty` (faculty_id, short_name) VALUES (9, 'ФЭП');

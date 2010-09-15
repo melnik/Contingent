@@ -1,0 +1,39 @@
+<!ATTR order_id to_add last_name first_name father_name !>
+<*/header_mini*>
+<% if @to_add then %>
+	<script language="javascript"><!--
+		parent.tab_reload('para0');
+		parent.switch_tab('para0');
+	//--></script>
+<% else %>
+	<script language="javascript"><!--
+		alert('Студент(ы) с таким Ф.И.О. уже есть в базе.');
+	//--></script>
+<% end unless @to_add.nil? %>
+	<table width="100%" height="100%"><tr><td align="center">
+		<form method="post">
+			<table style="margin: 0.5em;">
+				<tr>
+					<td>Фамилия</td>
+					<td><input class="text" name="last_name" value="<&last_name&>"/></td>
+				</tr>
+				<tr>
+					<td>Имя</td>
+					<td><input class="text" name="first_name" value="<&first_name&>"/></td>
+				</tr>
+				<tr>
+					<td>Отчество</td>
+					<td><input class="text" name="father_name" value="<&father_name&>"/></td>
+				</tr>
+				<tr><td colspan="2">
+					<hr/>
+					<div style="text-align: center"><input type="checkbox" name="force" value="1"/>&nbsp;не проверять на совпадения</div>
+				</td></tr>
+				<tr><td colspan="2">
+					<hr/>
+					<div style="text-align: center"><input type="submit" name="add" value="OK" style="width: 10em"/></div>
+				</td></tr>
+			</table>
+		</form>
+	</td></tr></table>
+<*/footer_mini*>

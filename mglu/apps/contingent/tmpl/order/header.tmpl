@@ -1,0 +1,38 @@
+<!ATTR order activable !>
+<*/header_mini*>
+<script language="javascript"><!--
+function del_order()
+{
+	if (confirm('Удалить приказ?'))
+		parent.document.location.href = 'delete.rb?order_id=<&order.oid&>';
+}
+//--></script>
+
+<form method="post">
+	<input type="hidden" name="save" value="1" />
+	<div class="toolbar">
+		<a href="details.rb?order_id=<&order.oid&>" target="details"><img src="/img/configure.png" width="22" height="22" alt="Свойства" title="Свойства" border="0"/></a>
+		<a href="print_version.rb?order_id=<&order.oid&>" target="_blank"><img src="/img/fileprint.png" width="22" height="22" alt="Печатная версия (табличная)" title="Печатная версия" border="0"/></a>
+		<a href="print_version.rb?order_id=<&order.oid&>&amp;part=all" target="_blank"><img src="/img/fileprint.png" width="22" height="22" alt="Выписка по всем" title="Выписка по всем" border="0"/></a>
+		<a href="check.rb?order_id=<&order.oid&>" target="main" onClick="return confirm('Проверить приказ?');"><img src="/img/spellcheck.png" width="24" height="24" alt="Проверить" title="Проверить" border="0"/></a>
+<% if activable %>
+		<a href="check.rb?order_id=<&order.oid&>&amp;action=freeze" target="main" onClick="return confirm('Заморозить приказ?');"><img src="/img/encrypted.png" width="24" height="24" alt="Заморозить" title="Заморозить" border="0"/></a>
+		<a href="check.rb?order_id=<&order.oid&>&amp;action=activate" target="main"><img src="/img/signature.png" width="24" height="24" alt="Ввести в действие" title="Ввести в действие" border="0"/></a>
+<% end %>
+<!--
+		<input type="image" src="/img/filesave2.png" width="22" height="22" alt="Сохранить" title="Сохранить"/>
+-->
+		<a href="javascript:del_order();"><img src="/img/remove.png" width="22" height="22" alt="Удалить" title="Удалить" border="0"/></a>
+	</div>
+	<div class="win_buttons">
+		<*/widgets/button_help*>
+		<a href="index.rb" target="main"><img src="/img/fileclose.png" width="16" height="16" alt="Закрыть" title="Закрыть" border="0"/></a>
+	</div>
+	<div class="header" style="height: 100%;">
+		Приказ <b><&order.title&></b> <&order&>
+<!--
+		<input name="number" value="<&order.number&>" class="text"/>
+-->
+	</div>
+</form>
+<*/footer_mini*>

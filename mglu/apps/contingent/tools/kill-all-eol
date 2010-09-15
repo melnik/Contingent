@@ -1,0 +1,4 @@
+#!/bin/sh
+
+./kill-eol ../share/data/order/*
+./kill-eol ../share/interface/order/details/*

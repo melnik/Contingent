@@ -1,0 +1,32 @@
+<!ATTR total criteria has_details !>
+<*/widgets/list/header*>
+		<script language="javascript"><!--
+<% if has_details then %>
+			hide_panel('details');
+<% end %>
+		//--></script>
+		<form id="export" action="list.rb?<&criteria.compact.url_encode&>" method="get">
+			<input type="hidden" id="target" name="target"/>
+		</form>
+		<table class="list_header">
+			<tr>
+				<th>Ф.&nbsp;И.&nbsp;О.</th>
+				<th style="width: 96px">Свойства</th>
+				<th style="width: 5em">Группа</th>
+				<th style="width: 6em">Л.&nbsp;д.</th>
+			</tr>
+		</table>
+		<div id="content">
+			<table cellpadding="0" cellspacing="0">
+				<**row|add_row**>
+				<**row-wo-link|add_row_wo_link**>
+			</table>
+		</div>
+		<table class="status_bar">
+			<tr>
+				<td class="status_bar">
+					<div class="title">Всего:</div><div><&total&></div>
+				<**/widgets/list/stats|add_stats**>
+			</tr>
+		</table>
+<*/widgets/list/footer*>

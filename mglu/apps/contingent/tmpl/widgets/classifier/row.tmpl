@@ -1,0 +1,7 @@
+<!INIT id code title selected !>
+		<tr class="list_item<% if @selected then %>_selected<% end %>">
+<% if code then %>
+			<td style="width: 6em; text-align: center"><a href="javascript:return_id('<&id&>');"><&code&></a></td>
+<% end %>
+			<td><a href="javascript:return_id('<&id&>');"><&title&></a></td>
+		</tr>

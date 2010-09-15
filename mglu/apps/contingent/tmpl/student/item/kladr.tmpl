@@ -1,0 +1,36 @@
+<!ATTR address_type type address address_displayed code parent okato okato_displayed additional post_index table !>
+
+<html>
+	<head>
+		<title>КЛАДР</title>
+		<link rel="Stylesheet" href="main.css" />
+	</head>
+
+	<body style="margin-top: 3px; margin-bottom: 3px">
+		<form name="kladr" style="display: inline">
+			<span><&address_displayed&></span>
+			<input type="hidden" name="address_type" value="<&address_type&>"/>
+			<input type="hidden" name="okato" value="<&okato&>"/>
+			<input type="hidden" name="post_index" value="<&post_index&>"/>
+			<input type="hidden" name="address" value="<&address&>"/>
+			<input type="hidden" name="table" value="<&table&>"/>
+			<input type="hidden" name="parent" value="<&parent&>"/>
+<% case type 
+	when 'next' %>
+			<select name="code">
+				<**kladr_options|add_option**>
+			</select>
+			<input type="submit" value="Далее >>"/>
+<% 	when 'finish' %>
+			<input type="hidden" name="code" value="<&code&>"/>
+			<input type="text" name="additional" value="<&additional&>"/>
+			<input type="submit" name='finish' value="Закончить"/>
+<% end %>
+		</form>
+		<form style="display: inline">
+			<input type="submit" value="Заново"/>
+		</form>
+		<br/>
+		<span><&okato_displayed&></span>
+	</body>
+</html>

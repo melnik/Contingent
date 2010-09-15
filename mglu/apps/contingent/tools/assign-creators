@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+# Генерирует скрипт для присваивания идентификаторов создетелей приказам.
+# В качестве создателя для приказа используется первый попавшийся пользователь
+# по тому факультету, по которому создан приказ.
+
+require '../share/db'
+
+$sql.execute("SELECT user_id, faculty_id FROM user GROUP BY faculty_id").fetch { |row|
+	puts "UPDATE `order` SET creator_id = #{row['user_id']} WHERE creator_id IS NULL AND faculty_id " +
+		if row['faculty_id'] then "= #{row['faculty_id']}" else "IS NULL" end + ";"
+}

@@ -1,0 +1,68 @@
+<!ATTR student_id state study_type enrollment department education_degree specialization post_university expelation profession_title !>
+<html>
+	<head>
+		<link rel="Stylesheet" href="/main.css" />
+		<script language="javascript" src="/tools/datecontrol.js"></script>
+		<script language="javascript" src="/studcard.js"></script>
+		<script language="javascript"><!--
+
+		function submit_form()
+		{
+			document.main_form.submit();
+		}
+
+		//--></script>
+	</head>
+
+	<body>
+		<form name="main_form" method="post">
+			<input type="hidden" name="student_id" value="<&student_id&>"/>
+			<input type="hidden" name="save" value="" />
+
+			<div class="panel">
+				Состояние: <b><&state&></b> |
+				Форма обучения: <b><&study_type&></b> |
+				Год поступления: <b><& enrollment['date'].year if enrollment['date'] &></b>
+			</div>
+
+			<h2>Условия обучения</h2>
+			<div class="panel">
+				<div>Форма получения образования: <**/widgets/classifier/coded_select|place_study_form**></div>
+				<div>Дата зачисления: <b><& enrollment['date'] &></b></div>
+<% if enrollment['agreement'] then %>
+				<div>Договор о предоставлении образовательных услуг от&nbsp;<b><& enrollment['agreement']['date'] &></b>&nbsp;&#x2116;<b><& enrollment['agreement']['num'] &></b></div>
+<% end %>
+			</div>
+
+			<h2>Высшее профессиональное образование</h2>
+			<div class="panel">
+				<div>Вид программы: <**/widgets/classifier/simple|place_program_kind**></div>
+				<div><&profession_title&>: <**/widgets/classifier/coded_input|place_profession**></div>
+				<div>Ступень высшего профессионального образования: <**/widgets/classifier/coded_input|place_degree**></div>
+<% if specialization then %>
+				<div>Специализация: <b><&specialization&></b></div>
+<% end %>
+			</div>
+
+			<h2>Послевузовское профессиональное образование</h2>
+			<div class="panel">
+				<div>
+					Отрасль науки <input name="science_branch_name" value="<& post_university['science_branch']['name'] &>" class="text"/>
+					код по ОКНСВК <input name="science_branch_code" value="<& post_university['science_branch']['code'] &>" class="text"/>
+				</div>
+				<div>
+					Специальность послевузовского образования <input type="text" name="post_speciality_name" value="<& post_university['speciality']['name'] &>" class="text"/>
+					код по ОКНСВК <input name="post_speciality_code" value="<& post_university['speciality']['code'] &>" class="text"/>
+				</div>
+				<br/>
+
+				<div>Год отчисления <input name="expelation_year" value="<& expelation['year'] &>" class="text"/></div>
+				<div>Причина отчисления <input name="expelation_reason" value="<& expelation['reason'] &>" class="text"/></div>
+				<div>
+					Приказ об отчислении от <**/widgets/date|place_expelation_order_date**>
+					&#x2116; <input name="expelation_order_num" value="<& expelation['order']['num'] &>" class="text"/>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>

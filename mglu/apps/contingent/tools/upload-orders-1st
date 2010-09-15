@@ -1,0 +1,6 @@
+#!/bin/sh
+iconv -f cp1251 -t koi8-r <orders.sql | mysqlc
+
+pushd ..
+ruby -Ishare -rdata/order -e "EnrollmentOrder.fix"
+popd

@@ -1,0 +1,398 @@
+#!/usr/bin/env ruby
+
+################################################################
+# convert-order-details
+#
+# По существующей базе данных (в формате r711, r715 или r755)
+# генерирует скрипт для перевода атрибутов приказов в формат r???
+# и помещает его в файл './new-order-attrs.sql'.
+
+$LOAD_PATH.push '../share'
+
+require '../../../plugins/radical-core/extensions'
+require 'extensions'
+require 'db'
+require 'data/order'
+require 'document'
+require 'daterange'
+
+
+module Convert
+
+	##----------------------------------------------------------
+	# Convert routines
+
+	def self.int(str)
+		if str.nil?
+			nil
+		elsif str.to_s =~ /^\d*$/
+			str.to_i
+		else
+			nil
+		end
+	end
+	
+	def self.date(str)
+		str.to_d
+	end
+	
+	def self.document(h)
+		if h.nil?
+			nil
+		elsif h.kind_of? Document
+			h
+		elsif !h.empty?
+			Document.new(h['date'].to_d, h['num'])
+		else
+			nil
+		end
+	end
+	
+	def self.daterange(h)
+		if h.nil?
+			nil
+		elsif h.kind_of? DateRange
+			h
+		elsif !h.empty?
+			DateRange.new(h['from'].to_d, h['till'].to_d)
+		else
+			nil
+		end	
+	end
+	
+	
+	##---------------------------------------------------------
+	# Student processing rules
+	
+	module Student
+	
+		def self.common(attrs)
+			res = attrs.dup
+			attrs.each_pair { |k, v|
+				if k =~ /^new_/
+					need_print = true
+					res.delete k
+					res[k.gsub(/^new_/, '')] = v
+				end
+			}
+			res
+		end
+
+		def self.transition(attrs)
+			attrs['deadline']				= Convert.date			attrs['deadline']
+			attrs
+		end
+
+		def self.expelation(attrs)
+			attrs['expelation_date']		= Convert.date			attrs['expelation_date']
+			attrs['reason']					= Convert.int			attrs['reason']
+			attrs['sa_from']				= Convert.date			attrs['sa_from']
+			attrs['dnsa']					= Convert.daterange		attrs['dnsa']
+			attrs['resolution']				= Convert.document		attrs['resolution']
+			attrs['term']					= Convert.int			attrs['term']
+			attrs
+		end
+
+		def self.beginvacation(attrs)
+			attrs['vacation']				= Convert.daterange		attrs['vacation']
+			attrs['reason']					= Convert.int			attrs['reason']
+			attrs['resolution']				= Convert.document		attrs['resolution']
+			attrs
+		end
+	
+		def self.endvacation(attrs)
+			attrs['circumstance']			= Convert.int			attrs['circumstance']
+			attrs['resolution']				= Convert.document		attrs['resolution']
+			attrs['new_group_id']			= Convert.int			attrs['new_group_id'] || attrs['new_group']
+			attrs.delete 'new_group'
+			attrs['from']					= Convert.date			attrs['from']
+			attrs['deadline']				= Convert.date			attrs['deadline']
+			attrs['agreement']				= Convert.document		attrs['agreement']
+			attrs
+		end
+	
+		def self.restoration(attrs)
+			attrs['new_group_id']			= Convert.int			attrs['new_group_id'] || attrs['new_group']
+			attrs.delete 'new_group'
+			attrs['agreement']				= Convert.document		attrs['agreement']
+			attrs['start_at']				= Convert.date			attrs['start_at']
+			attrs['deadline']				= Convert.date			attrs['deadline']
+			attrs
+		end
+	
+		def self.liabilitiesprolongation(attrs)
+			attrs['deadline']				= Convert.date			attrs['deadline']
+			attrs
+		end
+	
+		def self.liabilitiesremoval(attrs)
+			attrs
+		end
+	
+		def self.renaming(attrs)
+		
+			attrs['new_name'] = {
+				'last' 		=> attrs['new_last_name'],
+				'first'		=> attrs['new_first_name'],
+				'father'	=> attrs['new_father_name']
+			} if attrs['new_name'].nil?
+			%w( last first father ).each { |k| attrs.delete "new_#{k}_name" }
+			
+			attrs['document']				= Convert.int			attrs['document']
+			attrs
+		end
+	
+		def self.enrollment(attrs)
+
+			attrs['name'] = {
+				'last' 		=> attrs['last_name'],
+				'first'		=> attrs['first_name'],
+				'father'	=> attrs['father_name']
+			} if attrs['name'].nil?
+			%w( last first father ).each { |k| attrs.delete "#{k}_name" }
+
+			attrs['gender_id']				= Convert.int			attrs['gender_id'] || attrs['gender']
+			attrs.delete 'gender'
+			attrs['birth_date']				= Convert.date			attrs['birth_date']
+			attrs['citizenship_id']			= Convert.int			attrs['citizenship_id'] || attrs['citizenship']
+			attrs.delete 'citizenship'
+			attrs['agreement']				= Convert.document		attrs['agreement']
+			attrs['group_id']				= Convert.int			attrs['group_id'] || attrs['group']
+			attrs.delete 'group'
+			attrs
+		end
+	
+		def self.enrollmenttransition(attrs)
+
+			attrs['name'] = {
+				'last' 		=> attrs['last_name'],
+				'first'		=> attrs['first_name'],
+				'father'	=> attrs['father_name']
+			} if attrs['name'].nil?
+			%w( last first father ).each { |k| attrs.delete "#{k}_name" }
+
+			attrs['gender_id']				= Convert.int			attrs['gender_id'] || attrs['gender']
+			attrs.delete 'gender'
+			attrs['birth_date']				= Convert.date			attrs['birth_date']
+			attrs['citizenship_id']			= Convert.int			attrs['citizenship_id'] || attrs['citizenship']
+			attrs.delete 'citizenship'
+			attrs['agreement']				= Convert.document		attrs['agreement']
+			attrs['group_id']				= Convert.int			attrs['group_id'] || attrs['group']
+			attrs.delete 'group'
+			attrs['deadline']				= Convert.date			attrs['deadline']
+			
+			attrs
+		end
+	
+		def self.programswitching(attrs)
+			attrs['new_group_id']			= Convert.int			attrs['new_group_id'] || attrs['new_group']
+			attrs.delete 'new_group'
+			attrs['additional_agreement']	= Convert.document		attrs['additional_agreement']
+			attrs['basic_agreement']		= Convert.document		attrs['basic_agreement']
+			attrs['start_at']				= Convert.date			attrs['start_at']
+			attrs['deadline']				= Convert.date			attrs['deadline']
+			attrs
+		end
+	
+		def self.studytypeswitching(attrs)
+			attrs['new_group_id']			= Convert.int			attrs['new_group_id'] || attrs['new_group']
+			attrs.delete 'new_group'
+			attrs['start_at']				= Convert.date			attrs['start_at']
+			attrs['basics']					= Convert.int			attrs['basics']
+			attrs['protocol']				= Convert.document		attrs['protocol']
+			attrs['resolution']				= Convert.document		attrs['resolution']
+			attrs
+		end
+
+		def self.keepdown(attrs)
+			attrs['new_group_id']			= Convert.int			attrs['new_group_id'] || attrs['new_group']
+			attrs.delete 'new_group'
+			attrs
+		end
+		
+		def self.cancellation(attrs)
+			attrs
+		end
+		
+		def self.citizenshipswitching(attrs)
+			attrs
+		end
+		
+		def self.graduation(attrs)
+			attrs
+		end
+		
+		def self.magisterenrollment(attrs)
+			attrs
+		end
+		
+		def self.dormitoryoccupancy(attrs)
+			attrs
+		end
+		
+		def self.diplomaprolongation(attrs)
+			attrs
+		end
+	
+	end
+	
+	##---------------------------------------------------------
+	# Group processing rules
+
+	module Group
+	
+		def self.common(attrs)
+			attrs
+		end
+	
+		def self.transition(attrs)
+			attrs['monitor_id']				= Convert.int			attrs['monitor_id'] || attrs['monitor']
+			attrs.delete 'monitor'
+			attrs
+		end
+	end
+
+	##---------------------------------------------------------
+	# Order processing rules
+	
+	module Order
+	
+		def self.common(attrs)
+			attrs
+		end
+	
+		def self._empty(attrs)
+			attrs
+		end
+	
+		def self._default(attrs)
+			attrs['current_study_type_id'] 			= Convert.int			attrs['current_study_type_id'] || attrs['study_type_id'] || attrs['study_type']
+			attrs.delete 'study_type'
+			attrs.delete 'study_type_id'
+			attrs
+		end
+		
+		def self.default(t)
+			self.instance_eval "def self.#{t}(attrs)\nself._default(attrs)\nend"
+		end
+		
+		def self.empty(t)
+			self.instance_eval "def self.#{t}(attrs)\nself._empty(attrs)\nend"
+		end
+
+		empty   :transition
+		default :studytypeswitching
+		default :expelation
+		default :beginvacation
+		default :endvacation
+		default :liabilitiesprolongation
+		default :liabilitiesremoval
+		default :renaming
+		default :programswitching
+		default :keepdown
+		default :cancellation
+		default :diplomaprolongation
+		default :citizenshipswitching
+		default :graduation
+		default :dormitoryoccupancy
+		default :magisterenrollment
+
+		def self.enrollment(attrs)
+			attrs['enrollment_date'] 		= Convert.date			attrs['enrollment_date']
+			attrs['resolution'] 			= Convert.document		attrs['resolution']
+			attrs['approval'] 				= Convert.document		attrs['approval']
+			
+			attrs['students'].collect! { |student|
+				Convert::Student.enrollment(student)
+			} if attrs['students'].kind_of? Array
+			
+			self._default(attrs)
+		end
+
+		def self.enrollmenttransition(attrs)
+			attrs['enrollment_date'] 		= Convert.date			attrs['enrollment_date']
+			attrs['resolution'] 			= Convert.document		attrs['resolution']
+			attrs['approval'] 				= Convert.document		attrs['approval']
+			
+			attrs['students'].collect! { |student|
+				Convert::Student.enrollmenttransition(student)
+			} if attrs['students'].kind_of? Array
+			
+			self._default(attrs)
+		end
+				
+		def self.restoration(attrs)
+			attrs['resolution'] 			= Convert.document		attrs['resolution']
+			attrs['approval'] 				= Convert.document		attrs['approval']
+			self._default(attrs)
+		end
+
+	end
+	
+end
+
+module Percentage
+	@prev = nil
+	def self.show(current)
+		if @prev != current
+			@prev = current
+			$stdout << "\r#{current}% done"
+			$stdout.flush
+		end
+	end
+end
+
+begin
+
+	entities = ["group", "student"]
+
+	total = count = 0
+	$sql.execute("SELECT COUNT(*) AS cnt FROM `order`").fetch { |row|
+		total += row['cnt'].to_i
+	}
+	entities.each { |entity|
+		$sql.execute("SELECT COUNT(*) AS cnt FROM order_#{entity}").fetch { |row|
+			total += row['cnt'].to_i
+		}
+	}
+	
+	out = File.new('new-order-attrs.sql', 'w')
+	
+	$sql.execute("	SELECT order_id AS oid, order_type_id AS type, attributes AS attrs FROM `order`").fetch { |row|
+
+		unless row['attrs'].to_s.strip.empty?
+			attrs = Convert::Order.send(Order::CLASS_NAME[row['type'].to_i].gsub(/Order/,'').downcase, row['attrs'].to_h)
+			attrs = Convert::Order.common(attrs)
+			attrs = attrs.delete_if { |k,v| v.nil? }
+			out << "UPDATE `order` SET attributes=#{attrs.to_xml.quote} WHERE order_id=#{row['oid']}; -- #{Order::CLASS_NAME[row['type'].to_i].gsub(/Order/,'').downcase}:order\n"
+		end
+
+		count += 1
+		Percentage::show(count*100/total)
+	}
+
+	entities.each { |entity|
+		$sql.execute("	SELECT	o.order_id AS oid, oe.#{entity}_id AS eid, o.order_type_id AS type, oe.attributes AS attrs
+						FROM	order_#{entity} oe
+								INNER JOIN `order` o USING (order_id)").fetch { |row|
+		
+			unless row['attrs'].to_s.strip.empty?
+				attrs = Convert::const_get(entity.capitalize).send(Order::CLASS_NAME[row['type'].to_i].gsub(/Order/,'').downcase, row['attrs'].to_h)
+				attrs = Convert::const_get(entity.capitalize).common(attrs)
+				attrs = attrs.delete_if { |k,v| v.nil? }
+				out << "UPDATE order_#{entity} SET attributes=#{attrs.to_xml.quote} WHERE order_id=#{row['oid']} AND #{entity}_id=#{row['eid']}; -- #{Order::CLASS_NAME[row['type'].to_i].gsub(/Order/,'').downcase}:#{entity}\n"
+			end
+			
+			count += 1
+			Percentage::show(count*100/total)
+		}
+	}
+	
+	puts "\rAll done.   \n"
+	
+rescue Interrupt
+	print "\nInterrupted\n"
+ensure
+	out.close
+end
+

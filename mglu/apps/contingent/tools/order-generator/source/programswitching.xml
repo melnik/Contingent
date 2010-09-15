@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+<order classname="ProgramSwitchingOrder" base="StudentsOrder">
+
+	<type>О переходе с одной образовательной программы на другую</type>
+
+	<qualified_students class="Hash">
+		<student_state class="String">studying</student_state>
+	</qualified_students>
+	
+	<condition name="became_disabled">
+		<eval class="String"><![CDATA[ |attrs|
+			attrs['order']['group_id'] and Group.load(attrs['order']['group_id']).faculty.name == "\365\343"
+		]]></eval>
+	</condition>
+	
+	<condition name="profession_switching">
+		<order__profession_code class="Regexp">.</order__profession_code>
+	</condition>
+	<title condition="not profession_switching">О переводе из одной учебной группы в другую</title>
+
+	<template entity="student">
+
+		<input type="group" name="group_id" title="Числить в группе" default="Student.load(eid).group.oid"/>
+
+		<classifier type="profession" title="Код направления / специальности (новый)" default="nil" display_empty="yes"/>
+
+		<input type="text" name="card_number" title="Присвоить номер л.д." default="Student.load(eid).card_number" />
+		
+		<input type="text" name="specialization_code" title="Новый код специализации" default="'00'"/>
+
+		<classifier type="degree" title="Новая ступень образования" display_empty="yes" default="nil"/>
+
+		<input type="document" name="additional_agreement" title="Доп. соглашение" condition="contract"/>
+
+		<input type="document" name="basic_agreement" title="к договору/контракту" condition="contract"/>
+
+		<input type="date" name="start_at" title="Перевести с" />
+
+		<list name="liabilities" title="Имеет академические задолженности">
+			<input type="text" name="subject" title="Название" />
+			<select type="text" name="type" title="Отчетность">
+				<option title="зачет" />
+				<option title="экзамен" />
+			</select>
+		</list>
+
+		<input type="date" name="deadline" title="Срок сдачи задолженностей" />
+
+
+		<input type="document" name="addendum" title="Дополнение" condition="foreign" />
+		
+		<input type="document" name="contract" title="к контракту" condition="foreign" />
+		
+		
+		<select type="text" name="basics" title="Основания приказа" condition="disabled">
+			<option displayed="л/з студента" printable="личное заявление обучающегося с визой декана факультета и резолюцией проректора по учебной работе Университета"/>
+			<option displayed="с/з директора ГУИМЦ" printable="служебная записка директора ГУИМЦ, положение об организации учебного процесса"/>
+		</select>
+		
+		<input type="text" name="note" title="Примечания"/>
+		
+	</template>
+
+	<printable>
+
+		<p><![CDATA[
+		<% if conditions['profession_switching'] then %>		
+		Перевести с одной образовательной программы на другую
+		нижеперечисленных лиц, обучающихся в МГЛУ, и установить индивидуальный
+		график сдачи академических задолженностей, образовавшихся вследствие расхождения учебных
+		планов:
+		<% else %>
+		Перевести из одной учебной группы в другую нижеперечисленных
+		лиц, обучающихся в МГЛУ:</p>
+		<% end %>
+		]]></p>
+
+		<list style="text">
+			<column source="student" name="name"/>
+			<column source="student" name="student_status"/>
+			<column source="student" name="card_number"/>
+			<column source="student" name="group"/>
+			<column source="student" name="profession_code"/>
+			<column source="order" name="degree_code" condition="profession_switching"/>
+			<column source="order" name="group_id"/>
+			<column source="order" name="profession_code"/>
+			<column source="order" name="card_number" condition="profession_switching"/>
+			<column source="order" name="basic_agreement" title="Договор (контракт) о предоставлении платных образовательных услуг" condition="profession_switching"/>
+			<column source="order" name="addendum" condition="profession_switching"/>
+			<column source="order" name="contract" condition="profession_switching"/>
+			<column source="order" name="start_at"/>
+			<column source="order" name="liabilities" empty_text="академических задолженностей нет." condition="profession_switching"/>
+			<column source="order" name="deadline" condition="profession_switching"/>
+			<column title="Основания приказа"><![CDATA[<%
+	if not conditions['profession_switching'] then
+%>служебная записка зам.декана с резолюцией декана факультета<%	
+	elsif conditions['disabled'] then
+%><&attributes['basics']&><%
+	else
+%>личное заявление обучающегося с визой декана факультета<% if conditions['foreign'] then %>,
+декана ФОИГ <% end %> и резолюцией проректора по учебной работе Университета<%
+
+unless attributes['basic_agreement'].empty? || attributes['additional_agreement'].empty? then
+%>, дополнительное соглашение <&attributes['additional_agreement']&>
+к договору (контракту) о предоставлении платных образовательных услуг <&attributes['basic_agreement']&>
+<% end
+	end
+%>;]]>		</column>
+			<column source="order" name="note"/>
+		</list>
+
+		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector"/>
+			<signature name="personnel" condition="profession_switching"/>
+			<signature name="prorector-international" condition="foreign and profession_switching" />
+			<signature name="prorector-security" condition="foreign and profession_switching" />
+			<signature name="dean" condition="not disabled or became_disabled"/>
+			<signature name="rehabilitation" condition="disabled"/>
+			<signature name="deanreceiver" condition="not (disabled and became_disabled)"/>
+			<signature name="marketing" condition="contract and not foreign and profession_switching" />
+			<signature name="financing" condition="contract and not foreign and profession_switching "/>
+			<signature name="foreign" condition="foreign and profession_switching" />
+			
+			<!-- Signatures order depend on order 'subtype'; thus personnel signature are duplicated here.
+			     The first one goes before dean signature and applies to real program switching orders;
+			     the second one goes after dean signature and applies to group switching orders. -->
+			<signature name="personnel" condition="not profession_switching"/>
+		</signatures>
+
+	</printable>
+
+</order>

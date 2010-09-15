@@ -1,0 +1,84 @@
+#!/bin/sh
+#
+# chkconfig: - 80 20
+#
+# description:	The start/stop script for Radicals
+#
+
+# GREYFIX: add 
+#			--displayname "radical $I"
+# to all functions calls
+
+WITHOUT_RC_COMPAT=1
+
+# Source function library.
+. /etc/init.d/functions
+
+BASE_DIR=/srv/radical
+PID_DIR=/var/run/radical
+LOG_DIR=/var/log/radical
+RETVAL=0
+
+INSTANCES='production training web-service'
+
+radical_each()
+{
+	local CURRV=0
+	for I in $TODO; do
+		echo -n "Radical \"$I\": "
+		eval "$1 $I"
+		CURRV=$?
+		[ "$CURRV" -ne 0 ] && RETVAL=$CURRV
+	done
+	return $RETVAL
+}
+
+start()
+{
+	start_daemon \
+		--pidfile "$PID_DIR/$1.pid" \
+		--user radical \
+		--name /usr/bin/ruby \
+		-- "$BASE_DIR/$1/radical.rb" -d -F "$LOG_DIR/$1/radical.log" -P "$PID_DIR/$1.pid"
+}
+
+stop()
+{
+	stop_daemon --expect-user radical --pidfile "$PID_DIR/$1.pid" -- /usr/bin/ruby
+}
+
+radical_status()
+{
+	status --expect-user radical --pidfile "$PID_DIR/$1.pid" -- /usr/bin/ruby
+}
+
+restart()
+{
+	stop $1
+	start $1
+}
+
+# What are we operating on
+[ -n "$2" ] && TODO="$2" || TODO="$INSTANCES"
+
+# See how we were called.
+case "$1" in
+start)
+	radical_each start
+	;;
+stop)
+	radical_each stop
+	;;
+restart|reload)
+	radical_each restart
+	;;
+status)
+	radical_each radical_status
+	;;
+*)
+	msg_usage "${0##*/} {start|stop|reload|restart|adjust|status} [instance name]"
+	RETVAL=1
+esac
+
+echo RETVAL=$RETVAL
+exit $RETVAL

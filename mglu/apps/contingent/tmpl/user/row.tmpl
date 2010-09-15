@@ -1,0 +1,7 @@
+<!INIT user_id login name role faculty attributes !>
+				<tr class="list_item">
+					<td style="text-align: center; width: 10em;"><a href="item.rb?user_id=<&user_id&>" target="details"><&login&></a></td>
+					<td style="padding: 0px;       width: 16px;"><a href="item.rb?user_id=<&user_id&>" target="details"><% if attributes[:disabled] %><img src="/img/expelled.png" width="16" height="16" border="0" title="Заблокирован"/><% end %></a></td>
+					<td style="                    width: 15em;"><a href="item.rb?user_id=<&user_id&>" target="details"><&role&>&nbsp;<&faculty&></a></td>
+					<td style="text-align: center;             "><a href="item.rb?user_id=<&user_id&>" target="details"><&name&></a></td>
+				</tr>

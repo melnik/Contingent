@@ -1,0 +1,60 @@
+<!ATTR student_id expelation graduation profession_title !>
+<html>
+	<head>
+		<link rel="Stylesheet" href="/main.css" />
+		<script language="javascript" src="/tools/datecontrol.js"></script>
+		<script language="javascript" src="/studcard.js"></script>
+		<script language="javascript"><!--
+
+		function submit_form()
+		{
+			document.main_form.submit();
+		}
+
+		//--></script>
+	</head>
+
+	<body>
+		<form name="main_form" method="post">
+			<input type="hidden" name="student_id" value="<&student_id&>"/>
+			<input type="hidden" name="save" value="" />
+
+<% if expelation then %>
+			<h2>Отчисление</h2>
+			<div class="panel">
+				<div>Причина отчисления: <b><& expelation.attributes['reason'] &></b></div>
+				<br/>
+
+				<div>Год отчисления: <b><&(expelation.attributes['expelation_date'] or expelation.date_activated).year&></b></div>
+				<div>Приказ об отчислении от&nbsp;<b><&expelation.date_activated&></b>&nbsp;&#x2116;<b><&expelation.number&></b></div>
+			</div>
+<% end %>
+<% if graduation then %>
+			<h2>Завершение обучения</h2>
+			<div class="panel">
+				<div>Образовательный уровень (ценз): <**/widgets/classifier/coded_select|place_education_level**></div>
+				<br/>
+
+				<div>Документ об образовании: <**/widgets/classifier/simple|place_education_document_type**></div>
+				<div>
+					Серия <input name="education_document_serial" value="" class="text"/>
+					&#x2116; <input name="education_document_number" value="" class="text"/>
+					Регистрационный &#x2116; <input name="education_document_registration_number" value="" class="text"/>
+					Дата выдачи: <**/widgets/date|place_education_document_date**>
+				</div>
+				<br/>
+<% 	if graduation.attributes['protocol'] then %>
+				<div>Протокол ГАК от&nbsp;<b><&graduation.attributes['protocol'].date&></b>&nbsp;&#x2116;<b><&graduation.attributes['protocol'].num&></b></div>
+				<br/>
+<%	end %>
+				<div><&profession_title&>: <**/widgets/classifier/coded_input|place_profession**></div>
+				<div>Квалификация: <b><& graduation.attributes['qualification'] &></b></div>
+				<br/>
+
+				<div>Год окончания: <b><&graduation.date_activated.year&></b></div>
+				<div>Приказ о завершении обучения от&nbsp;<b><&graduation.date_activated&></b>&nbsp;&#x2116;<b><&graduation.number&></b></div>
+			</div>
+<% end %>
+		</form>
+	</body>
+</html>
