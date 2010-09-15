@@ -1,0 +1,1815 @@
+<?xml version="1.0" encoding="koi8-r" ?>
+<specialityDB xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="direction.xsd">
+	<speciality>
+		<guid>bfa047a6-f93f-11d9-9744-000874220790</guid>
+		<index_old>511200</index_old>
+		<index>010200</index>
+		<title>Математика. Прикладная математика</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр математики</qual_title>
+		<spec>
+			<index>  </index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bf9fd395-f93f-11d9-9744-000874220790</guid>
+		<index_old>010200</index_old>
+		<index>010501</index>
+		<title>Прикладная математика и информатика</title>
+		<qual>65</qual>
+		<qual_title>Математик, системный программист</qual_title>
+		<spec>
+			<index>  </index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa04559-f93f-11d9-9744-000874220790</guid>
+		<index_old>351500</index_old>
+		<index>010503</index>
+		<title>Математическое обеспечение и администрирование информационных систем</title>
+		<qual>65</qual>
+		<qual_title>Математик-программист</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa04681-f93f-11d9-9744-000874220790</guid>
+		<index_old>511100</index_old>
+		<index>020800</index>
+		<title>Экология и природопользование</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр экологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bf9fe55f-f93f-11d9-9744-000874220790</guid>
+		<index_old>021100</index_old>
+		<index>030501</index>
+		<title>Юриспруденция</title>
+		<qual>65</qual>
+		<qual_title>Юрист</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa043e5-f93f-11d9-9744-000874220790</guid>
+		<index_old>350600</index_old>
+		<index>030502</index>
+		<title>Судебная экспертиза</title>
+		<qual>65</qual>
+		<qual_title>Эксперт-криминалист</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa0489f-f93f-11d9-9744-000874220790</guid>
+		<index_old>520500</index_old>
+		<index>031100</index>
+		<title>Лингвистика</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр лингвистики</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bf9fe426-f93f-11d9-9744-000874220790</guid>
+		<index_old>020300</index_old>
+		<index>040201</index>
+		<title>Социология</title>
+		<qual>65</qual>
+		<qual_title>Социолог Преподаватель социологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa0498f-f93f-11d9-9744-000874220790</guid>
+		<index_old>521500</index_old>
+		<index>080500</index>
+		<title>Менеджмент</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр менеджмента</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa04a80-f93f-11d9-9744-000874220790</guid>
+		<index_old>521500</index_old>
+		<index>080500</index>
+		<title>Менеджмент</title>
+		<qual>68</qual>
+		<qual_title>Магистр менеджмента</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bf9fe6b1-f93f-11d9-9744-000874220790</guid>
+		<index_old>060800</index_old>
+		<index>080502</index>
+		<title>Экономика и управление на предприятии (по отраслям)</title>
+		<qual>65</qual>
+		<qual_title>Экономист-менеджер</qual_title>
+		<spec>
+			<index>03</index>
+			<title>Организация предпринимательской деятельности</title>
+		</spec>
+		<spec>
+			<index>08</index>
+			<title>Управление финансами на предприятии</title>
+		</spec>
+		<spec>
+			<index>26</index>
+			<title>Управление финансовыми потоками на основе информационных технологий</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bf9fe8bb-f93f-11d9-9744-000874220790</guid>
+		<index_old>062200</index_old>
+		<index>080506</index>
+		<title>Логистика</title>
+		<qual>65</qual>
+		<qual_title>Экономист-менеджер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>4c7879af-d3cc-11da-88e9-000874220790</guid>
+		<index_old>061100</index_old>
+		<index>080507</index>
+		<title>Менеджмент организации</title>
+		<qual>65</qual>
+		<qual_title>Менеджер</qual_title>
+		<spec>
+			<index>03</index>
+			<title>Инновационный менеджмент</title>
+		</spec>
+		<spec>
+			<index>31</index>
+			<title>Государственное регулирование экономических ресурсов</title>
+		</spec>
+		<spec>
+			<index>46</index>
+			<title>Информационные технологии управления</title>
+		</spec>
+		<spec>
+			<index>78</index>
+			<title>Контроллинг организации</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bf9ff670-f93f-11d9-9744-000874220790</guid>
+		<index_old>075200</index_old>
+		<index>090102</index>
+		<title>Компьютерная безопасность</title>
+		<qual>65</qual>
+		<qual_title>Математик</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bf9ff7fa-f93f-11d9-9744-000874220790</guid>
+		<index_old>075500</index_old>
+		<index>090105</index>
+		<title>Комплексное обеспечение информационной безопасности автоматизированных систем</title>
+		<qual>65</qual>
+		<qual_title>Специалист по защите информации</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bf9ff938-f93f-11d9-9744-000874220790</guid>
+		<index_old>075700</index_old>
+		<index>090107</index>
+		<title>Противодействие техническим разведкам</title>
+		<qual>65</qual>
+		<qual_title>Специалист по защите информации</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa04019-f93f-11d9-9744-000874220790</guid>
+		<index_old>310900</index_old>
+		<index>120301</index>
+		<title>Землеустройство</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa04f1a-f93f-11d9-9744-000874220790</guid>
+		<index_old>550900</index_old>
+		<index>140100</index>
+		<title>Теплоэнергетика</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bf9ffb16-f93f-11d9-9744-000874220790</guid>
+		<index_old>100900</index_old>
+		<index>140202</index>
+		<title>Нетрадиционные и возобновляемые источники энергии</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>595bb7c0-d3c9-11da-88e9-000874220790</guid>
+		<index_old>070500</index_old>
+		<index>140305</index>
+		<title>Ядерные реакторы и энергетические установки</title>
+		<qual>65</qual>
+		<qual_title>Инженер-физик</qual_title>
+		<spec>
+			<index>21</index>
+			<title>Транспортные ядерные энергетические установки</title>
+		</spec>
+		<spec>
+			<index>22</index>
+			<title>Стационарные ядерные энергетические установки</title>
+		</spec>
+		<spec>
+			<index>25</index>
+			<title>Технологии и оборудование ядерного топливного цикла</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa067f4-f93f-11d9-9744-000874220790</guid>
+		<index_old>553100</index_old>
+		<index>140400</index>
+		<title>Техническая физика</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa068fa-f93f-11d9-9744-000874220790</guid>
+		<index_old>553100</index_old>
+		<index>140400</index>
+		<title>Техническая физика</title>
+		<qual>68</qual>
+		<qual_title>Магистр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bf9fe9e3-f93f-11d9-9744-000874220790</guid>
+		<index_old>070200</index_old>
+		<index>140401</index>
+		<title>Техника и физика низких температур</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Криогенные машины и установки</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Установки сжижения и разделения газов</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Холодильные машины и установки</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bf9fec1d-f93f-11d9-9744-000874220790</guid>
+		<index_old>070700</index_old>
+		<index>140402</index>
+		<title>Теплофизика</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa061eb-f93f-11d9-9744-000874220790</guid>
+		<index_old>552700</index_old>
+		<index>140500</index>
+		<title>Энергомашиностроение</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa060e1-f93f-11d9-9744-000874220790</guid>
+		<index_old>552700</index_old>
+		<index>140500</index>
+		<title>Энергомашиностроение</title>
+		<qual>68</qual>
+		<qual_title>Магистр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>51a9314c-d3c8-11da-88e9-000874220790</guid>
+		<index_old>101200</index_old>
+		<index>140501</index>
+		<title>Двигатели внутреннего сгорания</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Автомобильные и тракторные двигатели</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Судовые и стационарные тепловозные двигатели</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Двигатели летательных аппаратов</title>
+		</spec>
+		<spec>
+			<index>05</index>
+			<title>Двигатели с внешним подводом теплоты</title>
+		</spec>
+		<spec>
+			<index>А </index>
+			<title>Двигатели водного транспорта</title>
+		</spec>
+		<spec>
+			<index>Б </index>
+			<title>Двигатели наземного транспорта</title>
+		</spec>
+		<spec>
+			<index>В </index>
+			<title>Двигатели специального назначения</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bf9ffebe-f93f-11d9-9744-000874220790</guid>
+		<index_old>101400</index_old>
+		<index>140503</index>
+		<title>Газотурбинные, паротурбинные установки и двигатели</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Авиационные газотурбинные двигатели</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Газотурбинные и паротурбинные установки тепловых и атомных электрических станций  </title>
+		</spec>
+		<spec>
+			<index>05</index>
+			<title>Газотурбинные установки газокомпрессорных </title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>e6313b53-d3c8-11da-88e9-000874220790</guid>
+		<index_old>101700</index_old>
+		<index>140504</index>
+		<title>Холодильная, криогенная техника и кондиционирование</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Холодильная техника и технологии</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Криогенная техника и технологии</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Кондиционирование воздуха и климатехника предприятий</title>
+		</spec>
+		<spec>
+			<index>08</index>
+			<title>Системы ожижения, разделения, транспортировки и хранения промышленных газов</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>7ccd6926-d3c9-11da-88e9-000874220790</guid>
+		<index_old>101100</index_old>
+		<index>140505</index>
+		<title>Плазменные энергетические установки</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Ионно-плазменные технологические установки</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Термоядерные установки</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Плазменные лазерные установки</title>
+		</spec>
+		<spec>
+			<index>04</index>
+			<title>Плазменные медицинские и экологические установки</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>1bbd1989-d3c4-11da-88e9-000874220790</guid>
+		<index_old>120400</index_old>
+		<index>150201</index>
+		<title>Машины и технология обработки металлов давлением</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>16</index>
+			<title>Технологические системы листовой штамповки</title>
+		</spec>
+		<spec>
+			<index>17</index>
+			<title>Технологические системы объемной штамповки</title>
+		</spec>
+		<spec>
+			<index>18</index>
+			<title>Конструирование автоматических машин и комплексов гибких систем КШП</title>
+		</spec>
+		<spec>
+			<index>19</index>
+			<title>Машины и технология прокатки и волочильного производства</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa007a6-f93f-11d9-9744-000874220790</guid>
+		<index_old>120500</index_old>
+		<index>150202</index>
+		<title>Оборудование и технология сварочного производства</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Производство сварных конструкций</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Контроль и управление качеством в сварочном производстве</title>
+		</spec>
+		<spec>
+			<index>10</index>
+			<title>Компьютерные технологии в сварочном производстве</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa00507-f93f-11d9-9744-000874220790</guid>
+		<index_old>120300</index_old>
+		<index>150204</index>
+		<title>Машины и технология литейного производства</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>10</index>
+			<title>Инженерная экология литейного производства</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa00922-f93f-11d9-9744-000874220790</guid>
+		<index_old>120700</index_old>
+		<index>150206</index>
+		<title>Машины и технология высокоэффективных процессов обработки материалов</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bf9ff1ee-f93f-11d9-9744-000874220790</guid>
+		<index_old>072100</index_old>
+		<index>150207</index>
+		<title>Реновация средств и объектов материального производства в машиностроении</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa06a01-f93f-11d9-9744-000874220790</guid>
+		<index_old>553300</index_old>
+		<index>150300</index>
+		<title>Прикладная механика</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>a5be5483-d3ca-11da-88e9-000874220790</guid>
+		<index_old>071100</index_old>
+		<index>150301</index>
+		<title>Динамика и прочность машин</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Методы математического моделирования механических систем и процессов</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Методы и техника эксперимента</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Компьютерная механика</title>
+		</spec>
+		<spec>
+			<index>04</index>
+			<title>Компьютерная биомеханика</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa0570f-f93f-11d9-9744-000874220790</guid>
+		<index_old>551800</index_old>
+		<index>150400</index>
+		<title>Технологические машины и оборудование</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa05842-f93f-11d9-9744-000874220790</guid>
+		<index_old>551800</index_old>
+		<index>150400</index>
+		<title>Технологические машины и оборудование</title>
+		<qual>68</qual>
+		<qual_title>Магистр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa00bfe-f93f-11d9-9744-000874220790</guid>
+		<index_old>120900</index_old>
+		<index>150401</index>
+		<title>Проектирование технических и технологических комплексов</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Проектирование технологических комплексов механо-сборочного производства</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Проектирование технологических  комплексов литейно-заготовительных производств</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa01e64-f93f-11d9-9744-000874220790</guid>
+		<index_old>170300</index_old>
+		<index>150404</index>
+		<title>Металлургические машины и оборудование</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>11</index>
+			<title>Литейно-прокатные агрегаты</title>
+		</spec>
+		<spec>
+			<index>12</index>
+			<title>Станы продольной прокатки</title>
+		</spec>
+		<spec>
+			<index>13</index>
+			<title>Трубо-прокатные станы</title>
+		</spec>
+		<spec>
+			<index>14</index>
+			<title>Машины порошковой металлургии</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>8eb78c74-d3c4-11da-88e9-000874220790</guid>
+		<index_old>120800</index_old>
+		<index>150501</index>
+		<title>Материаловедение в машиностроении</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>02</index>
+			<title>Поверхностная обработка и покрытия материалов в машиностроении</title>
+		</spec>
+		<spec>
+			<index>05</index>
+			<title>Высокопрочные машиностроительные материалы</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>8ef0df95-d3c7-11da-88e9-000874220790</guid>
+		<index_old>121000</index_old>
+		<index>150502</index>
+		<title>Конструирование и производство изделий из композиционных материалов</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>02</index>
+			<title>Конструирование изделий из композиционных мате-риалов</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Физика и химия композиционных материалов</title>
+		</spec>
+		<spec>
+			<index>04</index>
+			<title>Производство изделий их полимерных и углеродных композиционных материалов</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa055dc-f93f-11d9-9744-000874220790</guid>
+		<index_old>551600</index_old>
+		<index>150600</index>
+		<title>Материаловедение и технология новых материалов</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa06e88-f93f-11d9-9744-000874220790</guid>
+		<index_old>554300</index_old>
+		<index>150800</index>
+		<title>Гидравлическая, вакуумная и компрессорная техника</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр гидравлической, вакуумной и компрессорной техники</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa0001b-f93f-11d9-9744-000874220790</guid>
+		<index_old>101500</index_old>
+		<index>150801</index>
+		<title>Вакуумная и компрессорная техника физических установок</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Компрессорные машины</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Вакуумные машины и установки</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Пневмоагрегаты и пневмосистемы</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>c8682503-d3c9-11da-88e9-000874220790</guid>
+		<index_old>121100</index_old>
+		<index>150802</index>
+		<title>Гидравлические машины, гидроприводы и гидропневмоавтоматика</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Лопастные гидромашины</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Системы гидравлических и пневматических приводов</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa065c5-f93f-11d9-9744-000874220790</guid>
+		<index_old>552900</index_old>
+		<index>150900</index>
+		<title>Технология, оборудование и автоматизация машиностроительных производств</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa0028d-f93f-11d9-9744-000874220790</guid>
+		<index_old>120100</index_old>
+		<index>151001</index>
+		<title>Технология машиностроения</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>04</index>
+			<title>Технология и автоматизация сборочного производства</title>
+		</spec>
+		<spec>
+			<index>32</index>
+			<title>Технология и автоматизация машиностроительных производств</title>
+		</spec>
+		<spec>
+			<index>38</index>
+			<title>Технология и управление качеством продукции машиностроительного производства</title>
+		</spec>
+		<spec>
+			<index>45</index>
+			<title>Компьютерное проектирование и технология производства изделий</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa003c9-f93f-11d9-9744-000874220790</guid>
+		<index_old>120200</index_old>
+		<index>151002</index>
+		<title>Металлообрабатывающие станки и комплексы </title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>373f4382-d3c3-11da-88e9-000874220790</guid>
+		<index_old>121300</index_old>
+		<index>151003</index>
+		<title>Инструментальные системы машиностроительных производств</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Проектирование и эксплуатация инструментальных систем  машиностроительного производства</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Компьютерные системы механической обработки</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Инструментальные системы автоматизированных производств</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa05136-f93f-11d9-9744-000874220790</guid>
+		<index_old>551000</index_old>
+		<index>160100</index>
+		<title>Авиа- и ракетостроение</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa05027-f93f-11d9-9744-000874220790</guid>
+		<index_old>551000</index_old>
+		<index>160100</index>
+		<title>Авиа- и ракетостроение</title>
+		<qual>68</qual>
+		<qual_title>Магистр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa0167a-f93f-11d9-9744-000874220790</guid>
+		<index_old>131100</index_old>
+		<index>160202</index>
+		<title>Системы жизнеобеспечения и оборудования летательных аппаратов</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>c524cf7b-d3c7-11da-88e9-000874220790</guid>
+		<index_old>130400</index_old>
+		<index>160302</index>
+		<title>Ракетные двигатели</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Жидкостные ракетные двигатели</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Ракетные двигатели на твердом топливе</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Ракетные двигатели на гидрореагирующем топливе </title>
+		</spec>
+		<spec>
+			<index>04</index>
+			<title>Ядерные ракетные двигатели</title>
+		</spec>
+		<spec>
+			<index>05</index>
+			<title>Гидридные ракетные двигатели (ГРД)</title>
+		</spec>
+		<spec>
+			<index>06</index>
+			<title>Технология производства ракетных двигателей</title>
+		</spec>
+		<spec>
+			<index>07</index>
+			<title>Экология двигательных и энергетических установок</title>
+		</spec>
+		<spec>
+			<index>08</index>
+			<title>Высокие технологии на основе ракетных двигателей</title>
+		</spec>
+		<spec>
+			<index>09</index>
+			<title>Высокотемпературные установки и технологии</title>
+		</spec>
+		<spec>
+			<index>10</index>
+			<title>Проектный менеджмент в энергодвигателестроении авиаракетных комплексов</title>
+		</spec>
+		<spec>
+			<index>11</index>
+			<title>Терморегулирование в энергетических системах</title>
+		</spec>
+		<spec>
+			<index>14</index>
+			<title>Промышленная экология</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa012c2-f93f-11d9-9744-000874220790</guid>
+		<index_old>130500</index_old>
+		<index>160303</index>
+		<title>Электроракетные двигатели и энергетические установки</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>755d5c10-d3c2-11da-88e9-000874220790</guid>
+		<index_old>181200</index_old>
+		<index>160402</index>
+		<title>Приборы и системы ориентации, стабилизации и навигации</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Гироскопические приборы и гироскопические стабилизаторы</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Инерциальные навигационные системы</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Автопилоты</title>
+		</spec>
+		<spec>
+			<index>06</index>
+			<title>Технология гироскопов и навигационных систем</title>
+		</spec>
+		<spec>
+			<index>07</index>
+			<title>Электромеханические элементы и электронные устройства навигационных систем</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>3db77724-d3c2-11da-88e9-000874220790</guid>
+		<index_old>210500</index_old>
+		<index>160403</index>
+		<title>Системы управления летательными аппаратами</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>02</index>
+			<title>Системы  управления космических летательных аппаратов</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Системы  управления ракет</title>
+		</spec>
+		<spec>
+			<index>10</index>
+			<title>Программное обеспечение систем управления лета-тельными аппаратами</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>d8f6f9dc-d3c5-11da-88e9-000874220790</guid>
+		<index_old>131400</index_old>
+		<index>160703</index>
+		<title>Динамика полета и управление движением летательных аппаратов</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Баллистика и управление движением  ЛА</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Управление аэродинамическими характеристиками и процессами обтекания ЛА</title>
+		</spec>
+		<spec>
+			<index>06</index>
+			<title>Газодинамические процессы управления</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>2c6be6e1-d3c5-11da-88e9-000874220790</guid>
+		<index_old>130600</index_old>
+		<index>160801</index>
+		<title>Ракетостроение</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Ракетные транспортные системы</title>
+		</spec>
+		<spec>
+			<index>04</index>
+			<title>Скоростные подводные аппараты</title>
+		</spec>
+		<spec>
+			<index>05</index>
+			<title>Технология производства ракет и ракетных блоков</title>
+		</spec>
+		<spec>
+			<index>08</index>
+			<title>Проектный менеджмент и маркетинг ракетостроения</title>
+		</spec>
+		<spec>
+			<index>09</index>
+			<title>Конструкторско-технологическая отработка и испытания в ракетостроении</title>
+		</spec>
+		<spec>
+			<index>10</index>
+			<title>Ракеты с РДТТ</title>
+		</spec>
+		<spec>
+			<index>12</index>
+			<title>Аэрокосмические системы и крылатые ракеты</title>
+		</spec>
+		<spec>
+			<index>13</index>
+			<title>Компьютерные технологии в ракетостроении</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>89e61a66-d3c5-11da-88e9-000874220790</guid>
+		<index_old>130700</index_old>
+		<index>160802</index>
+		<title>Космические летательные аппараты и разгонные блоки</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Пилотируемые и автоматические космические аппараты и системы</title>
+		</spec>
+		<spec>
+			<index>04</index>
+			<title>Несущие конструкции аэрокосмической техники</title>
+		</spec>
+		<spec>
+			<index>06</index>
+			<title>Модули орбитальных комплексов</title>
+		</spec>
+		<spec>
+			<index>09</index>
+			<title>Аэрокосмические системы</title>
+		</spec>
+		<spec>
+			<index>11</index>
+			<title>Проектный менеджмент и маркетинг аэрокосмической техники</title>
+		</spec>
+		<spec>
+			<index>12</index>
+			<title>Компьютерные технологии в космической технике</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>fa6a5a97-d3c6-11da-88e9-000874220790</guid>
+		<index_old>131300</index_old>
+		<index>160803</index>
+		<title>Стартовые и технические комплексы ракет и космических аппаратов</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Пусковое и установочное оборудование ракетных комплексов</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Системы заправки и термостатирования ракетных комплексов</title>
+		</spec>
+		<spec>
+			<index>05</index>
+			<title>Техническая эксплуатация ракетных комплексов</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>1021c1f4-d3c9-11da-88e9-000874220790</guid>
+		<index_old>132000</index_old>
+		<index>160804</index>
+		<title>Системы жизнеобеспечения и защиты ракетно-космических аппаратов</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Системы жизнеобеспечения и защита пилотируемых космических аппаратов</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Системы термо-криостатирования космических аппаратов</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Жизнеобеспечение наземных и подводных объектов с ракетно-космическими системами</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa05b72-f93f-11d9-9744-000874220790</guid>
+		<index_old>552000</index_old>
+		<index>160900</index>
+		<title>Эксплуатация авиационной и космической техники</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>74a1eeb6-d3c6-11da-88e9-000874220790</guid>
+		<index_old>171300</index_old>
+		<index>170102</index>
+		<title>Стрелково-пушечное, артиллерийское и ракетное оружие</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Артиллерийское оружие</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Стрелково-пушечное вооружение</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Ракетное оружие и средства ближнего боя</title>
+		</spec>
+		<spec>
+			<index>05</index>
+			<title>Сертификация и качество систем вооружения</title>
+		</spec>
+		<spec>
+			<index>06</index>
+			<title>Менеджмент, маркетинг и инженерный бизнес систем вооружения</title>
+		</spec>
+		<spec>
+			<index>11</index>
+			<title>Автоматизированное проектирование ракетного и ствольного оружия</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>0a05bc1b-d3c6-11da-88e9-000874220790</guid>
+		<index_old>171400</index_old>
+		<index>170103</index>
+		<title>Средства поражения и боеприпасы</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Высокоточные средства поражения и боеприпасы</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Артиллерийские снаряды и мины</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Боевые части ракет и авиабомбы</title>
+		</spec>
+		<spec>
+			<index>05</index>
+			<title>Компьютерное проектирование средств поражения и боеприпасов</title>
+		</spec>
+		<spec>
+			<index>07</index>
+			<title>Высокие технологии на основе взрыва и удара</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa0539c-f93f-11d9-9744-000874220790</guid>
+		<index_old>551400</index_old>
+		<index>190100</index>
+		<title>Наземные транспортные системы</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>44f31d28-d3c7-11da-88e9-000874220790</guid>
+		<index_old>150100</index_old>
+		<index>190201</index>
+		<title>Автомобиле- и тракторостроение</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Автомобилестроение</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Тракторостроение</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa01d2e-f93f-11d9-9744-000874220790</guid>
+		<index_old>150300</index_old>
+		<index>190202</index>
+		<title>Многоцелевые гусеничные и колесные машины</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa01fdd-f93f-11d9-9744-000874220790</guid>
+		<index_old>170900</index_old>
+		<index>190205</index>
+		<title>Подъемно-транспортные, строительные, дорожные машины и оборудование</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>14</index>
+			<title>Подъемно транспортные машины и роботы</title>
+		</spec>
+		<spec>
+			<index>15</index>
+			<title>Системы подъемно-транспортных машин автоматизированного производства </title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa0549a-f93f-11d9-9744-000874220790</guid>
+		<index_old>551500</index_old>
+		<index>200100</index>
+		<title>Приборостроение</title>
+		<qual>68</qual>
+		<qual_title>Магистр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa02509-f93f-11d9-9744-000874220790</guid>
+		<index_old>190200</index_old>
+		<index>200102</index>
+		<title>Приборы и методы контроля качества и диагностики</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa02b5d-f93f-11d9-9744-000874220790</guid>
+		<index_old>190900</index_old>
+		<index>200106</index>
+		<title>Информационно-измерительная техника и технологии</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa0593e-f93f-11d9-9744-000874220790</guid>
+		<index_old>551900</index_old>
+		<index>200200</index>
+		<title>Оптотехника</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa05a31-f93f-11d9-9744-000874220790</guid>
+		<index_old>551900</index_old>
+		<index>200200</index>
+		<title>Оптотехника</title>
+		<qual>68</qual>
+		<qual_title>Магистр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>3cc677b7-d3ca-11da-88e9-000874220790</guid>
+		<index_old>072300</index_old>
+		<index>200201</index>
+		<title>Лазерная техника и лазерные технологии</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>03</index>
+			<title>Экологический мониторинг</title>
+		</spec>
+		<spec>
+			<index>08</index>
+			<title>Лазерные информационно-измерительные системы</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>57f2c434-d3ca-11da-88e9-000874220790</guid>
+		<index_old>190700</index_old>
+		<index>200203</index>
+		<title>Оптико-электронные приборы и системы</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Оптико-электронные информационно-измерительные и следящие приборы и системы</title>
+		</spec>
+		<spec>
+			<index>11</index>
+			<title>Компьютерная оптика</title>
+		</spec>
+		<spec>
+			<index>14</index>
+			<title>Лазерные оптико-электронные приборы и системы</title>
+		</spec>
+		<spec>
+			<index>15</index>
+			<title>Оптико-электронные приборы научных исследований и кино-фотоприборы</title>
+		</spec>
+		<spec>
+			<index>25</index>
+			<title>Оптико-электронные системы безопасности</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa06b18-f93f-11d9-9744-000874220790</guid>
+		<index_old>553400</index_old>
+		<index>200300</index>
+		<title>Биомедицинская инженерия</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa06c2d-f93f-11d9-9744-000874220790</guid>
+		<index_old>553400</index_old>
+		<index>200300</index>
+		<title>Биомедицинская инженерия</title>
+		<qual>68</qual>
+		<qual_title>Магистр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa02655-f93f-11d9-9744-000874220790</guid>
+		<index_old>190500</index_old>
+		<index>200401</index>
+		<title>Биотехнические и медицинские аппараты и системы</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa027a2-f93f-11d9-9744-000874220790</guid>
+		<index_old>190600</index_old>
+		<index>200402</index>
+		<title>Инженерное дело в медико-биологической практике</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa05de9-f93f-11d9-9744-000874220790</guid>
+		<index_old>552200</index_old>
+		<index>200500</index>
+		<title>Метрология, стандартизация и сертификация</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa05cae-f93f-11d9-9744-000874220790</guid>
+		<index_old>552200</index_old>
+		<index>200500</index>
+		<title>Метрология, стандартизация и сертификация</title>
+		<qual>68</qual>
+		<qual_title>Магистр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa02a11-f93f-11d9-9744-000874220790</guid>
+		<index_old>190800</index_old>
+		<index>200501</index>
+		<title>Метрология и метрологическое обеспечение</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bf9ff072-f93f-11d9-9744-000874220790</guid>
+		<index_old>072000</index_old>
+		<index>200503</index>
+		<title>Стандартизация и сертификация</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>25</index>
+			<title>Стандартизация, сертификация и управление качест  ством в сфере торговли и потребительских услуг  </title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa04e19-f93f-11d9-9744-000874220790</guid>
+		<index_old>550700</index_old>
+		<index>210100</index>
+		<title>Электроника и микроэлектроника</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa0309d-f93f-11d9-9744-000874220790</guid>
+		<index_old>200500</index_old>
+		<index>210107</index>
+		<title>Электронное машиностроение</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa0527a-f93f-11d9-9744-000874220790</guid>
+		<index_old>551100</index_old>
+		<index>210200</index>
+		<title>Проектирование и технология электронных средств</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa031fa-f93f-11d9-9744-000874220790</guid>
+		<index_old>200800</index_old>
+		<index>210201</index>
+		<title>Проектирование и технология радиоэлектронных средств</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>12</index>
+			<title>Обеспечение качества и сертификация радиоэлектронных средств</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa03f13-f93f-11d9-9744-000874220790</guid>
+		<index_old>220500</index_old>
+		<index>210202</index>
+		<title>Проектирование и технология электронно-вычислительных средств</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa05fdb-f93f-11d9-9744-000874220790</guid>
+		<index_old>552500</index_old>
+		<index>210300</index>
+		<title>Радиотехника</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa05ee5-f93f-11d9-9744-000874220790</guid>
+		<index_old>552500</index_old>
+		<index>210300</index>
+		<title>Радиотехника</title>
+		<qual>68</qual>
+		<qual_title>Магистр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>e528173a-d3c9-11da-88e9-000874220790</guid>
+		<index_old>201600</index_old>
+		<index>210304</index>
+		<title>Радиоэлектронные системы</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Радиолокационные и радионавигационные системы</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Радиосистемы управления и передачи информации</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Антенные системы и устройства</title>
+		</spec>
+		<spec>
+			<index>04</index>
+			<title>Лазерные системы локации и связи</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa066ed-f93f-11d9-9744-000874220790</guid>
+		<index_old>553000</index_old>
+		<index>220100</index>
+		<title>Системный анализ и управление</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa04cf7-f93f-11d9-9744-000874220790</guid>
+		<index_old>550200</index_old>
+		<index>220200</index>
+		<title>Автоматизация и управление</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa04b94-f93f-11d9-9744-000874220790</guid>
+		<index_old>550200</index_old>
+		<index>220200</index>
+		<title>Автоматизация и управление</title>
+		<qual>68</qual>
+		<qual_title>Магистр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>461b2b97-d3c6-11da-88e9-000874220790</guid>
+		<index_old>210800</index_old>
+		<index>220203</index>
+		<title>Автономные информационные и управляющие системы</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Автономные локальные информационные и управляющие системы</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Обработка сигналов в автономных информационных и управляющих системах</title>
+		</spec>
+		<spec>
+			<index>03</index>
+			<title>Автономные мехатронные устройства управления</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa03482-f93f-11d9-9744-000874220790</guid>
+		<index_old>210200</index_old>
+		<index>220301</index>
+		<title>Автоматизация технологических процессов и производств (по отраслям)</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>32</index>
+			<title>Компьютерные системы автоматизации и управления</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>ca46065d-d3c6-11da-88e9-000874220790</guid>
+		<index_old>071800</index_old>
+		<index>220401</index>
+		<title>Мехатроника</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>02</index>
+			<title>Мехатронные исполнительные приводы</title>
+		</spec>
+		<spec>
+			<index>08</index>
+			<title>Мехатронные системы в ракетно-артиллерийских комплексах</title>
+		</spec>
+		<spec>
+			<index>13</index>
+			<title>Элементы и устройства мехатронных систем</title>
+		</spec>
+		<spec>
+			<index>14</index>
+			<title>Автомобильная мехатроника</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>5eec2a20-d3c7-11da-88e9-000874220790</guid>
+		<index_old>210300</index_old>
+		<index>220402</index>
+		<title>Роботы и робототехнические системы</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Управление роботами</title>
+		</spec>
+		<spec>
+			<index>02</index>
+			<title>Исполнительные устройства и приводы роботов</title>
+		</spec>
+		<spec>
+			<index>06</index>
+			<title>Подводные роботы и робототехнические системы</title>
+		</spec>
+		<spec>
+			<index>07</index>
+			<title>Компьютерно-интегрированные робототехнические комплексы</title>
+		</spec>
+		<spec>
+			<index>08</index>
+			<title>Роботы для экстремальных сред</title>
+		</spec>
+		<spec>
+			<index>11</index>
+			<title>Распределенные робототехнические системы (РТС)</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bf9ff559-f93f-11d9-9744-000874220790</guid>
+		<index_old>073900</index_old>
+		<index>220701</index>
+		<title>Менеджмент высоких технологий</title>
+		<qual>65</qual>
+		<qual_title>Инженер-менеджер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa06318-f93f-11d9-9744-000874220790</guid>
+		<index_old>552800</index_old>
+		<index>230100</index>
+		<title>Информатика и вычислительная техника</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa06449-f93f-11d9-9744-000874220790</guid>
+		<index_old>552800</index_old>
+		<index>230100</index>
+		<title>Информатика и вычислительная техника</title>
+		<qual>68</qual>
+		<qual_title>Магистр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa03982-f93f-11d9-9744-000874220790</guid>
+		<index_old>220100</index_old>
+		<index>230101</index>
+		<title>Вычислительные машины, комплексы, системы и сети</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa03ae7-f93f-11d9-9744-000874220790</guid>
+		<index_old>220200</index_old>
+		<index>230102</index>
+		<title>Автоматизированные системы обработки информации и управления</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa03c26-f93f-11d9-9744-000874220790</guid>
+		<index_old>220300</index_old>
+		<index>230104</index>
+		<title>Системы автоматизированного проектирования</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>03</index>
+			<title>Компьютерная графика, эргономика и дизайн</title>
+		</spec>
+		<spec>
+			<index>04</index>
+			<title>Моделирование несущих конструкций</title>
+		</spec>
+		<spec>
+			<index>05</index>
+			<title>Интеграция САПР и систем информационной поддержки изделий</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa03da7-f93f-11d9-9744-000874220790</guid>
+		<index_old>220400</index_old>
+		<index>230105</index>
+		<title>Программное обеспечение вычислительной техники и автоматизированных систем</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>07</index>
+			<title>Проектирование автоматизированных библиотечных и документальных систем</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa06f9d-f93f-11d9-9744-000874220790</guid>
+		<index_old>554400</index_old>
+		<index>230200</index>
+		<title>Информационные системы</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр информационных систем</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bf9fef53-f93f-11d9-9744-000874220790</guid>
+		<index_old>071900</index_old>
+		<index>230201</index>
+		<title>Информационные системы и технологии</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>32</index>
+			<title>Информационные системы фондового рынка</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bf9ff43c-f93f-11d9-9744-000874220790</guid>
+		<index_old>073000</index_old>
+		<index>230401</index>
+		<title>Прикладная математика</title>
+		<qual>65</qual>
+		<qual_title>Инженер-математик</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa042dc-f93f-11d9-9744-000874220790</guid>
+		<index_old>330100</index_old>
+		<index>280101</index>
+		<title>Безопасность жизнедеятельности в техносфере</title>
+		<qual>65</qual>
+		<qual_title>Инженер</qual_title>
+		<spec>
+			<index>01</index>
+			<title>Аудит и экспертиза безопасности проектов</title>
+		</spec>
+		<spec>
+			<index>04</index>
+			<title>Безопасность труда (охрана труда)</title>
+		</spec>
+		<spec>
+			<index>05</index>
+			<title>Предупреждение техногенных аварий</title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa06d3f-f93f-11d9-9744-000874220790</guid>
+		<index_old>553500</index_old>
+		<index>280200</index>
+		<title>Защита окружающей среды</title>
+		<qual>62</qual>
+		<qual_title>Бакалавр техники и технологии</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+	<speciality>
+		<guid>bfa04192-f93f-11d9-9744-000874220790</guid>
+		<index_old>320700</index_old>
+		<index>280201</index>
+		<title>Охрана окружающей среды и рациональное использование природных ресурсов</title>
+		<qual>65</qual>
+		<qual_title>Инженер-эколог</qual_title>
+		<spec>
+			<index></index>
+			<title></title>
+		</spec>
+	</speciality>
+</specialityDB>

@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Contingent" 
+	targetNamespace="http://service.bmstu.ru/contingent" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:tns="http://service.bmstu.ru/contingent"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://service.bmstu.ru/contingent" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+			<xsd:element name="baseObject" type="tns:BaseObject" />
+			<xsd:element name="classifier" type="tns:Classifier" />
+			<xsd:element name="studyTypeClassifier" type="tns:StudyTypeClassifier" />
+			<xsd:element name="studentStateClassifier" type="tns:StudentStateClassifier" />
+			<xsd:element name="militaryStateClassifier" type="tns:MilitaryStateClassifier" />
+			<xsd:element name="genderClassifier" type="tns:GenderClassifier" />
+			<xsd:element name="citizenshipClassifier" type="tns:CitizenshipClassifier" />
+			<xsd:element name="Source" type="tns:Source" />
+			
+			<xsd:element name="group" type="tns:Group" />
+			<xsd:element name="student" type="tns:Student" />
+			<xsd:element name="order" type="tns:order" />
+			
+			<xsd:element name="listStudentsRequest" type="tns:listStudentsRequest" />
+			<xsd:element name="listStudentsResponse" type="tns:listStudentsResponse" />
+			
+			<xsd:element name="getRequest" type="tns:getRequest" />
+			<xsd:element name="getResponse" type="tns:getResponse" />
+			
+			<xsd:element name="listClassifiersRequest" type="tns:listClassifiersRequest" />
+			<xsd:element name="listClassifiersResponse" type="tns:listClassifiersResponse" />
+			
+			<xsd:element name="listOrdersRequest" type="tns:listOrdersRequest" />
+			<xsd:element name="listOrdersResponse" type="tns:listOrdersResponse" />
+			
+			<xsd:complexType name="BaseObject">
+				<xsd:sequence>
+					<xsd:element name="uuid" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="source" type="tns:Source" minOccurs="0"/>
+					<xsd:element name="embedable" type="xsd:boolean" minOccurs="0"/>
+					<xsd:element name="type" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="name" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="formatting" type="xsd:string" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="Source">
+				<xsd:sequence>
+					<xsd:element name="name" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="url" type="xsd:string" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			
+			<xsd:complexType name="Classifier">
+				<xsd:complexContent>
+					<xsd:extension base="tns:BaseObject">
+						<xsd:sequence>
+							<xsd:element name="code" type="xsd:string" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>	
+			<xsd:complexType name="StudyTypeClassifier">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="ru">Форма обучения</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexContent>
+					<xsd:extension base="tns:Classifier">
+						<xsd:sequence>
+							<xsd:element name="startDate" type="xsd:date" minOccurs="0" maxOccurs="1">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="ru">Год начала обучения</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="endDate" type="xsd:date" minOccurs="0" maxOccurs="1">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="ru">Год окончания обучения</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<choice>
+								<sequence>
+									<element name="contractNumber" type="string" minOccurs="0"/>
+									<element name="contractDate" type="date" minOccurs="0"/>
+								</sequence>
+								<sequence>
+									<element name="assignmentOrganisation" type="string" minOccurs="0"/>
+									<element name="assignmentNumber" type="string" minOccurs="0"/>
+									<element name="assignmentDate" type="date" minOccurs="0"/>
+								</sequence>
+							</choice>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>	
+			<xsd:complexType name="StudentStateClassifier">
+				<xsd:complexContent>
+					<xsd:extension base="tns:Classifier">
+						<xsd:sequence>
+							<xsd:element name="startDate" type="xsd:date" minOccurs="0" maxOccurs="1">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="ru">Дата начала состояния</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="endDate" type="xsd:date" minOccurs="0" maxOccurs="1">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="ru">Дата окончания состояния</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>	
+			<xsd:complexType name="MilitaryStateClassifier">
+				<xsd:complexContent>
+					<xsd:extension base="tns:Classifier">
+						<xsd:sequence>
+							<xsd:element name="studyYear" type="xsd:int" minOccurs="0" maxOccurs="1">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="ru">Курс обучения</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="startDate" type="xsd:date" minOccurs="0" maxOccurs="1">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="ru">Дата начала состояния</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="endDate" type="xsd:date" minOccurs="0" maxOccurs="1">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="ru">Дата окончания состояния</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>	
+			<xsd:complexType name="GenderClassifier">
+				<xsd:complexContent>
+					<xsd:extension base="tns:Classifier">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="ru">Отставить смех!</xsd:documentation>
+						</xsd:annotation>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>	
+			<xsd:complexType name="CitizenshipClassifier">
+				<xsd:complexContent>
+					<xsd:extension base="tns:Classifier">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="ru">Классификатор гражданства</xsd:documentation>
+						</xsd:annotation>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>	
+			<xsd:complexType name="GrantClassifier">
+				<xsd:complexContent>
+					<xsd:extension base="tns:Classifier">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="ru">Классификатор стипендии</xsd:documentation>
+						</xsd:annotation>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>	
+			
+			<xsd:complexType name="Group">
+				<xsd:complexContent>
+					<xsd:extension base="tns:BaseObject">
+						<xsd:sequence>
+							<xsd:element name="titleshort" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+							<xsd:element name="speciality" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+							<xsd:element name="parentuuid" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="semester" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+							<xsd:element name="monitor" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+							<xsd:element name="next" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+							<xsd:element name="prev" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+		
+			<xsd:complexType name="order">
+				<xsd:complexContent>
+					<xsd:extension base="tns:BaseObject">
+						<xsd:sequence>
+							<xsd:element name="orderType" type="xsd:string" />
+							<xsd:element name="dateActivated" type="xsd:date" />
+							<xsd:element name="studentsInOrder" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+
+			<xsd:complexType name="Student">
+				<xsd:complexContent>
+					<xsd:extension base="tns:BaseObject">
+						<xsd:sequence>
+							<xsd:element name="lastName" type="xsd:string"/>
+							<xsd:element name="firstName" type="xsd:string"/>
+							<xsd:element name="middleName" type="xsd:string"/>
+							<xsd:element name="cardNumber" type="xsd:string"/>
+							<xsd:element name="group" type="tns:Group">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="ru">Группа</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							
+							<xsd:element name="studyType" type="tns:StudyTypeClassifier">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="ru">Форма обучения: бюджетная, платная, по направлению</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="studentState" type="tns:StudentStateClassifier">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="ru">Состояние студента: обучается, в академе и т.д.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="militaryState" type="tns:MilitaryStateClassifier">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="ru">Состояние обучения на Военной кафедре</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="isInvalid" type="xsd:boolean">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="ru">ГУИМЦ</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="gender" type="tns:GenderClassifier" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="ru">Не ржать</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="birthDate" type="xsd:date" minOccurs="0"/>
+							<xsd:element name="hasDormitory" type="xsd:boolean" minOccurs="0"/>
+							<xsd:element name="speciality" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="citizenship" type="tns:CitizenshipClassifier" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="ru">Тип гражданства</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="grant" type="tns:GrantClassifier" minOccurs="0">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="ru">Тип стипендии</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			
+			<xsd:complexType name="listStudentsRequest">
+				<xsd:sequence>
+					<xsd:element name="lastName" type="xsd:string"/>
+					<xsd:element name="firstName" type="xsd:string"/>
+					<xsd:element name="middleName" type="xsd:string"/>
+					<xsd:element name="cardNumber" type="xsd:string"/>
+					<xsd:element name="group" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			
+			<xsd:complexType name="listStudentsResponse">
+				<xsd:sequence>
+					<xsd:element name="student" type="tns:Student" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+		
+			<xsd:complexType name="getRequest">
+				<xsd:sequence>
+					<xsd:element name="uuid" type="xsd:string" minOccurs="1" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="getResponse">
+				<xsd:sequence>
+					<xsd:element name="student" type="tns:Student" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+		
+			<xsd:complexType name="listClassifiersRequest">
+				<xsd:sequence>
+					<xsd:element name="type" type="xsd:string">
+						<xsd:annotation>
+							<xsd:documentation xml:lang="ru">Варианты: '' (все классификаторы), citizenship, gender, grant, militaryState, studentState, studyType</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="listClassifiersResponse">
+				<xsd:sequence>
+					<xsd:element name="classifier" type="tns:Classifier" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element name="studyTypeClassifier" type="tns:StudyTypeClassifier" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element name="studentStateClassifier" type="tns:StudentStateClassifier" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element name="militaryStateClassifier" type="tns:MilitaryStateClassifier" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element name="genderClassifier" type="tns:GenderClassifier" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element name="citizenshipClassifier" type="tns:CitizenshipClassifier" minOccurs="0" maxOccurs="unbounded" />
+					<xsd:element name="grantClassifier" type="tns:GrantClassifier" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+		
+			<xsd:complexType name="listOrdersRequest">
+				<xsd:sequence>
+					<xsd:element name="orderType" type="xsd:string" />
+					<xsd:element name="studentInOrder" type="xsd:string" minOccurs="1" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+			
+			<xsd:complexType name="listOrdersResponse">
+				<xsd:sequence>
+					<xsd:element name="order" type="tns:order" minOccurs="0" maxOccurs="unbounded" />
+				</xsd:sequence>
+			</xsd:complexType>
+	    </xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="listStudentsRequest">
+		<wsdl:part name="listStudentsRequest" element="tns:listStudentsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="listStudentsResponse">
+		<wsdl:part name="listStudentsResponse" element="tns:listStudentsResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="getRequest">
+		<wsdl:part name="getRequest" element="tns:getRequest"/>
+	</wsdl:message>
+	<wsdl:message name="getResponse">
+		<wsdl:part name="getResponse" element="tns:getResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="listClassifiersRequest">
+		<wsdl:part name="listClassifiersRequest" element="tns:listClassifiersRequest"/>
+	</wsdl:message>
+	<wsdl:message name="listClassifiersResponse">
+		<wsdl:part name="listClassifiersResponse" element="tns:listClassifiersResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="listOrdersRequest">
+		<wsdl:part name="listOrdersRequest" element="tns:listOrdersRequest"/>
+	</wsdl:message>
+	<wsdl:message name="listOrdersResponse">
+		<wsdl:part name="listOrdersResponse" element="tns:listOrdersResponse"/>
+	</wsdl:message>
+	
+	<wsdl:portType name="ContingentPortType">
+		
+		<wsdl:operation name="listStudents">
+			<wsdl:input message="tns:listStudentsRequest"/>
+			<wsdl:output message="tns:listStudentsResponse"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="get">
+			<wsdl:input message="tns:getRequest"/>
+			<wsdl:output message="tns:getResponse"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="listClassifiers">
+			<wsdl:input message="tns:listClassifiersRequest"/>
+			<wsdl:output message="tns:listClassifiersResponse"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="listOrders">
+			<wsdl:input message="tns:listOrdersRequest"/>
+			<wsdl:output message="tns:listOrdersResponse"/>
+		</wsdl:operation>
+		
+	</wsdl:portType>
+
+	<wsdl:binding name="ContingentBinding" type="tns:ContingentPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		
+		<wsdl:operation name="listStudents">
+			<soap:operation soapAction="http://bmstu.ru/listStudents"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<wsdl:operation name="get">
+			<soap:operation soapAction="http://bmstu.ru/get"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<wsdl:operation name="listClassifiers">
+			<soap:operation soapAction="http://bmstu.ru/listClassifiers"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<wsdl:operation name="listOrders">
+			<soap:operation soapAction="http://bmstu.ru/listOrders"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+	</wsdl:binding>
+
+	<wsdl:service name="ContingentService">
+		<wsdl:documentation>Contingent service (c) preved</wsdl:documentation>
+		<wsdl:port name="ContingentPort" binding="tns:ContingentBinding">
+			<soap:address location="http://10.1.1.60/contingent/Server.php"/>
+		</wsdl:port>
+	</wsdl:service>
+
+</wsdl:definitions>

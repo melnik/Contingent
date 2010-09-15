@@ -1,0 +1,5 @@
+case 1: return "лр";
+case 2: return "дъ";
+case 3: return "лт";
+case 4: return "тл";
+

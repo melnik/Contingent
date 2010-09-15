@@ -1,0 +1,25 @@
+<?php
+/* Класс: html
+ * Назначение: Обеспечивает формирование HTML документа
+ * 
+ * Версия: 0.1
+ */
+class html {
+	
+	function __construct($title="HTML документ", $enc="koi8-r", $style="css/style.css") {
+	echo "<html>\n";
+	echo "<head>\n";
+	echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=".$enc."\" />\n";
+	echo "<meta http-equiv=\"Content-Language\" content=\"ru\" />\n";
+	echo "<title>".$title."</title>\n";
+	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"".$style."\">";
+	echo "</head>\n";
+	echo "<body>\n";
+	}
+
+	function __destruct() {
+	echo "</body>\n</html>\n";
+	}
+}
+
+?>

@@ -1,0 +1,1192 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<structure>
+<faculty name="чПХЯОПСДЕМЖХХ (ЙЮТЕДПЮ)" abbr="чп" dean="йНПНАЕЖ а.м." id="a318ba75-82fc-1029-96dd-000347adedc6">
+<subfaculty name="йЮТЕДПЮ ЧПХЯОПСДЕМЖХХ" abbr="чп" chief="йНПНАЕЖ а.м." id="a31915ee-82fc-1029-96dd-000347adedc6">
+<group abbr="чп-11" speciality_code="0305010065" id="1104515e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="чп-31" speciality_code="0305010065" id="1106cedb-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="чп-51" speciality_code="0305010065" id="1108fe0b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="чп-71" speciality_code="0305010065" id="110b23cb-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="чп-91" speciality_code="0305010165" id="110dc5ea-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="чп-92" speciality_code="0305010265" id="110de78c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="чп-93" speciality_code="0305010365" id="110e0cba-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="чп-111" speciality_code="0305010065" id="11103476-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+</faculty>
+<faculty name="юЩПНЙНЯЛХВЕЯЙХИ" abbr="юй" dean="яХЛНКЭЪМЖ п.о." id="a31b5b3d-82fc-1029-96dd-000347adedc6">
+<subfaculty name="ял-2" abbr="юй-1" chief="" id="a31bb563-82fc-1029-96dd-000347adedc6">
+<group abbr="юй1-11" speciality_code="1608020065" id="1112cf94-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй1-31" speciality_code="1608020065" id="1114fca3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй1-51" speciality_code="1608020065" id="11173066-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй1-71" speciality_code="1608020065" id="1119a72f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй1-91" speciality_code="1608021165" id="111bd283-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй1-111" speciality_code="1608021165" id="111e38da-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="ял-2" abbr="юй-2" chief="" id="a31e39c8-82fc-1029-96dd-000347adedc6">
+<group abbr="юй2-11" speciality_code="1608010065" id="1120be94-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй2-31" speciality_code="1608010065" id="1122f46d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй2-51" speciality_code="1608010065" id="11252556-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй2-71" speciality_code="1608010065" id="1127a6d7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй2-91" speciality_code="1608011265" id="1129d43a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй2-111" speciality_code="1608011265" id="112c3bbf-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="тм-11" abbr="юй-3" chief="" id="a320a6e4-82fc-1029-96dd-000347adedc6">
+<group abbr="юй3-11" speciality_code="2304010065" id="112eba61-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй3-31" speciality_code="2304010065" id="1130df8d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй3-51" speciality_code="2304010065" id="11339b03-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй3-71" speciality_code="2304010065" id="113600eb-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй3-91" speciality_code="2304010165" id="1138437f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй3-111" speciality_code="2304010165" id="11403249-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="хс-1" abbr="юй-4" chief="" id="a3233447-82fc-1029-96dd-000347adedc6">
+<group abbr="юй4-11" speciality_code="1604030065" id="11425a6a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй4-31" speciality_code="1604030065" id="11448008-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй4-51" speciality_code="1604030065" id="114701dd-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй4-71" speciality_code="1604030065" id="1149758d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй4-91" speciality_code="1604031765" id="114b9a51-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй4-111" speciality_code="1604031765" id="114e0fd6-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="хс-6" abbr="юй-5" chief="" id="a325af65-82fc-1029-96dd-000347adedc6">
+<group abbr="юй5-11" speciality_code="2301010065" id="115049d7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй5-31" speciality_code="2301010065" id="1152796c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй5-51" speciality_code="2301010065" id="1155008e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй5-71" speciality_code="2301010065" id="115766b9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй5-91" speciality_code="2301010165" id="1159f88d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="юй5-111" speciality_code="2301010165" id="115c266b-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+</faculty>
+<faculty name="аХНЛЕДХЖХМЯЙЮЪ РЕУМХЙЮ" abbr="алр" dean="ыСЙХМ я.х." id="a2eaf134-82fc-1029-96dd-000347adedc6">
+<subfaculty name="аХНЛЕДХЖХМЯЙХЕ РЕУМХВЕЯЙХЕ ЯХЯРЕЛШ" abbr="алр-1" chief="яОХПХДНМНБ х.м." id="a2eb4b01-82fc-1029-96dd-000347adedc6">
+<group abbr="алр1-11" speciality_code="2004010065" id="0ffcce41-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр1-31" speciality_code="2004010065" id="0fff732c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр1-51" speciality_code="2004010065" id="1001ed46-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр1-71" speciality_code="2004010065" id="1004174a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр1-91" speciality_code="2004010065" id="1006ae08-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр1-92" speciality_code="2004010065" id="1006cfa1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр1-111" speciality_code="2004010065" id="100eb6ff-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр1-112" speciality_code="2004010065" id="100ed875-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="лЕДХЙН-РЕУМХВЕЯЙХЕ ХМТНПЛЮЖХНММШЕ РЕУМНКНЦХХ" abbr="алр-2" chief="ыСЙХМ я.х." id="a2edbe9b-82fc-1029-96dd-000347adedc6">
+<group abbr="алр2-11" speciality_code="2004020065" id="1010db32-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр2-12" speciality_code="2004020065" id="1010fc94-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр2-31" speciality_code="2004020065" id="10130629-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр2-32" speciality_code="2004020065" id="10132799-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр2-51" speciality_code="2004020065" id="10159ac3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр2-52" speciality_code="2004020065" id="1015bdc2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр2-71" speciality_code="2004020065" id="10180a61-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр2-72" speciality_code="2004020065" id="101838ba-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр2-91" speciality_code="2004020065" id="101a9834-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр2-92" speciality_code="2004020065" id="101abc48-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр2-111" speciality_code="2004020065" id="101cc278-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="алр2-112" speciality_code="2004020065" id="101ce458-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="лЕДХЙН-РЕУМХВЕЯЙХИ ЛЕМЕДФЛЕМР" abbr="алр-4" chief="пСРЙНБЯЙХИ н.б." id="a2f0aef6-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+</faculty>
+<faculty name="тСМДЮЛЕМРЮКЭМШЕ МЮСЙХ" abbr="тм" dean="мЮГЮПЕМЙН а.о." id="a24bbb0e-82fc-1029-96dd-000347adedc6">
+<subfaculty name="бШЯЬЮЪ ЛЮРЕЛЮРХЙЮ" abbr="тм-1" chief="йЮПРЮЬЕБ ц.д." id="a24c14a4-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+<subfaculty name="оПХЙКЮДМЮЪ ЛЮРЕЛЮРХЙЮ" abbr="тм-2" chief="гЮПСАХМ б.я." id="a24db5e0-82fc-1029-96dd-000347adedc6">
+<group abbr="тм2-11" speciality_code="2304010065" id="0c3877cd-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм2-12" speciality_code="2304010065" id="0c3898c2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм2-31" speciality_code="2304010065" id="0c3b1b8f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм2-32" speciality_code="2304010065" id="0c3b4541-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм2-51" speciality_code="2304010065" id="0c3d45d0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм2-52" speciality_code="2304010065" id="0c3d6876-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм2-71" speciality_code="2304010065" id="0c3f75c4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм2-72" speciality_code="2304010065" id="0c3f97d3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм2-91" speciality_code="2304010165" id="0c41fde7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм2-92" speciality_code="2304010265" id="0c421fb3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм2-93" speciality_code="2304010365" id="0c4241b2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм2-94" speciality_code="2304010465" id="0c426391-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм2-111" speciality_code="2304010165" id="0c441e16-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм2-112" speciality_code="2304010265" id="0c443fe0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм2-113" speciality_code="2304010365" id="0c4461a3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм2-114" speciality_code="2304010465" id="0c4483b8-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="рЕНПЕРХВЕЯЙЮЪ ЛЕУЮМХЙЮ" abbr="тм-3" chief="дСАХМХМ б.б." id="a250b7cf-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+<subfaculty name="тХГХЙЮ" abbr="тм-4" chief="лНПНГНБ ю.м." id="a252230a-82fc-1029-96dd-000347adedc6">
+<group abbr="тм4-11" speciality_code="1404000062" id="0c545c27-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм4-31" speciality_code="1404000062" id="0c5708d4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм4-51" speciality_code="1404000062" id="0c5937fe-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм4-71" speciality_code="1404000062" id="0c5b731c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм4-91" speciality_code="1404000068" id="0c5df010-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="тм4-111" speciality_code="1404000068" id="0c603bc1-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="уХЛХЪ" abbr="тм-5" chief="тЮДЕЕБ ц.м." id="a254724a-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+<subfaculty name="щКЕЙРПНРЕУМХЙЮ Х ОПНЛШЬКЕММЮЪ ЩКЕЙРПНМХЙЮ" abbr="тм-7" chief="йПЮЯНБЯЙХИ ю.а." id="a255e4be-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+<subfaculty name="бШВХЯКХРЕКЭМЮЪ ЛЮРЕЛЮРХЙЮ Х ЛЮРЕЛЮРХВЕЯЙЮЪ ТХГХЙЮ" abbr="тм-11" chief="дХЛХРПХЕМЙН ч.х." id="a2576289-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+<subfaculty name="лЮРЕЛЮРХВЕЯЙНЕ ЛНДЕКХПНБЮМХЕ" abbr="тм-12" chief="йПХЫЕМЙН ю.о." id="a258e401-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+</faculty>
+<faculty name="тХГЙСКЭРСПМН-НГДНПНБХРЕКЭМШИ" abbr="тн" dean="" id="9e27d8f5-9f58-1029-a29e-000347adedc6">
+<subfaculty name="тХГХВЕЯЙНЕ БНЯОХРЮМХЕ" abbr="тб" chief="" id="b343756d-9f58-1029-a29e-000347adedc6">
+</subfaculty>
+<subfaculty name="бЮКЕНКНЦХЪ" abbr="алр-3" chief="" id="7ef65ebf-c211-1029-86e7-000cf1a7cbf0">
+</subfaculty>
+</faculty>
+<faculty name="бНЕММНЦН НАСВЕМХЪ" abbr="тбн" dean="нЯРПХЙНБ я.о." id="a30a9bbf-82fc-1029-96dd-000347adedc6">
+<subfaculty name="бНЕММЮЪ ОНДЦНРНБЙЮ" abbr="бо" chief="" id="ebd115ee-c212-1029-86e7-000cf1a7cbf0">
+</subfaculty>
+<subfaculty name="гЮЬХРЮ Б вя Х цн" abbr="гвяХцн" chief="рХРНПЕМЙН к.о." id="f5719a52-7af3-11dc-b081-00179a38b145">
+</subfaculty>
+</faculty>
+<faculty name="цНКНБМНИ СВЕАМН-ХЯЯКЕДНБЮРЕКЭЯЙХИ ЛЕРНДХВЕЯЙХИ ЖЕМРП ОПНТЕЯЯХНМЮКЭМНИ ПЕЮАХКХРЮЖХХ ХМБЮКХДНБ ОН ЯКСУС" abbr="цсхлж" dean="яРЮМЕБЯЙХИ ю.ц." id="a30af6b7-82fc-1029-96dd-000347adedc6">
+<subfaculty name="лр-8" abbr="сж-1" chief="яРЮМЕБЯЙХИ ю.ц." id="a30b49f8-82fc-1029-96dd-000347adedc6">
+<group abbr="сж1-11" speciality_code="1505010065" id="10be5a26-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="сж1-12" speciality_code="1505010065" id="10be8291-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="сж1-13" speciality_code="1505010065" id="10bea548-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="сж1-14" speciality_code="1505010065" id="10bec717-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="сж1-31" speciality_code="1505010065" id="10c0858a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="сж1-51" speciality_code="1505010065" id="10c305a5-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="пй-9" abbr="сж-2" chief="яРЮМЕБЯЙХИ ю.ц." id="a30da16a-82fc-1029-96dd-000347adedc6">
+<group abbr="сж2-31" speciality_code="2203010065" id="10d0a9a2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="сж2-51" speciality_code="2203010065" id="10d2d203-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="сж2-71" speciality_code="-" id="10d5a90c-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="лр-4" abbr="сж-4" chief="яРЮМЕБЯЙХИ ю.ц." id="a30faca5-82fc-1029-96dd-000347adedc6">
+<group abbr="сж4-51" speciality_code="2005030065" id="10e0dc27-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="сж4-71" speciality_code="-" id="10e39bd3-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="хс-5" abbr="сж-5" chief="яРЮМЕБЯЙХИ ю.ц." id="a311d2d5-82fc-1029-96dd-000347adedc6">
+<group abbr="сж5-31" speciality_code="2301020065" id="10ecb82d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="сж5-51" speciality_code="2301020065" id="10ee7553-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="сж5-71" speciality_code="-" id="10f0ad5a-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="хс-8" abbr="сж-8" chief="яРЮМЕБЯЙХИ ю.ц." id="a313d374-82fc-1029-96dd-000347adedc6">
+<group abbr="сж8-31" speciality_code="0901050065" id="10f92051-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="сж8-51" speciality_code="0901050065" id="10fb2729-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="сж8-71" speciality_code="-" id="10fd1820-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+</faculty>
+<faculty name="хМФЕМЕПМШИ АХГМЕЯ Х ЛЕМЕДФЛЕМР" abbr="хал" dean="нЛЕКЭВЕМЙН х.м." id="a2fa35fb-82fc-1029-96dd-000347adedc6">
+<subfaculty name="щЙНМНЛХВЕЯЙЮЪ РЕНПХЪ" abbr="хал-1" chief="кНАЮВЕБЮ е.м." id="a2fa99db-82fc-1029-96dd-000347adedc6">
+<group abbr="хал1-11" speciality_code="0805073165" id="106749f3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал1-31" speciality_code="0805073165" id="106915de-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал1-51" speciality_code="0805073165" id="106b7839-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал1-91" speciality_code="0805073165" id="106f77ec-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал1-111" speciality_code="0805073165" id="1071960e-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="щЙНМНЛХЙЮ Х НПЦЮМХГЮЖХЪ ОПНХГБНДЯРБЮ" abbr="хал-2" chief="тЮКЭЙН я.ц." id="a2fd0769-82fc-1029-96dd-000347adedc6">
+<group abbr="хал2-11" speciality_code="2207010065" id="10738dbe-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал2-12" speciality_code="2207010065" id="1073b3ed-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал2-31" speciality_code="2207010065" id="10758a3e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал2-32" speciality_code="2207010065" id="1075abd4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал2-51" speciality_code="2207010065" id="1077405a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал2-52" speciality_code="2207010065" id="10775f77-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал2-71" speciality_code="2207010065" id="107994c4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал2-91" speciality_code="2207010365" id="107bf2b1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал2-92" speciality_code="0805077865" id="107c15ae-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал2-111" speciality_code="2207010465" id="107e5144-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал2-112" speciality_code="2207010565" id="107e7350-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="оПНЛШЬКЕММЮЪ КНЦХЯРХЙЮ" abbr="хал-3" chief="йНКНАНБ ю.ю." id="a2fffd32-82fc-1029-96dd-000347adedc6">
+<group abbr="хал3-11" speciality_code="2207010065" id="1080d786-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал3-12" speciality_code="2207010065" id="1080f9e4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал3-31" speciality_code="2207010065" id="1082f764-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал3-32" speciality_code="2207010065" id="108318f6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал3-51" speciality_code="2207010065" id="10851db3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал3-52" speciality_code="2207010065" id="1085447b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал3-71" speciality_code="2207010065" id="1087a2bf-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал3-72" speciality_code="2207010065" id="1087c453-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал3-91" speciality_code="2207010065" id="1089c53c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал3-111" speciality_code="0805073765" id="108c34be-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="лЕМЕДФЛЕМР" abbr="хал-4" chief="юЙНОНБ б.я." id="a302aea1-82fc-1029-96dd-000347adedc6">
+<group abbr="хал4-11" speciality_code="2207010065" id="108ebfd1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал4-31" speciality_code="2207010065" id="1090fb80-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал4-51" speciality_code="2207010065" id="10931a8c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал4-71" speciality_code="2207010065" id="10959c0d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал4-91" speciality_code="0805074665" id="1097beb6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал4-111" speciality_code="0805074665" id="109ffff2-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="тХМЮМЯШ" abbr="хал-5" chief="яНЙНКНБ е.б." id="a3051d41-82fc-1029-96dd-000347adedc6">
+<group abbr="хал5-11" speciality_code="2207010065" id="10a22b21-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал5-31" speciality_code="2207010065" id="10a4548b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал5-51" speciality_code="0805022665" id="10a6d4de-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал5-71" speciality_code="0805022665" id="10a94a29-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал5-72" speciality_code="0805020865" id="10a97026-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал5-91" speciality_code="0805022665" id="10ab76ce-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал5-92" speciality_code="0805020865" id="10ab9a7b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал5-111" speciality_code="0805022665" id="10ae03b9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал5-112" speciality_code="0805020865" id="10ae2c25-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="оПЕДОПХМХЛЮРЕКЭЯРБН Х БМЕЬМЕЩЙНМНЛХВЕЯЙЮЪ ДЕЪРЕКЭМНЯРЭ" abbr="хал-6" chief="яЮДНБЯЙЮЪ р.ц." id="a30801e9-82fc-1029-96dd-000347adedc6">
+<group abbr="хал6-11" speciality_code="2207010065" id="10b03f63-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал6-31" speciality_code="2207010065" id="10b2692f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал6-51" speciality_code="2207010065" id="10b4e52a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал6-71" speciality_code="2207010065" id="10b70f44-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал6-91" speciality_code="0805020065" id="10b97d64-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хал6-111" speciality_code="0805020065" id="10bbff41-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+</faculty>
+<faculty name="хМТНПЛЮРХЙЮ Х СОПЮБКЕМХЕ" abbr="хс" dean="лЮРБЕЕБ б.ю." id="a22d4cbb-82fc-1029-96dd-000347adedc6">
+<subfaculty name="яХЯРЕЛШ ЮБРНЛЮРХВЕЯЙНЦН СОПЮБКЕМХЪ" abbr="хс-1" chief="оСОЙНБ й.ю." id="a2336d07-82fc-1029-96dd-000347adedc6">
+<group abbr="хс1-11" speciality_code="1604030065" id="0bb54827-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс1-12" speciality_code="1604030065" id="0bb57102-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс1-31" speciality_code="1604030065" id="0bb7d018-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс1-32" speciality_code="1604030065" id="0bb7f1cd-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс1-51" speciality_code="1604030065" id="0bb9ca8d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс1-52" speciality_code="1604030065" id="0bb9ec7d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс1-71" speciality_code="1604030065" id="0bbc0bc7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс1-72" speciality_code="1604030065" id="0bbc2575-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс1-91" speciality_code="1604030265" id="0bbe60a9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс1-92" speciality_code="1604030365" id="0bbe8370-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс1-93" speciality_code="1604030265" id="0bbea47e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс1-94" speciality_code="2202000568" id="0bbebf16-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс1-111" speciality_code="1604030265" id="0bc07b77-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс1-112" speciality_code="1604030365" id="0bc09190-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс1-113" speciality_code="1604030265" id="0bc0bf97-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс1-114" speciality_code="2202000568" id="0bc0e1e7-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="оПХАНПШ   Х   ЯХЯРЕЛШ   НПХЕМРЮЖХХ,   ЯРЮАХКХГЮЖХХ   Х МЮБХЦЮЖХХ" abbr="хс-2" chief="йНМНБЮКНБ я.т." id="a2362498-82fc-1029-96dd-000347adedc6">
+<group abbr="хс2-11" speciality_code="1604020065" id="0bc2c099-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс2-12" speciality_code="1604020065" id="0bc2dca7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс2-31" speciality_code="1604020065" id="0bc53e18-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс2-32" speciality_code="1604020065" id="0bc5661d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс2-51" speciality_code="1604020065" id="0bc7512c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс2-52" speciality_code="1604020065" id="0bc7728e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс2-71" speciality_code="1604020065" id="0bc97fe2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс2-72" speciality_code="1604020065" id="0bc9a1c4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс2-73" speciality_code="1604020065" id="0bc9b9b5-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс2-91" speciality_code="1604020165" id="0bcbf0b8-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс2-92" speciality_code="1604020365" id="0bcc11be-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс2-93" speciality_code="1604020165" id="0bcc2b12-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс2-111" speciality_code="1604020165" id="0bcdece7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс2-112" speciality_code="1604020365" id="0bce104b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс2-113" speciality_code="1604020165" id="0bce25d6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс2-114" speciality_code="2202001368" id="0bce5017-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="хМТНПЛЮЖХНММШЕ ЯХЯРЕЛШ Х РЕКЕЙНЛЛСМХЙЮЖХХ" abbr="хс-3" chief="дЕБЪРЙНБ б.б." id="a238f38e-82fc-1029-96dd-000347adedc6">
+<group abbr="хс3-11" speciality_code="2302010065" id="0bcffb18-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс3-12" speciality_code="2302010065" id="0bd0245a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс3-13" speciality_code="2302010065" id="0bd04b47-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс3-31" speciality_code="2302010065" id="0bd2a72a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс3-32" speciality_code="2302010065" id="0bd2c86b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс3-51" speciality_code="2302010065" id="0bd4b661-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс3-52" speciality_code="2302010065" id="0bd4db3e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс3-71" speciality_code="2302010065" id="0bd6b21d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс3-72" speciality_code="2302010065" id="0bd6dc91-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс3-91" speciality_code="2302010065" id="0bd8d5f7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс3-92" speciality_code="2302010065" id="0bd8fd0e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс3-93" speciality_code="2302002468" id="0bd9261e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс3-111" speciality_code="2302010065" id="0bdb2256-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс3-112" speciality_code="2302010065" id="0bdb444e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс3-113" speciality_code="2302000868" id="0bdb6628-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="оПНЕЙРХПНБЮМХЕ Х РЕУМНКНЦХЪ ОПНХГБНДЯРБЮ ЩКЕЙРПНММНИ ЮООЮПЮРСПШ" abbr="хс-4" chief="ьЮУМНБ б.ю." id="a23baf8a-82fc-1029-96dd-000347adedc6">
+<group abbr="хс4-11" speciality_code="2102020065" id="0bdd4b24-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-12" speciality_code="2102020065" id="0bdd6cc3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-13" speciality_code="2102020065" id="0bdd8eb6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-31" speciality_code="2102020065" id="0be57fa3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-32" speciality_code="2102020065" id="0be5a3c2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-33" speciality_code="2102020065" id="0be5c636-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-51" speciality_code="2102020065" id="0be7b6c2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-52" speciality_code="2102020065" id="0be7dda7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-53" speciality_code="2102020065" id="0be80058-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-54" speciality_code="2102020065" id="0be82240-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-71" speciality_code="2102020065" id="0be9fd1e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-72" speciality_code="2102020065" id="0bea1f89-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-73" speciality_code="2102020065" id="0bea412e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-74" speciality_code="2102020065" id="0bea62e6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-91" speciality_code="2102020065" id="0bec76c3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-92" speciality_code="2102020065" id="0bec99e9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-93" speciality_code="2102020065" id="0becbbc6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-111" speciality_code="2102020065" id="0beedda9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-112" speciality_code="2102020065" id="0beeff5c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс4-113" speciality_code="2102020065" id="0bef2125-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="яХЯРЕЛШ НАПЮАНРЙХ ХМТНПЛЮЖХХ Х СОПЮБКЕМХЪ" abbr="хс-5" chief="вЕПМЕМЭЙХИ б.л." id="a22f8d37-82fc-1029-96dd-000347adedc6">
+<group abbr="хс5-11" speciality_code="2301020065" id="0ba77772-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-12" speciality_code="2301020065" id="0ba88c7f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-13" speciality_code="2301020065" id="0ba8d891-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-14" speciality_code="2301020065" id="0ba905d0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-31" speciality_code="2301020065" id="0baa7219-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-32" speciality_code="2301020065" id="0baa94d8-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-33" speciality_code="2301020065" id="0baaa9fc-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-34" speciality_code="2301020065" id="0baabfc9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-51" speciality_code="2301020065" id="0bac37b8-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-52" speciality_code="2301020065" id="0bac5c3e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-53" speciality_code="2301020065" id="0bac9bb1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-54" speciality_code="2301020065" id="0bacbdbd-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-71" speciality_code="2301020065" id="0bae578b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-72" speciality_code="2301020065" id="0bae79be-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-73" speciality_code="2301020065" id="0bae9060-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-74" speciality_code="2301020065" id="0baeba74-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-91" speciality_code="2301020065" id="0bb0cb8f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-92" speciality_code="2301020065" id="0bb0fd36-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-93" speciality_code="2301020065" id="0bb116fc-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-94" speciality_code="2301020065" id="0bb1395a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-95" speciality_code="2301000868" id="0bb14f0e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-111" speciality_code="2301020065" id="0bb2c77a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-112" speciality_code="2301020065" id="0bb2ea20-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-113" speciality_code="2301020065" id="0bb32737-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-114" speciality_code="2301020065" id="0bb34e3d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс5-115" speciality_code="2301000868" id="0bb3742f-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="йНЛОЭЧРЕПМШЕ ЯХЯРЕЛШ Х ЯЕРХ" abbr="хс-6" chief="яЧГЕБ б.б." id="a23f77c7-82fc-1029-96dd-000347adedc6">
+<group abbr="хс6-11" speciality_code="2301010065" id="0bf10307-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-12" speciality_code="2301010065" id="0bf124ca-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-13" speciality_code="2301010065" id="0bf1470c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-31" speciality_code="2301010065" id="0bf39261-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-32" speciality_code="2301010065" id="0bf3b382-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-33" speciality_code="2301010065" id="0bf3d5e2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-51" speciality_code="2301010065" id="0bf5c3d3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-52" speciality_code="2301010065" id="0bf5e97f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-53" speciality_code="2301010065" id="0bf60b6a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-71" speciality_code="2301010065" id="0bf7e7bb-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-72" speciality_code="2301010065" id="0bf80a15-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-73" speciality_code="2301010065" id="0bf8313a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-91" speciality_code="2301010065" id="0bfa698f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-92" speciality_code="2301010065" id="0bfa8bb2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-93" speciality_code="2301010065" id="0bfaae20-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-94" speciality_code="2301000468" id="0bfaceda-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-95" speciality_code="2301000568" id="0bfaf0a3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-96" speciality_code="2301000868" id="0bfb1286-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-97" speciality_code="2301001368" id="0bfb340c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-98" speciality_code="2301002168" id="0bfb55a3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-111" speciality_code="2301010065" id="0bfee712-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-112" speciality_code="2301010065" id="0bff07c7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-113" speciality_code="2301010065" id="0bff2232-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-114" speciality_code="2301000468" id="0bff86c2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-115" speciality_code="2301000868" id="0bffaa95-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс6-116" speciality_code="2301001368" id="0bffcc1b-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="оПНЦПЮЛЛМНЕ НАЕЯОЕВЕМХЕ щбл Х ХМТНПЛЮЖХНММШЕ РЕУМНКНЦХХ" abbr="хс-7" chief="рПСЯНБ а.ц." id="a242bc7a-82fc-1029-96dd-000347adedc6">
+<group abbr="хс7-11" speciality_code="2301050065" id="0c013778-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс7-12" speciality_code="2301050065" id="0c015ab7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс7-13" speciality_code="2301050065" id="0c017ce8-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс7-31" speciality_code="2301050065" id="0c03422a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс7-32" speciality_code="2301050065" id="0c03588f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс7-33" speciality_code="2301050065" id="0c037b56-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс7-51" speciality_code="2301050065" id="0c056601-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс7-52" speciality_code="2301050065" id="0c05a50f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс7-53" speciality_code="2301050765" id="0c05dac2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс7-71" speciality_code="2301050065" id="0c07af8c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс7-72" speciality_code="2301050065" id="0c07c660-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс7-73" speciality_code="2301050765" id="0c07e93e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс7-91" speciality_code="2301050065" id="0c09bda0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс7-92" speciality_code="2301050065" id="0c09dfc0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс7-93" speciality_code="2301050065" id="0c09f6b6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс7-111" speciality_code="2301050065" id="0c0bf583-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс7-112" speciality_code="2301050065" id="0c0c1cc6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс7-113" speciality_code="2301050065" id="0c0c6a71-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="хМТНПЛЮЖХНММЮЪ АЕГНОЮЯМНЯРЭ" abbr="хс-8" chief="лЕДБЕДЕБ м.б." id="a245f184-82fc-1029-96dd-000347adedc6">
+<group abbr="хс8-11" speciality_code="0901050065" id="0c0e55c3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-12" speciality_code="0901050065" id="0c0e87a5-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-13" speciality_code="0901050065" id="0c0ea23d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-14" speciality_code="0901050065" id="0c0ec53f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-31" speciality_code="0901050065" id="0c108d88-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-32" speciality_code="0901050065" id="0c10b05d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-33" speciality_code="0901050065" id="0c10c756-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-34" speciality_code="0901050065" id="0c10e9dd-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-51" speciality_code="0901050065" id="0c12fb50-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-52" speciality_code="0901050065" id="0c133a10-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-53" speciality_code="0901050065" id="0c135225-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-71" speciality_code="0901050065" id="0c1529f5-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-72" speciality_code="0901050065" id="0c15419d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-73" speciality_code="0901050065" id="0c156b5e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-91" speciality_code="0901050065" id="0c172b18-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-92" speciality_code="0901050065" id="0c174cfa-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-93" speciality_code="0901050065" id="0c176449-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-111" speciality_code="0901050065" id="0c193582-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-112" speciality_code="0901050065" id="0c19adeb-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс8-113" speciality_code="0901050065" id="0c19d162-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="бШЯНЙНОПНХГБНДХРЕКЭМШЕ ЙНЛОЭЧРЕПМШЕ РЕУМНКНЦХХ" abbr="хс-9" chief="хБЮМНБ х.о." id="a24974ff-82fc-1029-96dd-000347adedc6">
+<group abbr="хс9-11" speciality_code="2301010065" id="0c1bf422-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс9-31" speciality_code="2301010065" id="0c1e28fc-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс9-51" speciality_code="2301010065" id="0c20c70b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс9-71" speciality_code="2301010065" id="0c22e937-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс9-91" speciality_code="2301010065" id="0c251dc0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс9-111" speciality_code="2301010065" id="0c27c7d4-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="гЮЫХРЮ ХМТНПЛЮЖХХ" abbr="хс-10" chief="яНКНЛНМНБ ч.я." id="63332b7b-03f8-102a-b397-000cf1a7cbf0">
+<group abbr="хс10-11" speciality_code="0901070065" id="1240ddc7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс10-31" speciality_code="0901070065" id="124328f0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс10-51" speciality_code="0901070065" id="1245a494-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс10-71" speciality_code="0901070065" id="1247cc40-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс10-91" speciality_code="0901070065" id="1249f022-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="хс10-111" speciality_code="0901070065" id="124c7a0c-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+</faculty>
+<faculty name="кХМЦБХЯРХЙЮ" abbr="к" dean="йСГМЕЖНБЮ р.х." id="a25a6df9-82fc-1029-96dd-000347adedc6">
+<subfaculty name="пСЯЯЙХИ ЪГШЙ" abbr="к-1" chief="пНЛЮМНБЮ м.м." id="a25ac83e-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+<subfaculty name="юМЦКХИЯЙХИ ЪГШЙ ОПХАНПНЯРПНХРЕКЭМШУ ЯОЕЖХЮКЭМНЯРЕИ" abbr="к-2" chief="йСГМЕЖНБЮ р.х." id="a25c363f-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+<subfaculty name="юМЦКХИЯЙХИ ЪГШЙ ЛЮЬХМНЯРПНХРЕКЭМШУ ЯОЕЖХЮКЭМНЯРЕИ" abbr="к-3" chief="цСПНБЮ ц.ц." id="a25db492-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+<subfaculty name="пНЛЮМН-ЦЕПЛЮМЯЙХЕ ЪГШЙХ" abbr="к-4" chief="яЕЛЕМНБЮ е.к." id="a25f2c1f-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+</faculty>
+<faculty name="лЮЬХМНЯРПНХРЕКЭМШЕ РЕУМНКНЦХХ" abbr="лр" dean="йНКЕЯМХЙНБ ю.ц." id="a260d8fb-82fc-1029-96dd-000347adedc6">
+<subfaculty name="лЕРЮККНПЕФСЫХЕ ЯРЮМЙХ" abbr="лр-1" chief="бЮЯХКЭЕБ ц.м." id="a2613a7f-82fc-1029-96dd-000347adedc6">
+<group abbr="лр1-11" speciality_code="1510020065" id="0cdc0116-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр1-12" speciality_code="1510020065" id="0cdc23da-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр1-31" speciality_code="1510020065" id="0cde349b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр1-32" speciality_code="1510020065" id="0cde5701-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр1-51" speciality_code="1510020065" id="0ce0631b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр1-52" speciality_code="1510020065" id="0ce0847a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр1-71" speciality_code="1510020065" id="0ce2e211-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр1-72" speciality_code="1510020065" id="0ce30939-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр1-91" speciality_code="1510020065" id="0ce5508a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр1-92" speciality_code="1510020065" id="0ce5720a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр1-111" speciality_code="1510020065" id="0ce7b230-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр1-112" speciality_code="1510020065" id="0ce7d3be-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="хМЯРПСЛЕМРЮКЭМЮЪ РЕУМХЙЮ Х РЕУМНКНЦХХ" abbr="лр-2" chief="дПЕБЮКЭ ю.е." id="a263f3cb-82fc-1029-96dd-000347adedc6">
+<group abbr="лр2-11" speciality_code="1510030065" id="0cea344a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр2-12" speciality_code="1510030065" id="0cea5657-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр2-31" speciality_code="1510030065" id="0cec51c2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр2-32" speciality_code="1510030065" id="0cec73df-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр2-51" speciality_code="1510030065" id="0cee7eb0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр2-52" speciality_code="1510030065" id="0ceef7ad-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр2-71" speciality_code="1510030065" id="0cf0f91e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр2-72" speciality_code="1510030065" id="0cf11e1a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр2-91" speciality_code="1510030065" id="0cf32594-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр2-92" speciality_code="1510030065" id="0cf347f1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр2-111" speciality_code="1510030065" id="0cf5f7cb-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр2-112" speciality_code="1510030065" id="0cf619b0-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="рЕУМНКНЦХХ ЛЮЬХМНЯРПНЕМХЪ" abbr="лр-3" chief="бЮЯХКЭЕБ ю.я." id="a266c14b-82fc-1029-96dd-000347adedc6">
+<group abbr="лр3-11" speciality_code="1510010065" id="0cf83c02-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр3-12" speciality_code="1504010065" id="0cf86425-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр3-31" speciality_code="1510010065" id="0cfa71c2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр3-32" speciality_code="1504010065" id="0cfa9555-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр3-51" speciality_code="1510010065" id="0cfcf1fe-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр3-52" speciality_code="1504010065" id="0cfd13a0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр3-53" speciality_code="1504010065" id="0cfd6d92-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр3-71" speciality_code="1510010065" id="0cff59ee-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр3-72" speciality_code="1504010065" id="0cff7c16-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр3-73" speciality_code="1510010065" id="0cff9dd1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр3-91" speciality_code="1510010065" id="0d017eaf-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр3-92" speciality_code="1504010065" id="0d01a057-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр3-111" speciality_code="1510010065" id="0d04365e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр3-112" speciality_code="1504010065" id="0d045825-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="лЕРПНКНЦХЪ Х БГЮХЛНГЮЛЕМЪЕЛНЯРЭ" abbr="лр-4" chief="йХЯЕКЕБ л.х." id="a26a16f6-82fc-1029-96dd-000347adedc6">
+<group abbr="лр4-11" speciality_code="2005030065" id="0d066227-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр4-31" speciality_code="2005030065" id="0d0888e8-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр4-51" speciality_code="2005030065" id="0d0b1dd0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр4-71" speciality_code="2005030065" id="0d0d5e8f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр4-91" speciality_code="2005030065" id="0d0f7cf9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр4-111" speciality_code="2005030065" id="0d17ef21-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="кХРЕИМШЕ РЕУМНКНЦХХ" abbr="лр-5" chief="пШАЙХМ б.ю." id="a26c7a64-82fc-1029-96dd-000347adedc6">
+<group abbr="лр5-11" speciality_code="1502040065" id="0d1a15be-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр5-12" speciality_code="1502040065" id="0d1a3ad2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр5-31" speciality_code="1502040065" id="0d1c3fe6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр5-32" speciality_code="1502040065" id="0d1c61c0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр5-51" speciality_code="1502040065" id="0d1eb5c2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр5-52" speciality_code="1502040065" id="0d1ed7aa-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр5-71" speciality_code="1502040065" id="0d212217-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр5-72" speciality_code="1502040065" id="0d2156ca-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр5-91" speciality_code="1502040065" id="0d235ce7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр5-92" speciality_code="1502040065" id="0d237eb5-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр5-111" speciality_code="1502040065" id="0d25da23-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр5-112" speciality_code="1502040065" id="0d260c56-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="рЕУМНКНЦХХ НАПЮАНРЙХ ДЮБКЕМХЕЛ" abbr="лр-6" chief="дЛХРПХЕБ ю.л." id="a26f5d4c-82fc-1029-96dd-000347adedc6">
+<group abbr="лр6-11" speciality_code="1502010065" id="0d2831b9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр6-12" speciality_code="1502010165" id="0d2852d0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр6-31" speciality_code="1502010065" id="0d2a5599-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр6-32" speciality_code="1502010165" id="0d2a761e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр6-51" speciality_code="1502010065" id="0d2ccece-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр6-52" speciality_code="1502010065" id="0d2cf0da-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр6-71" speciality_code="1502010065" id="0d2f4058-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр6-72" speciality_code="1502010065" id="0d2f630c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр6-91" speciality_code="1502010065" id="0d33ae2f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр6-92" speciality_code="1502010065" id="0d33d003-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр6-111" speciality_code="1502010065" id="0d35e4ba-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр6-112" speciality_code="1502010065" id="0d3606e5-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="рЕУМНКНЦХХ ЯБЮПЙХ Х ДХЮЦМНЯРХЙХ" abbr="лр-7" chief="юКЕЬХМ м.о." id="a2722887-82fc-1029-96dd-000347adedc6">
+<group abbr="лр7-11" speciality_code="1502020065" id="0d380d0d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр7-12" speciality_code="1502020065" id="0d382e10-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр7-31" speciality_code="1502020065" id="0d3a911f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр7-32" speciality_code="1502020065" id="0d3ab612-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр7-51" speciality_code="1502020065" id="0d3cd3b0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр7-52" speciality_code="1502020065" id="0d3cf59b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр7-71" speciality_code="1502020065" id="0d3f9b51-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр7-72" speciality_code="1502021065" id="0d3fbd87-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр7-73" speciality_code="1502020365" id="0d3fdf6f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр7-91" speciality_code="1502020065" id="0d41de74-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр7-92" speciality_code="1502021065" id="0d42000b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр7-93" speciality_code="1502020365" id="0d4221e5-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр7-111" speciality_code="1502020165" id="0d4400b9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр7-112" speciality_code="1502021065" id="0d442290-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр7-113" speciality_code="1502020365" id="0d444486-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="лЮРЕПХЮКНБЕДЕМХЕ" abbr="лр-8" chief="цЕПЮЯХЛНБ я.ю." id="a274d093-82fc-1029-96dd-000347adedc6">
+<group abbr="лр8-11" speciality_code="1505010065" id="0d46835f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр8-12" speciality_code="1505010065" id="0d46a5d5-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр8-31" speciality_code="1505010065" id="0d48a62f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр8-32" speciality_code="1505010065" id="0d48c81a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр8-51" speciality_code="1505010065" id="0d4aceea-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр8-52" speciality_code="1505010065" id="0d4af0dd-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр8-71" speciality_code="1505010065" id="0d4d963f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр8-72" speciality_code="1505010065" id="0d4dbd5b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр8-91" speciality_code="1505010065" id="0d4fba37-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр8-92" speciality_code="1505010065" id="0d4fe19c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр8-111" speciality_code="1505010265" id="0d51f9a2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр8-112" speciality_code="1505010565" id="0d521b55-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр8-113" speciality_code="1505011365" id="0d523e65-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="нАНПСДНБЮМХЕ Х РЕУМНКНЦХХ ОПНЙЮРЙХ" abbr="лр-10" chief="йНКЕЯМХЙНБ ю.ц." id="a2777f66-82fc-1029-96dd-000347adedc6">
+<group abbr="лр10-11" speciality_code="1504040065" id="0d5483f7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр10-12" speciality_code="1504040165" id="0d54a635-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр10-31" speciality_code="1504040065" id="0d56c318-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр10-32" speciality_code="1504040165" id="0d56e56d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр10-51" speciality_code="1504041165" id="0d58eb2b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр10-52" speciality_code="1504041365" id="0d590ce4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр10-53" speciality_code="1504041465" id="0d592e80-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр10-71" speciality_code="1504041165" id="0d5b9e61-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр10-72" speciality_code="1504041365" id="0d5bbef4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр10-73" speciality_code="1504041465" id="0d5be4bc-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр10-91" speciality_code="1504041165" id="0d5dcef4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр10-92" speciality_code="1504041365" id="0d5df08b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр10-93" speciality_code="1504041465" id="0d5e1844-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр10-111" speciality_code="1504041165" id="0d6004c7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр10-112" speciality_code="1504041365" id="0d602743-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр10-113" speciality_code="1504041465" id="0d604955-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="щКЕЙРПНММШЕ РЕУМНКНЦХХ Б ЛЮЬХМНЯРПНЕМХХ" abbr="лр-11" chief="оЮМТХКНБ ч.б." id="a27a8198-82fc-1029-96dd-000347adedc6">
+<group abbr="лр11-11" speciality_code="2101070065" id="0d628042-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр11-12" speciality_code="2101070065" id="0d62a20e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр11-31" speciality_code="2101070065" id="0d650817-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр11-32" speciality_code="2101070065" id="0d652a7c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр11-51" speciality_code="2101070065" id="0d678c71-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр11-52" speciality_code="2101070065" id="0d67b090-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр11-71" speciality_code="2101070065" id="0d69f428-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр11-72" speciality_code="2101070065" id="0d6a158f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр11-91" speciality_code="2101070065" id="0d6c47f2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр11-92" speciality_code="2101070065" id="0d6c6fae-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр11-111" speciality_code="2101070065" id="0d6f0e1d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр11-112" speciality_code="2101070065" id="0d6f305b-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="кЮГЕПМШЕ РЕУМНКНЦХХ Б ЛЮЬХМНЯРПНЕМХХ" abbr="лр-12" chief="цПХЦНПЭЪМЖ ю.ц." id="a27d351f-82fc-1029-96dd-000347adedc6">
+<group abbr="лр12-11" speciality_code="1502060065" id="0d713d1b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр12-31" speciality_code="1502060065" id="0d7379fd-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр12-51" speciality_code="1502060065" id="0d7600f5-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр12-71" speciality_code="1502060065" id="0d787b91-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр12-91" speciality_code="1502060065" id="0d7ac123-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр12-111" speciality_code="1502060065" id="0d7d5640-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="рЕУМНКНЦХХ НАПЮАНРЙХ ЛЮРЕПХЮКНБ" abbr="лр-13" chief="яРСОМХЙНБ б.о." id="a27f86fe-82fc-1029-96dd-000347adedc6">
+<group abbr="лр13-11" speciality_code="1502070065" id="0d7f9046-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр13-31" speciality_code="1502070065" id="0d81b27d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр13-51" speciality_code="1502070065" id="0d842c49-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр13-71" speciality_code="1502070065" id="0d8689d8-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр13-91" speciality_code="1502070065" id="0d890e48-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="лр13-111" speciality_code="1502070065" id="0d8b3589-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+</faculty>
+<faculty name="нОРХЙН-ЩКЕЙРПНММНЕ ОПХАНПНЯРПНЕМХЕ" abbr="нщ" dean="гЮБЮГПХМ б.х." id="a32f1df3-82fc-1029-96dd-000347adedc6">
+<subfaculty name="пк-2" abbr="нщ-2" chief="" id="a32f8365-82fc-1029-96dd-000347adedc6">
+<group abbr="нщ2-11" speciality_code="2002030065" id="117202a9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="нщ2-31" speciality_code="2002030065" id="117461bb-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="нщ2-51" speciality_code="2002030065" id="11768842-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="нщ2-71" speciality_code="2002030065" id="117910ee-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="нщ2-91" speciality_code="2002030065" id="117b3952-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="нщ2-111" speciality_code="2002030065" id="117d9864-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="пк-3" abbr="нщ-3" chief="" id="a33219f3-82fc-1029-96dd-000347adedc6">
+<group abbr="нщ3-11" speciality_code="2002030065" id="1180157d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="нщ3-31" speciality_code="2002030065" id="11823e29-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="нщ3-51" speciality_code="2002030065" id="1184bafb-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="нщ3-71" speciality_code="2002030065" id="11873b65-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="нщ3-91" speciality_code="2002030065" id="1189640e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="нщ3-111" speciality_code="2002030065" id="118b9c21-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+</faculty>
+<faculty name="оПХАНПНЯРПНХРЕКЭМШИ" abbr="оя" dean="цЕПДХ б.м." id="a3287f97-82fc-1029-96dd-000347adedc6">
+<subfaculty name="хс-2" abbr="оя-1" chief="" id="a32905e5-82fc-1029-96dd-000347adedc6">
+<group abbr="оя1-11" speciality_code="1604020065" id="115e69b0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="оя1-12" speciality_code="1604020065" id="115e8bc4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="оя1-13" speciality_code="1604020065" id="115eaddf-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="оя1-31" speciality_code="1604020065" id="1160ea14-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="оя1-32" speciality_code="1604020065" id="11610c9b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="оя1-33" speciality_code="1604020065" id="11612f27-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="оя1-51" speciality_code="1604020165" id="1163116e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="оя1-52" speciality_code="1604020065" id="116340f2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="оя1-53" speciality_code="1604020065" id="1163620b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="оя1-71" speciality_code="1604020165" id="11654ec3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="оя1-72" speciality_code="1604020265" id="1165aba9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="оя1-73" speciality_code="1604020365" id="1165cf69-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="оя1-91" speciality_code="1604020165" id="116d4dee-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="оя1-92" speciality_code="1604020265" id="116d6fcb-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="оя1-93" speciality_code="1604020365" id="116d9172-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="оя1-111" speciality_code="1604020165" id="116f6e04-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="оя1-112" speciality_code="1604020265" id="116f8fd5-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="оя1-113" speciality_code="1604020365" id="116fb1b2-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="хс-1" abbr="оя-2" chief="" id="1784b0c0-7af4-11dc-b84c-00179a38b145">
+<group abbr="оя2-11" speciality_code="1604030065" id="1f49dc86-7af4-11dc-ba28-00179a38b145"/>
+</subfaculty>
+</faculty>
+<faculty name="пНАНРНРЕУМХЙЮ Х ЙНЛОКЕЙЯМЮЪ ЮБРНЛЮРХГЮЖХЪ" abbr="пй" dean="кНАЮВЕБ б.х." id="a2c415be-82fc-1029-96dd-000347adedc6">
+<subfaculty name="хМФЕМЕПМЮЪ ЦПЮТХЙЮ" abbr="пй-1" chief="цСГМЕМЙНБ б.м." id="a2c47171-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+<subfaculty name="рЕНПХЪ ЛЕУЮМХГЛНБ Х ЛЮЬХМ" abbr="пй-2" chief="тПНКНБ й.б." id="a2c64cff-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+<subfaculty name="нЯМНБШ ЙНМЯРПСХПНБЮМХЪ ЛЮЬХМ" abbr="пй-3" chief="пЪУНБЯЙХИ н.ю." id="a2c839f2-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+<subfaculty name="оНДЗЕЛМН-РПЮМЯОНПРМШЕ ЯХЯРЕЛШ" abbr="пй-4" chief="бЕПЬХМЯЙХИ ю.б." id="a2c9f870-82fc-1029-96dd-000347adedc6">
+<group abbr="пй4-11" speciality_code="1902050065" id="0f188021-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй4-12" speciality_code="1902050065" id="0f18a1b7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй4-31" speciality_code="1902050065" id="0f1aa459-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй4-32" speciality_code="1902050065" id="0f1ac620-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй4-51" speciality_code="1902050065" id="0f1d1cdf-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй4-52" speciality_code="1902050065" id="0f1d3ee5-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй4-71" speciality_code="1902050065" id="0f1f851c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй4-72" speciality_code="1902050065" id="0f1faf47-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй4-91" speciality_code="1902051465" id="0f21cb26-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй4-92" speciality_code="1902051565" id="0f21ed81-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй4-111" speciality_code="1902050065" id="0f244f6a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй4-112" speciality_code="1902050065" id="0f247094-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="оПХЙКЮДМЮЪ ЛЕУЮМХЙЮ" abbr="пй-5" chief="мЮПЮИЙХМ н.я." id="a2ccf88a-82fc-1029-96dd-000347adedc6">
+<group abbr="пй5-11" speciality_code="1503010065" id="0f2680fb-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй5-12" speciality_code="1503010065" id="0f26a310-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй5-31" speciality_code="1503010065" id="0f28f657-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй5-32" speciality_code="1503010065" id="0f2919e4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй5-51" speciality_code="1503010165" id="0f2b7ac7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй5-52" speciality_code="1503010265" id="0f2ba2ce-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй5-71" speciality_code="1503010165" id="0f2df0e6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй5-72" speciality_code="1503010265" id="0f2e137b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй5-91" speciality_code="1503010165" id="0f30869d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй5-92" speciality_code="1503010265" id="0f30ab39-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй5-111" speciality_code="1503010165" id="0f32b2e6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй5-112" speciality_code="1503010265" id="0f32d549-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="яХЯРЕЛШ ЮБРНЛЮРХГХПНБЮММНЦН ОПНЕЙРХПНБЮМХЪ" abbr="пй-6" chief="мНПЕМЙНБ х.о." id="a2d011ed-82fc-1029-96dd-000347adedc6">
+<group abbr="пй6-11" speciality_code="2301040065" id="0f353708-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй6-12" speciality_code="2301040065" id="0f355b2a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй6-13" speciality_code="2301040065" id="0f357e0a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй6-31" speciality_code="2301040065" id="0f37ec08-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй6-32" speciality_code="2301040065" id="0f380f1d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй6-33" speciality_code="2301040065" id="0f3830d9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй6-51" speciality_code="2301040065" id="0f3a0e7f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй6-52" speciality_code="2301040065" id="0f3a3005-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй6-53" speciality_code="2301040065" id="0f3a5503-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй6-71" speciality_code="2301040065" id="0f3c6f78-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй6-72" speciality_code="2301040065" id="0f3c947c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй6-73" speciality_code="2301040065" id="0f3cce4a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй6-91" speciality_code="2301040065" id="0f3f192f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй6-92" speciality_code="2301040065" id="0f3f3af5-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй6-93" speciality_code="2301040065" id="0f3f5ca0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй6-111" speciality_code="2301040065" id="0f414079-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй6-112" speciality_code="2301040065" id="0f41621e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй6-113" speciality_code="2301040065" id="0f4183f7-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="йНЛОЭЧРЕПМШЕ ЯХЯРЕЛШ ЮБРНЛЮРХГЮЖХХ ОПНХГБНДЯРБЮ" abbr="пй-9" chief="яЮБХМНБ ю.л." id="a2d3d661-82fc-1029-96dd-000347adedc6">
+<group abbr="пй9-11" speciality_code="2204020065" id="0f436123-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй9-12" speciality_code="2203010065" id="0f4382d0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй9-31" speciality_code="2204020065" id="0f45de9f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй9-32" speciality_code="2203010065" id="0f460533-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй9-51" speciality_code="2204020065" id="0f483a7a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй9-52" speciality_code="2203010065" id="0f485c2a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй9-71" speciality_code="2204020065" id="0f4a9a93-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй9-72" speciality_code="2203010065" id="0f4b1236-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй9-91" speciality_code="2204020065" id="0f4d1914-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй9-92" speciality_code="2203010065" id="0f4d3afc-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй9-111" speciality_code="2204020065" id="0f4f5369-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй9-112" speciality_code="2203010065" id="0f4f73e8-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="пНАНРНРЕУМХВЕЯЙХЕ ЯХЯРЕЛШ" abbr="пй-10" chief="чЫЕМЙН ю.я." id="a2d6bee9-82fc-1029-96dd-000347adedc6">
+<group abbr="пй10-11" speciality_code="2204020065" id="0f51e26f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй10-31" speciality_code="2204020065" id="0f5405af-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй10-51" speciality_code="2204020065" id="0f562999-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй10-71" speciality_code="2204020065" id="0f58e018-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй10-72" speciality_code="2204020065" id="0f590238-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй10-91" speciality_code="2204020065" id="0f5affad-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй10-92" speciality_code="2204020065" id="0f5b2439-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй10-111" speciality_code="2204020065" id="0f5d5119-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пй10-112" speciality_code="2204020065" id="0f5d74bd-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+</faculty>
+<faculty name="пЮЙЕРМН-ЙНЯЛХВЕЯЙЮЪ РЕУМХЙЮ" abbr="пйр" dean="дНПНТЕЕБ ю.ю." id="a3349dd8-82fc-1029-96dd-000347adedc6">
+<subfaculty name="хс-1" abbr="пйр-1" chief="" id="a335251e-82fc-1029-96dd-000347adedc6">
+<group abbr="пйр1-11" speciality_code="1604030065" id="118e243e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр1-31" speciality_code="1604030065" id="119057e0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр1-51" speciality_code="1604030065" id="119322c1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр1-71" speciality_code="1604030065" id="11954fb7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр1-91" speciality_code="1604030065" id="1197846d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр1-111" speciality_code="1604030065" id="119a1f05-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="ял-1" abbr="пйр-2" chief="" id="a337ac9c-82fc-1029-96dd-000347adedc6">
+<group abbr="пйр2-11" speciality_code="1608010065" id="119c545f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр2-31" speciality_code="1608010065" id="119ed48e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр2-51" speciality_code="1608010065" id="11a19bff-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр2-71" speciality_code="1608010065" id="11a3d6f3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр2-91" speciality_code="1608010065" id="11a61db3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр2-111" speciality_code="1608010065" id="11a8b640-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="лр-2" abbr="пйр-3" chief="" id="a33a205d-82fc-1029-96dd-000347adedc6">
+<group abbr="пйр3-11" speciality_code="1510030065" id="11ab0139-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр3-31" speciality_code="1510030065" id="11ad2b9c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр3-51" speciality_code="1510030065" id="11aff225-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр3-71" speciality_code="1510030065" id="11b21388-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр3-91" speciality_code="1510030065" id="11b496a6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр3-111" speciality_code="1510030065" id="11b6bef6-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="ял-12" abbr="пйр-4" chief="" id="a33cc8f5-82fc-1029-96dd-000347adedc6">
+<group abbr="пйр4-11" speciality_code="1608010065" id="11b8f83c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр4-31" speciality_code="1608010065" id="11bb9f6b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр4-51" speciality_code="1608010065" id="11bdfa45-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр4-71" speciality_code="1608010065" id="11c0278c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр4-91" speciality_code="1608010065" id="11c2b283-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр4-111" speciality_code="1608010065" id="11c4dc8f-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="щ-1" abbr="пйр-5" chief="" id="a33f3e6c-82fc-1029-96dd-000347adedc6">
+<group abbr="пйр5-11" speciality_code="1603020065" id="11c70af1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр5-31" speciality_code="1603020065" id="11c98604-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр5-51" speciality_code="1603020065" id="11d19df2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр5-71" speciality_code="1603020065" id="11d3dcd1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр5-91" speciality_code="1603020065" id="11d600cf-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пйр5-111" speciality_code="1603020065" id="11d87c92-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="пйр-6" abbr="пйр-6" chief="" id="a341f63d-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+</faculty>
+<faculty name="пЮДХНЩКЕЙРПНМХЙЮ Х КЮГЕПМЮЪ РЕУМХЙЮ" abbr="пк" dean="яРПЕКЙНБ а.б." id="a2d915f9-82fc-1029-96dd-000347adedc6">
+<subfaculty name="пЮДХНЩКЕЙРПНММШЕ ЯХЯРЕЛШ Х СЯРПНИЯРБЮ" abbr="пк-1" chief="тЕДНПНБ х.а." id="a2d99739-82fc-1029-96dd-000347adedc6">
+<group abbr="пк1-11" speciality_code="2103040065" id="0f5fdaf6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-12" speciality_code="2103040065" id="0f5ffdc6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-13" speciality_code="2103040065" id="0f601fb9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-31" speciality_code="2103040065" id="0f621226-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-32" speciality_code="2103040065" id="0f62346a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-33" speciality_code="2103040065" id="0f6259f1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-34" speciality_code="2103040065" id="0f62813d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-51" speciality_code="2103040065" id="0f643dc2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-52" speciality_code="2103040065" id="0f645e82-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-53" speciality_code="2103040065" id="0f648c0c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-54" speciality_code="2103040065" id="0f64ad84-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-71" speciality_code="2103040065" id="0f677879-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-72" speciality_code="2103040065" id="0f679c3b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-73" speciality_code="2103040065" id="0f67be93-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-74" speciality_code="2103040065" id="0f67df93-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-91" speciality_code="2103040065" id="0f699f20-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-92" speciality_code="2103040065" id="0f69c0d0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-93" speciality_code="2103040065" id="0f69e275-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-94" speciality_code="2103040065" id="0f6a0332-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-111" speciality_code="2103040065" id="0f6beb0f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-112" speciality_code="2103040065" id="0f6c6534-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-113" speciality_code="2103040065" id="0f6c8890-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-114" speciality_code="2103040065" id="0f6cc766-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк1-115" speciality_code="2103040065" id="0f6ce9b5-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="кЮГЕПМШЕ Х НОРХЙН-ЩКЕЙРПНММШЕ ЯХЯРЕЛШ" abbr="пк-2" chief="йНГХМЖЕБ б.х." id="a2ddd539-82fc-1029-96dd-000347adedc6">
+<group abbr="пк2-11" speciality_code="2002030065" id="0f6e7bd7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-12" speciality_code="2002030065" id="0f6e9d5a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-13" speciality_code="2002010065" id="0f6ec4bc-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-31" speciality_code="2002030065" id="0f709eaa-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-32" speciality_code="2002030065" id="0f70c5df-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-33" speciality_code="2002010065" id="0f70e81e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-51" speciality_code="2002030065" id="0f736fe5-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-52" speciality_code="2002030065" id="0f739182-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-53" speciality_code="2002010065" id="0f73b2f7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-71" speciality_code="2002030065" id="0f758f8b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-72" speciality_code="2002030065" id="0f75b101-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-73" speciality_code="2002010065" id="0f7bce0f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-91" speciality_code="2002030165" id="0f7db877-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-92" speciality_code="2002031465" id="0f7dd931-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-93" speciality_code="2002010365" id="0f7dfb1e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-94" speciality_code="2002010865" id="0f7e1d03-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-95" speciality_code="2002000268" id="0f7e3eff-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-96" speciality_code="2002000368" id="0f7e60a6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-97" speciality_code="2002001168" id="0f7e874b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-111" speciality_code="2002030165" id="0f7ff000-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-112" speciality_code="2002031465" id="0f8011b0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-113" speciality_code="2002010365" id="0f8033d5-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-114" speciality_code="" id="0f8055b5-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-115" speciality_code="2002000268" id="0f8077a8-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-116" speciality_code="2002000368" id="0f80cf84-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк2-117" speciality_code="2002001168" id="0f810681-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="нОРХЙН-ЩКЕЙРПНММШЕ ОПХАНПШ МЮСВМШУ ХЯЯКЕДНБЮМХИ" abbr="пк-3" chief="оСПЪЕБ д.р." id="a2e2a302-82fc-1029-96dd-000347adedc6">
+<group abbr="пк3-11" speciality_code="2002030065" id="0fb7b9cd-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк3-31" speciality_code="2002030065" id="0fbac713-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк3-51" speciality_code="2002030065" id="0fbe2323-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк3-71" speciality_code="2002030065" id="0fc10891-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк3-91" speciality_code="2002031565" id="0fc3c7e7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк3-92" speciality_code="2002031565" id="0fc464f8-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк3-93" speciality_code="2002000268" id="0fc48b29-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк3-94" speciality_code="2002000668" id="0fc4b28c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк3-111" speciality_code="2002031565" id="0fc6d52f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк3-112" speciality_code="2002031565" id="0fc6fc38-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк3-113" speciality_code="2002000268" id="0fc72328-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк3-114" speciality_code="2002000668" id="0fc74d58-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк3-115" speciality_code="2002000868" id="0fc7712e-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="рЕНПЕРХВЕЯЙХЕ НЯМНБШ ЩКЕЙРПНРЕУМХЙХ" abbr="пк-4" chief="еМХМ б.м." id="a2e4f484-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+<subfaculty name="щКЕЛЕМРШ ОПХАНПМШУ СЯРПНИЯРБ" abbr="пк-5" chief="оНРЮОЖЕБ х.я." id="a2e6d0c5-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+<subfaculty name="рЕУМНКНЦХХ ОПХАНПНЯРПНЕМХЪ" abbr="пк-6" chief="ьЮЬСПХМ б.д." id="a2e8905d-82fc-1029-96dd-000347adedc6">
+<group abbr="пк6-11" speciality_code="2102010065" id="0fed9ddd-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк6-31" speciality_code="2102010065" id="0ff0b301-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк6-51" speciality_code="2102010065" id="0ff33fc8-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк6-71" speciality_code="2102010065" id="0ff57c72-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк6-91" speciality_code="2102011465" id="0ff7bad1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк6-92" speciality_code="2102011565" id="0ff7dd20-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк6-111" speciality_code="2102011465" id="0ffa7f50-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пк6-112" speciality_code="2102011565" id="0ffaa1f0-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+</faculty>
+<faculty name="пЮДХНРЕУМХВЕЯЙХИ" abbr="пр" dean="чДЮВЕБ я.я." id="a343d3e3-82fc-1029-96dd-000347adedc6">
+<subfaculty name="пр-1" abbr="пр-1" chief="" id="a3443ef1-82fc-1029-96dd-000347adedc6">
+<group abbr="пр1-11" speciality_code="2103040065" id="11e90a7f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пр1-31" speciality_code="2103040065" id="11eb9a49-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пр1-91" speciality_code="2103040065" id="11f27bf1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пр1-111" speciality_code="2103040065" id="11f4addc-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="хс-4" abbr="пр-2" chief="" id="a346aeed-82fc-1029-96dd-000347adedc6">
+<group abbr="пр2-11" speciality_code="2102010065" id="11f728f2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пр2-31" speciality_code="2102010065" id="11f9b6bd-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пр2-91" speciality_code="2102010065" id="12009d27-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пр2-111" speciality_code="2102010065" id="12057bab-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="лр-3" abbr="пр-3" chief="" id="a3494a00-82fc-1029-96dd-000347adedc6">
+<group abbr="пр3-11" speciality_code="1510010065" id="1207a3a7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пр3-31" speciality_code="1510010065" id="120a1e2c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пр3-91" speciality_code="1510010065" id="1210f23f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="пр3-111" speciality_code="1510010065" id="1213467b-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+</faculty>
+<faculty name="яНЖХЮКЭМШЕ Х ЦСЛЮМХРЮПМШЕ МЮСЙХ" abbr="яцм" dean="пЕЛЮПВСЙ б.м." id="a2f293b1-82fc-1029-96dd-000347adedc6">
+<subfaculty name="хЯРНПХЪ" abbr="яцм-1" chief="гЕЛЖНБ а.м." id="a2f2f647-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+<subfaculty name="яНЖХНКНЦХЪ Х ЙСКЭРСПНКНЦХЪ" abbr="яцм-2" chief="аЮЦДЮЯЮПЭЪМ м.ц." id="a2f4b5c0-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+<subfaculty name="оНКХРНКНЦХЪ" abbr="яцм-3" chief="оСЯЭЙН б.я." id="a2f68019-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+<subfaculty name="тХКНЯНТХЪ" abbr="яцм-4" chief="" id="a2f86ea3-82fc-1029-96dd-000347adedc6">
+</subfaculty>
+</faculty>
+<faculty name="яОЕЖХЮКЭМНЕ ЛЮЬХМНЯРПНЕМХЕ" abbr="ял" dean="гЕКЕМЖНБ б.б." id="a281b64a-82fc-1029-96dd-000347adedc6">
+<subfaculty name="йНЯЛХВЕЯЙХЕ ЮООЮПЮРШ Х ПЮЙЕРШ-МНЯХРЕКХ" abbr="ял-1" chief="йНОРЕБ ч.м." id="a2820cf5-82fc-1029-96dd-000347adedc6">
+<group abbr="ял1-11" speciality_code="1608010665" id="0d8d8823-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял1-12" speciality_code="1608021065" id="0d8da9d3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял1-31" speciality_code="1608010665" id="0d900131-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял1-32" speciality_code="1608021065" id="0d9022f8-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял1-51" speciality_code="1608010665" id="0d9243a4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял1-52" speciality_code="1608021065" id="0d926857-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял1-71" speciality_code="1608010665" id="0d94b518-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял1-72" speciality_code="1608021065" id="0d94d868-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял1-91" speciality_code="1608010665" id="0d978e23-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял1-92" speciality_code="1608021065" id="0d97b05f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял1-111" speciality_code="1608010665" id="0d99b4b2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял1-112" speciality_code="1608021065" id="0d99d550-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="юЩПНЙНЯЛХВЕЯЙХЕ ЯХЯРЕЛШ" abbr="ял-2" chief="рСЬЕБ н.м." id="a2850cf6-82fc-1029-96dd-000347adedc6">
+<group abbr="ял2-11" speciality_code="1608020065" id="0d9bd9f1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял2-31" speciality_code="1608020065" id="0d9e6986-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял2-51" speciality_code="1608020065" id="0da08ce7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял2-71" speciality_code="1608020065" id="0da89ad3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял2-91" speciality_code="1608020065" id="0daac096-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял2-111" speciality_code="1608020065" id="0dacee6b-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="аЮККХЯРХЙЮ Х ЮЩПНДХМЮЛХЙЮ" abbr="ял-3" chief="яНКНБЭ╦Б б.я." id="a2874418-82fc-1029-96dd-000347adedc6">
+<group abbr="ял3-11" speciality_code="1607030065" id="0daf73fc-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял3-12" speciality_code="1607030065" id="0daf967a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял3-31" speciality_code="1607030065" id="0db20238-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял3-32" speciality_code="1607030065" id="0db223fc-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял3-51" speciality_code="1607030065" id="0db4325f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял3-52" speciality_code="1607030065" id="0db4543e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял3-71" speciality_code="1607030065" id="0db6ae5f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял3-72" speciality_code="1607030065" id="0db6d052-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял3-91" speciality_code="1607030165" id="0db8d2ae-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял3-92" speciality_code="1607030265" id="0db8f879-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял3-111" speciality_code="1607030165" id="0dbb0e2e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял3-112" speciality_code="1607030265" id="0dbb33cc-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="бШЯНЙНРНВМШЕ КЕРЮРЕКЭМШЕ ЮООЮПЮРШ" abbr="ял-4" chief="яЕКХБЮМНБ б.б." id="a28a287d-82fc-1029-96dd-000347adedc6">
+<group abbr="ял4-11" speciality_code="1701030065" id="0dbd9aa6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял4-12" speciality_code="1701030065" id="0dbdbd39-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял4-31" speciality_code="1701030065" id="0dc013f8-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял4-32" speciality_code="1701030065" id="0dc0365d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял4-51" speciality_code="1701030065" id="0dc2382e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял4-52" speciality_code="1701030065" id="0dc259d8-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял4-71" speciality_code="1701030065" id="0dc4b5c9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял4-72" speciality_code="1701030065" id="0dc4d7b7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял4-91" speciality_code="1701030165" id="0dc6db51-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял4-92" speciality_code="1701030265" id="0dc6fd2e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял4-93" speciality_code="1701030765" id="0dc71ec5-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял4-111" speciality_code="1701030165" id="0dc91a38-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял4-112" speciality_code="1701030265" id="0dc93f85-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="юБРНМНЛМШЕ ХМТНПЛЮЖХНММШЕ Х СОПЮБКЪЧЫХЕ ЯХЯРЕЛШ" abbr="ял-5" chief="уНУКНБ б.й." id="a28ce088-82fc-1029-96dd-000347adedc6">
+<group abbr="ял5-11" speciality_code="2202030065" id="0dcd6a20-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял5-12" speciality_code="2202030065" id="0dcd8c16-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял5-31" speciality_code="2202030065" id="0dcfdf87-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял5-32" speciality_code="2202030065" id="0dd05915-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял5-51" speciality_code="2202030065" id="0dd28abd-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял5-52" speciality_code="2202030065" id="0dd2ac03-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял5-71" speciality_code="2202030065" id="0dd4a7ec-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял5-72" speciality_code="2202030065" id="0dd4c97d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял5-91" speciality_code="2202030165" id="0dd72140-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял5-92" speciality_code="2202030265" id="0dd74312-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял5-93" speciality_code="2202030365" id="0dd764a3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял5-111" speciality_code="2202030165" id="0dd9494d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял5-112" speciality_code="2202030265" id="0dd96b27-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял5-113" speciality_code="2202030365" id="0dd98ccf-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="пЮЙЕРМШЕ Х ХЛОСКЭЯМШЕ ЯХЯРЕЛШ" abbr="ял-6" chief="гЕКЕМЖНБ б.б." id="a28fbe3a-82fc-1029-96dd-000347adedc6">
+<group abbr="ял6-11" speciality_code="1701020065" id="0ddb723d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял6-12" speciality_code="1701020065" id="0ddb93bd-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял6-31" speciality_code="1701020065" id="0dde258f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял6-32" speciality_code="1701020065" id="0dde498c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял6-51" speciality_code="1701020065" id="0de05430-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял6-52" speciality_code="1701020065" id="0de075f1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял6-71" speciality_code="1701020065" id="0de28029-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял6-72" speciality_code="1701020065" id="0de2a0f9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял6-91" speciality_code="1701020265" id="0de4f6f5-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял6-92" speciality_code="1701020365" id="0de518b6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял6-93" speciality_code="1701021165" id="0de54e34-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял6-111" speciality_code="1701020265" id="0de72bdd-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял6-112" speciality_code="1701020365" id="0de75154-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял6-113" speciality_code="1701021165" id="0de7737f-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="яОЕЖХЮКЭМЮЪ ПНАНРНРЕУМХЙЮ Х ЛЕУЮРПНМХЙЮ" abbr="ял-7" chief="пЮЯЯЮДЙХМ ч.х." id="a2930bad-82fc-1029-96dd-000347adedc6">
+<group abbr="ял7-11" speciality_code="2204020065" id="0de96074-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял7-12" speciality_code="2204010065" id="0de98328-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял7-31" speciality_code="2204020065" id="0dec2831-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял7-32" speciality_code="2204010065" id="0dec4aa2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял7-51" speciality_code="2204020065" id="0dee7de4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял7-52" speciality_code="2204010065" id="0deea08a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял7-71" speciality_code="2204020065" id="0df0dc92-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял7-72" speciality_code="2204010065" id="0df0f21d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял7-91" speciality_code="2204020265" id="0df2ffe9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял7-92" speciality_code="2204010265" id="0df3221f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял7-93" speciality_code="2204020865" id="0df3395d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял7-94" speciality_code="2204010865" id="0df35bfb-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял7-111" speciality_code="2204020265" id="0df50bce-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял7-112" speciality_code="2204010265" id="0df525e9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял7-113" speciality_code="2204020865" id="0df54965-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял7-114" speciality_code="2204010865" id="0df56c2a-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="яРЮПРНБШЕ ПЮЙЕРМШЕ ЙНЛОКЕЙЯШ" abbr="ял-8" chief="аЮПЛХМ х.б." id="a2960461-82fc-1029-96dd-000347adedc6">
+<group abbr="ял8-11" speciality_code="1608030065" id="0df73522-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял8-12" speciality_code="1608030065" id="0df757b2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял8-31" speciality_code="1608030065" id="0dfa0f6c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял8-32" speciality_code="1608030065" id="0dfa32ac-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял8-51" speciality_code="1608030065" id="0dfc42f7-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял8-52" speciality_code="1608030065" id="0dfc654c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял8-71" speciality_code="1608030065" id="0dfecda3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял8-72" speciality_code="1608030065" id="0dfef0f8-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял8-91" speciality_code="1608030165" id="0e014b8f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял8-92" speciality_code="1608030265" id="0e016d2b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял8-93" speciality_code="1608030565" id="0e018ed9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял8-111" speciality_code="1608030165" id="0e036e94-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял8-112" speciality_code="1608030265" id="0e0390ae-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял8-113" speciality_code="1608030565" id="0e03b267-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="лМНЦНЖЕКЕБШЕ ЦСЯЕМХВМШЕ ЛЮЬХМШ Х ЛНАХКЭМШЕ ПНАНРШ" abbr="ял-9" chief="чДХМ е.ц." id="a2994a8a-82fc-1029-96dd-000347adedc6">
+<group abbr="ял9-11" speciality_code="1902020065" id="0e059290-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял9-12" speciality_code="1902020065" id="0e05b45e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял9-31" speciality_code="1902020065" id="0e080d9a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял9-32" speciality_code="1902020065" id="0e086847-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял9-51" speciality_code="1902020065" id="0e0a7350-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял9-52" speciality_code="1902020065" id="0e0a952d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял9-71" speciality_code="1902020065" id="0e0d0b06-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял9-72" speciality_code="1902020065" id="0e0d2ce0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял9-91" speciality_code="1902020165" id="0e0f4d28-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял9-92" speciality_code="1902020265" id="0e0f6ea0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял9-93" speciality_code="1902020365" id="0e0f9002-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял9-111" speciality_code="1902020165" id="0e116e6b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял9-112" speciality_code="1902020265" id="0e119008-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял9-113" speciality_code="1902020365" id="0e11b164-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="йНКЕЯМШЕ ЛЮЬХМШ" abbr="ял-10" chief="йНРХЕБ ц.н." id="a29c25d2-82fc-1029-96dd-000347adedc6">
+<group abbr="ял10-11" speciality_code="1902010065" id="0e13e5ce-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял10-12" speciality_code="1902020065" id="0e14077c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял10-31" speciality_code="1902010065" id="0e161fcc-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял10-32" speciality_code="1902020065" id="0e1641b1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял10-51" speciality_code="1902010065" id="0e188b6f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял10-52" speciality_code="1902020065" id="0e18ad40-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял10-71" speciality_code="1902010065" id="0e1b0c1e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял10-72" speciality_code="1902020065" id="0e1b3ef0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял10-91" speciality_code="1902010065" id="0e1d3e06-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял10-92" speciality_code="1902020165" id="0e1d5ef2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял10-111" speciality_code="1902010065" id="0e1f5cfc-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял10-112" speciality_code="1902020165" id="0e1f7ed9-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="оНДБНДМШЕ ПНАНРШ Х ЮООЮПЮРШ" abbr="ял-11" chief="бЕКЭРХЫЕБ б.б." id="a29f1184-82fc-1029-96dd-000347adedc6">
+<group abbr="ял11-11" speciality_code="2204020065" id="0e21ecf2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял11-31" speciality_code="2204020065" id="0e2419f1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял11-51" speciality_code="2204020665" id="0e267336-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял11-71" speciality_code="2204020665" id="0e28f409-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял11-91" speciality_code="2204020665" id="0e2b3374-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял11-111" speciality_code="2204020665" id="0e2d6a2e-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="рЕУМНКНЦХХ ПЮЙЕРМН-ЙНЯЛХВЕЯЙНЦН ЛЮЬХМНЯРПНЕМХЪ" abbr="ял-12" chief="рЮПЮЯНБ б.ю." id="a2a1433a-82fc-1029-96dd-000347adedc6">
+<group abbr="ял12-11" speciality_code="1608010065" id="0e2fe3a4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял12-31" speciality_code="1608010065" id="0e327655-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял12-51" speciality_code="1608010065" id="0e352d00-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял12-71" speciality_code="1608010065" id="0e3769d8-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял12-91" speciality_code="1608010065" id="0e399df1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял12-111" speciality_code="1608010065" id="0e3c2dd9-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="пЮЙЕРМН-ЙНЯЛХВЕЯЙХЕ ЙНЛОНГХРМШЕ ЙНМЯРПСЙЖХХ" abbr="ял-13" chief="аСКЮМНБ х.л." id="a2a38d93-82fc-1029-96dd-000347adedc6">
+<group abbr="ял13-11" speciality_code="1505020065" id="0e3e51f9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял13-31" speciality_code="1505020065" id="0e407ddb-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял13-51" speciality_code="1505020065" id="0e48cb09-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял13-71" speciality_code="1505020065" id="0e4afc4a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял13-91" speciality_code="1505020065" id="0e4d23c6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="ял13-111" speciality_code="1505020065" id="0e4fccdb-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+</faculty>
+<faculty name="щМЕПЦНЛЮЬХМНЯРПНЕМХЕ" abbr="щ" dean="яСПНБЖЕБ х.ц." id="a2a5ce0d-82fc-1029-96dd-000347adedc6">
+<subfaculty name="пЮЙЕРМШЕ ДБХЦЮРЕКХ" abbr="щ-1" chief="ъЦНДМХЙНБ д.ю." id="a2a627da-82fc-1029-96dd-000347adedc6">
+<group abbr="щ1-11" speciality_code="1603020065" id="0e52386f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ1-12" speciality_code="1603020065" id="0e525a1a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ1-31" speciality_code="1603020065" id="0e5459e0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ1-32" speciality_code="1603020065" id="0e54843a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ1-51" speciality_code="1603020065" id="0e56e1d3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ1-52" speciality_code="1603020065" id="0e570420-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ1-71" speciality_code="1603020165" id="0e590b62-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ1-72" speciality_code="1603020265" id="0e592cfc-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ1-91" speciality_code="1603020165" id="0e5b2d99-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ1-92" speciality_code="1603020265" id="0e5b4f57-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ1-111" speciality_code="1603020165" id="0e5db509-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ1-112" speciality_code="1603020265" id="0e5dd6c7-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="оНПЬМЕБШЕ ДБХЦЮРЕКХ" abbr="щ-2" chief="хБЮЫЕМЙН м.ю." id="a2a91624-82fc-1029-96dd-000347adedc6">
+<group abbr="щ2-11" speciality_code="1405010065" id="0e601a17-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ2-12" speciality_code="1405010065" id="0e604139-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ2-31" speciality_code="1405010065" id="0e62b65d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ2-32" speciality_code="1405010065" id="0e62dd82-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ2-51" speciality_code="1405010065" id="0e6729b1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ2-52" speciality_code="1405010065" id="0e674b2f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ2-71" speciality_code="1405010065" id="0e695765-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ2-72" speciality_code="1405010065" id="0e697ce2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ2-91" speciality_code="1405010065" id="0e6b8647-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ2-92" speciality_code="1405010065" id="0e6ba71b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ2-111" speciality_code="1405010065" id="0e6e4c13-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ2-112" speciality_code="1405010065" id="0e6e6e8c-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="цЮГНРСПАХММШЕ Х МЕРПЮДХЖХНММШЕ ЩМЕПЦНСЯРЮМНБЙХ" abbr="щ-3" chief="нЯХОНБ л.х." id="a2abf2a0-82fc-1029-96dd-000347adedc6">
+<group abbr="щ3-11" speciality_code="1405030065" id="0e707819-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ3-12" speciality_code="1402020065" id="0e70a037-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ3-31" speciality_code="1405030065" id="0e72aa81-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ3-32" speciality_code="1402020065" id="0e72ce0a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ3-51" speciality_code="1405030065" id="0e752e3c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ3-52" speciality_code="1402020065" id="0e75518c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ3-71" speciality_code="1405030065" id="0e775e70-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ3-72" speciality_code="1402020065" id="0e778058-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ3-91" speciality_code="1405030565" id="0e79824d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ3-92" speciality_code="1402020065" id="0e79c490-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ3-93" speciality_code="1405030565" id="0e7a442d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ3-111" speciality_code="1405030565" id="0e7c27fa-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ3-112" speciality_code="1402020065" id="0e7c48dc-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ3-113" speciality_code="1405030165" id="0e7c6ad7-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="уНКНДХКЭМЮЪ, ЙПХНЦЕММЮЪ РЕУМХЙЮ, ЯХЯРЕЛШ ЙНМДХЖХНМХПНБЮМХЪ Х ФХГМЕНАЕЯОЕВЕМХЪ" abbr="щ-4" chief="юПУЮПНБ ю.л." id="a2af0836-82fc-1029-96dd-000347adedc6">
+<group abbr="щ4-11" speciality_code="1608040065" id="0e7e9c98-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ4-12" speciality_code="1405040065" id="0e7ec3c5-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ4-13" speciality_code="1405040065" id="0e7ee64f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ4-31" speciality_code="1608040065" id="0e812268-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ4-32" speciality_code="1405040065" id="0e8144a9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ4-33" speciality_code="1405040065" id="0e8166ee-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ4-51" speciality_code="1608040065" id="0e83452a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ4-52" speciality_code="1405040065" id="0e836712-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ4-53" speciality_code="1405040065" id="0e8388ba-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ4-71" speciality_code="1608040065" id="0e85704e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ4-72" speciality_code="1405040165" id="0e859608-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ4-73" speciality_code="1405040265" id="0e85b7f5-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ4-91" speciality_code="1608040065" id="0e882081-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ4-92" speciality_code="1405040165" id="0e884237-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ4-93" speciality_code="1405040265" id="0e886411-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ4-111" speciality_code="1608040065" id="0e8a4fa9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ4-112" speciality_code="1405040165" id="0e8a7172-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ4-113" speciality_code="1405040265" id="0e8a96a0-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="бЮЙССЛМЮЪ Х ЙНЛОПЕЯЯНПМЮЪ РЕУМХЙЮ" abbr="щ-5" chief="дЕЛХУНБ й.е." id="a2b276a4-82fc-1029-96dd-000347adedc6">
+<group abbr="щ5-11" speciality_code="1508010065" id="0e8cbfe6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ5-12" speciality_code="1508010065" id="0e8ce19c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ5-31" speciality_code="1508010065" id="0e8f5920-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ5-32" speciality_code="1508010065" id="0e8f7aa9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ5-51" speciality_code="1508010065" id="0e91782d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ5-52" speciality_code="1508010065" id="0e9199e2-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ5-71" speciality_code="1508010065" id="0e939ae4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ5-72" speciality_code="1508010065" id="0e93c066-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ5-91" speciality_code="1508010165" id="0e961c97-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ5-92" speciality_code="1508010265" id="0e963e8d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ5-111" speciality_code="1508010165" id="0e984907-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ5-112" speciality_code="1508010265" id="0e986a7f-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="рЕОКНТХГХЙЮ" abbr="щ-6" chief="уБЕЯЧЙ б.х." id="a2b5707b-82fc-1029-96dd-000347adedc6">
+<group abbr="щ6-11" speciality_code="1404020065" id="0e9aeceb-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ6-31" speciality_code="1404020065" id="0e9d8b09-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ6-51" speciality_code="1404020065" id="0e9fb7a3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ6-71" speciality_code="1404020065" id="0ea23a70-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ6-91" speciality_code="1404020065" id="0ea482c8-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ6-111" speciality_code="1404020065" id="0ea6c09d-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="ъДЕПМШЕ ПЕЮЙРНПШ Х СЯРЮМНБЙХ" abbr="щ-7" chief="яНКНМХМ б.х." id="a2b7ae88-82fc-1029-96dd-000347adedc6">
+<group abbr="щ7-11" speciality_code="1403050065" id="0ea99a3d-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ7-12" speciality_code="1403050065" id="0ea9bcf3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ7-31" speciality_code="1403050065" id="0eabd825-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ7-32" speciality_code="1403050065" id="0eabfac3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ7-51" speciality_code="1403050065" id="0eae2173-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ7-52" speciality_code="1403050065" id="0eae4438-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ7-71" speciality_code="1403050065" id="0eb0ac2c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ7-72" speciality_code="1403050065" id="0eb0cdc0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ7-91" speciality_code="1403052265" id="0eb2d64c-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ7-92" speciality_code="1403052165" id="0eb2f7b9-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ7-93" speciality_code="1403052265" id="0eb31964-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ7-111" speciality_code="1403052265" id="0eb4f88e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ7-112" speciality_code="1403052165" id="0eb51acf-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ7-113" speciality_code="1403052265" id="0eb53c61-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="оКЮГЛЕММШЕ ЩМЕПЦЕРХВЕЯЙХЕ СЯРЮМНБЙХ" abbr="щ-8" chief="лЮПЮУРЮМНБ л.й." id="a2bae368-82fc-1029-96dd-000347adedc6">
+<group abbr="щ8-11" speciality_code="1603030065" id="0eb7dd84-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ8-12" speciality_code="1405050065" id="0eb7ff3a-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ8-31" speciality_code="1603030065" id="0eba0afb-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ8-32" speciality_code="1405050065" id="0eba2ce3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ8-51" speciality_code="1603030065" id="0ebc2e03-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ8-52" speciality_code="1405050065" id="0ebc4f70-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ8-71" speciality_code="1603030065" id="0ebeb140-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ8-72" speciality_code="1405050065" id="0ebed1a1-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ8-91" speciality_code="1603030065" id="0ec0d3b4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ8-92" speciality_code="1405050065" id="0ec0f455-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ8-111" speciality_code="1603030065" id="0ec2fd78-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ8-112" speciality_code="1405050065" id="0ec3762d-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="щЙНКНЦХЪ Х ОПНЛШЬКЕММЮЪ АЕГНОЮЯМНЯРЭ" abbr="щ-9" chief="аЕКНБ я.б." id="a2bdbf1a-82fc-1029-96dd-000347adedc6">
+<group abbr="щ9-11" speciality_code="2802010065" id="0ec5ceb3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ9-12" speciality_code="2801010065" id="0ec5fcf0-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ9-31" speciality_code="2802010065" id="0ec801d4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ9-32" speciality_code="2801010065" id="0ec823f4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ9-51" speciality_code="2802010065" id="0eca8c4b-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ9-52" speciality_code="2801010065" id="0ecaae06-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ9-71" speciality_code="2802010065" id="0ecd079e-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ9-72" speciality_code="2801010065" id="0ecd2877-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ9-91" speciality_code="2802010065" id="0ecf2949-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ9-92" speciality_code="2801010065" id="0ecf4a28-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ9-111" speciality_code="2802010065" id="0ed1a717-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ9-112" speciality_code="2801010065" id="0ed1cc15-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+<subfaculty name="цХДПНЛЕУЮМХЙЮ, ЦХДПНЛЮЬХМШ Х ЦХДПНОМЕБЛНЮБРНЛЮРХЙЮ" abbr="щ-10" chief="ьСЛХКНБ х.я." id="a2c0dadb-82fc-1029-96dd-000347adedc6">
+<group abbr="щ10-11" speciality_code="1508020065" id="0ed997c4-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ10-12" speciality_code="1508020065" id="0ed9b9c8-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ10-31" speciality_code="1508020065" id="0edbbd30-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ10-32" speciality_code="1508020065" id="0edbdeb3-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ10-51" speciality_code="1508020065" id="0eddf3f6-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ10-52" speciality_code="1508020065" id="0ede1656-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ10-71" speciality_code="1508020065" id="0ee07c62-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ10-72" speciality_code="1508020065" id="0ee09e7f-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ10-91" speciality_code="1508020165" id="0ee2df46-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ10-92" speciality_code="1508020365" id="0ee304ec-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ10-111" speciality_code="1508020165" id="0ee83e17-e73e-11db-89c3-000cf1a7cbf0"/>
+<group abbr="щ10-112" speciality_code="1508020365" id="0ee87b2e-e73e-11db-89c3-000cf1a7cbf0"/>
+</subfaculty>
+</faculty>
+</structure>
