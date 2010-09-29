@@ -2121,16 +2121,22 @@ class menu extends html {
 	$i=1;
 	$semester=0;
 	$pg = new pgsql();
-	$pg->_query("SELECT * from prog 
+    $query = "SELECT * from prog
 					 INNER JOIN dis ON (prog.discipline_id=dis.discipline_id)
-					 INNER JOIN lang ON (f_id = prog.program_id
-					 AND lang_first='".$_GET["lang_first"]."'
-					 AND lang_second='".$_GET["lang_second"]."')
-					 WHERE subfaculty_for='".$_GET["subfaculty"]."' 
+					 INNER JOIN lang ON (f_id = prog.program_id";
+    if ($_GET["lang_first"])
+    {
+        $query .="AND lang_first='".$_GET["lang_first"]."'";
+    }
+    if ($_GET["lang_second"])
+    {
+        $query .="AND lang_second='".$_GET["lang_second"]."'";
+    }
+    $query .=")WHERE subfaculty_for='".$_GET["subfaculty"]."'
 					 AND speciality_for='".$_GET["spec"]."'
 					 AND year = $this->year
-					 ORDER BY semester"
-					  );
+					 ORDER BY semester";
+	$pg->_query($query);
 
 	$span=6;
 		echo "<div id='planBody'>";

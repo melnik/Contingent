@@ -24,7 +24,6 @@ tmpl.tabs = make_tabs( tabs = [
 	else
 		{ 'title' => 'Итоговый документ', 'url' => 'education_result.rb' }
 	end,
-	{ 'title' => 'Воинский учет',     'url' => 'military.rb' },
 	{ 'title' => 'История обучения',  'url' => 'history.rb' },
 # 	{ 'title' => 'Выплаты',           'url' => 'grants.rb' },
 ].compact.collect do |tab|

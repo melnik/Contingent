@@ -13,8 +13,9 @@ class IndividualScholarshipAssignmentOrder < StudentsOrder
 
 	def title
 		conditions = DetailsForIndividualScholarshipAssignmentOrder.order_conditions(self)
-		return %(О назначении на стипендию) if not conditions['grant']
-		return %(О назначении на грант) if conditions['grant']
+		return %(О назначении на стипендию) if not conditions['social'] and not conditions['zhukov']
+		return %(О назначении дотаций мэрии г. Москвы) if conditions['social']
+		return %(О назначении на стипендию имени маршала Г. К. Жукова) if conditions['zhukov']
 		super
 	end
 
@@ -31,7 +32,7 @@ class IndividualScholarshipAssignmentOrder < StudentsOrder
 		super
 		set :student, {
 			'scholarship_id' => attributes['scholarship_id']
-		}
+		}.compact
 
 	end
 

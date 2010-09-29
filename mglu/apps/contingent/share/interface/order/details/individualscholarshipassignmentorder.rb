@@ -9,7 +9,8 @@ class DetailsForIndividualScholarshipAssignmentOrder
 	extend DetailsCommon
 
 	CONDITIONS = [
-		DetailsCommon::Condition.new('grant', {"order:scholarship_id"=>13}),
+		DetailsCommon::Condition.new('social', {"order:scholarship_id"=>13}),
+		DetailsCommon::Condition.new('zhukov', {"order:scholarship_id"=>3}),
 		DetailsCommon::Condition.new('high_courses', {"course"=>[3, 4, 5, 6]}),
 		DetailsCommon::Condition.new('contract', {"study_type_id"=>Classifier::StudyType::CONTRACT}),
 		DetailsCommon::Condition.new('foreign', {"citizenship_id"=>[4, 5, 6, 7]}),
@@ -69,6 +70,7 @@ class DetailsForIndividualScholarshipAssignmentOrder
 		attributes = attributes.dup
 		case paragraph
 		when 0
+			attributes['degree'] ||= Proc.new { 'первая' }.call
 		end
 		attributes
 	end
@@ -77,6 +79,8 @@ class DetailsForIndividualScholarshipAssignmentOrder
 		attributes = fix_student(o, eid, paragraph, o.get_student_attributes(eid))
 		case paragraph
 		when 0
+			tmpl.degree = attributes['degree']
+			tmpl.amount = attributes['amount']
 		end
 	end
 	
@@ -84,6 +88,8 @@ class DetailsForIndividualScholarshipAssignmentOrder
 		attributes = o.get_student_attributes(eid)
 		case paragraph
 		when 0
+			attributes['degree'] = params["degree"]
+			attributes['amount'] = params["amount"]
 		end
 		o.set_student_attributes(eid, attributes)
 	end

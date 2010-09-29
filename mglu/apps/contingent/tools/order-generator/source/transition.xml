@@ -17,6 +17,7 @@
 			<input type="text" name="subject" title="Название" />
 			<select type="text" name="type" title="Отчетность">
 				<option title="зачет" />
+				<option title="диф.зачет" />
 				<option title="экзамен" />
 			</select>
 		</list>
@@ -58,7 +59,7 @@
 					<%= section_index %>. Перевести нижеперечисленных студентов,
 					полностью выполнивших учебный план <& _group[:current_term_number] &> семестра
 					и сдавших все экзамены и зачеты, на <& _group[:current_term_number].to_i + 1 &> семестр.
-					Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}#{_group[:group_num]}" &>.
+					Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}-#{_group[:group_num]}" &>.
 				]]></p>
 				
 				<list style="table">
@@ -68,10 +69,9 @@
 					
 					<column source="student" name="category" hidden="1"/>
 					<column source="student" name="study_type" hidden="1"/>
-					<column title="Форма (основа) обучения"><![CDATA[ <%
+					<column title="Основа обучения"><![CDATA[ <%
 						r = [study_type]
-						r << 'ОРИСА' if category.include? :foreign
-						r << 'ГУИМЦ' if category.include? :disabled
+						r << 'иностранный гражданин' if category.include? :foreign
 						print r.join(', ')
 					%> ]]></column>
 				</list>
@@ -87,7 +87,7 @@
 					<%= section_index %>. Перевести нижеперечисленных студентов, не сдавших академические задолженности
 					в дополнительную экзаменационную сессию, условно на <& _group[:current_term_number].to_i + 1 &> семестр,
 					установив индивидуальный срок сдачи задолженностей.
-					Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}#{_group[:group_num]}" &>.
+					Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}-#{_group[:group_num]}" &>.
 				]]></p>
 				
 				<list style="table">
@@ -97,10 +97,9 @@
 					
 					<column source="student" name="category" hidden="1"/>
 					<column source="student" name="study_type" hidden="1"/>
-					<column title="Форма (основа) обучения"><![CDATA[ <%
+					<column title="Основа обучения"><![CDATA[ <%
 						r = [study_type]
-						r << 'ОРИСА' if category.include? :foreign
-						r << 'ГУИМЦ' if category.include? :disabled
+						r << 'Иностранный гражданин' if category.include? :foreign
 						print r.join(', ')
 					%> ]]></column>
 					
@@ -113,7 +112,7 @@
 			<section source="order" paragraph="2">
 				<p><![CDATA[
 					<%= section_index %>. Считать нижеперечисленных студентов находящимися в академическом отпуске.
-					Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}#{_group[:group_num]}" &>.
+					Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}-#{_group[:group_num]}" &>.
 				]]></p>
 				
 				<list style="table">
@@ -123,10 +122,9 @@
 					
 					<column source="student" name="category" hidden="1"/>
 					<column source="student" name="study_type" hidden="1"/>
-					<column title="Форма (основа) обучения"><![CDATA[ <%
+					<column title="Основа обучения"><![CDATA[ <%
 						r = [study_type]
-						r << 'ОРИСА' if category.include? :foreign
-						r << 'ГУИМЦ' if category.include? :disabled
+						r << 'Иностранный гражданин' if category.include? :foreign
 						print r.join(', ')
 					%> ]]></column>
 				</list>
@@ -135,7 +133,7 @@
 			<section source="order" paragraph="3">
 				<p><![CDATA[
 					<%= section_index %>. Считать нижеперечисленных студентов находящимися на стажировке.
-					Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}#{_group[:group_num]}" &>.
+					Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}-#{_group[:group_num]}" &>.
 				]]></p>
 				
 				<list style="table">
@@ -145,10 +143,9 @@
 					
 					<column source="student" name="category" hidden="1"/>
 					<column source="student" name="study_type" hidden="1"/>
-					<column title="Форма (основа) обучения"><![CDATA[ <%
+					<column title="Основа обучения"><![CDATA[ <%
 						r = [study_type]
-						r << 'ОРИСА' if category.include? :foreign
-						r << 'ГУИМЦ' if category.include? :disabled
+						r << 'Иностранный гражданин' if category.include? :foreign
 						print r.join(', ')
 					%> ]]></column>
 				</list>
@@ -162,16 +159,19 @@
 						
 		</group>
 		
-		<p>Основания приказа: положение о зачетах и экзменах в МГЛУ.</p>
+		<p>Основания приказа: устав МГЛУ.</p>
 		
 		<signatures>
 			<signature name="rector"/>
 			<signature name="prorector"/>
+			<signature name="accountant"/>
+			<signature name="financing"/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract"/> -->
+			<signature name="foreign" condition="foreign"/>
 			<signature name="personnel"/>
-			<signature name="dean"/>
-			<signature name="marketing" condition="contract"/>
-			<signature name="financing" condition="contract"/>
-			<!-- signature name="foreign" condition="foreign"/ -->
+			<signature name="dean" condition="not foreign"/>
+			<signature name="foreign" condition="foreign"/>
 		</signatures>
 	</printable>
 

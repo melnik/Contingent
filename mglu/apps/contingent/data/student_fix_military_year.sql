@@ -5,11 +5,11 @@ CREATE TABLE military (
 );
 
 INSERT INTO military (military_id, name) VALUES
-	(1, '1-й год'),
-	(2, '2-й год'),
-	(3, '3-й год'),
-	(4, 'отстранен'),
-	(5, 'временно отстранен');
+	(1, '1-п╧ пЁп╬п╢'),
+	(2, '2-п╧ пЁп╬п╢'),
+	(3, '3-п╧ пЁп╬п╢'),
+	(4, 'п╬я┌я│я┌я─п╟п╫п╣п╫'),
+	(5, 'п╡я─п╣п╪п╣п╫п╫п╬ п╬я┌я│я┌я─п╟п╫п╣п╫');
 
 ALTER TABLE student CHANGE military_year military_id INT NULL;
 

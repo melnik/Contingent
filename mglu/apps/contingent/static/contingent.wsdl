@@ -369,7 +369,7 @@
     </wsdl:binding>
 <wsdl:service name="contingent">
 <wsdl:port binding="tns:contingentSOAP" name="contingentSOAP">
-<soap:address location="http://contingent.bmstu.ru:83/SOAP"/>
+<soap:address location="http://192.168.0.12/SOAP"/>
 </wsdl:port>
 </wsdl:service>
 </wsdl:definitions>

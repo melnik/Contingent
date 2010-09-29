@@ -19,7 +19,7 @@ class GroupCreationOrder < Order
 
 		attributes['groups'].each { |group|
 
-			group['name'] =~ /^([^\d]+)(\d+)-(\d+)(\d)$/
+			group['name'] =~ /^([^\d]+)(\d+)-(\d+)-(\d+)$/
 			faculty, department, term, num = $1, $2.to_i, $3.to_i, $4.to_i
 
 			dep = $sql.execute("SELECT  department_id
@@ -38,7 +38,7 @@ class GroupCreationOrder < Order
 		attributes['groups'].each { |group|
 
 			group = group['name']
-			raise error(:activation, true), "Неправильно название группы: #{group}" unless group =~ /^([^\d]+)(\d+)-(\d+)(\d)$/
+			raise error(:activation, true), "Неправильное название группы: #{group}" unless group =~ /^([^\d]+)(\d+)-(\d+)-(\d+)$/
 			faculty, department, term, num = $1, $2.to_i, $3.to_i, $4.to_i
 
 			# OMG... how do I find a department?

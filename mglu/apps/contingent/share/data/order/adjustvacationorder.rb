@@ -24,7 +24,7 @@ class AdjustVacationOrder < StudentsOrder
 
 			begin
 				set_student_attributes student_id, {
-					'group_id' => Group.load("#{department}-#{term_number - 2}#{group_number}").oid,
+					'group_id' => Group.load("#{department}-#{term_number-2}-#{group_number}").oid,
 				}
 			rescue # shit happend (most likely group not found)
 			end

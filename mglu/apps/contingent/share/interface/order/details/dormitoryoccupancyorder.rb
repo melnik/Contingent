@@ -9,7 +9,6 @@ class DetailsForDormitoryOccupancyOrder
 	extend DetailsCommon
 
 	CONDITIONS = [
-		DetailsCommon::Condition.new('first_term', {"student:current_term_number"=>1}),
 		DetailsCommon::Condition.new('contract', {"study_type_id"=>Classifier::StudyType::CONTRACT}),
 		DetailsCommon::Condition.new('foreign', {"citizenship_id"=>[4, 5, 6, 7]}),
 		DetailsCommon::Condition.new('disabled', {"category"=>:disabled})
@@ -34,12 +33,10 @@ class DetailsForDormitoryOccupancyOrder
 
 	def self.render_order(o, tmpl)
 		attributes = fix_order(o)
-		tmpl.resolution = attributes['resolution']
 	end
 
 	def self.save_order(o, params)
 		attributes = o.attributes.dup
-		attributes['resolution'] = Document.new(params["resolution_date"].to_d, params["resolution_num"])
 		attributes.each_pair { |k,v| o.attributes[k] = v }
 		o.save
 	end
@@ -60,7 +57,7 @@ class DetailsForDormitoryOccupancyOrder
 		attributes = attributes.dup
 		case paragraph
 		when 0
-			attributes['dormitory_num'] ||= Proc.new { { 'ИУ' => 5, 'РЛ' => 5, 'БМТ' => 5, 'МТ' => 4, 'РК' => 9, 'Э' => 10, 'СМ' => 11 }[o.faculty.name] || 5 }.call.to_i
+			attributes['dormitory_num'] ||= 1
 		end
 		attributes
 	end

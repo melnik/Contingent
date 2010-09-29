@@ -35,14 +35,14 @@ class Test_Order < Test::Unit::TestCase
 		o = Order.load @@oid
 
 		# ...modify it...
-		o.number = 'ÔÅÓÔ'
+		o.number = 'Ñ‚ĞµÑÑ‚'
 
 		# ...and save
 		o.save
 
 		o = Order.load @@oid
 
-		assert_equal 'ÔÅÓÔ',                           o.number
+		assert_equal 'Ñ‚ĞµÑÑ‚',                           o.number
 	end
 
 	def test_04_delete

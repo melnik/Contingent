@@ -12,13 +12,13 @@
 
 	<template entity="order">
 
-		<input type="document" name="resolution" title="Протокол решения отборочной комиссии факультета" />
-
-		<input type="document" name="approval" title="Протокол заседания Приемной комиссии МГЛУ" />
+		<input type="document" name="resolution" title="Протокол заседания Приемной комиссии МГЛУ" />
 
 		<input type="date" name="enrollment_date" title="Дата зачисления" />
 
-		<classifier type="study_type" title="Форма (основа) обучения" />
+		<classifier type="study_type" title="Основа обучения" default="Classifier::StudyType::BUDGET"/>
+		
+		<classifier type="study_form" title="Форма обучения" default="Classifier::StudyForm::FULLTIME"/>
 
 		<classifier type="degree" title="Ступень высшего профессионального образования" />
 		
@@ -53,7 +53,7 @@
 		
 		<classifier type="country" title="Страна" condition="foreign"/>
 		
-		<input type="document" name="assignment" title="Направление Министерства образования и науки РФ" condition="foreign"/>
+		<input type="document" name="assignment" title="Направление Министерства образования и науки РФ"/>
 		
 		<input type="text" name="special_assignment" title="Направление для поступления" condition="special"/>
 
@@ -67,10 +67,8 @@
 		<preamble><![CDATA[
 
 <p>
-На основании решения отборочной комиссии факультета "<&order.faculty.name&>"
-от <&order.attributes['resolution'][:date]&> протокол &#x2116; <&order.attributes['resolution'][:num]&>,
-утвержденного на заседании Приемной комиссии МГЛУ
-от <&order.attributes['approval'][:date]&> протокол &#x2116;<&order.attributes['approval'][:num]&>,
+На основании решения Приемной комиссии МГЛУ
+от <&order.attributes['resolution'][:date]&> протокол &#x2116;<&order.attributes['resolution'][:num]&>,
 </p>
 
 		]]></preamble>
@@ -86,8 +84,8 @@
 			else
 				"?"
 			end)
-		%> курс факультета &quot;<&order.faculty.name&>&quot;
-		для обучения по указанным направлениям, специальностям и специализациям подготовки
+		%> курс факультета <&order.faculty.name&>
+		для обучения по указанным специальностям и направлениям подготовки
 		<&Classifier::Degree[order.attributes['degree_code']][:name].to_s.gsub(/ый /, 'ых ')&>ов
 
 
@@ -105,26 +103,33 @@
 
 		<list style="text">
 			<column source="student" name="name"/>
+			<column source="student" name="course"/>
 			<column source="order" name="passport"/>
 			<column source="order" name="gender_id"/>
 			<column source="student" name="birth_date"/>
 			<column source="order" name="citizenship_id" />
 			<column source="order" name="country_id" />
 			<column source="student" name="card_number"/>
+			<column source="student" name="study_form"/>
 			<column source="order" name="agreement"/>
 			<column source="order" name="assignment"/>
 			<column source="student" name="group"/>
-			<column source="order" name="profession_code" title="Направление подготовки/специальность.специализация.квалификация"/>
+			<column source="order" name="profession_code" title="Направление подготовки/специальность, специализация, ступень образования"/>
 			<!--<column><![CDATA[ <% if conditions['special'] then %>
 				Направление для поступления: <%= Classifier::SpecialEnrollment[order.attributes['special_enrollment_code']][:agreement]
 				%><% unless attributes['special_assignment'].empty? then %>, <& attributes['special_assignment'] &><% end %>
 			<% end %> ]]></column>-->
-			<column><![CDATA[ <% if attributes['enrollment_type'] == 2 then %>
-				Основания приказа: личное заявление студента с визой декана факультета и
-				резолюцией проректора по учебной работе Университета<%
+			<column><![CDATA[ <br/><br/>Основания приказа:
+			<% if attributes['enrollment_type'] == 2 then %>
+				личное заявление студента с визой декана факультета и
+				резолюцией ректора<%
 				if order.attributes['study_type_id'] == 2 then %>, договор (контракт)
-				о предоставлении платных образовательных услуг <% end %>
-			<% end %> ]]></column>
+				о предоставлении платных образовательных услуг<% end
+				%>
+			<% else %>
+				решение Приемной комиссии МГЛУ <& order.attributes['resolution'] &>
+			<% end %>, правила приема в МГЛУ
+			]]></column>
 			<column><![CDATA[ <% unless attributes['note'].empty? then %>
 				<br/>Примечание: <& attributes['note'] &>
 			<% end %> ]]></column>
@@ -132,15 +137,13 @@
 
 		<signatures>
 			<signature name="rector"/>
-			<signature name="prorector"/>
-			<signature name="personnel"/>
-			<signature name="legal-councilor"/>
-			<signature name="prorector-international" condition="foreign" />
-			<signature name="prorector-security" condition="foreign" />
-			<signature name="enrollment"/>
-			<signature name="selection"/>
-			<signature name="marketing" condition="contract and not foreign" />
-			<signature name="financing" condition="contract and not foreign"/>
+			<signature name="prorector" condition="contract or foreign"/>
+			<signature name="accountant" condition="contract or foreign"/>
+			<signature name="financing" condition="contract or foreign"/>
+			<signature name="educational" condition="contract or foreign"/>
+			<!-- <signature name="marketing" condition="contract and not foreign"/> -->
+			<signature name="personnel" condition="contract or foreign"/>
+			<signature name="enrollment" condition="foreign"/>
 			<signature name="foreign" condition="foreign" />
 		</signatures>
 	</printable>

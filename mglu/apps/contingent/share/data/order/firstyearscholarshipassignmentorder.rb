@@ -11,7 +11,7 @@ class FirstYearScholarshipAssignmentOrder < StudentsOrder
 
 	public_class_method :new
 
-	QUALIFIED_STUDENTS = {"student_state"=>"studying", "liabilities"=>false}
+	QUALIFIED_STUDENTS = {"liabilities"=>false, "student_state"=>"studying"}
 
 	def search_available params = {}, fields = %w( student_id last_name first_name father_name card_number group_id group )
 		where_clauses = convert_search_params(params).compact
@@ -26,7 +26,7 @@ class FirstYearScholarshipAssignmentOrder < StudentsOrder
 		each_student :all, %w( student_id attributes ) do |student_id, attributes|
 			set :student, {
 				'scholarship_id' => 7
-			}, [ student_id ]
+			}.compact, [ student_id ]
 		end
 	end
 

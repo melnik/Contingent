@@ -30,6 +30,7 @@ function list_change(name, suffix)
 		<td>
 			<select name='liabilities_type_<&liabilities_index&>' >
 				<option value='зачет'<% if liabilities_line['type'] == 'зачет' then print " selected='1'" end %>>зачет</option>
+				<option value='диф.зачет'<% if liabilities_line['type'] == 'диф.зачет' then print " selected='1'" end %>>диф.зачет</option>
 				<option value='экзамен'<% if liabilities_line['type'] == 'экзамен' then print " selected='1'" end %>>экзамен</option>
 			</select>
 		</td>
@@ -49,6 +50,7 @@ function list_change(name, suffix)
 		<td>
 			<select name='liabilities_type_new' >
 				<option value='зачет'<% if nil == 'зачет' then print " selected='1'" end %>>зачет</option>
+				<option value='диф.зачет'<% if nil == 'диф.зачет' then print " selected='1'" end %>>диф.зачет</option>
 				<option value='экзамен'<% if nil == 'экзамен' then print " selected='1'" end %>>экзамен</option>
 			</select>
 		</td>

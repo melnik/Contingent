@@ -6,7 +6,7 @@ CREATE TABLE `role` (
   PRIMARY KEY  (`role_id`)
 ) TYPE=MyISAM;
 
-INSERT INTO `role` VALUES (1,'Администратор','student_edit,order_project,order_activate,user_edit,student_view_short,student_view,news_view,news_edit');
-INSERT INTO `role` VALUES (2,'Работник деканата','student_edit,order_project,student_view_short,student_view,news_view');
-INSERT INTO `role` VALUES (3,'Работник УК','student_edit,order_project,order_activate,student_view_short,student_view,news_view');
-INSERT INTO `role` VALUES (4,'Администрация МГТУ','student_view_short,student_view,news_view');
+INSERT INTO `role` VALUES (1,'п░п╢п╪п╦п╫п╦я│я┌я─п╟я┌п╬я─','student_edit,order_project,order_activate,user_edit,student_view_short,student_view,news_view,news_edit');
+INSERT INTO `role` VALUES (2,'п═п╟п╠п╬я┌п╫п╦п╨ п╢п╣п╨п╟п╫п╟я┌п╟','student_edit,order_project,student_view_short,student_view,news_view');
+INSERT INTO `role` VALUES (3,'п═п╟п╠п╬я┌п╫п╦п╨ пёп ','student_edit,order_project,order_activate,student_view_short,student_view,news_view');
+INSERT INTO `role` VALUES (4,'п░п╢п╪п╦п╫п╦я│я┌я─п╟я├п╦я▐ п°п⌠п╒пё','student_view_short,student_view,news_view');

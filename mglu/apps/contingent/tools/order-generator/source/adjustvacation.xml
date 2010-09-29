@@ -10,10 +10,23 @@
 		</student_state_id>
 	</qualified_students>
 
+	<template entity="order">
+		<const type="int" name="hide_study_type" value="1" />
+	</template>
+
 	<template entity="student">
 		<input type="group" name="group_id" title="Числить в группе" fixed="faculty,department,course" default="
 			g = Student.load(eid).group
-			Group.load(g.department.name + (g.term_number - 2).to_s + g.number.to_s)
+			# One year younger group
+			Group.load(%(#{g.department}-#{g.term_number - 2}-#{g.number})).oid rescue nil ||
+			# One term younger group
+			Group.load(%(#{g.department}-#{g.term_number - 1}-#{g.number})).oid rescue nil ||
+			# The first group that is one year younger
+			Group.load(%(#{g.department}-#{g.term_number - 2}-1)).oid rescue nil ||
+			# The first group that is one term younger
+			Group.load(%(#{g.department}-#{g.term_number - 1}-1)).oid rescue nil ||
+			# Fallback: unchanged group
+			g.oid
 		"/>
 	</template>
 
@@ -32,13 +45,15 @@
 				<list style="table">
 					<column name="number"/>
 					<column source="student" name="name"/>
+			<column source="student" name="profession"/>
+			<column source="student" name="course"/>
 					<column source="student" name="card_number"/>
 
 					<column source="student" name="category" hidden="1"/>
 					<column source="student" name="study_type" hidden="1"/>
-					<column title="Форма (основа) обучения"><![CDATA[ <%
+					<column title="Основа обучения"><![CDATA[ <%
 						r = [study_type]
-						r << 'ОРИСА' if category.include? :foreign
+						r << 'иностранный гражданин' if category.include? :foreign
 						r << 'ГУИМЦ' if category.include? :disabled
 						print r.join(', ')
 					%> ]]></column>
@@ -50,8 +65,12 @@
 		<signatures>
 			<signature name="rector"/>
 			<signature name="prorector"/>
+			<signature name="accountant"/>
+			<signature name="financing"/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract"/> -->
 			<signature name="personnel"/>
-			<signature name="dean"/>
+			<signature name="dean" condition="not foreign"/>
 		</signatures>
 	</printable>
 </order>

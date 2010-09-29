@@ -41,7 +41,8 @@ class DetailsForProgramSwitchingOrder
 			attributes['card_number'] ||= Proc.new { Student.load(eid).card_number }.call
 			attributes['specialization_code'] ||= Proc.new { '00' }.call
 			attributes['degree_code'] ||= Proc.new { nil }.call
-			attributes['basics'] ||= Proc.new { 'личное заявление обучающегося с визой декана факультета и резолюцией проректора по учебной работе Университета' }.call
+			attributes['study_form_id'] ||= Proc.new { Student.load(eid).study_form_id }.call
+			attributes['basics'] ||= Proc.new { 'личное заявление обучающегося с визой декана факультета и резолюцией ректора' }.call
 		end
 		attributes
 	end
@@ -55,9 +56,11 @@ class DetailsForProgramSwitchingOrder
 			tmpl.card_number = attributes['card_number']
 			tmpl.specialization_code = attributes['specialization_code']
 			tmpl.degree_code = attributes['degree_code']
+			tmpl.study_form_id = attributes['study_form_id']
 			tmpl.additional_agreement = attributes['additional_agreement']
 			tmpl.basic_agreement = attributes['basic_agreement']
 			tmpl.start_at = attributes['start_at']
+			tmpl.requalification = attributes['requalification']
 			tmpl.liabilities = attributes['liabilities']
 			tmpl.deadline = attributes['deadline']
 			tmpl.addendum = attributes['addendum']
@@ -78,9 +81,23 @@ class DetailsForProgramSwitchingOrder
 			attributes['specialization_code'] = params["specialization_code"]
 			attributes['degree_code'] = params["degree_code_code"]
 			attributes['degree_code'] = nil if attributes['degree_code'] == 0
+			attributes['study_form_id'] = params["study_form_id_id"].to_s.split(':')[0].to_i
 			attributes['additional_agreement'] = Document.new(params["additional_agreement_date"].to_d, params["additional_agreement_num"])
 			attributes['basic_agreement'] = Document.new(params["basic_agreement_date"].to_d, params["basic_agreement_num"])
 			attributes['start_at'] = params["start_at"].to_d
+			collect_row = Proc.new { |index|
+				row = {}
+				row['subject'] = params["requalification_subject_#{index}"]
+				row['mark'] = params["requalification_mark_#{index}"]
+				row
+			}
+			attributes['requalification'] = []
+			i = 0
+			while (keep = params["keep_requalification_#{i}"])
+				attributes['requalification'] << collect_row.call(i) if keep == '1'
+				i += 1
+			end
+			attributes['requalification'] << collect_row.call('new') if params['keep_requalification_new'] == '1'
 			collect_row = Proc.new { |index|
 				row = {}
 				row['subject'] = params["liabilities_subject_#{index}"]

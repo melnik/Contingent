@@ -15,7 +15,29 @@ class DetailsForLiabilitiesProlongationOrder
 	]
 
 	def self.has_order?
-		false
+		true
+	end
+
+	def self.init_order(o)
+		attributes = o.attributes.dup
+		attributes['hide_study_type'] = 1
+		attributes.each_pair { |k,v| o.attributes[k] = v }
+		o.save
+	end
+
+	def self.fix_order(o)
+		attributes = o.attributes.dup
+		attributes
+	end
+
+	def self.render_order(o, tmpl)
+		attributes = fix_order(o)
+	end
+
+	def self.save_order(o, params)
+		attributes = o.attributes.dup
+		attributes.each_pair { |k,v| o.attributes[k] = v }
+		o.save
 	end
 
 	def self.has_student?(paragraph)

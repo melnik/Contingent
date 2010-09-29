@@ -6,7 +6,7 @@ class EndVacationOrder < StudentsOrder
 	PARAGRAPH_NAME = [ 'В приказе' ]
 
 	AFFECTED_ATTRIBUTES = {
-		:student => %w( student_state_id liabilities group_id card_number ),
+		:student => %w( student_state_id liabilities card_number group_id ),
 	}
 
 	public_class_method :new
@@ -24,14 +24,14 @@ class EndVacationOrder < StudentsOrder
 		super
 		set :student, {
 			'student_state_id' => Classifier::StudentState::STUDYING
-		}
+		}.compact
 
 		each_student :all, %w( student_id attributes ) do |student_id, attributes|
 			set :student, {
 				'liabilities' => (not attributes['liabilities'].empty?),
-				'group_id' => attributes['group_id'],
-				'card_number' => attributes['card_number']
-			}, [ student_id ]
+				'card_number' => attributes['card_number'],
+				'group_id' => attributes['group_id']
+			}.compact, [ student_id ]
 		end
 	end
 
@@ -54,8 +54,8 @@ class EndVacationOrder < StudentsOrder
 			set_student_attributes(student_id, attributes = fixed_attrs) if @auto_fix and attributes != fixed_attrs
 
 			raise error(:activation, (not fixed_attrs['liabilities'].empty?).empty?), 'Поле "Академические задолженности" не определено' if (not attributes['liabilities'].empty?).empty?
+			raise error(:activation, fixed_attrs['card_number'].empty?), 'Поле "Присвоить № л.д." не определено' if attributes['card_number'].empty?
 			raise error(:activation, fixed_attrs['group_id'].empty?), 'Поле "Числить в группе" не определено' if attributes['group_id'].empty?
-			raise error(:activation, fixed_attrs['card_number'].empty?), 'Поле "Присвоить &#x2116; л.д." не определено' if attributes['card_number'].empty?
 		end
 	end
 end

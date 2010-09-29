@@ -9,8 +9,12 @@
 		<student_state class="String">studying</student_state>
 	</qualified_students>
 
-	<condition name="grant">
+	<condition name="social">
 		<order__scholarship_id class="Fixnum">13</order__scholarship_id>
+	</condition>
+	
+	<condition name="zhukov">
+		<order__scholarship_id class="Fixnum">3</order__scholarship_id>
 	</condition>
 
 	<condition name="high_courses">
@@ -22,8 +26,9 @@
 		</course>
 	</condition>
 
-	<title condition="not grant">О назначении на стипендию</title>
-	<title condition="grant">О назначении на грант</title>
+	<title condition="not social and not zhukov">О назначении на стипендию</title>
+	<title condition="social">О назначении дотаций мэрии г. Москвы</title>	
+	<title condition="zhukov">О назначении на стипендию имени маршала Г. К. Жукова</title>
 
 	<template entity="order">
 		<classifier type="scholarship" title="Вид стипендии" custom="1"/>
@@ -35,25 +40,44 @@
 		<input type="document" name="basics" title="Протокол заседания стипендиальной комиссии"/>
 	</template>
 
-	<template entity="student"/>
+	<template entity="student">
+	
+		<select type="text" name="degree" title="степень" condition="zhukov">
+			<option title="первая"/>
+			<option title="вторая"/>
+		</select>
+		
+		<input type="text" name="amount" title="Сумма" condition="zhukov"/>
+	
+	</template>
 
 	<printable>
 
 		<p><![CDATA[
-			<% if order.attributes['scholarship_id'] == 10 then %>
-			Следующих студентов, обучающихся за счет средств федерального бюджета и не имеющих
-			академических задолженностей на момент подачи заявлений
-			<% else %>
-			Студентов, сдавших все экзамены и зачеты <& Term.current.even?? 'зимней' : 'летней' &> экзаменационной сессии
-			<%= Term.prev.academic_year.begin %>/<%= Term.prev.academic_year.end %> учебного года
-			<% end %>, назначить на
-			<& (if order.attributes['scholarship_id'] == 0 then
-				order.attributes['custom_scholarship_id']
+			<% case order.attributes['scholarship_id']
+			when 10 then
+				%>Следующих студентов, обучающихся за счет средств федерального бюджета и не имеющих
+				академических задолженностей на момент подачи заявлений, назначить на государственную социальную стипендию
+				в <& Term.current.academic_year.begin &>/<& Term.current.academic_year.end &> учебном году
+				(<& order.attributes['period'] &>): <%
+			when 3 then
+				%>За достигнутые высокие результаты и примерную воинскую дисциплину по итогам обучения,
+				сборов и стажировки в 2009 году объявить лауреатами ежегодной премии имени
+				маршала Советского Союза Г.К. Жукова и наградить денежной премией согласно Положению о стипендии: <%
+			when 13 then
+				%>Остронуждающимся студентам очной формы обучения назначить дотации мэрии г. Москвы
+				<& order.attributes['period'] &>: <%
 			else
-				Classifier::Scholarship[order.attributes['scholarship_id']][:name]
-			end).gsub('ая ', 'ую ').gsub('типендия', 'типендию') &>
-			в <& Term.current.academic_year.begin &>/<& Term.current.academic_year.end &> учебном году
-			(<& order.attributes['period'] &>):
+				%>Студентов, сдавших все экзамены и зачеты <& Term.current.even?? 'зимней' : 'летней' &> экзаменационной сессии
+				<%= Term.prev.academic_year.begin %>/<%= Term.prev.academic_year.end %> учебного года, назначить на
+				<& (if order.attributes['scholarship_id'] == 0 then
+					order.attributes['custom_scholarship_id']
+				else
+					Classifier::Scholarship[order.attributes['scholarship_id']][:name]
+				end).gsub('ая ', 'ую ').gsub('типендия', 'типендию') &>
+				в <& Term.current.academic_year.begin &>/<& Term.current.academic_year.end &> учебном году
+				(<& order.attributes['period'] &>): <%
+			end %>
 		]]></p>
 
 		<group by="group">
@@ -64,31 +88,43 @@
 				<column source="student" name="name" />
 				<column source="student" name="group_id" hidden="1"/>
 				<column source="student" name="start_year" hidden="1"/>
+				<column source="student" name="course"/>
+				<column source="student" name="profession"/>
+				<column source="order" name="degree" />
+				<column><![CDATA[ <& attributes['amount'] &> ]]></column>
 			</list>
 		</group>
 
 		<p><![CDATA[
-			<% if order.attributes['scholarship_id'] == 10 then %>
-			Основания приказа: личное заявление студента, справка установленного образца
-			из государственных органов социальной защиты населения.
-			<% else %>
-			Основание приказа:
-			протокол заседания стипендиальной комиссии <& order.attributes['basics'] &>.
-			<% end %>
+			<br/><br/>Основания приказа:
+			<% case order.attributes['scholarship_id']
+			when 10,13 then
+				%>личное заявление студента, справка установленного образца
+				из государственных органов социальной защиты населения<%
+			when 3 then
+				%>служебная записка начальника КВО с резолюцией ректора,
+				Положение о стипендии маршала Советского Союза Г. К. Жукова,
+				объявленное приказом ректора МГЛУ<%
+			else
+				%>протокол заседания стипендиальной комиссии <& order.attributes['basics'] &><%
+			end %>.
 		]]></p>
 
 		<signatures>
 			<signature name="rector"/>
 			<signature name="prorector"/>
-			<signature name="personnel"/>
-			<signature name="dean" condition="not (disabled and high_courses)"/>
-			<signature name="deputy_dean" condition="not (disabled and high_courses)"/>
-			<signature name="rehabilitation_dean" condition="disabled and high_courses"/>
-			<signature name="rehabilitation_deputy_dean" condition="disabled and high_courses"/>
+			<signature name="accountant" condition="not zhukov"/>
 			<signature name="financing"/>
-			<signature name="accountant"/>
-			<signature name="rehabilitation" condition="disabled and not high_courses"/>
-			<signature name="foreign" condition="foreign"/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract"/> -->
+			<signature name="personnel"/>
+			<signature name="dean" condition="not (disabled and high_courses) and not zhukov and not foreign"/>
+			<signature name="deputy_dean" condition="not (disabled and high_courses) and not zhukov"/>
+			<signature name="rehabilitation_dean" condition="disabled and high_courses and not zhkov"/>
+			<signature name="rehabilitation_deputy_dean" condition="disabled and high_courses and not zhukov"/>
+			<signature name="military" condition="zhukov"/>
+			<signature name="rehabilitation" condition="disabled and not high_courses and not zhukov"/>
+			<signature name="foreign" condition="foreign and not zhukov"/>
 		</signatures>
 	</printable>
 

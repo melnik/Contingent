@@ -24,7 +24,7 @@ class BeginTraineeOrder < StudentsOrder
 		super
 		set :student, {
 			'student_state_id' => Classifier::StudentState::TRAINEE
-		}
+		}.compact
 
 	end
 

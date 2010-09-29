@@ -21,6 +21,7 @@ class DetailsForLiabilitiesRemovalOrder
 	def self.init_order(o)
 		attributes = o.attributes.dup
 		attributes['liabilities'] = Proc.new {  }.call.to_s
+		attributes['hide_study_type'] = 1
 		attributes.each_pair { |k,v| o.attributes[k] = v }
 		o.save
 	end

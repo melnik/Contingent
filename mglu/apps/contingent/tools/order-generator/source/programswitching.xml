@@ -17,7 +17,8 @@
 	<condition name="profession_switching">
 		<order__profession_code class="Regexp">.</order__profession_code>
 	</condition>
-	<title condition="not profession_switching">О переводе из одной учебной группы в другую</title>
+
+	<title condition="not profession_switching">О переходе из одной учебной группы в другую</title>
 
 	<template entity="student">
 
@@ -30,6 +31,8 @@
 		<input type="text" name="specialization_code" title="Новый код специализации" default="'00'"/>
 
 		<classifier type="degree" title="Новая ступень образования" display_empty="yes" default="nil"/>
+		
+		<classifier type="study_form" title="Новая форма обучения" default="Student.load(eid).study_form_id"/>
 
 		<input type="document" name="additional_agreement" title="Доп. соглашение" condition="contract"/>
 
@@ -37,10 +40,21 @@
 
 		<input type="date" name="start_at" title="Перевести с" />
 
-		<list name="liabilities" title="Имеет академические задолженности">
+		<list name="requalification" title="Перезачесть дисциплины">
+			<input type="text" name="subject" title="Название"/>
+			<select type="text" name="mark" title="Оценка">
+				<option title="зачтено" />
+				<option title="удовлетворительно" />
+				<option title="хорошо" />
+				<option title="отлично" />
+			</select>
+		</list>
+
+		<list name="liabilities" title="Академические задолженности">
 			<input type="text" name="subject" title="Название" />
 			<select type="text" name="type" title="Отчетность">
 				<option title="зачет" />
+				<option title="диф.зачет"/>
 				<option title="экзамен" />
 			</select>
 		</list>
@@ -54,8 +68,8 @@
 		
 		
 		<select type="text" name="basics" title="Основания приказа" condition="disabled">
-			<option displayed="л/з студента" printable="личное заявление обучающегося с визой декана факультета и резолюцией проректора по учебной работе Университета"/>
-			<option displayed="с/з директора ГУИМЦ" printable="служебная записка директора ГУИМЦ, положение об организации учебного процесса"/>
+			<option displayed="л/з студента" printable="личное заявление обучающегося с визой декана факультета и резолюцией ректора"/>
+			<option displayed="с/з директора ГУИМЦ" printable="служебная записка директора ГУИМЦ, приказ ректора об организации учебного процесса"/>
 		</select>
 		
 		<input type="text" name="note" title="Примечания"/>
@@ -67,9 +81,7 @@
 		<p><![CDATA[
 		<% if conditions['profession_switching'] then %>		
 		Перевести с одной образовательной программы на другую
-		нижеперечисленных лиц, обучающихся в МГЛУ, и установить индивидуальный
-		график сдачи академических задолженностей, образовавшихся вследствие расхождения учебных
-		планов:
+		нижеперечисленных лиц, обучающихся в МГЛУ:
 		<% else %>
 		Перевести из одной учебной группы в другую нижеперечисленных
 		лиц, обучающихся в МГЛУ:</p>
@@ -78,33 +90,37 @@
 
 		<list style="text">
 			<column source="student" name="name"/>
+			<column source="student" name="course"/>
 			<column source="student" name="student_status"/>
 			<column source="student" name="card_number"/>
+			<column source="student" name="study_form"/>
 			<column source="student" name="group"/>
 			<column source="student" name="profession_code"/>
 			<column source="order" name="degree_code" condition="profession_switching"/>
 			<column source="order" name="group_id"/>
 			<column source="order" name="profession_code"/>
+			<column source="order" name="study_form_id"/>
 			<column source="order" name="card_number" condition="profession_switching"/>
 			<column source="order" name="basic_agreement" title="Договор (контракт) о предоставлении платных образовательных услуг" condition="profession_switching"/>
 			<column source="order" name="addendum" condition="profession_switching"/>
 			<column source="order" name="contract" condition="profession_switching"/>
 			<column source="order" name="start_at"/>
-			<column source="order" name="liabilities" empty_text="академических задолженностей нет." condition="profession_switching"/>
-			<column source="order" name="deadline" condition="profession_switching"/>
-			<column title="Основания приказа"><![CDATA[<%
+			<column source="order" name="requalification" condition="profession_switching" title="Перезачесть нижеприведенные учебные дисциплины и результаты их освоения"/>
+			<column source="order" name="liabilities" condition="profession_switching" title="Утвердить индивидуальный план ликвидации академической задолженности, образовавшейся в результате выявленной академической разницы"/>
+			<column source="order" name="deadline" condition="profession_switching and has_liabilities" title="Срок ликвидации академической задолженности до"/>
+			<column><![CDATA[ <% unless attributes['liabilities'].empty? then %>
+				Прием зачетов и экзаменов по вышеназванным дисциплинам проводится на компенсационной основе в установленном порядке.
+			<% else %>
+				Академической задолженности не имеет.
+			<% end %>]]></column>
+			<column><![CDATA[
+<br/><br/>Основание приказа: <%
 	if not conditions['profession_switching'] then
-%>служебная записка зам.декана с резолюцией декана факультета<%	
+%>докладная записка зам.декана с резолюцией декана факультета<%	
 	elsif conditions['disabled'] then
 %><&attributes['basics']&><%
 	else
-%>личное заявление обучающегося с визой декана факультета<% if conditions['foreign'] then %>,
-декана ФОИГ <% end %> и резолюцией проректора по учебной работе Университета<%
-
-unless attributes['basic_agreement'].empty? || attributes['additional_agreement'].empty? then
-%>, дополнительное соглашение <&attributes['additional_agreement']&>
-к договору (контракту) о предоставлении платных образовательных услуг <&attributes['basic_agreement']&>
-<% end
+%>личное заявление обучающегося с визой декана факультета и резолюцией ректора<%
 	end
 %>;]]>		</column>
 			<column source="order" name="note"/>
@@ -112,21 +128,16 @@ unless attributes['basic_agreement'].empty? || attributes['additional_agreement'
 
 		<signatures>
 			<signature name="rector"/>
-			<signature name="prorector"/>
-			<signature name="personnel" condition="profession_switching"/>
-			<signature name="prorector-international" condition="foreign and profession_switching" />
-			<signature name="prorector-security" condition="foreign and profession_switching" />
-			<signature name="dean" condition="not disabled or became_disabled"/>
+			<signature name="prorector" condition="profession_switching"/>
+			<signature name="financing" condition="profession_switching "/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="profession_switching" /> -->
+			<signature name="personnel"/>
+			<signature name="dean" condition="(not disabled or became_disabled) and not foreign"/>
+			<signature name="legal-councilor" condition="profession_switching"/>
 			<signature name="rehabilitation" condition="disabled"/>
 			<signature name="deanreceiver" condition="not (disabled and became_disabled)"/>
-			<signature name="marketing" condition="contract and not foreign and profession_switching" />
-			<signature name="financing" condition="contract and not foreign and profession_switching "/>
 			<signature name="foreign" condition="foreign and profession_switching" />
-			
-			<!-- Signatures order depend on order 'subtype'; thus personnel signature are duplicated here.
-			     The first one goes before dean signature and applies to real program switching orders;
-			     the second one goes after dean signature and applies to group switching orders. -->
-			<signature name="personnel" condition="not profession_switching"/>
 		</signatures>
 
 	</printable>

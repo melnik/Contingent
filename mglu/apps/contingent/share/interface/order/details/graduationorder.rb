@@ -32,10 +32,12 @@ class DetailsForGraduationOrder
 
 	def self.render_order(o, tmpl)
 		attributes = fix_order(o)
+		tmpl.graduation_date = attributes['graduation_date']
 	end
 
 	def self.save_order(o, params)
 		attributes = o.attributes.dup
+		attributes['graduation_date'] = params["graduation_date"].to_d
 		attributes.each_pair { |k,v| o.attributes[k] = v }
 		o.save
 	end
@@ -56,9 +58,9 @@ class DetailsForGraduationOrder
 		attributes = attributes.dup
 		case paragraph
 		when 0
-			attributes['mark'] ||= 4
+			attributes['mark'] ||= Proc.new { '' }.call
 			attributes['qualification'] ||= Proc.new { 'инженер' }.call
-			attributes['diploma_type'] ||= 1
+			attributes['diploma_type'] ||= Proc.new { 'С выдачей диплома о высшем профессиональном образовании' }.call
 			attributes['country_id'] ||= Proc.new { first_value(Classifier::Country) }.call
 		end
 		attributes
@@ -72,6 +74,7 @@ class DetailsForGraduationOrder
 			tmpl.mark = attributes['mark']
 			tmpl.qualification = attributes['qualification']
 			tmpl.diploma_type = attributes['diploma_type']
+			tmpl.languages = attributes['languages']
 			tmpl.protocol = attributes['protocol']
 			tmpl.agreement = attributes['agreement']
 			tmpl.country_id = attributes['country_id']
@@ -85,9 +88,10 @@ class DetailsForGraduationOrder
 		case paragraph
 		when 0
 			attributes['graduation_thesis'] = params["graduation_thesis"]
-			attributes['mark'] = params["mark"].to_i
+			attributes['mark'] = params["mark"]
 			attributes['qualification'] = params["qualification"]
-			attributes['diploma_type'] = params["diploma_type"].to_i
+			attributes['diploma_type'] = params["diploma_type"]
+			attributes['languages'] = params["languages"]
 			attributes['protocol'] = Document.new(params["protocol_date"].to_d, params["protocol_num"])
 			attributes['agreement'] = Document.new(params["agreement_date"].to_d, params["agreement_num"])
 			attributes['country_id'] = params["country_id_id"].to_s.split(':')[0].to_i

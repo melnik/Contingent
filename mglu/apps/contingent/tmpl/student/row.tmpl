@@ -1,10 +1,9 @@
 <!INIT student_id name group card_number attributes !>
 				<tr class="list_item">
 					<td                                       ><a href="item.rb?student_id=<&student_id&>" target="details"><&name&></a></td>
-					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:foreign] %><img src="/img/foreign.png" width="16" height="16" border="0" title="ОРИСА"/><% end %></a></td>
+					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:foreign] %><img src="/img/foreign.png" width="16" height="16" border="0" title="Иностранный гражданин"/><% end %></a></td>
 					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:disabled] %><img src="/img/disabled.png" width="16" height="16" border="0" title="ГУИМЦ"/><% end %></a></td>
-					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:military][:id].to_i != 0 %><img src="/img/military_<&attributes[:military][:id]&>.png" width="16" height="16" border="0" title="военное обучение: <&attributes[:military][:name]&>"/><% end %></a></td>
-					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:contract] %><img src="/img/contract.png" width="16" height="16" border="0" title="Контрактная форма обучения"/><% end %></a></td>
+					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:contract] %><img src="/img/contract.png" width="16" height="16" border="0" title="На договорной основе"/><% end %></a></td>
 					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:vacation] %><img src="/img/vacation.png" width="16" height="16" border="0" title="В академическом отпуске"/><% end %></a></td>
 					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:trainee] %><img src="/img/trainee.png" width="16" height="16" border="0" title="На стажировке"/><% end %></a></td>
 					<td style="width: 16px; padding: 0px"     ><a href="item.rb?student_id=<&student_id&>" target="details"><% if attributes[:expelled] %><img src="/img/expelled.png" width="16" height="16" border="0" title="Отчислен"/><% end %></a></td>

@@ -74,7 +74,7 @@ _SETS_[-1].keys.sort.each { |group|
 							<%= section_index %>. Перевести нижеперечисленных студентов,
 							полностью выполнивших учебный план <& _group[:current_term_number] &> семестра
 							и сдавших все экзамены и зачеты, на <& _group[:current_term_number].to_i + 1 &> семестр.
-							Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}#{_group[:group_num]}" &>.
+							Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}-#{_group[:group_num]}" &>.
 						</p>
 
 		<table class="printable" cellspacing="0"><thead>
@@ -82,7 +82,7 @@ _SETS_[-1].keys.sort.each { |group|
 				<th class="printleft" rowspan="1">&#x2116; п/п</th>
 				<th rowspan="1">Ф.И.О.</th>
 				<th rowspan="1">Л.д. &#x2116;</th>
-				<th rowspan="1">Форма (основа) обучения</th>
+				<th rowspan="1">Основа обучения</th>
 			</tr>
 		</thead><tbody>
 		<% _ITEM_INDEX_ = 0 %>
@@ -103,8 +103,7 @@ _SETS_[-1].keys.sort.each { |group|
 				<% if _ROW_ == 0 then %><td rowspan="<%= _HEIGHT_ %>"><& card_number &>&nbsp;</td><% end %>
 				<% if _ROW_ == 0 then %><td rowspan="<%= _HEIGHT_ %>"> <%
 									r = [study_type]
-									r << 'ОРИСА' if category.include? :foreign
-									r << 'ГУИМЦ' if category.include? :disabled
+									r << 'иностранный гражданин' if category.include? :foreign
 									print r.join(', ')
 								%> &nbsp;</td><% end %>
 			</tr>
@@ -131,7 +130,7 @@ _SETS_[-1].keys.sort.each { |group|
 							<%= section_index %>. Перевести нижеперечисленных студентов, не сдавших академические задолженности
 							в дополнительную экзаменационную сессию, условно на <& _group[:current_term_number].to_i + 1 &> семестр,
 							установив индивидуальный срок сдачи задолженностей.
-							Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}#{_group[:group_num]}" &>.
+							Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}-#{_group[:group_num]}" &>.
 						</p>
 
 		<table class="printable" cellspacing="0"><thead>
@@ -139,7 +138,7 @@ _SETS_[-1].keys.sort.each { |group|
 				<th class="printleft" rowspan="2">&#x2116; п/п</th>
 				<th rowspan="2">Ф.И.О.</th>
 				<th rowspan="2">Л.д. &#x2116;</th>
-				<th rowspan="2">Форма (основа) обучения</th>
+				<th rowspan="2">Основа обучения</th>
 				<th colspan="2">Академические задолженности</th>
 				<th rowspan="2">Причина</th>
 				<th rowspan="2">Срок сдачи</th>
@@ -167,8 +166,7 @@ _SETS_[-1].keys.sort.each { |group|
 				<% if _ROW_ == 0 then %><td rowspan="<%= _HEIGHT_ %>"><& card_number &>&nbsp;</td><% end %>
 				<% if _ROW_ == 0 then %><td rowspan="<%= _HEIGHT_ %>"> <%
 									r = [study_type]
-									r << 'ОРИСА' if category.include? :foreign
-									r << 'ГУИМЦ' if category.include? :disabled
+									r << 'Иностранный гражданин' if category.include? :foreign
 									print r.join(', ')
 								%> &nbsp;</td><% end %>
 				<% case
@@ -207,7 +205,7 @@ _SETS_[-1].keys.sort.each { |group|
 
 		<p>
 							<%= section_index %>. Считать нижеперечисленных студентов находящимися в академическом отпуске.
-							Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}#{_group[:group_num]}" &>.
+							Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}-#{_group[:group_num]}" &>.
 						</p>
 
 		<table class="printable" cellspacing="0"><thead>
@@ -215,7 +213,7 @@ _SETS_[-1].keys.sort.each { |group|
 				<th class="printleft" rowspan="1">&#x2116; п/п</th>
 				<th rowspan="1">Ф.И.О.</th>
 				<th rowspan="1">Л.д. &#x2116;</th>
-				<th rowspan="1">Форма (основа) обучения</th>
+				<th rowspan="1">Основа обучения</th>
 			</tr>
 		</thead><tbody>
 		<% _ITEM_INDEX_ = 0 %>
@@ -236,8 +234,7 @@ _SETS_[-1].keys.sort.each { |group|
 				<% if _ROW_ == 0 then %><td rowspan="<%= _HEIGHT_ %>"><& card_number &>&nbsp;</td><% end %>
 				<% if _ROW_ == 0 then %><td rowspan="<%= _HEIGHT_ %>"> <%
 									r = [study_type]
-									r << 'ОРИСА' if category.include? :foreign
-									r << 'ГУИМЦ' if category.include? :disabled
+									r << 'Иностранный гражданин' if category.include? :foreign
 									print r.join(', ')
 								%> &nbsp;</td><% end %>
 			</tr>
@@ -257,7 +254,7 @@ _SETS_[-1].keys.sort.each { |group|
 
 		<p>
 							<%= section_index %>. Считать нижеперечисленных студентов находящимися на стажировке.
-							Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}#{_group[:group_num]}" &>.
+							Числить в группе <& "#{_group[:group].to_s.gsub(/-.*$/, '')}-#{_group[:current_term_number].to_i+1}-#{_group[:group_num]}" &>.
 						</p>
 
 		<table class="printable" cellspacing="0"><thead>
@@ -265,7 +262,7 @@ _SETS_[-1].keys.sort.each { |group|
 				<th class="printleft" rowspan="1">&#x2116; п/п</th>
 				<th rowspan="1">Ф.И.О.</th>
 				<th rowspan="1">Л.д. &#x2116;</th>
-				<th rowspan="1">Форма (основа) обучения</th>
+				<th rowspan="1">Основа обучения</th>
 			</tr>
 		</thead><tbody>
 		<% _ITEM_INDEX_ = 0 %>
@@ -286,8 +283,7 @@ _SETS_[-1].keys.sort.each { |group|
 				<% if _ROW_ == 0 then %><td rowspan="<%= _HEIGHT_ %>"><& card_number &>&nbsp;</td><% end %>
 				<% if _ROW_ == 0 then %><td rowspan="<%= _HEIGHT_ %>"> <%
 									r = [study_type]
-									r << 'ОРИСА' if category.include? :foreign
-									r << 'ГУИМЦ' if category.include? :disabled
+									r << 'Иностранный гражданин' if category.include? :foreign
 									print r.join(', ')
 								%> &nbsp;</td><% end %>
 			</tr>
@@ -311,31 +307,42 @@ _SETS_[-1].keys.sort.each { |group|
 _SETS_.pop
 %>
 
-<p>Основания приказа: положение о зачетах и экзменах в МГЛУ.</p>
+<p>Основания приказа: устав МГЛУ.</p>
 
 <% _SIGNATURE_INDEX_ = 0 %>
 <table class="signatures">
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Ректор МГЛУ</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">И. И. Халеева</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+	<tr><td>Ректор</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">И. И. Халеева</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
 	<tr><td>Проректор по учебной работе</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">И. В. Манохин</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Начальник управления кадров</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Ю. И. Вторушин</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+	<tr><td>Начальник управления бухгалтерского учета и финансового контроля</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Л. В. Куренкова</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
 
-	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Декан факультета &laquo;<%=order.faculty.name%>&raquo;</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
-
-	<% if _CONDITIONS_['contract'] then %>
-	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Начальник учебно-организационного отдела</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
-	<% end %>
-
-	<% if _CONDITIONS_['contract'] then %>
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
 	<tr><td>Начальник планово-финансового управления</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Л. Н. Ермакова</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+
+	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
+	<tr><td>Начальник учебно-методического управления</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">А. И. Коробко</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+
+	<% if _CONDITIONS_['foreign'] then %>
+	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
+	<tr><td>Декан ФОИГ</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
+	<% end %>
+
+	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
+	<tr><td>Начальник управления кадров</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Ю. И. Вторушин</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+
+	<% if not _CONDITIONS_['foreign'] then %>
+	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
+	<tr><td><%=order.faculty.dean_position%></td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
+	<% end %>
+
+	<% if _CONDITIONS_['foreign'] then %>
+	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
+	<tr><td>Декан ФОИГ</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
 	<% end %>
 </table>
 

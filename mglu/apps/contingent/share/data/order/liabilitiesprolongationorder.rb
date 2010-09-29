@@ -2,7 +2,7 @@ require 'data/order/studentsorder'
 require 'expression'
 
 class LiabilitiesProlongationOrder < StudentsOrder
-	TYPE = 'О переносе срока ликвидации академических задолженностей'
+	TYPE = 'О переносе срока ликвидации академической задолженности'
 	PARAGRAPH_NAME = [ 'В приказе' ]
 
 	AFFECTED_ATTRIBUTES = {

@@ -2,11 +2,11 @@ require 'data/order/studentsorder'
 require 'expression'
 
 class KeepDownOrder < StudentsOrder
-	TYPE = 'О предоставлении повторного обучения на платной основе'
+	TYPE = 'О предоставлении повторного обучения'
 	PARAGRAPH_NAME = [ 'В приказе' ]
 
 	AFFECTED_ATTRIBUTES = {
-		:student => %w( study_type_id degree_code liabilities group_id card_number profession_code ),
+		:student => %w( study_form_id study_type_id degree_code liabilities group_id profession_code ),
 	}
 
 	public_class_method :new
@@ -23,17 +23,17 @@ class KeepDownOrder < StudentsOrder
 	def _activate
 		super
 		set :student, {
-			'study_type_id' => Classifier::StudyType::CONTRACT
-		}
+			'study_form_id' => attributes['study_form_id'],
+			'study_type_id' => attributes['study_type_id']
+		}.compact
 
 		each_student :all, %w( student_id attributes ) do |student_id, attributes|
 			set :student, {
 				'degree_code' => attributes['degree_code'],
 				'liabilities' => (not attributes['liabilities'].empty?),
 				'group_id' => attributes['group_id'],
-				'card_number' => attributes['card_number'],
 				'profession_code' => attributes['profession_code']
-			}, [ student_id ]
+			}.compact, [ student_id ]
 		end
 	end
 
@@ -49,6 +49,8 @@ class KeepDownOrder < StudentsOrder
 				save
 			end
 
+			raise error(:activation, fixed_attrs['study_form_id'].empty?), 'Поле "Форма обучения" не определено' if attributes['study_form_id'].empty?
+			raise error(:activation, fixed_attrs['study_type_id'].empty?), 'Поле "Основа обучения" не определено' if attributes['study_type_id'].empty?
 		end
 
 		each_student :all, %w( student_id paragraph_id attributes ) do |student_id, paragraph_id, attributes|
@@ -58,7 +60,6 @@ class KeepDownOrder < StudentsOrder
 			raise error(:activation, fixed_attrs['degree_code'].empty?), 'Поле "Новая ступень образования" не определено' if attributes['degree_code'].empty?
 			raise error(:activation, (not fixed_attrs['liabilities'].empty?).empty?), 'Поле "Академические задолженности" не определено' if (not attributes['liabilities'].empty?).empty?
 			raise error(:activation, fixed_attrs['group_id'].empty?), 'Поле "Числить в группе" не определено' if attributes['group_id'].empty?
-			raise error(:activation, fixed_attrs['card_number'].empty?), 'Поле "Присвоить номер л.д." не определено' if attributes['card_number'].empty?
 			raise error(:activation, fixed_attrs['profession_code'].empty?), 'Поле "Код направления / специальности (новый)" не определено' if attributes['profession_code'].empty?
 		end
 	end

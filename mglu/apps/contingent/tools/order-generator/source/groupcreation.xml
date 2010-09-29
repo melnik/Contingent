@@ -30,9 +30,9 @@
 		<signatures>
 			<signature name="rector"/>
 			<signature name="prorector"/>
-			<signature name="personnel"/>
-			<signature name="dean"/>
 			<signature name="educational"/>
+			<signature name="personnel"/>
+			<signature name="dean" condition="not foreign"/>
 		</signatures>
 
 	</printable>

@@ -27,6 +27,22 @@
 
 	<template entity="order">
 		<input type="document" name="basics" title="Протокол заседания стипендиальной комиссии"/>
+
+		<select type="text" name="term_type" title="Сессия">
+			<option title="летняя"/>
+			<option title="зимняя"/>
+		</select>
+
+		<select type="text" name="year" title="учебный год"/>
+		
+		<input type="daterange" name="period" title="Назначить на стипендию"/>
+		
+		<input type="text" name="scholarship_1" title="Сумма стипендии (отл)" />
+		
+		<input type="text" name="scholarship_2" title="Сумма стипендии (отл+хор)" />
+		
+		<input type="text" name="scholarship_3" title="Сумма стипендии (хор)" />
+		
 	</template>
 
 	<template entity="student" paragraph="0">
@@ -36,13 +52,17 @@
 	<template entity="student" paragraph="1">
 		<const type="int" name="scholarship_id" value="2"/>
 	</template>
+	
+	<template entity="student" paragraph="2">
+		<const type="int" name="scholarship_id" value="2"/>
+	</template>
 
 	<printable>
 
 		<p><![CDATA[
-			Студентов, сдавших все экзамены и зачеты <& Term.current.even? ? 'зимней' : 'летней' &> экзаменационной
-			сессии, назначить на государственные академические стипендии в
-			<& Term.current.academic_year.begin &>/<& Term.current.academic_year.end &> учебном году (<& Term.current &>):
+			Студентов, сдавших все экзамены и зачеты <%= order.attributes['term'].gsub(/яя/, "ей") %>
+			экзаменационной	сессии, назначить на государственную академическую стипендию в
+			<& year &> учебном году (<& order.attributes['period'] &>):
 		]]></p>
 
 		<group by="group">
@@ -50,41 +70,60 @@
 			<p><![CDATA[ <h3>По группе <& group &></h3> ]]></p>
 
 			<section source="order" paragraph="0">
-				<p>&lt;%= section_index %&gt;. Студентов, имеющих по итогам сессии только
-				отличные оценки, назначить на повышенную государственную академическую стипендию:</p>
-
+				<p><![CDATA[ <%= section_index %>. Студентов, имеющих по итогам сессии только
+				отличные оценки, назначить на государственную академическую стипендию
+				в размере <& order.attributes['scholarship_1'] &>:]]></p>
 				<list style="list">
 					<column source="student" name="group_id" hidden="1"/>
 					<column source="student" name="name"/>
+			<column source="student" name="profession"/>
+			<column source="student" name="course"/>
 				</list>
 			</section>
 
 			<section source="order" paragraph="1">
-				<p>&lt;%= section_index %&gt;. Студентов, имеющих по итогам сессии только
-				отличные и хорошие оценки, назначить на государственную академическую стипендию:</p>
+				<p><![CDATA[ <%= section_index %>. Студентов, имеющих по итогам сессии только
+				отличные и хорошие оценки, назначить на государственную академическую стипендию
+				в размере <& order.attributes['scholarship_2'] &>:]]></p>
 
 				<list style="list">
 					<column source="student" name="name"/>
+			<column source="student" name="profession"/>
+			<column source="student" name="course"/>
+				</list>
+			</section>
+
+			<section source="order" paragraph="2">
+				<p><![CDATA[ <%= section_index %>. Студентов, имеющих по итогам сессии только
+				хорошие оценки, назначить на государственную академическую стипендию
+				в размере <& order.attributes['scholarship_3'] &>:]]></p>
+				<list style="list">
+					<column source="student" name="group_id" hidden="1"/>
+					<column source="student" name="name"/>
+			<column source="student" name="profession"/>
+			<column source="student" name="course"/>
 				</list>
 			</section>
 
 		</group>
 
 		<p><![CDATA[
-			Основание приказа: протокол заседания стипендиальной
-			комиссии <& order.attributes['basics'] &>.
+			<br/><br/>Основание приказа: протокол заседания стипендиальной
+			комиссии факультета <& order.attributes['basics'] &>,
+			Положение о стипендиальном обеспечении и других формах
+			материальной поддержки студентов, аспирантов, докторантов в МГЛУ.
 		]]></p>
 
 		<signatures>
 			<signature name="rector"/>
 			<signature name="prorector"/>
-			<signature name="personnel"/>
-			<signature name="dean" condition="not (disabled and high_courses)"/>
-			<signature name="deputy_dean" condition="not (disabled and high_courses)"/>
-			<signature name="rehabilitation_dean" condition="disabled and high_courses"/>
-			<signature name="rehabilitation_deputy_dean" condition="disabled and high_courses"/>
-			<signature name="financing"/>
 			<signature name="accountant"/>
+			<signature name="financing"/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract"/> -->
+			<signature name="personnel"/>
+			<signature name="dean" condition="not (disabled and high_courses) and not foreign"/>
+			<signature name="rehabilitation_dean" condition="disabled and high_courses"/>
 			<signature name="rehabilitation" condition="disabled and not high_courses"/>
 			<signature name="foreign" condition="foreign"/>
 		</signatures>

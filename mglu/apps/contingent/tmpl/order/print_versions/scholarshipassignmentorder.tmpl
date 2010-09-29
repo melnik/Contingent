@@ -37,8 +37,9 @@ self.class.class_eval {
 _SETS_ = []
 _GROUPS_ = nil
 @students = list.new(
-	  fetch(order, :each_student, 0, %w( group group_id name student_id attributes )).collect { |item| item | { :SECTION => 1 } } \
-	+ fetch(order, :each_student, 1, %w( group group_id name student_id attributes )).collect { |item| item | { :SECTION => 2 } }
+	  fetch(order, :each_student, 0, %w( group group_id name profession course student_id attributes )).collect { |item| item | { :SECTION => 1 } } \
+	+ fetch(order, :each_student, 1, %w( group group_id name profession course student_id attributes )).collect { |item| item | { :SECTION => 2 } } \
+	+ fetch(order, :each_student, 2, %w( group group_id name profession course student_id attributes )).collect { |item| item | { :SECTION => 3 } }
 )
 _LIST_ = [@students]
 
@@ -49,9 +50,9 @@ _LIST_ = [@students]
 %>
 
 <p>
-			Студентов, сдавших все экзамены и зачеты <& Term.current.even? ? 'зимней' : 'летней' &> экзаменационной
-			сессии, назначить на государственные академические стипендии в
-			<& Term.current.academic_year.begin &>/<& Term.current.academic_year.end &> учебном году (<& Term.current &>):
+			Студентов, сдавших все экзамены и зачеты <%= order.attributes['term'].gsub(/яя/, "ей") %>
+			экзаменационной	сессии, назначить на государственную академическую стипендию в
+			<& year &> учебном году (<& order.attributes['period'] &>):
 		</p>
 
 <%
@@ -71,20 +72,27 @@ _SETS_[-1].keys.sort.each { |group|
 	section_index += 1
 	%>
 
-		<p><%= section_index %>. Студентов, имеющих по итогам сессии только
-						отличные оценки, назначить на повышенную государственную академическую стипендию:</p>
+		<p> <%= section_index %>. Студентов, имеющих по итогам сессии только
+						отличные оценки, назначить на государственную академическую стипендию
+						в размере <& order.attributes['scholarship_1'] &>:</p>
 
 		<ol>
 		<% _LIST_[-1].each { |_ITEM_|
 			group = _ITEM_[:group]
 			group_id = _ITEM_[:group_id]
 			name = _ITEM_[:name]
+			profession = _ITEM_[:profession]
+			course = _ITEM_[:course]
 			attributes = _ITEM_[:attributes]
 		%>
 			<li>
 			<% _HAS_FIELDS_ = false %>
 				<% unless name.empty? then %><% if _HAS_FIELDS_ then %>;
 				<% end %><& name &><% _HAS_FIELDS_ = true; end %>
+				<% unless profession.empty? then %><% if _HAS_FIELDS_ then %>;
+				<% end %>Направление / специальность: <& profession &><% _HAS_FIELDS_ = true; end %>
+				<% unless course.empty? then %><% if _HAS_FIELDS_ then %>;
+				<% end %>Курс: <& course &><% _HAS_FIELDS_ = true; end %>
 			</li>
 		<% } %>
 		</ol>
@@ -99,20 +107,62 @@ _SETS_[-1].keys.sort.each { |group|
 	section_index += 1
 	%>
 
-		<p><%= section_index %>. Студентов, имеющих по итогам сессии только
-						отличные и хорошие оценки, назначить на государственную академическую стипендию:</p>
+		<p> <%= section_index %>. Студентов, имеющих по итогам сессии только
+						отличные и хорошие оценки, назначить на государственную академическую стипендию
+						в размере <& order.attributes['scholarship_2'] &>:</p>
 
 		<ol>
 		<% _LIST_[-1].each { |_ITEM_|
 			group = _ITEM_[:group]
 			group_id = _ITEM_[:group_id]
 			name = _ITEM_[:name]
+			profession = _ITEM_[:profession]
+			course = _ITEM_[:course]
 			attributes = _ITEM_[:attributes]
 		%>
 			<li>
 			<% _HAS_FIELDS_ = false %>
 				<% unless name.empty? then %><% if _HAS_FIELDS_ then %>;
 				<% end %><& name &><% _HAS_FIELDS_ = true; end %>
+				<% unless profession.empty? then %><% if _HAS_FIELDS_ then %>;
+				<% end %>Направление / специальность: <& profession &><% _HAS_FIELDS_ = true; end %>
+				<% unless course.empty? then %><% if _HAS_FIELDS_ then %>;
+				<% end %>Курс: <& course &><% _HAS_FIELDS_ = true; end %>
+			</li>
+		<% } %>
+		</ol>
+	<%
+	end
+	_LIST_.pop
+	%>
+
+	<%
+	_LIST_.push(_LIST_[-1].collect { |item| item if item[:SECTION] == 3 }.compact)
+	unless _LIST_[-1].empty?
+	section_index += 1
+	%>
+
+		<p> <%= section_index %>. Студентов, имеющих по итогам сессии только
+						хорошие оценки, назначить на государственную академическую стипендию
+						в размере <& order.attributes['scholarship_3'] &>:</p>
+
+		<ol>
+		<% _LIST_[-1].each { |_ITEM_|
+			group = _ITEM_[:group]
+			group_id = _ITEM_[:group_id]
+			name = _ITEM_[:name]
+			profession = _ITEM_[:profession]
+			course = _ITEM_[:course]
+			attributes = _ITEM_[:attributes]
+		%>
+			<li>
+			<% _HAS_FIELDS_ = false %>
+				<% unless name.empty? then %><% if _HAS_FIELDS_ then %>;
+				<% end %><& name &><% _HAS_FIELDS_ = true; end %>
+				<% unless profession.empty? then %><% if _HAS_FIELDS_ then %>;
+				<% end %>Направление / специальность: <& profession &><% _HAS_FIELDS_ = true; end %>
+				<% unless course.empty? then %><% if _HAS_FIELDS_ then %>;
+				<% end %>Курс: <& course &><% _HAS_FIELDS_ = true; end %>
 			</li>
 		<% } %>
 		</ol>
@@ -128,47 +178,42 @@ _SETS_.pop
 %>
 
 <p>
-			Основание приказа: протокол заседания стипендиальной
-			комиссии <& order.attributes['basics'] &>.
+			<br/><br/>Основание приказа: протокол заседания стипендиальной
+			комиссии факультета <& order.attributes['basics'] &>,
+			Положение о стипендиальном обеспечении и других формах
+			материальной поддержки студентов, аспирантов, докторантов в МГЛУ.
 		</p>
 
 <% _SIGNATURE_INDEX_ = 0 %>
 <table class="signatures">
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Ректор МГЛУ</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">И. И. Халеева</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+	<tr><td>Ректор</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">И. И. Халеева</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
 	<tr><td>Проректор по учебной работе</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">И. В. Манохин</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
+	<tr><td>Начальник управления бухгалтерского учета и финансового контроля</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Л. В. Куренкова</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+
+	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
+	<tr><td>Начальник планово-финансового управления</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Л. Н. Ермакова</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+
+	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
+	<tr><td>Начальник учебно-методического управления</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">А. И. Коробко</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+
+	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
 	<tr><td>Начальник управления кадров</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Ю. И. Вторушин</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
 
-	<% if not (_CONDITIONS_['disabled'] and _CONDITIONS_['high_courses']) then %>
+	<% if not (_CONDITIONS_['disabled'] and _CONDITIONS_['high_courses']) and not _CONDITIONS_['foreign'] then %>
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Декан факультета &laquo;<%=order.faculty.name%>&raquo;</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
-	<% end %>
-
-	<% if not (_CONDITIONS_['disabled'] and _CONDITIONS_['high_courses']) then %>
-	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Зам. декана &laquo;<%=order.faculty.name%>&raquo;</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
+	<tr><td><%=order.faculty.dean_position%></td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
 	<% end %>
 
 	<% if _CONDITIONS_['disabled'] and _CONDITIONS_['high_courses'] then %>
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
 	<tr><td>Декан факультета ГУИМЦ</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
 	<% end %>
-
-	<% if _CONDITIONS_['disabled'] and _CONDITIONS_['high_courses'] then %>
-	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Зам. декана факультета ГУИМЦ</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
-	<% end %>
-
-	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Начальник планово-финансового управления</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Л. Н. Ермакова</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
-
-	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Начальник управления бухгалтерского учета и финансового контроля</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Л. В. Куренкова</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
 
 	<% if _CONDITIONS_['disabled'] and not _CONDITIONS_['high_courses'] then %>
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>

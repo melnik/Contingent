@@ -5,5 +5,6 @@ CREATE TABLE `program_kind` (
   PRIMARY KEY  (`program_kind_id`)
 ) TYPE=MyISAM;
 
-INSERT INTO `program_kind` VALUES (1,'основная');
-INSERT INTO `program_kind` VALUES (2,'второе образование');
+INSERT INTO `program_kind` VALUES (1,'п╬я│п╫п╬п╡п╫п╟я▐');
+INSERT INTO `program_kind` VALUES (2,'п╡я┌п╬я─п╬п╣ п╬п╠я─п╟п╥п╬п╡п╟п╫п╦п╣');
+

@@ -2,30 +2,28 @@
 <!ATTR conditions !>
 <html>
 <head>
-<title>Система &laquo;Электронный университет&raquo;</title>
+<title>Система управления учебной деятельностью</title>
 <link rel="Stylesheet" href="print.css" />
 </head>
 <body>
 
-<table width="100%">
-<tr>
-<td style="width: 6cm">&nbsp;</td>
-<td class="org-header">
 <div align="center"><br/><br/>
 Государственное образовательное учреждение<br/>
 высшего профессионального образования<br/>
-&laquo;Московский государственный лингвистический университет&raquo;
+&laquo;Московский государственный лингвистический университет&raquo;<br/>
+(ГОУ ВПО МГЛУ)
 </div>
-</td>
-<td style="width: 6cm">
+<table width="100%">
+<tr>
+<td style="width: 1px">
 	<table width="100%">
 	<tr><td></td><td align="center">Код</td></tr>
-	<tr><td align="right">Форма по ОКУД</td><td class="boxed">&nbsp;</td></tr>
-	<tr><td align="right">по ОКПО</td><td class="boxed">&nbsp;</td></tr>
+	<tr><td align="right">Форма&nbsp;по&nbsp;ОКУД</td><td class="boxed">&nbsp;</td></tr>
+	<tr><td align="right">по&nbsp;ОКПО</td><td class="boxed">&nbsp;</td></tr>
 	</table>
 </td>
-</tr>
-<tr><td>
+<td align="right">
+	<br/>
 	<table width="100%" cellspacing="0" style="width: 6cm">
 	<tr>
 	<td class="boxed" width="60%">Номер документа</td>
@@ -37,8 +35,9 @@
 	</td>
 	</tr>
 	</table>
-</td><td>&nbsp;</td></tr>
-<tr><td align="center" colspan="3">
+</td>
+</tr>
+<tr><td align="center" colspan="2">
 <h1>ПРИКАЗ</h1><h2><&order.title&></h2>
 <&order.faculty.class::NAME&> &laquo;<&order.faculty.full_name&>&raquo; (<&order.faculty.name&>)
 
@@ -60,19 +59,21 @@ if not @order.attributes['hide_disabled']
 end
 %>
 
-<% study_type_id = nil
+<% study_type_id = study_form_id = nil
 unless @order.attributes['hide_study_type']
 	study_type_id ||= @order.attributes['shown_study_type_id']
-	@order.each_student :all, %w( study_type_id ) do |stid|
+	@order.each_student :all, %w( study_type_id study_form_id ) do |stid, stfid|
 		study_type_id ||= stid
+		study_form_id ||= stfid
 		break
 	end
 	study_type_id ||= @order.attributes['study_type_id']
 	study_type_id ||= (conditions['contract'] ? Classifier::StudyType::CONTRACT : Classifier::StudyType::BUDGET)
-end
-if study_type_id %>
-<br/>Форма (основа) обучения: <%= Classifier::StudyType[study_type_id][:name] %>
-<% end %>
+	study_form_id ||= @order.attributes['study_form_id']
+	study_form_id ||= Classifier::StudyForm::FULLTIME
+end %>
+<% if study_type_id then %><br/>Основа обучения: <%= Classifier::StudyType[study_type_id][:name] %><% end %>
+<% if study_form_id then %><br/>Форма обучения:  <%= Classifier::StudyForm[study_form_id][:name] %><% end %>
 
 </td></tr>
 </table>

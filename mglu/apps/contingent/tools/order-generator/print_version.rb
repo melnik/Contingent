@@ -194,19 +194,19 @@ self.class.class_eval {
 		class Signature < Printable
 		
 			SIGNATURES = {
-				'rector' => ['Ректор МГЛУ', 'И. И. Халеева'],
+				'rector' => ['Ректор', 'И. И. Халеева'],
 				'prorector' => ['Проректор по учебной работе', 'И. В. Манохин'],
 				'personnel' => ['Начальник управления кадров', 'Ю. И. Вторушин'],
-				'dean' => 'Декан факультета &laquo;<%=order.faculty.name%>&raquo;',
+				'dean' => '<%=order.faculty.dean_position%>',
 				'deputy_dean' => 'Зам. декана &laquo;<%=order.faculty.name%>&raquo;',
-				'deanreceiver' => 'Декан факультета &laquo;<%=receiver%>&raquo;',
+				'deanreceiver' => '<%=receiver.dean_position%>',
 				'legal' => 'Юридический отдел',
-				'legal-councilor' => 'Советник ректора по правовым вопросам',
-				'marketing' => 'Начальник учебно-организационного отдела',
+				'legal-councilor' => ['Советник ректора по правовым вопросам', 'Н. А. Шулепов'],
+				'marketing' => ['Начальник учебно-организационного отдела', 'М. Б. Хватова'],
 				'union' => 'Профсоюзный комитет студентов',
 				'enrollment' => 'Ответственный секретарь приемной комиссии',
 				'selection' => 'Председатель отборочной комиссии &laquo;<%=order.faculty.name%>&raquo;',
-				'prorector-international' => 'Проректор по международным связям',
+				'prorector-international' => ['Проректор по международным связям', 'В. К. Шлег'],
 				'prorector-security' => 'Проректор по безопасности',
 				'foreign' => 'Декан ФОИГ',
 				'clerical' => 'Управление делами',
@@ -216,8 +216,8 @@ self.class.class_eval {
 				'rehabilitation' => 'Директор ГУИМЦ',
 				'rehabilitation_dean' => 'Декан факультета ГУИМЦ',
 				'rehabilitation_deputy_dean' => 'Зам. декана факультета ГУИМЦ',
-				'military' => 'Директор Военного института',
-				'educational' => 'Учебное управление',
+				'educational' => ['Начальник учебно-методического управления', 'А. И. Коробко'],
+				'military' => ['Начальник КВО', 'С. И. Иванов']
 			}
 
 			def initialize(xmlnode)
@@ -239,8 +239,8 @@ new_group_id = nil
 order.each_student(:all, ['attributes']) { |a|
 	new_group_id = a['group_id'].to_i
 }
-receiver = Group.load(new_group_id).faculty.name
-if receiver != order.faculty.name then %>
+receiver = Group.load(new_group_id).faculty
+if receiver.name != order.faculty.name then %>
 "
 				end
 				
@@ -399,7 +399,8 @@ end
 				'profession' => 'Направление / специальность',
 				'profession_code' => 'Код направления / специальности',
 				'dormitory' => 'Общежитие',
-				'study_type' => 'Форма (основа) обучения',
+				'study_type' => 'Ооснова обучения',
+				'study_form' => 'Форма обучения',
 				'current_term_number' => 'Семестр',
 				'passport' => "<% if order.attributes['citizenship'] == 2 then %>Паспорт: <% end %>",
 				'confirmed' => '',

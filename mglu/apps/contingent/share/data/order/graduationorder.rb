@@ -24,7 +24,7 @@ class GraduationOrder < StudentsOrder
 		super
 		set :student, {
 			'student_state_id' => Classifier::StudentState::GRADUATED
-		}
+		}.compact
 
 	end
 

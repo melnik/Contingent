@@ -25,13 +25,16 @@
 		<input type="date" name="birth_date" title="Дата рождения"/>
 		<input type="text" name="birth_date_basics" title="Основания"/>
 		
-		<classifier type="citizenship" title="Гражданство"/>
+		<classifier type="study_type" title="Основа обучения" default="Student.load(eid).study_type_id"/>
+		<input type="text" name="study_type_basics" title="Основания"/>
+		
+		<classifier type="citizenship" title="Гражданство" default="Student.load(eid).citizenship_id"/>
 		<input type="text" name="citizenship_basics" title="Основания"/>
 		
-		<classifier type="profession" title="Код направления/специальности" />
+		<classifier type="profession" title="Код направления/специальности" default="Student.load(eid).profession_code"/>
 		<input type="text" name="profession_basics" title="Основания"/>
 		
-		<classifier type="degree" title="Ступень образования" />
+		<classifier type="degree" title="Ступень образования" default="Student.load(eid).degree_code"/>
 		<input type="text" name="degree_basics" title="Основания"/>
 
 		<input type="document" name="agreement" title="Договор/контракт" />
@@ -55,6 +58,7 @@
 			<column source="student" name="profession_code" hidden="1" />
 			<column source="student" name="specialization_code" hidden="1" />
 			<column source="student" name="degree_code" hidden="1" />
+			<column source="student" name="study_type_id" hidden="1" />
 			
 			<column><![CDATA[
 				<table class="printable" cellspacing="0">
@@ -114,6 +118,16 @@
 					</tr>
 				<% end %>
 
+				<% if study_type_id != attributes['study_type_id'] %>
+					<% cl = Classifier::StudyType.new %>
+					<tr>
+						<td class="printleft">Основа обучения</td>
+						<td><& cl[study_type_id][:name] &>&nbsp;</td>
+						<td><& cl[attributes['study_type_id']][:name] &>&nbsp;</td>
+						<td><& attributes['study_type_basics'] &>&nbsp;</td>
+					</tr>
+				<% end %>
+
 				<% if citizenship_id != attributes['citizenship_id'] %>
 					<% cl = Classifier::Citizenship.new %>
 					<tr>
@@ -158,7 +172,18 @@
 		</list>
 
 		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector"/>
+			<signature name="accountant" condition="pregnancy" />
+			<signature name="accountant"/>
+			<signature name="financing" condition="pregnancy" />			
+			<signature name="financing"/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract and not foreign"/> -->
 			<signature name="personnel"/>
+			<signature name="dean" condition="not disabled and not foreign"/>
+			<signature name="rehabilitation" condition="disabled"/>
+			<signature name="foreign" condition="foreign"/>
 		</signatures>
 
 	</printable>

@@ -2,7 +2,7 @@ require 'data/order/studentsorder'
 require 'expression'
 
 class LiabilitiesRemovalOrder < StudentsOrder
-	TYPE = 'О признании факта ликвидации академических задолженностей'
+	TYPE = 'О признании факта ликвидации академической задолженности'
 	PARAGRAPH_NAME = [ 'В приказе' ]
 
 	AFFECTED_ATTRIBUTES = {
@@ -24,7 +24,7 @@ class LiabilitiesRemovalOrder < StudentsOrder
 		super
 		set :student, {
 			'liabilities' => (not attributes['liabilities'].empty?)
-		}
+		}.compact
 
 	end
 

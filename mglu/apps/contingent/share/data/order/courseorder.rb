@@ -7,22 +7,24 @@ class CourseOrder < Order
 
 	LAST_COURSE = 7
 
-	def initialize *args
-		super
-
-		@term = Term.current
-	end
-
 	def full?
 		@attributes.include? 'course'
 	end
 
+	def term
+		@term ||= Term.new date_created
+	end
+
+	def term_number
+		@term_number ||= term.number @attributes['course'] if @attributes['course']
+	end
+
 	def add course
 		unless full? then
-			$sql.execute "INSERT INTO order_group (order_id, group_id)
-			              SELECT #{@oid}, group_id
-			              FROM `group` INNER JOIN department USING (department_id)
-			              WHERE faculty_id = #{@faculty_id} AND current_term_number = #{@term.number( @attributes['course'] = course )}"
+			@attributes['course'] = course
+
+			add_students rescue nil
+			add_groups   rescue nil
 
 			save
 		else
@@ -31,6 +33,22 @@ class CourseOrder < Order
 	end
 
 	alias_method :<<, :add
+
+	def add_students student_ids, paragraph_id = 0
+		move student_ids, paragraph_id
+	end
+
+	def add_groups group_ids = nil
+		if group_ids then
+			$sql.execute "INSERT INTO order_group (order_id, group_id)
+			              VALUES (#{@oid}, #{group_ids.join "), (#{@oid}, "})"
+		else
+			$sql.execute "INSERT INTO order_group (order_id, group_id)
+			              SELECT #{@oid}, group_id
+			              FROM `group` INNER JOIN department USING (department_id)
+			              WHERE faculty_id = #{@faculty_id} AND current_term_number = #{term_number}"
+		end
+	end
 
 	def get_student_attributes student_id
 		get_attributes :student, student_id
@@ -54,7 +72,7 @@ class CourseOrder < Order
 			                                FROM student s INNER JOIN `group` g USING (group_id) INNER JOIN department d USING (department_id) INNER JOIN faculty f USING (faculty_id)
 			                                WHERE student_id NOT IN (
 			                                	SELECT student_id FROM order_student WHERE order_id = #{@oid}
-			                                ) AND f.faculty_id = #{@faculty_id} AND current_term_number = #{@term.number @attributes['course']} AND s.student_state_id = #{Classifier::StudentState::STUDYING}
+			                                ) AND f.faculty_id = #{@faculty_id} AND current_term_number = #{term_number} AND s.student_state_id = #{Classifier::StudentState::STUDYING}
 			                                ORDER BY f.short_name, d.department_num, current_term_number, g.group_num, last_name, first_name, father_name").fetch do |row|
 				yield *( convert_sql_result row, fields ) if block_given?
 
@@ -80,15 +98,15 @@ class CourseOrder < Order
 		try_to_modify; remove :student; remove :group; super
 	end
 
-	def add_students student_ids, paragraph_id = 0
-		move student_ids, paragraph_id
-	end
-
 	def remove_students student_ids
 		remove :student, student_ids
 	end
 
 	private
+
+	def remove_groups group_ids
+		remove :group, group_ids
+	end
 
 	def try_to_activate
 		##
@@ -110,12 +128,13 @@ class CourseOrder < Order
 		                                FROM student s INNER JOIN `group` g USING (group_id) INNER JOIN department d USING (department_id)
 		                                WHERE student_id NOT IN (
 		                                	SELECT student_id FROM order_student WHERE order_id = #{@oid}
-		                                ) AND d.faculty_id = #{@faculty_id} AND current_term_number = #{@term.number @attributes['course']} AND s.student_state_id = #{Classifier::StudentState::STUDYING}").fetch do |row|
+		                                ) AND d.faculty_id = #{@faculty_id} AND current_term_number = #{term_number} AND s.student_state_id = #{Classifier::StudentState::STUDYING}").fetch do |row|
 			student_ids << row['student_id'].to_i
 		end
 
 		unless student_ids.empty? or self.class::ALLOW_PARTIAL then
 			if @auto_fix then
+				add_students student_ids rescue nil
 			else
 				raise error(:activation, true, { 'student_ids' => student_ids }), 'следующие студенты должны присутствовать в приказе'
 			end
@@ -125,7 +144,7 @@ class CourseOrder < Order
 		# которых не должно быть в приказе, но они там есть
 		student_ids = []; $sql.execute("SELECT *
 		                                FROM order_student os LEFT JOIN student s USING (student_id) LEFT JOIN `group` g USING (group_id) LEFT JOIN department d USING (department_id)
-		                                WHERE order_id = #{@oid} AND NOT (faculty_id = #{@faculty_id} AND current_term_number = #{@term.number @attributes['course']} AND s.student_state_id = #{Classifier::StudentState::STUDYING})").fetch do |row|
+		                                WHERE order_id = #{@oid} AND NOT (faculty_id = #{@faculty_id} AND current_term_number = #{term_number} AND s.student_state_id = #{Classifier::StudentState::STUDYING})").fetch do |row|
 			student_ids << row['student_id'].to_i
 		end
 
@@ -146,14 +165,13 @@ class CourseOrder < Order
 		                              FROM `group` g INNER JOIN department d USING (department_id)
 		                              WHERE group_id NOT IN (
 		                              	SELECT group_id FROM order_group WHERE order_id = #{@oid}
-		                              ) AND d.faculty_id = #{@faculty_id} AND current_term_number = #{@term.number @attributes['course']}").fetch do |row|
+		                              ) AND d.faculty_id = #{@faculty_id} AND current_term_number = #{term_number}").fetch do |row|
 			group_ids << row['group_id'].to_i
 		end
 
 		unless group_ids.empty? then
 			if @auto_fix then
-				$sql.execute "INSERT INTO order_group (order_id, group_id)
-				              VALUES (#{@oid}, #{group_ids.join "), (#{@oid}, "})"
+				add_groups group_ids rescue nil
 			else
 				raise error(:activation, false, { 'group_ids' => group_ids }), 'следующие группы должны присутствовать в приказе'
 			end
@@ -163,13 +181,13 @@ class CourseOrder < Order
 		# которых не должно быть в приказе, но они там есть
 		group_ids = []; $sql.execute("SELECT *
 		                              FROM order_group og LEFT JOIN `group` g USING (group_id) LEFT JOIN department d USING (department_id)
-		                              WHERE order_id = #{@oid} AND NOT (faculty_id = #{@faculty_id} AND current_term_number = #{@term.number @attributes['course']})").fetch do |row|
+		                              WHERE order_id = #{@oid} AND NOT (faculty_id = #{@faculty_id} AND current_term_number = #{term_number})").fetch do |row|
 			group_ids << row['group_id'].to_i
 		end
 
 		unless group_ids.empty? then
 			if @auto_fix then
-				remove :group, group_ids
+				remove_groups group_ids
 			else
 				raise error(:activation, false, { 'group_ids' => group_ids }), 'следующие группы не должны присутствовать в приказе'
 			end

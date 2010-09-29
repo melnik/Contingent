@@ -6,13 +6,15 @@
 
 	<template entity="order">
 
-		<input type="document" name="resolution" title="Протокол решения отборочной комиссии факультета" />
-
-		<input type="document" name="approval" title="Протокол заседания Приемной комиссии МГЛУ" />
+		<input type="document" name="resolution" title="Протокол заседания Приемной комиссии МГЛУ" />
 
 		<input type="date" name="enrollment_date" title="Дата зачисления" />
+		
+		<input type="text" name="from" title="Перевод из" />
 
-		<classifier type="study_type" title="Форма (основа) обучения" />
+		<classifier type="study_type" title="Основа обучения" default="Classifier::StudyType::BUDGET"/>
+		
+		<classifier type="study_form" title="Форма обучения" default="Classifier::StudyForm::FULLTIME"/>
 
 		<classifier type="degree" title="Ступень высшего профессионального образования"/>
 
@@ -44,6 +46,7 @@
 			<input type="text" name="subject" title="Название" />
 			<select type="text" name="type" title="Отчетность">
 				<option title="зачет" />
+				<option title="диф.зачет" />
 				<option title="экзамен" />
 			</select>
 		</list>
@@ -57,19 +60,17 @@
 	    <preamble><![CDATA[
 
 <p>
-На основании решения отборочной комиссии факультета "<&order.faculty.name&>"
-от <&order.attributes['resolution'][:date]&> протокол &#x2116; <&order.attributes['resolution'][:num]&>,
-утвержденного на заседании Приемной комиссии МГЛУ
-от <&order.attributes['approval'][:date]&> протокол &#x2116;<&order.attributes['approval'][:num]&>,
+На основании решения Приемной комиссии МГЛУ
+протокол &#x2116;<&order.attributes['resolution'][:num]&> от <&order.attributes['resolution'][:date]&>,
 </p>
 
 		]]></preamble>
 
 		<p><![CDATA[
 
-		Зачислить в МГЛУ в порядке перевода из другого высшего
-		учебного заведения с <&order.attributes['enrollment_date']&>
-		студентами на факультет &quot;<&order.faculty.name&>
+		Зачислить в МГЛУ в порядке перевода из <& order.attributes['from'] &>
+		с <&order.attributes['enrollment_date']&>
+		студентами на факультет <&order.faculty.name&>
 
 		<%= case order.attributes['study_type_id']
 		when 1 then 'на места, финансируемые из федерального бюджета,'
@@ -91,13 +92,15 @@
 			<column source="student" name="course"/>
 			<column source="student" name="group"/>
 			<column source="order" name="profession_code"/>
-			<column source="order" name="liabilities" empty_text="академических задолженностей нет."/>
+			<column source="order" name="liabilities" empty_text="академической задолженности нет."/>
 			<column source="order" name="deadline"/>
-			<column title="Основания приказа"><![CDATA[
-личное заявление претендента с визой декана факультета<% if conditions['foreign'] then %>,
-декана ФОИГ <% end %> и резолюцией проректора по учебной работе Университета,
+			<column><![CDATA[
+<br/><br/>Основание приказа:
+<% unless order.attributes['resolution'].empty? then %>
+протокол <& order.attributes['resolution'] &>, утвержденный на заседании Приемной комиссии МГЛУ, <% end %>
+личное заявление претендента с визой декана факультета и резолюцией ректора,
 документ об образовании (базовом),
-академическая справка.
+академическая справка
 <% if order.attributes['study_type_id'] == 2 then %>
 , договор/контракт о предоставлении платных образовательных услуг <&attributes['agreement']&>
 <% end %>;
@@ -109,15 +112,14 @@
 		<signatures>
 			<signature name="rector"/>
 			<signature name="prorector"/>
-			<signature name="dean"/>
+			<signature name="accountant"/>
+			<signature name="financing"/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract and not foreign" /> -->
 			<signature name="personnel"/>
 			<signature name="legal-councilor"/>
-			<signature name="prorector-international" condition="foreign" />
-			<signature name="prorector-security" condition="foreign" />
-			<signature name="enrollment"/>
-			<signature name="selection"/>
-			<signature name="marketing" condition="contract and not foreign" />
-			<signature name="financing" condition="contract and not foreign"/>
+			<signature name="dean" condition="not foreign"/>
+			<signature name="enrollment" condition="foreign"/>
 			<signature name="foreign" condition="foreign" />
 		</signatures>
 

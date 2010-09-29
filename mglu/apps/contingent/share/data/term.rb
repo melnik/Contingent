@@ -20,7 +20,7 @@ class Term < DateRange
 	##
 	# Place term (season) detection logic here
 	def even?
-		@date.month < 7
+		@date.month.in? 2..7
 	end
 
 	def odd?; not even? end

@@ -37,7 +37,7 @@ self.class.class_eval {
 _SETS_ = []
 _GROUPS_ = nil
 @students = list.new(
-	  fetch(order, :each_student, :all, %w( name student_status card_number course group citizenship student_id attributes ))
+	  fetch(order, :each_student, :all, %w( name profession student_status card_number study_form course group citizenship student_id attributes ))
 )
 _LIST_ = [@students]
 
@@ -51,11 +51,11 @@ _LIST_ = [@students]
 		Предоставить <%
 	case
 	when conditions['baby_minding'] then
-%>отпуска по уходу за ребенком<%
+%>отпуск по уходу за ребенком<%
 	when  conditions['pregnancy']
-%>отпуска по беременности и родам<%
+%>отпуск по беременности и родам<%
 	else
-%>академические отпуска<%
+%>академический отпуск<%
 	end
 		%> нижеперечисленным лицам, обучающимся в МГЛУ:
 		</p>
@@ -63,8 +63,10 @@ _LIST_ = [@students]
 <% _ITEM_INDEX_ = 0 %>
 <% _LIST_[-1].each { |_ITEM_|
 	name = _ITEM_[:name]
+	profession = _ITEM_[:profession]
 	student_status = _ITEM_[:student_status]
 	card_number = _ITEM_[:card_number]
+	study_form = _ITEM_[:study_form]
 	course = _ITEM_[:course]
 	group = _ITEM_[:group]
 	citizenship = _ITEM_[:citizenship]
@@ -77,11 +79,17 @@ _LIST_ = [@students]
 	<% unless name.empty? then %><% if _HAS_FIELDS_ then %>; <% end %>
 	<& name &><% _HAS_FIELDS_ = true;
 	 end %>
+	<% unless profession.empty? then %><% if _HAS_FIELDS_ then %>; <% end %>
+	Направление / специальность: <& profession &><% _HAS_FIELDS_ = true;
+	 end %>
 	<% unless student_status.empty? then %><% if _HAS_FIELDS_ then %>; <% end %>
 	<& student_status &><% _HAS_FIELDS_ = true;
 	 end %>
 	<% unless card_number.empty? then %><% if _HAS_FIELDS_ then %>; <% end %>
 	Л.д. &#x2116;: <& card_number &><% _HAS_FIELDS_ = true;
+	 end %>
+	<% unless study_form.empty? then %><% if _HAS_FIELDS_ then %>; <% end %>
+	Форма обучения: <& study_form &><% _HAS_FIELDS_ = true;
 	 end %>
 	<% unless course.empty? then %><% if _HAS_FIELDS_ then %>; <% end %>
 	Курс: <& course &><% _HAS_FIELDS_ = true;
@@ -111,9 +119,9 @@ _LIST_ = [@students]
 		when 1
 	%>Причина: по семейным обстоятельствам<%
 		when 2
-	%>до достижения возраста 1,5 лет<%
+	%>по уходу за ребенком до достижения возраста 1,5 лет<%
 		when 3
-	%>до достижения возраста 3-х лет<%
+	%>по уходу за ребенком до достижения возраста 3-х лет<%
 		when 4
 	%>Причина: в связи со стихийным бедствием<%
 		when 6
@@ -143,31 +151,38 @@ _LIST_ = [@students]
 	Числить в группе: <& group &><% _HAS_FIELDS_ = true;
 	 end %>
 	<% unless false then %><% if _HAS_FIELDS_ then %>; <% end %>
-	<% if conditions['pregnancy'] then %>
+	<% unless attributes['scholarship'].empty? then %>
+					Установить на время академического отпуска ежемесячную выплату в размере <& attributes['scholarship'] &> рублей
+				<% end %><% _HAS_FIELDS_ = true;
+	 end %>
+	<% unless false then %><% if _HAS_FIELDS_ then %>; <% end %>
+	<% if conditions['pregnancy'] and not conditions['evening'] then %>
 					Главному бухгалтеру МГЛУ в период <&attributes['vacation']&>
 					обеспечить выплату пособия по беременности и родам за счет средств федерального бюджета,
 					выделенных на выплату стипендий
 				<% end %><% _HAS_FIELDS_ = true;
 	 end %>
 	<% unless false then %><% if _HAS_FIELDS_ then %>; <% end %>
-	Основания приказа:
+
+	<br/><br/>Основания приказа:
 	личное заявление обучающегося с визой декана факультета<% if conditions['foreign'] then %>,декана ФОИГ<% end %>
-	и резолюцией проректора по учебной работе Университета;
+	и резолюцией ректора;
 	<%
 		case attributes['reason']
 		when 0
-	%>заключение клинико-экспертной комиссии <&attributes['resolution']&><%
+	%>заключение клинико-экспертной комиссии <&attributes['resolution']&>,
+	положение о порядке предоставления академических отпусков студентам МГЛУ<%
 		when 1
 	%>подтверждающие документы<%
 		when 2,3
 	%>копия свидетельства о рождении ребенка<%
 		when 5
-	%>документ, подтверждающий основания для предоставления отпуска по беременности и родам;
-	  Положение о назначении и выплате пособий гражданам, имеющим детей, утвержденное Постановлением Правительства РФ от 30.12.2006г. &#x2116;65<%
+	%>документ, подтверждающий основания для предоставления отпуска по беременности и родам<%
 		when 6
-	%>документ, подтверждающий основания для предоставления академического отпуска<%
+	%>документ, подтверждающий основания для предоставления академического отпуска,
+	положение о порядке предоставления академических отпусков студентам МГЛУ<%
 		end
-	%>; Положение об организации учебного процесса в МГЛУ
+	%>
 	<% _HAS_FIELDS_ = true;
 	 end %>
 	<% if _HAS_FIELDS_ then %>.<% end %>
@@ -178,52 +193,31 @@ _LIST_ = [@students]
 <table class="signatures">
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Ректор МГЛУ</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">И. И. Халеева</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+	<tr><td>Ректор</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">И. И. Халеева</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
 	<tr><td>Проректор по учебной работе</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">И. В. Манохин</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Начальник управления кадров</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Ю. И. Вторушин</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
-
-	<% if _CONDITIONS_['foreign'] then %>
-	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Проректор по международным связям</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
-	<% end %>
-
-	<% if _CONDITIONS_['foreign'] then %>
-	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Проректор по безопасности</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
-	<% end %>
-
-	<% if _CONDITIONS_['pregnancy'] then %>
-	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
 	<tr><td>Начальник управления бухгалтерского учета и финансового контроля</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Л. В. Куренкова</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
-	<% end %>
 
-	<% if _CONDITIONS_['pregnancy'] then %>
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
 	<tr><td>Начальник планово-финансового управления</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Л. Н. Ермакова</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
-	<% end %>
 
-	<% if not _CONDITIONS_['disabled'] then %>
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Декан факультета &laquo;<%=order.faculty.name%>&raquo;</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
+	<tr><td>Начальник учебно-методического управления</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">А. И. Коробко</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+
+	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
+	<tr><td>Начальник управления кадров</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Ю. И. Вторушин</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+
+	<% if not _CONDITIONS_['disabled'] and not _CONDITIONS_['foreign'] then %>
+	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
+	<tr><td><%=order.faculty.dean_position%></td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
 	<% end %>
 
 	<% if _CONDITIONS_['disabled'] then %>
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
 	<tr><td>Директор ГУИМЦ</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
-	<% end %>
-
-	<% if _CONDITIONS_['contract'] and not _CONDITIONS_['foreign'] then %>
-	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Начальник учебно-организационного отдела</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
-	<% end %>
-
-	<% if _CONDITIONS_['contract'] and not _CONDITIONS_['foreign'] then %>
-	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Начальник планово-финансового управления</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Л. Н. Ермакова</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
 	<% end %>
 
 	<% if _CONDITIONS_['foreign'] then %>

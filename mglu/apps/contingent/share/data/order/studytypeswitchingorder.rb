@@ -2,7 +2,7 @@ require 'data/order/studentsorder'
 require 'expression'
 
 class StudyTypeSwitchingOrder < StudentsOrder
-	TYPE = 'О переходе с платной формы (основы) обучения на бюджетную'
+	TYPE = 'О переходе с платной основы обучения на бюджетную'
 	PARAGRAPH_NAME = [ 'В приказе' ]
 
 	AFFECTED_ATTRIBUTES = {
@@ -24,12 +24,12 @@ class StudyTypeSwitchingOrder < StudentsOrder
 		super
 		set :student, {
 			'study_type_id' => Classifier::StudyType::BUDGET
-		}
+		}.compact
 
 		each_student :all, %w( student_id attributes ) do |student_id, attributes|
 			set :student, {
 				'group_id' => attributes['group_id']
-			}, [ student_id ]
+			}.compact, [ student_id ]
 		end
 	end
 

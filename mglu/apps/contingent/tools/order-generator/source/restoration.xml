@@ -10,16 +10,15 @@
 
 	<template entity="order">
 
-		<classifier type="study_type" title="Форма (основа) обучения" />
-		<const type="int" name="hide_study_type" value="1" />
-
 		<const type="int" name="student_state_id" value="Classifier::StudentState::STUDYING" />
 
-		<input type="document" name="resolution" title="Протокол решения отборочной комиссии" />
-
-		<input type="document" name="approval" title="Протокол заседания Приемной комиссии МГЛУ" />
+		<input type="document" name="resolution" title="Протокол заседания Приемной комиссии МГЛУ" />
 
 		<classifier type="degree" title="Ступень высшего профессионального образования" />
+
+		<classifier type="study_type" title="Основа обучения" />
+
+		<classifier type="study_form" title="Форма обучения" />
 		
 	</template>
 
@@ -42,6 +41,7 @@
 			<input type="text" name="subject" title="Название" />
 			<select type="text" name="type" title="Отчетность">
 				<option title="зачет" />
+				<option title="диф.зачет" />
 				<option title="экзамен" />
 			</select>
 		</list>
@@ -58,10 +58,8 @@
 
 		<preamble><![CDATA[
 
-<p>На основании решения отборочной комиссии факультета "<&order.faculty.name&>"
-от <&order.attributes['resolution'][:date]&> протокол &#x2116;<&order.attributes['resolution'][:num]&>,
-утвержденного на заседании Приемной комиссии МГЛУ
-от <&order.attributes['approval'][:date]&> протокол &#x2116;<&order.attributes['approval'][:num]&>,</p>
+<p>На основании решения Приемной комиссии МГЛУ
+от <&order.attributes['resolution'][:date]&> протокол &#x2116;<&order.attributes['resolution'][:num]&>,</p>
 
 		]]></preamble>
 
@@ -69,12 +67,12 @@
 
 Восстановить нижеперечисленных лиц, обучавшихся в
 МГЛУ, для обучения на факультете
-"<&order.faculty.full_name&>" по указанным направлениям и специальностям
+<&order.faculty.name&> по указанным направлениям и специальностям
 подготовки <&Classifier::Degree[order.attributes['degree_code']][:name].to_s.gsub(/ый /, 'ых ')&>ов
 
-<%= case order.attributes['study_type_id']
-when 1 then 'на места, финансируемые из федерального бюджета,'
-when 2 then 'на основе договоров с оплатой стоимости обучения'
+<%= case (@students[0] ? Student.load(@students[0][:student_id]).study_type_id : Classifier::StudyType::BUDGET)
+when Classifier::StudyType::BUDGET then 'на места, финансируемые из федерального бюджета,'
+when Classifier::StudyType::CONTRACT then 'на основе договоров с оплатой стоимости обучения'
 end %>
 
 и установить индивидуальный график сдачи академических задолженностей, образовавшихся
@@ -87,42 +85,44 @@ end %>
 		<list style="text">
 			<column source="student" name="student_id" hidden="1"/>
 			<column source="student" name="name"/>
+			<column source="student" name="course"/>
 			<column source="student" name="student_status"/>
 			<column source="student" name="card_number"/>
+			<column source="student" name="study_form"/>
 			<column title="Приказ на отчисление" type="document"><![CDATA[ <& require 'data/student';
 				s = Student.load(student_id); s.quit_order
 			&> ]]></column>
 			<column source="order" name="group_id"/>
-			<column source="student" name="profession_code" title="Направление подготовки/специальность.специализация.квалификация"/>
-			<column source="order" name="profession_code" title="Новое направление подготовки/специальность.специализация.квалификация"/>
+			<column source="student" name="profession_code" title="Направление подготовки/специальность, специализация, ступень образования"/>
+			<column source="order" name="profession_code" title="Новое направление подготовки/специальность, специализация, ступень образования"/>
 			<column source="order" name="card_number"/>
 			<column source="order" name="agreement" title="Договор (контракт) о предоставлении платных образовательных услуг"/>
 			<column source="order" name="start_at"/>
-			<column source="order" name="liabilities" empty_text="академических задолженностей нет."/>
+			<column source="order" name="liabilities" empty_text="академической задолженности нет."/>
 			<column source="order" name="deadline"/>
 			<column source="order" name="assignment"/>
-			<column title="Основания приказа"><![CDATA[
-				Личное заявление отчисленного с визой декана факультета<% if conditions['foreign'] then %>,
-				декана ФОИГ<% end %> и резолюцией проректора по учебной работе Университета
-<% if order.attributes['study_type_id'] == Classifier::StudyType::CONTRACT then %>
-, договор (контракт) о предоставлении платных образовательных услуг <& attributes['agreement'] &>
-<% end %>
+			<column><![CDATA[
+				<br/><br/>Основания приказа:
+				<% unless order.attributes['resolution'].empty? then %>
+				протокол <& order.attributes['resolution'] &>, утвержденный на заседании Приемной комиссии МГЛУ, <% end %>
+				личное заявление отчисленного с визой декана факультета<% if conditions['foreign'] then %>,
+				декана ФОИГ<% end %> и резолюцией ректора<% if s.study_type_id == Classifier::StudyType::CONTRACT then %>,
+				договор (контракт) о предоставлении платных образовательных услуг <& attributes['agreement'] &>
+				<% end %>
 			]]></column>
 		</list>
 
 		<signatures>
 			<signature name="rector"/>
 			<signature name="prorector"/>
+			<signature name="accountant" />
+			<signature name="financing" />
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract and not foreign" /> -->
 			<signature name="personnel"/>
-			<signature name="prorector-international" condition="foreign" />
-			<signature name="prorector-security" condition="foreign" />
+			<signature name="dean" condition="not foreign"/>
 			<signature name="legal-councilor"/>
-			<signature name="dean"/>
 			<signature name="deanreceiver"/>
-			<signature name="enrollment"/>
-			<signature name="selection"/>
-			<signature name="marketing" condition="contract and not foreign" />
-			<signature name="financing" condition="contract and not foreign"/>
 			<signature name="foreign" condition="foreign" />
 		</signatures>
 

@@ -2,7 +2,7 @@
 
 <order classname="LiabilitiesRemovalOrder" base="StudentsOrder">
 
-	<type>О признании факта ликвидации академических задолженностей</type>
+	<type>О признании факта ликвидации академической задолженности</type>
 
 	<qualified_students class="Hash">
 		<liabilities class="Fixnum">1</liabilities>
@@ -11,6 +11,8 @@
 	<template entity="order">
 		<!-- TODO: find out how to deal with different liabilities handling rules -->
 		<const type="string" name="liabilities" value="" />
+		
+		<const type="int" name="hide_study_type" value="1" />
 	</template>
 
 	<template entity="student">
@@ -19,6 +21,7 @@
 			<input type="text" name="subject" title="Название" />
 			<select type="text" name="type" title="Отчетность">
 				<option title="зачет" />
+				<option title="диф.зачет" />
 				<option title="экзамен" />
 			</select>
 		</list>
@@ -27,28 +30,34 @@
 
 	<printable>
 
-		<p>Признать факт ликвидации всех академических задолженностей нижеперечисленными лицами:</p>
+		<p>Признать факт ликвидации академической задолженности нижеперечисленными лицами:</p>
 
 		<list style="text">
 			<column source="student" name="name"/>
+			<column source="student" name="profession"/>
+			<column source="student" name="course"/>
 			<column source="student" name="student_status" />
 			<column source="student" name="card_number"/>
+			<column source="student" name="study_form"/>
 			<column source="student" name="group"/>
 			<column source="student" name="study_type"/>
 			<column source="order" name="liabilities_list"/>
-			<column title="Основание приказа">
+			<column><![CDATA[
+				<br/><br/>Основание приказа:
 				Журналы учета выполнения учебного плана и сдачи экзаменов и зачетов
-			</column>
+			]]></column>
 		</list>
 
 		<signatures>
 			<signature name="rector"/>
 			<signature name="prorector"/>
+			<signature name="accountant"/>
+			<signature name="financing"/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract and not foreign"/> -->
 			<signature name="personnel"/>
-			<signature name="dean" condition="not disabled"/>
+			<signature name="dean" condition="not disabled and not foreign"/>
 			<signature name="rehabilitation" condition="disabled"/>
-			<signature name="marketing" condition="contract and not foreign"/>
-			<signature name="financing" condition="contract and not foreign"/>
 			<signature name="foreign" condition="foreign"/>
 		</signatures>
 

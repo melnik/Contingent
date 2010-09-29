@@ -149,10 +149,13 @@ module Classifier
 		BUDGET   = 1
 		CONTRACT = 2
 	end
-
-	class Military < Simple
-		EXPELLED = 4
-		SUSPENDED = 5
+	
+	class StudyForm < Coded
+		FULLTIME   = 1
+		MIXED      = 2
+		POSTAL     = 3
+		SELF       = 4
+		EXTERNSHIP = 5
 	end
 
 	class StudentStatus < Simple

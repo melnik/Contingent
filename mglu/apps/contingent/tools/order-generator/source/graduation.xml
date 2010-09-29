@@ -10,16 +10,19 @@
 
 	<template entity="order">
 		<const type="int" name="student_state_id" value="Classifier::StudentState::GRADUATED" />
+
+		<input type="date" name="graduation_date" title="Дата окончания обучения"/>
 	</template>
 
 	<template entity="student">
 
 		<input type="text" name="graduation_thesis" title="Тема выпускной квалификационной работы" html_style="width: 90%"/>
 		
-		<select type="int" name="mark" title="Оценка" default="4">
-			<option value="5" title="отлично" />
-			<option value="4" title="хорошо" />
-			<option value="3" title="удовлетворительно" />
+		<select type="text" name="mark" title="Оценка">
+			<option title="" />
+			<option title="отлично" />
+			<option title="хорошо" />
+			<option title="удовлетворительно" />
 		</select>
 
 		<select type="text" name="qualification" title="Квалификация" default="'инженер'">
@@ -51,7 +54,8 @@
 			<option title="политолог" />
 			<option title="психолог" />
 			<option title="регионовед" />
-			<option title="социолог" />
+			<option title="референт-аналитик информационных курсов" />
+			<option title="социолог, преподаватель социологии" />
 			<option title="специалист в области международных отношений" />
 			<option title="специалист по защите информации" />
 			<option title="специалист по связям с общественностью" />
@@ -61,10 +65,13 @@
 			<option title="юрист" />
 		</select>
 
-		<select type="int" name="diploma_type" title="Вид диплома" default="1">
-			<option value="1" title="Обычный" />
-			<option value="2" title="С отличием" />
+		<select type="text" name="diploma_type" title="Вид диплома">
+			<option displayed="Обычный" printable="С выдачей диплома о высшем профессиональном образовании"/>
+			<option displayed="С отличием" printable="С выдачей диплома (с отличием) о высшем профессиональном образовании" />
+			<option displayed="О неполном образовании" printable="С выдачей государственного диплома о неполном высшем профессиональном образовании" />
 		</select>
+
+		<input type="text" name="languages" title="Со знанием"/>
 
 		<input type="document" name="protocol" title="Протокол заседания ГАК"/>
 		
@@ -81,7 +88,8 @@
 
 	<printable>
 
-		<p>Отчислить в связи с завершением обучения в МГЛУ:</p>
+		<p><![CDATA[ В связи с завершением обучения отчислить из МГЛУ с
+		<& order.attributes['graduation_date'] &> следующих выпускников: ]]></p>
 
 		<list style="text">
 			<column source="student" name="name"/>
@@ -92,18 +100,18 @@
 			<column source="order" name="passport" />
 			<column source="student" name="birth_date"/>
 			<column source="student" name="card_number"/>
+			<column source="student" name="study_form"/>
 			<column source="student" name="course"/>
-			<column source="student" name="profession_code" title="Направление подготовки/специальность.специализация.квалификация"/>
+			<column source="student" name="profession_code" title="Направление подготовки/специальность, специализация, ступень образования"/>
 			<column source="order" name="graduation_thesis"/>
 			<column source="order" name="mark"/>
 			<column><![CDATA[
 				<% if degree_code != '65' then %>Присуждена степень<% else %>Квалификация<% end %>:
 				<& attributes['qualification'] &>
+				<% unless attributes['languages'].empty? then %>(со знанием <& attributes['languages'] &>)<% end %>
 			]]></column>
-			<column><![CDATA[
-				с выдачей диплома<% if attributes['diploma_type'] == 2 then %> с отличием<% end %>.
-			]]></column>
-			<column><![CDATA[ Основание приказа: протокол заседания ГАК <&attributes['protocol']&> ]]></column>
+		<column source="order" name="diploma_type" title=""/>
+		<column><![CDATA[ <br/><br/>Основание: протокол заседания ГАК <&attributes['protocol']&> ]]></column>
 			<column source="order" name="agreement" title="договор (контракт) о предоставлении платных образовательных услуг" />
 			<column source="order" name="assignment" />
 			<column source="student" name="dormitory" hidden="1" />
@@ -113,14 +121,13 @@
 		<signatures>
 			<signature name="rector"/>
 			<signature name="prorector"/>
+			<signature name="accountant"/>
+			<signature name="financing"/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract and not foreign" /> -->
 			<signature name="personnel"/>
-			<signature name="prorector-international" condition="foreign" />
-			<signature name="prorector-security" condition="foreign" />
-			<signature name="legal-councilor"/>
-			<signature name="dean" condition="not disabled"/>
+			<signature name="dean" condition="not disabled and not foreign"/>
 			<signature name="rehabilitation" condition="disabled"/>
-			<signature name="marketing" condition="contract and not foreign" />
-			<signature name="financing" condition="contract and not foreign"/>
 			<signature name="foreign" condition="foreign" />
 		</signatures>
 

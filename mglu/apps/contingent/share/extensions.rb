@@ -4,7 +4,6 @@ require 'iconv'
 require 'cgi'
 
 require 'config'
-require 'data/set'
 require 'data/classifier'
 
 class Object
@@ -130,7 +129,9 @@ class String
 	end
 
 	def to_set
-		Set.new self
+		split(',').to_set do |element|
+			element.strip.to_sym
+		end
 	end
 
 	def utf_encode
@@ -207,6 +208,23 @@ class Hash
 			end
 		end
 	end
+end
+
+require 'set'
+class Set
+	def to_s
+		@hash.keys.join ','
+	end
+
+	def to_xml
+		@hash.keys.to_xml
+	end
+
+	def quote
+		"'#{$sql.quote to_s}'"
+	end
+
+	alias_method :[], :include?
 end
 
 def convert_search_params params

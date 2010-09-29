@@ -14,6 +14,14 @@
 	<template entity="order">
 		<const type="int" name="student_state_id" value="Classifier::StudentState::STUDYING" />
 	</template>
+	
+	<condition name="trainee">
+		<order__circumstance class="Fixnum">3</order__circumstance>
+	</condition>
+
+	<condition name="has_deadline2">
+		<order__deadline2 class="Empty">false</order__deadline2>
+	</condition>
 
 	<template entity="student">
 
@@ -22,7 +30,9 @@
 				<input type="document" name="resolution" title="Заключение клинико-экспертной комиссии" />
 			</option>
 			<option value="1" title="после академического отпуска" />
-			<option value="3" title="после стажировки" />
+			<option value="3" title="после стажировки">
+				<input type="date" name="deadline2" title="Срок прохождения промежуточной аттестации"/>
+			</option>
 			<option value="4" title="после отпуска по беременности и родам" />
 			<option value="5" displayed="после отпуска по уходу за ребенком (1,5 лет)" printable="после отпуска по уходу за ребенком до достижения им возраста 1,5 лет" />
 			<option value="6" displayed="после отпуска по уходу за ребенком (3 года)" printable="после отпуска по уходу за ребенком до достижения им возраста 3 лет" />
@@ -38,27 +48,32 @@
 			<input type="text" name="subject" title="Название" />
 			<select type="text" name="type" title="Отчетность">
 				<option title="зачет" />
+				<option title="диф.зачет" />
 				<option title="экзамен" />
 			</select>
 		</list>
 
-		<input type="date" name="deadline" title="Срок сдачи задолженностей" />
-
+		<input type="date" name="deadline" title="Срок сдачи задолженностей" condition="not trainee"/>
+		
 		<input type="document" name="agreement" title="Договор/контракт" condition="contract or foreign"/>
 
 	</template>
 
 	<printable>
 
-		<p>Допустить к учебному процессу нижеперечисленных лиц и
-		установить индивидуальный график сдачи академических
+		<p><![CDATA[ Допустить к учебному процессу нижеперечисленных лиц<%
+		if conditions['has_deadline2'] or not conditions['trainee'] then %> и
+		установить индивидуальный график <% if conditions['trainee'] then %>
+		прохождения промежуточной аттестации<% else %> сдачи академических
 		задолженностей, образовавшихся вследствие расхождения
-		учебных планов:</p>
+		учебных планов<% end %><% end %>: ]]></p>
 
 		<list style="text">
 			<column source="student" name="name"/>
+			<column source="student" name="profession"/>
 			<column source="student" name="student_status"/>
 			<column source="student" name="card_number"/>
+			<column source="student" name="study_form"/>
 			<column source="student" name="course"/>
 			<column source="student" name="group"/>
 			<column source="student" name="citizenship"/>
@@ -67,12 +82,14 @@
 			<column source="order" name="card_number" />
 			<column source="order" name="agreement"/>
 			<column source="order" name="from"/>
-			<column source="order" name="liabilities" empty_text="академических задолженностей нет."/>
-			<column source="order" name="deadline"/>
-			<column title="Основания приказа"><![CDATA[
+			<column source="order" name="liabilities" empty_text="академической задолженности нет." condition="not trainee"/>
+			<column source="order" name="deadline" condition="not trainee"/>
+			<column source="order" name="deadline2" condition="trainee and has_deadline2"/>
+			<column><![CDATA[
+<br/><br/>Основание приказа:
 личное заявление обучающегося с визой декана факультета<%
 if conditions['foreign'] then %>, декана ФОИГ <% end%>
-и резолюцией проректора по учебной работе Университета
+и резолюцией ректора
 <%
 	case attributes['circumstance']
 	when 0
@@ -89,13 +106,13 @@ if conditions['foreign'] then %>, декана ФОИГ <% end%>
 		<signatures>
 			<signature name="rector"/>
 			<signature name="prorector"/>
+			<signature name="accountant"/>
+			<signature name="financing"/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract and not foreign"/> -->
 			<signature name="personnel"/>
-			<signature name="prorector-international" condition="foreign" />
-			<signature name="prorector-security" condition="foreign" />
-			<signature name="dean" condition="not disabled"/>
+			<signature name="dean" condition="not disabled and not foreign"/>
 			<signature name="rehabilitation" condition="disabled"/>
-			<signature name="marketing" condition="contract and not foreign"/>
-			<signature name="financing" condition="contract and not foreign"/>
 			<signature name="foreign" condition="foreign"/>
 		</signatures>
 

@@ -27,7 +27,8 @@ class DetailsForEnrollmentTransitionOrder
 
 	def self.fix_order(o)
 		attributes = o.attributes.dup
-		attributes['study_type_id'] ||= Proc.new { first_value(Classifier::StudyType) }.call
+		attributes['study_type_id'] ||= Proc.new { Classifier::StudyType::BUDGET }.call
+		attributes['study_form_id'] ||= Proc.new { Classifier::StudyForm::FULLTIME }.call
 		attributes['degree_code'] ||= Proc.new { first_value(Classifier::Degree) }.call
 		attributes
 	end
@@ -35,18 +36,20 @@ class DetailsForEnrollmentTransitionOrder
 	def self.render_order(o, tmpl)
 		attributes = fix_order(o)
 		tmpl.resolution = attributes['resolution']
-		tmpl.approval = attributes['approval']
 		tmpl.enrollment_date = attributes['enrollment_date']
+		tmpl.from = attributes['from']
 		tmpl.study_type_id = attributes['study_type_id']
+		tmpl.study_form_id = attributes['study_form_id']
 		tmpl.degree_code = attributes['degree_code']
 	end
 
 	def self.save_order(o, params)
 		attributes = o.attributes.dup
 		attributes['resolution'] = Document.new(params["resolution_date"].to_d, params["resolution_num"])
-		attributes['approval'] = Document.new(params["approval_date"].to_d, params["approval_num"])
 		attributes['enrollment_date'] = params["enrollment_date"].to_d
+		attributes['from'] = params["from"]
 		attributes['study_type_id'] = params["study_type_id_id"].to_s.split(':')[0].to_i
+		attributes['study_form_id'] = params["study_form_id_id"].to_s.split(':')[0].to_i
 		attributes['degree_code'] = params["degree_code_code"]
 		attributes.each_pair { |k,v| o.attributes[k] = v }
 		o.save

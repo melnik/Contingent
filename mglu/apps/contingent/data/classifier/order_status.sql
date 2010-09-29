@@ -5,7 +5,7 @@ CREATE TABLE `order_status` (
 	PRIMARY KEY (`order_status_id`)
 ) TYPE=MyISAM;
 
-INSERT INTO `order_status` VALUES (1, 'проект');
-INSERT INTO `order_status` VALUES (2, 'в стадии подписания');
-INSERT INTO `order_status` VALUES (3, 'содержит ошибки');
-INSERT INTO `order_status` VALUES (4, 'введен в действие');
+INSERT INTO `order_status` VALUES (1, 'п©я─п╬п╣п╨я┌');
+INSERT INTO `order_status` VALUES (2, 'п╡ я│я┌п╟п╢п╦п╦ п©п╬п╢п©п╦я│п╟п╫п╦я▐');
+INSERT INTO `order_status` VALUES (3, 'я│п╬п╢п╣я─п╤п╦я┌ п╬я┬п╦п╠п╨п╦');
+INSERT INTO `order_status` VALUES (4, 'п╡п╡п╣п╢п╣п╫ п╡ п╢п╣п╧я│я┌п╡п╦п╣');

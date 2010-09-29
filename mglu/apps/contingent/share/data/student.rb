@@ -8,7 +8,7 @@ require 'document'
 require 'daterange'
 
 class Student < DataObject
-	TABLES = %w( common education_basic education_current military )
+	TABLES = %w( common education_basic education_current )
 
 	EXPORT_METHODS = %w( enrollment quit )
 
@@ -76,7 +76,7 @@ class Student < DataObject
 	# Students atributes (IDs, states, group, etc.)
 	attr_reader :card_number, :group_id
 	attr_reader :status_id, :study_type_id, :category #, :dormitory
-	attr_reader :state_id, :military_state_id, :special_enrollment_code
+	attr_reader :state_id, :special_enrollment_code
 	attr_reader :profession_code, :specialization_code, :degree_code
 	attr_reader :liabilities
 	attr_reader :scholarship_id
@@ -104,7 +104,6 @@ class Student < DataObject
 			@dormitory     = params['dormitory'] != '0'
 
 			@state_id                = params['student_state_id'].to_i unless params['student_state_id'].empty?
-			@military_state_id       = params['military_id'].to_i unless params['military_id'].empty?
 			@special_enrollment_code = params['special_enrollment_code'] unless params['special_enrollment_code'].empty?
 
 			@profession_code     = params['profession_code']
@@ -171,30 +170,6 @@ class Student < DataObject
 
 						# Приказ об отчислении (какой еще приказ и что он тут делает?)
 						'expelation'     => params['expelation'].to_h
-					}
-
-				when 'military' then # Воинский учет
-					@military = {
-						# Категория запаса
-						'reserve_category' => params['reserve_category'],
-
-						# Звание
-						'rank'             => params['rank'],
-
-						# Соства (профиль)
-						'profile'          => params['profile'],
-
-						# ВУС
-						'speciality'       => params['speciality'],
-
-						# Категория годности к военной службе
-						'fitness'          => params['fitness'].to_h,
-
-						# Воинский учет
-						'registration'     => params['registration'].to_h,
-
-						# Военное обучение
-						'education'        => params['education'].to_h
 					}
 				end
 			end
@@ -283,12 +258,6 @@ class Student < DataObject
 	# Состояние (String)
 	def state
 		@state ||= Classifier::StudentState[@state_id][:name]
-	end
-
-	##
-	# Состояние военного обучения (String)
-	def military_state
-		@military ||= Classifier::Military[@military_state_id][:name]
 	end
 
 	##

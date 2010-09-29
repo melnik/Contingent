@@ -6,9 +6,10 @@ CREATE TABLE `education_level` (
   PRIMARY KEY  (`education_level_id`)
 ) TYPE=MyISAM;
 
-INSERT INTO `education_level` VALUES (1,'среднее (полное) общее','30 07');
-INSERT INTO `education_level` VALUES (2,'начальное профессиональное','30 10');
-INSERT INTO `education_level` VALUES (3,'среднее профессиональное','30 11');
-INSERT INTO `education_level` VALUES (4,'неполное высшее','30 15');
-INSERT INTO `education_level` VALUES (5,'высшее профессиональное','30 18');
-INSERT INTO `education_level` VALUES (6,'послевузовское профессиональное','30 19');
+INSERT INTO `education_level` VALUES (1,'я│я─п╣п╢п╫п╣п╣ (п©п╬п╩п╫п╬п╣) п╬п╠я┴п╣п╣','30 07');
+INSERT INTO `education_level` VALUES (2,'п╫п╟я┤п╟п╩я▄п╫п╬п╣ п©я─п╬я└п╣я│я│п╦п╬п╫п╟п╩я▄п╫п╬п╣','30 10');
+INSERT INTO `education_level` VALUES (3,'я│я─п╣п╢п╫п╣п╣ п©я─п╬я└п╣я│я│п╦п╬п╫п╟п╩я▄п╫п╬п╣','30 11');
+INSERT INTO `education_level` VALUES (4,'п╫п╣п©п╬п╩п╫п╬п╣ п╡я▀я│я┬п╣п╣','30 15');
+INSERT INTO `education_level` VALUES (5,'п╡я▀я│я┬п╣п╣ п©я─п╬я└п╣я│я│п╦п╬п╫п╟п╩я▄п╫п╬п╣','30 18');
+INSERT INTO `education_level` VALUES (6,'п©п╬я│п╩п╣п╡я┐п╥п╬п╡я│п╨п╬п╣ п©я─п╬я└п╣я│я│п╦п╬п╫п╟п╩я▄п╫п╬п╣','30 19');
+

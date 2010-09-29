@@ -28,7 +28,7 @@ class RenamingOrder < StudentsOrder
 				'first_name' => attributes['name']['first'],
 				'last_name' => attributes['name']['last'],
 				'father_name' => attributes['name']['father']
-			}, [ student_id ]
+			}.compact, [ student_id ]
 		end
 	end
 

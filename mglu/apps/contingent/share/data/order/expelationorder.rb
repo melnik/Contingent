@@ -30,13 +30,13 @@ class ExpelationOrder < StudentsOrder
 		super
 		set :student, {
 			'student_state_id' => Classifier::StudentState::EXPELLED
-		}
+		}.compact
 
 		each_student :all, %w( student_id attributes ) do |student_id, attributes|
 			set :student, {
 				'liabilities' => (not attributes['liabilities'].empty?),
 				'group_id' => nil
-			}, [ student_id ]
+			}.compact, [ student_id ]
 		end
 	end
 

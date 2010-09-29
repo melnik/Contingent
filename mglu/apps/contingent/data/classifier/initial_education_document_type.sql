@@ -5,8 +5,8 @@ CREATE TABLE `initial_education_document_type` (
   PRIMARY KEY  (`initial_education_document_type_id`)
 ) TYPE=MyISAM;
 
-INSERT INTO `initial_education_document_type` VALUES (1,'аттестат о среднем (полном) общем образовании');
-INSERT INTO `initial_education_document_type` VALUES (2,'диплом о начальном профессиональном образовании');
-INSERT INTO `initial_education_document_type` VALUES (3,'диплом о среднем профессиональном образовании');
-INSERT INTO `initial_education_document_type` VALUES (4,'диплом о неполном высшем профессиональном образовании');
-INSERT INTO `initial_education_document_type` VALUES (5,'диплом о высшем профессиональном образовании');
+INSERT INTO `initial_education_document_type` VALUES (1,'п╟я┌я┌п╣я│я┌п╟я┌ п╬ я│я─п╣п╢п╫п╣п╪ (п©п╬п╩п╫п╬п╪) п╬п╠я┴п╣п╪ п╬п╠я─п╟п╥п╬п╡п╟п╫п╦п╦');
+INSERT INTO `initial_education_document_type` VALUES (2,'п╢п╦п©п╩п╬п╪ п╬ п╫п╟я┤п╟п╩я▄п╫п╬п╪ п©я─п╬я└п╣я│я│п╦п╬п╫п╟п╩я▄п╫п╬п╪ п╬п╠я─п╟п╥п╬п╡п╟п╫п╦п╦');
+INSERT INTO `initial_education_document_type` VALUES (3,'п╢п╦п©п╩п╬п╪ п╬ я│я─п╣п╢п╫п╣п╪ п©я─п╬я└п╣я│я│п╦п╬п╫п╟п╩я▄п╫п╬п╪ п╬п╠я─п╟п╥п╬п╡п╟п╫п╦п╦');
+INSERT INTO `initial_education_document_type` VALUES (4,'п╢п╦п©п╩п╬п╪ п╬ п╫п╣п©п╬п╩п╫п╬п╪ п╡я▀я│я┬п╣п╪ п©я─п╬я└п╣я│я│п╦п╬п╫п╟п╩я▄п╫п╬п╪ п╬п╠я─п╟п╥п╬п╡п╟п╫п╦п╦');
+INSERT INTO `initial_education_document_type` VALUES (5,'п╢п╦п©п╩п╬п╪ п╬ п╡я▀я│я┬п╣п╪ п©я─п╬я└п╣я│я│п╦п╬п╫п╟п╩я▄п╫п╬п╪ п╬п╠я─п╟п╥п╬п╡п╟п╫п╦п╦');

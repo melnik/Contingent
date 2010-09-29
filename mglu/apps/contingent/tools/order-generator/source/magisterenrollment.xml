@@ -11,20 +11,18 @@
 	
 	<template entity="order">
 
-		<input type="document" name="resolution" title="Протокол решения отборочной комиссии факультета" />
-
-		<input type="document" name="approval" title="Протокол заседания Приемной комиссии МГЛУ" />
+		<input type="document" name="resolution" title="Протокол заседания Приемной комиссии МГЛУ" />
 		
 		<input type="date" name="enrollment_date" title="Дата зачисления" />
 
-		<classifier type="study_type" title="Форма (основа) обучения" />
+		<classifier type="study_type" title="Основа обучения" />
 
 	</template>
 
 	
 	<template entity="student">
 	
-		<classifier type="profession" title="Направление подготовки/специальность.специализация.квалификация" default="Student.load(eid).profession_code"/>
+		<classifier type="profession" title="Направление подготовки/специальность, специализация, ступень образования" default="Student.load(eid).profession_code"/>
 
 		<const type="text" name="degree_code" value="'68'" /> <!-- TODO: Remove this magic number -->
 		
@@ -47,10 +45,8 @@
 
 		<preamble><![CDATA[
 <p>
-На основании решения отборочной комиссии факультета "<&order.faculty.name&>"
-от <&order.attributes['resolution'][:date]&> протокол &#x2116; <&order.attributes['resolution'][:num]&>,
-утвержденного на заседании Приемной комиссии МГЛУ
-от <&order.attributes['approval'][:date]&> протокол &#x2116;<&order.attributes['approval'][:num]&>,
+На основании решения Приемной комиссии МГЛУ
+от <&order.attributes['resolution'][:date]&> протокол &#x2116;<&order.attributes['resolution'][:num]&>,
 </p>
 		]]></preamble>
 
@@ -69,19 +65,21 @@
 		<list style="text">
 			<column source="student" name="name" />
 			<column source="student" name="student_status" />
+			<column source="student" name="course" />
 			<column source="student" name="gender" />
 			<column source="student" name="birth_date" />
 			<column source="student" name="citizenship" />
 			<column source="order" name="country_id"/>
 			<column source="student" name="card_number" />
+			<column source="student" name="study_form"/>
 			<column source="order" name="agreement" title="договор (контракт) о предоставлении платных образовательных услуг" />
 			<column source="student" name="group" />
 			<column source="order" name="profession_code" />
 			<column source="order" name="graduation_thesis" />
 			<column source="order" name="tutor" />
 			<column><![CDATA[
-				Основание приказа: личное заявление с резолюцией проректора по учебной
-				работе<% unless attributes['reference'].empty? then %>, рекомендация ГАК <& attributes['reference'] &><% end %>,
+				<br/><br/>Основание приказа: личное заявление с резолюцией
+				ректора<% unless attributes['reference'].empty? then %>, рекомендация ГАК <& attributes['reference'] &><% end %>,
 				протокол собеседования
 			]]></column>
 		</list>
@@ -89,14 +87,14 @@
 		<signatures>
 			<signature name="rector" />
 			<signature name="prorector"/>
+			<signature name="accountant"/>
+			<signature name="financing"/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract and not foreign" /> -->
 			<signature name="personnel"/>
-			<signature name="prorector-international" condition="foreign" />
-			<signature name="prorector-security" condition="foreign" />
 			<signature name="legal-councilor"/>
 			<signature name="enrollment"/>
 			<signature name="selection"/>
-			<signature name="marketing" condition="contract and not foreign" />
-			<signature name="financing" condition="contract and not foreign"/>
 			<signature name="foreign" condition="foreign" />
 		</signatures>
 

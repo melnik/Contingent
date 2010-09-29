@@ -64,7 +64,7 @@ class DetailsForExpelationOrder
 			attributes['reason'] ||= 0
 			attributes['basics2'] ||= 1
 			attributes['term'] ||= Proc.new { Student.load(eid).group.term_number }.call.to_i
-			attributes['year'] ||= Proc.new { Term.current.academic_year.begin.to_s + '/' + (Term.current.academic_year.end.to_s }.call
+			attributes['year'] ||= Proc.new { Term.current.academic_year.begin.to_s + '/' + Term.current.academic_year.end.to_s }.call
 			attributes['country_id'] ||= Proc.new { first_value(Classifier::Country) }.call
 		end
 		attributes
@@ -82,6 +82,11 @@ class DetailsForExpelationOrder
 				tmpl.liabilities = attributes['liabilities']
 				tmpl.term = attributes['term']
 				tmpl.year = attributes['year']
+			when '18'.to_i
+				tmpl.basics2_1 = attributes['basics2']
+				tmpl.liabilities_1 = attributes['liabilities']
+				tmpl.term_1 = attributes['term']
+				tmpl.year_1 = attributes['year']
 			when '2'.to_i
 				tmpl.dnsa = attributes['dnsa']
 			when '3'.to_i
@@ -94,6 +99,8 @@ class DetailsForExpelationOrder
 				tmpl.statement = attributes['statement']
 			when '12'.to_i
 				tmpl.dnsa_1 = attributes['dnsa']
+			when '19'.to_i
+				tmpl.dnsa2 = attributes['dnsa2']
 			when '13'.to_i
 				tmpl.basics_1 = attributes['basics']
 			when '14'.to_i
@@ -119,6 +126,7 @@ class DetailsForExpelationOrder
 			attributes['resolution'] = nil
 			attributes['to'] = nil
 			attributes['statement'] = nil
+			attributes['dnsa2'] = nil
 			case attributes['reason']
 			when '0'.to_i
 				attributes['basics2'] = params["basics2"].to_i
@@ -137,6 +145,23 @@ class DetailsForExpelationOrder
 				attributes['liabilities'] << collect_row.call('new') if params['keep_liabilities_new'] == '1'
 				attributes['term'] = params["term"].to_i
 				attributes['year'] = params["year"]
+			when '18'.to_i
+				attributes['basics2'] = params["basics2_1"].to_i
+				collect_row = Proc.new { |index|
+					row = {}
+					row['subject'] = params["liabilities_1_subject_#{index}"]
+					row['type'] = params["liabilities_1_type_#{index}"]
+					row
+				}
+				attributes['liabilities'] = []
+				i = 0
+				while (keep = params["keep_liabilities_1_#{i}"])
+					attributes['liabilities'] << collect_row.call(i) if keep == '1'
+					i += 1
+				end
+				attributes['liabilities'] << collect_row.call('new') if params['keep_liabilities_1_new'] == '1'
+				attributes['term'] = params["term_1"].to_i
+				attributes['year'] = params["year_1"]
 			when '2'.to_i
 				attributes['dnsa'] = DateRange.new(params["dnsa_from"].to_d, params["dnsa_till"].to_d)
 			when '3'.to_i
@@ -149,6 +174,8 @@ class DetailsForExpelationOrder
 				attributes['statement'] = Document.new(params["statement_date"].to_d, params["statement_num"])
 			when '12'.to_i
 				attributes['dnsa'] = DateRange.new(params["dnsa_1_from"].to_d, params["dnsa_1_till"].to_d)
+			when '19'.to_i
+				attributes['dnsa2'] = DateRange.new(params["dnsa2_from"].to_d, params["dnsa2_till"].to_d)
 			when '13'.to_i
 				attributes['basics'] = params["basics_1"]
 			when '14'.to_i

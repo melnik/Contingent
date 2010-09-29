@@ -10,6 +10,7 @@ class DetailsForKeepDownOrder
 
 	CONDITIONS = [
 		DetailsCommon::Condition.new('contract_now', {"student:citizenship_id"=>[1, 2, 3], "student:study_type_id"=>Classifier::StudyType::CONTRACT}),
+		DetailsCommon::Condition.new('transition', {"order:transition"=>1}),
 		DetailsCommon::Condition.new('contract', {"study_type_id"=>Classifier::StudyType::CONTRACT}),
 		DetailsCommon::Condition.new('foreign', {"citizenship_id"=>[4, 5, 6, 7]}),
 		DetailsCommon::Condition.new('disabled', {"category"=>:disabled})
@@ -21,22 +22,30 @@ class DetailsForKeepDownOrder
 
 	def self.init_order(o)
 		attributes = o.attributes.dup
-		attributes['study_type_id'] = Proc.new { Classifier::StudyType::CONTRACT }.call.to_i
 		attributes.each_pair { |k,v| o.attributes[k] = v }
 		o.save
 	end
 
 	def self.fix_order(o)
 		attributes = o.attributes.dup
+		attributes['transition'] ||= 0
+		attributes['study_type_id'] ||= Proc.new { first_value(Classifier::StudyType) }.call
+		attributes['study_form_id'] ||= Proc.new { first_value(Classifier::StudyForm) }.call
 		attributes
 	end
 
 	def self.render_order(o, tmpl)
 		attributes = fix_order(o)
+		tmpl.transition = attributes['transition']
+		tmpl.study_type_id = attributes['study_type_id']
+		tmpl.study_form_id = attributes['study_form_id']
 	end
 
 	def self.save_order(o, params)
 		attributes = o.attributes.dup
+		attributes['transition'] = params["transition"].to_i
+		attributes['study_type_id'] = params["study_type_id_id"].to_s.split(':')[0].to_i
+		attributes['study_form_id'] = params["study_form_id_id"].to_s.split(':')[0].to_i
 		attributes.each_pair { |k,v| o.attributes[k] = v }
 		o.save
 	end
@@ -58,7 +67,7 @@ class DetailsForKeepDownOrder
 		case paragraph
 		when 0
 			attributes['group_id'] ||= Proc.new { Student.load(eid).group.oid }.call.to_i
-			attributes['card_number'] ||= Proc.new { Student.load(eid).card_number }.call
+			attributes['term_count'] ||= Proc.new { '' }.call
 			attributes['change_speciality'] ||= 0
 			attributes['profession_code'] ||= Proc.new { Student.load(eid).profession_code }.call
 			attributes['degree_code'] ||= Proc.new { Student.load(eid).degree_code }.call
@@ -71,7 +80,7 @@ class DetailsForKeepDownOrder
 		case paragraph
 		when 0
 			tmpl.group_id = attributes['group_id']
-			tmpl.card_number = attributes['card_number']
+			tmpl.term_count = attributes['term_count']
 			tmpl.change_speciality = attributes['change_speciality']
 			case attributes['change_speciality']
 			when '0'.to_i
@@ -92,7 +101,7 @@ class DetailsForKeepDownOrder
 		case paragraph
 		when 0
 			attributes['group_id'] = params["group_id"].to_i
-			attributes['card_number'] = params["card_number"]
+			attributes['term_count'] = params["term_count"]
 			attributes['change_speciality'] = params["change_speciality"].to_i
 			attributes['profession_code'] = nil
 			attributes['degree_code'] = nil

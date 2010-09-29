@@ -1,2 +1,2 @@
 #!/bin/sh
-subst 's/\s*$//g;' $@
+sed -i 's/\s*$//g;' $@

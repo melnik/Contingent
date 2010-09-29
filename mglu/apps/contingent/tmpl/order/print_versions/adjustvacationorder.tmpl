@@ -37,7 +37,7 @@ self.class.class_eval {
 _SETS_ = []
 _GROUPS_ = nil
 @students = list.new(
-	  fetch(order, :each_student, 0, %w( group name card_number category study_type student_id attributes )).collect { |item| item | { :SECTION => 1 } }
+	  fetch(order, :each_student, 0, %w( group name profession course card_number category study_type student_id attributes )).collect { |item| item | { :SECTION => 1 } }
 )
 _LIST_ = [@students]
 
@@ -75,8 +75,10 @@ _SETS_[-1].keys.sort.each { |group|
 			<tr>
 				<th class="printleft" rowspan="1">&#x2116; п/п</th>
 				<th rowspan="1">Ф.И.О.</th>
+				<th rowspan="1">Направление / специальность</th>
+				<th rowspan="1">Курс</th>
 				<th rowspan="1">Л.д. &#x2116;</th>
-				<th rowspan="1">Форма (основа) обучения</th>
+				<th rowspan="1">Основа обучения</th>
 				<th rowspan="1">Числить в группе</th>
 			</tr>
 		</thead><tbody>
@@ -84,6 +86,8 @@ _SETS_[-1].keys.sort.each { |group|
 		<% _LIST_[-1].each { |_ITEM_|
 			group = _ITEM_[:group]
 			name = _ITEM_[:name]
+			profession = _ITEM_[:profession]
+			course = _ITEM_[:course]
 			card_number = _ITEM_[:card_number]
 			category = _ITEM_[:category]
 			study_type = _ITEM_[:study_type]
@@ -95,10 +99,12 @@ _SETS_[-1].keys.sort.each { |group|
 			<tr>
 				<% if _ROW_ == 0 then %><td class="printleft" rowspan="<%= _HEIGHT_ %>"><& _ITEM_INDEX_ &>&nbsp;</td><% end %>
 				<% if _ROW_ == 0 then %><td rowspan="<%= _HEIGHT_ %>"><& name &>&nbsp;</td><% end %>
+				<% if _ROW_ == 0 then %><td rowspan="<%= _HEIGHT_ %>"><& profession &>&nbsp;</td><% end %>
+				<% if _ROW_ == 0 then %><td rowspan="<%= _HEIGHT_ %>"><& course &>&nbsp;</td><% end %>
 				<% if _ROW_ == 0 then %><td rowspan="<%= _HEIGHT_ %>"><& card_number &>&nbsp;</td><% end %>
 				<% if _ROW_ == 0 then %><td rowspan="<%= _HEIGHT_ %>"> <%
 									r = [study_type]
-									r << 'ОРИСА' if category.include? :foreign
+									r << 'иностранный гражданин' if category.include? :foreign
 									r << 'ГУИМЦ' if category.include? :disabled
 									print r.join(', ')
 								%> &nbsp;</td><% end %>
@@ -123,16 +129,27 @@ _SETS_.pop
 <table class="signatures">
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Ректор МГЛУ</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">И. И. Халеева</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+	<tr><td>Ректор</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">И. И. Халеева</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
 	<tr><td>Проректор по учебной работе</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">И. В. Манохин</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Начальник управления кадров</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Ю. И. Вторушин</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+	<tr><td>Начальник управления бухгалтерского учета и финансового контроля</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Л. В. Куренкова</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Декан факультета &laquo;<%=order.faculty.name%>&raquo;</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
+	<tr><td>Начальник планово-финансового управления</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Л. Н. Ермакова</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+
+	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
+	<tr><td>Начальник учебно-методического управления</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">А. И. Коробко</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+
+	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
+	<tr><td>Начальник управления кадров</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Ю. И. Вторушин</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+
+	<% if not _CONDITIONS_['foreign'] then %>
+	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
+	<tr><td><%=order.faculty.dean_position%></td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
+	<% end %>
 </table>
 
 

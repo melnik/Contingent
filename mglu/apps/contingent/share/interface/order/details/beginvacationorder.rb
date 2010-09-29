@@ -11,6 +11,7 @@ class DetailsForBeginVacationOrder
 	CONDITIONS = [
 		DetailsCommon::Condition.new('pregnancy', {"reason"=>5}),
 		DetailsCommon::Condition.new('baby_minding', {"reason"=>[2, 3]}),
+		DetailsCommon::Condition.new('evening', {"study_form_id"=>2}),
 		DetailsCommon::Condition.new('contract', {"study_type_id"=>Classifier::StudyType::CONTRACT}),
 		DetailsCommon::Condition.new('foreign', {"citizenship_id"=>[4, 5, 6, 7]}),
 		DetailsCommon::Condition.new('disabled', {"category"=>:disabled})
@@ -74,6 +75,7 @@ class DetailsForBeginVacationOrder
 			when '0'.to_i
 				tmpl.resolution = attributes['resolution']
 			end
+			tmpl.scholarship = attributes['scholarship']
 			tmpl.agreement = attributes['agreement']
 			tmpl.country_id = attributes['country_id']
 			tmpl.addendum = attributes['addendum']
@@ -92,6 +94,7 @@ class DetailsForBeginVacationOrder
 			when '0'.to_i
 				attributes['resolution'] = Document.new(params["resolution_date"].to_d, params["resolution_num"])
 			end
+			attributes['scholarship'] = params["scholarship"]
 			attributes['agreement'] = Document.new(params["agreement_date"].to_d, params["agreement_num"])
 			attributes['country_id'] = params["country_id_id"].to_s.split(':')[0].to_i
 			attributes['addendum'] = Document.new(params["addendum_date"].to_d, params["addendum_num"])

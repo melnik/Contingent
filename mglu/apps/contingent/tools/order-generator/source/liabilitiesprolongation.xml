@@ -2,30 +2,38 @@
 
 <order classname="LiabilitiesProlongationOrder" base="StudentsOrder">
 
-	<type>О переносе срока ликвидации академических задолженностей</type>
+	<type>О переносе срока ликвидации академической задолженности</type>
 
 	<qualified_students class="Hash">
 		<liabilities class="Fixnum">1</liabilities>
 	</qualified_students>
 
+	<template entity="order">
+		<const type="int" name="hide_study_type" value="1" />
+	</template>
+
 	<template entity="student">
 
-		<input type="date" name="deadline" title="Новый срок сдачи задолженностей" />
+		<input type="date" name="deadline" title="Новый срок сдачи задолженности" />
 
 	</template>
 
 	<printable>
 
-		<p>Перенести срок ликвидации академических задолженностей нижеперечисленным лицам:</p>
+		<p>Перенести срок ликвидации академической задолженности нижеперечисленным лицам:</p>
 
 		<list style="text">
 			<column source="student" name="name"/>
+			<column source="student" name="profession"/>
+			<column source="student" name="course"/>
 			<column source="student" name="student_status"/>
 			<column source="student" name="card_number"/>
+			<column source="student" name="study_form"/>
 			<column source="student" name="group"/>
 			<column source="student" name="study_type"/>
 			<column source="order" name="deadline"/>
-			<column title="Основания приказа"><![CDATA[
+			<column><![CDATA[
+				<br/><br/>Основания приказа:
 				Личное заявление студента с резолюцией декана факультета, служебная записка зам.декана
 				с резолюцией декана, документ, подтверждающий уважительную причину переноса;
 			]]></column>
@@ -34,11 +42,13 @@
 		<signatures>
 			<signature name="rector"/>
 			<signature name="prorector"/>
+			<signature name="accountant"/>
+			<signature name="financing"/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract and not foreign" /> -->
 			<signature name="personnel"/>
-			<signature name="dean" condition="not disabled"/>
+			<signature name="dean" condition="not disabled and not foreign"/>
 			<signature name="rehabilitation" condition="disabled"/>
-			<signature name="marketing" condition="contract and not foreign" />
-			<signature name="financing" condition="contract and not foreign"/>
 			<signature name="foreign" condition="foreign" />
 		</signatures>
 

@@ -1,4 +1,19 @@
 #!/usr/bin/env ruby
+
+# Позволяет создавать, переименовывать и перемещать группы и кафедры.
+# Варианты использования:
+#
+# grouptool.rb mkgrp ФЭП9-11
+# grouptool.rb mvgrp ФЭП9-81 ФЭП9-11  (group_id сохранится)
+# grouptool.rb mkdep ФЭП8 "защита информации"
+# grouptool.rb mvdep ФЭП8 ФЭП4   (опять-таки, department_id сохранится)
+# grouptool.rb xchgdep ФЭП8 ФЭП4
+# grouptool.rb grpid ФЭП8-11   (напишет на stdout group_id)
+# grouptool.rb depid ФЭП8       (напишет на stdout department_id)
+#
+# С ключом -v пишет на stdout SQL-запросы, которые будут выполняться для
+# выполнения собственно действия, а с ключом -n не выполняет их.
+
 $KCODE = 'UTF8'
 
 require 'mysql'

@@ -24,7 +24,7 @@
 			<option value="2" title="С отличием" />
 		</select>
 
-		<select type="text" name="qualification" title="Квалификация" default="'бакалавр техники и технологи'">
+		<select type="text" name="qualification" title="Квалификация" default="'бакалавр техники и технологии'">
 			<option title="бакалавр техники и технологии" />
 			<option title="бакалавр математики" />
 			<option title="бакалавр лингвистики" />
@@ -54,6 +54,7 @@
 		<list style="text">
 			<column source="student" name="name"/>
 			<column source="student" name="student_status"/>
+			<column source="student" name="profession"/>
 			<column source="student" name="group"/>
 			<column source="student" name="citizenship"/>
 			<column source="order" name="country_id"/>
@@ -68,7 +69,8 @@
 			<column><![CDATA[
 				с выдачей диплома<% if attributes['diploma_type'] == 2 then %> с отличием<% end %>
 			]]></column>
-			<column title="Основание приказа"><![CDATA[
+			<column><![CDATA[
+				<br/><br/>Основание приказа:
 				протокол заседания ГАК <& attributes['protocol'] &><%
 	
 				if conditions['contract'] then
@@ -80,13 +82,13 @@
 		<signatures>
 			<signature name="rector"/>
 			<signature name="prorector"/>
+			<signature name="accountant"/>
+			<signature name="financing"/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract and not foreign"/> -->
 			<signature name="personnel"/>
-			<signature name="prorector-international" condition="foreign"/>
-			<signature name="prorector-security" condition="foreign"/>
-			<signature name="dean" condition="not disabled"/>
+			<signature name="dean" condition="not disabled and not foreign"/>
 			<signature name="rehabilitation" condition="disabled"/>
-			<signature name="marketing" condition="contract and not foreign"/>
-			<signature name="financing" condition="contract and not foreign"/>
 			<signature name="foreign" condition="foreign"/>
 		</signatures>
 

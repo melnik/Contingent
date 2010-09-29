@@ -1,10012 +1,10012 @@
 
 --
--- Ó¡⁄Œ¡ﬁ≈Œ…≈ Àœƒœ◊ Œ¡–“¡◊Ã≈Œ…  … ”–≈√…¡ÃÿŒœ”‘≈  ”‘’ƒ≈Œ‘¡Õ
--- ◊Œ’‘“… «“’––
+-- –ù–∞–∑–Ω–∞—á–µ–Ω–∏–µ –∫–æ–¥–æ–≤ –Ω–∞–ø—Ä–∞–≤–ª–µ–Ω–∏–π –∏ —Å–ø–µ—Ü–∏–∞–ª—å–Ω–æ—Å—Ç–µ–π —Å—Ç—É–¥–µ–Ω—Ç–∞–º
+-- –≤–Ω—É—Ç—Ä–∏ –≥—Ä—É–ø–ø
 --
 
--- Setting speciality 151003 for group ÌÙ2-42 (from line 4)
+-- Setting speciality 151003 for group –ú–¢2-42 (from line 4)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151003'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 230104 for group ÚÎ6-23 (from line 34)
+-- Setting speciality 230104 for group –†–ö6-23 (from line 34)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230104'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 6
           AND g.current_term_number = 2
           AND g.group_num = 3;
 
 
--- Setting speciality 160402 for group Èı2-101 (from line 80)
+-- Setting speciality 160402 for group –ò–£2-101 (from line 80)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 140401 for group ¸4-43 (from line 132)
+-- Setting speciality 140401 for group –≠4-43 (from line 132)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 4
           AND g.group_num = 3;
 
 
--- Setting speciality 160402 for group Èı2-102 (from line 81)
+-- Setting speciality 160402 for group –ò–£2-102 (from line 81)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 230101 for group Èı9-61 (from line 105)
+-- Setting speciality 230101 for group –ò–£9-61 (from line 105)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 9
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 210201 for group ÚÙ2-41 (from line 160)
+-- Setting speciality 210201 for group –†–¢2-41 (from line 160)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210201'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 210107 for group ÌÙ11-101 (from line 20)
+-- Setting speciality 210107 for group –ú–¢11-101 (from line 20)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210107'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 11
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 160403 for group Èı1-21 (from line 77)
+-- Setting speciality 160403 for group –ò–£1-21 (from line 77)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Èı2-103 (from line 82)
+-- Setting speciality 160402 for group –ò–£2-103 (from line 82)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 160803 for group ÛÌ8-121 (from line 65)
+-- Setting speciality 160803 for group –°–ú8-121 (from line 65)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160803'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 8
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 210107 for group ÌÙ11-102 (from line 21)
+-- Setting speciality 210107 for group –ú–¢11-102 (from line 21)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210107'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 11
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 160403 for group Èı1-22 (from line 78)
+-- Setting speciality 160403 for group –ò–£1-22 (from line 78)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 150502 for group ÛÌ13-41 (from line 76)
+-- Setting speciality 150502 for group –°–ú13-41 (from line 76)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150502'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 13
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160803 for group ÛÌ8-122 (from line 66)
+-- Setting speciality 160803 for group –°–ú8-122 (from line 66)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160803'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 8
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 230105 for group Èı7-101 (from line 98)
+-- Setting speciality 230105 for group –ò–£7-101 (from line 98)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 150204 for group ÌÙ5-121 (from line 9)
+-- Setting speciality 150204 for group –ú–¢5-121 (from line 9)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150204'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 5
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 160801 for group ÛÌ1-61 (from line 47)
+-- Setting speciality 160801 for group –°–ú1-61 (from line 47)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 200402 for group ‚ÌÙ2-21 (from line 120)
+-- Setting speciality 200402 for group –ë–ú–¢2-21 (from line 120)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200402'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ3-121 (from line 114)
+-- Setting speciality 200203 for group –†–õ3-121 (from line 114)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 3
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 230100 for group Èı7-102 (from line 99)
+-- Setting speciality 230100 for group –ò–£7-102 (from line 99)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230100'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 150204 for group ÌÙ5-122 (from line 10)
+-- Setting speciality 150204 for group –ú–¢5-122 (from line 10)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150204'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 5
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 160801 for group ÛÌ1-62 (from line 48)
+-- Setting speciality 160801 for group –°–ú1-62 (from line 48)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 200203 for group ÚÏ3-122 (from line 115)
+-- Setting speciality 200203 for group –†–õ3-122 (from line 115)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 3
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 230105 for group Èı7-103 (from line 101)
+-- Setting speciality 230105 for group –ò–£7-103 (from line 101)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 200401 for group Û2-61 (from line 148)
+-- Setting speciality 200401 for group –ü–°2-61 (from line 148)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200401'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 150501 for group ÌÙ8-61 (from line 16)
+-- Setting speciality 150501 for group –ú–¢8-61 (from line 16)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150501'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 8
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 200401 for group ‚ÌÙ1-81 (from line 117)
+-- Setting speciality 200401 for group –ë–ú–¢1-81 (from line 117)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200401'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 150204 for group ÌÙ5-21 (from line 9)
+-- Setting speciality 150204 for group –ú–¢5-21 (from line 9)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150204'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 5
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 150501 for group ÌÙ8-62 (from line 17)
+-- Setting speciality 150501 for group –ú–¢8-62 (from line 17)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150501'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 8
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 200401 for group ‚ÌÙ1-82 (from line 118)
+-- Setting speciality 200401 for group –ë–ú–¢1-82 (from line 118)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200401'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 220402 for group ÛÌ11-121 (from line 74)
+-- Setting speciality 220402 for group –°–ú11-121 (from line 74)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 11
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group Ô¸3-81 (from line 153)
+-- Setting speciality 200203 for group –û–≠3-81 (from line 153)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'Ô¸'
+WHERE     f.short_name = '–û–≠'
           AND d.department_num = 3
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 150204 for group ÌÙ5-22 (from line 10)
+-- Setting speciality 150204 for group –ú–¢5-22 (from line 10)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150204'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 5
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 230105 for group Èı7-41 (from line 98)
+-- Setting speciality 230105 for group –ò–£7-41 (from line 98)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÛÌ11-21 (from line 74)
+-- Setting speciality 220402 for group –°–ú11-21 (from line 74)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 11
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 150206 for group ÌÙ12-61 (from line 22)
+-- Setting speciality 150206 for group –ú–¢12-61 (from line 22)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150206'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 12
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 230105 for group Èı7-42 (from line 100)
+-- Setting speciality 230105 for group –ò–£7-42 (from line 100)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 140402 for group ¸6-81 (from line 135)
+-- Setting speciality 140402 for group –≠6-81 (from line 135)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140402'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 6
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÛÌ7-81 (from line 61)
+-- Setting speciality 220402 for group –°–ú7-81 (from line 61)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 7
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 230105 for group Èı7-43 (from line 101)
+-- Setting speciality 230105 for group –ò–£7-43 (from line 101)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 4
           AND g.group_num = 3;
 
 
--- Setting speciality 200503 for group ÌÙ4-81 (from line 8)
+-- Setting speciality 200503 for group –ú–¢4-81 (from line 8)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200503'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 4
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÛÌ7-82 (from line 62)
+-- Setting speciality 220402 for group –°–ú7-82 (from line 62)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 7
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 150301 for group ÚÎ5-101 (from line 30)
+-- Setting speciality 150301 for group –†–ö5-101 (from line 30)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150301'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 5
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 160801 for group ÚÎÙ4-61 (from line 151)
+-- Setting speciality 160801 for group –†–ö–¢4-61 (from line 151)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 4
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 190201 for group ÛÌ10-81 (from line 70)
+-- Setting speciality 190201 for group –°–ú10-81 (from line 70)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190201'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 10
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 160801 for group ÚÎÙ4-101 (from line 151)
+-- Setting speciality 160801 for group –†–ö–¢4-101 (from line 151)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 4
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 150301 for group ÚÎ5-102 (from line 31)
+-- Setting speciality 150301 for group –†–ö5-102 (from line 31)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150301'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 5
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 230401 for group ·Î3-41 (from line 156)
+-- Setting speciality 230401 for group –ê–ö3-41 (from line 156)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230401'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 3
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160802 for group ·Î1-121 (from line 154)
+-- Setting speciality 160802 for group –ê–ö1-121 (from line 154)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160802'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 190201 for group ÛÌ10-82 (from line 71)
+-- Setting speciality 190201 for group –°–ú10-82 (from line 71)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190201'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 10
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 080507 for group È‚Ì1-41 (from line 39)
+-- Setting speciality 080507 for group –ò–ë–ú1-41 (from line 39)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 080502 for group È‚Ì6-101 (from line 46)
+-- Setting speciality 080502 for group –ò–ë–ú6-101 (from line 46)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080502'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 6
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 140401 for group ¸4-101 (from line 130)
+-- Setting speciality 140401 for group –≠4-101 (from line 130)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 151003 for group ÌÙ2-61 (from line 3)
+-- Setting speciality 151003 for group –ú–¢2-61 (from line 3)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151003'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 230104 for group ÚÎ6-41 (from line 32)
+-- Setting speciality 230104 for group –†–ö6-41 (from line 32)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230104'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 6
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 140401 for group ¸4-61 (from line 130)
+-- Setting speciality 140401 for group –≠4-61 (from line 130)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 140401 for group ¸4-102 (from line 131)
+-- Setting speciality 140401 for group –≠4-102 (from line 131)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 170102 for group ÛÌ6-101 (from line 58)
+-- Setting speciality 170102 for group –°–ú6-101 (from line 58)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170102'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 6
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 151003 for group ÌÙ2-62 (from line 4)
+-- Setting speciality 151003 for group –ú–¢2-62 (from line 4)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151003'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 230104 for group ÚÎ6-42 (from line 34)
+-- Setting speciality 230104 for group –†–ö6-42 (from line 34)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230104'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 6
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 160302 for group ¸1-21 (from line 122)
+-- Setting speciality 160302 for group –≠1-21 (from line 122)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 140401 for group ¸4-62 (from line 131)
+-- Setting speciality 140401 for group –≠4-62 (from line 131)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 140401 for group ¸4-103 (from line 132)
+-- Setting speciality 140401 for group –≠4-103 (from line 132)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 170102 for group ÛÌ6-102 (from line 59)
+-- Setting speciality 170102 for group –°–ú6-102 (from line 59)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170102'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 6
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 160302 for group ¸1-22 (from line 123)
+-- Setting speciality 160302 for group –≠1-22 (from line 123)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 160402 for group Èı2-121 (from line 80)
+-- Setting speciality 160402 for group –ò–£2-121 (from line 80)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 140401 for group ¸4-63 (from line 132)
+-- Setting speciality 140401 for group –≠4-63 (from line 132)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 6
           AND g.group_num = 3;
 
 
--- Setting speciality 170102 for group ÛÌ6-103 (from line 60)
+-- Setting speciality 170102 for group –°–ú6-103 (from line 60)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170102'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 6
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 160402 for group Èı2-122 (from line 81)
+-- Setting speciality 160402 for group –ò–£2-122 (from line 81)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 230101 for group Èı9-81 (from line 105)
+-- Setting speciality 230101 for group –ò–£9-81 (from line 105)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 9
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 210201 for group ÚÙ2-61 (from line 160)
+-- Setting speciality 210201 for group –†–¢2-61 (from line 160)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210201'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 210107 for group ÌÙ11-121 (from line 20)
+-- Setting speciality 210107 for group –ú–¢11-121 (from line 20)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210107'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 11
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 160403 for group Èı1-41 (from line 77)
+-- Setting speciality 160403 for group –ò–£1-41 (from line 77)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Èı2-123 (from line 82)
+-- Setting speciality 160402 for group –ò–£2-123 (from line 82)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 210107 for group ÌÙ11-122 (from line 21)
+-- Setting speciality 210107 for group –ú–¢11-122 (from line 21)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210107'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 11
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 160403 for group Èı1-42 (from line 78)
+-- Setting speciality 160403 for group –ò–£1-42 (from line 78)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 150502 for group ÛÌ13-61 (from line 76)
+-- Setting speciality 150502 for group –°–ú13-61 (from line 76)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150502'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 13
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 160801 for group ÛÌ1-81 (from line 47)
+-- Setting speciality 160801 for group –°–ú1-81 (from line 47)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 200402 for group ‚ÌÙ2-41 (from line 120)
+-- Setting speciality 200402 for group –ë–ú–¢2-41 (from line 120)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200402'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 230105 for group Èı7-121 (from line 98)
+-- Setting speciality 230105 for group –ò–£7-121 (from line 98)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 160801 for group ÛÌ1-82 (from line 48)
+-- Setting speciality 160801 for group –°–ú1-82 (from line 48)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 150501 for group ÌÙ8-101 (from line 16)
+-- Setting speciality 150501 for group –ú–¢8-101 (from line 16)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150501'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 8
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 230100 for group Èı7-122 (from line 99)
+-- Setting speciality 230100 for group –ò–£7-122 (from line 99)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230100'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 150501 for group ÌÙ8-102 (from line 17)
+-- Setting speciality 150501 for group –ú–¢8-102 (from line 17)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150501'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 8
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 230105 for group Èı7-123 (from line 101)
+-- Setting speciality 230105 for group –ò–£7-123 (from line 101)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 200401 for group Û2-81 (from line 148)
+-- Setting speciality 200401 for group –ü–°2-81 (from line 148)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200401'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 150501 for group ÌÙ8-81 (from line 16)
+-- Setting speciality 150501 for group –ú–¢8-81 (from line 16)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150501'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 8
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 150207 for group ÌÙ13-21 (from line 23)
+-- Setting speciality 150207 for group –ú–¢13-21 (from line 23)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150207'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 13
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 080507 for group È‚Ì4-21 (from line 43)
+-- Setting speciality 080507 for group –ò–ë–ú4-21 (from line 43)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 4
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 210201 for group ÚÏ6-101 (from line 116)
+-- Setting speciality 210201 for group –†–õ6-101 (from line 116)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210201'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 6
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÚÎ9-21 (from line 35)
+-- Setting speciality 220402 for group –†–ö9-21 (from line 35)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 9
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 150501 for group ÌÙ8-82 (from line 17)
+-- Setting speciality 150501 for group –ú–¢8-82 (from line 17)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150501'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 8
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 220402 for group ÚÎ10-21 (from line 37)
+-- Setting speciality 220402 for group –†–ö10-21 (from line 37)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 10
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 150204 for group ÌÙ5-41 (from line 9)
+-- Setting speciality 150204 for group –ú–¢5-41 (from line 9)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150204'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 5
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÚÎ9-22 (from line 36)
+-- Setting speciality 220402 for group –†–ö9-22 (from line 36)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 9
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 220402 for group ÚÎ10-22 (from line 38)
+-- Setting speciality 220402 for group –†–ö10-22 (from line 38)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 10
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 150204 for group ÌÙ5-42 (from line 10)
+-- Setting speciality 150204 for group –ú–¢5-42 (from line 10)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150204'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 5
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 230105 for group Èı7-61 (from line 98)
+-- Setting speciality 230105 for group –ò–£7-61 (from line 98)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 230105 for group Èı7-62 (from line 100)
+-- Setting speciality 230105 for group –ò–£7-62 (from line 100)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 150206 for group ÌÙ12-81 (from line 22)
+-- Setting speciality 150206 for group –ú–¢12-81 (from line 22)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150206'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 12
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 230105 for group Èı7-63 (from line 101)
+-- Setting speciality 230105 for group –ò–£7-63 (from line 101)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 6
           AND g.group_num = 3;
 
 
--- Setting speciality 220402 for group ÛÌ11-41 (from line 74)
+-- Setting speciality 220402 for group –°–ú11-41 (from line 74)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 11
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 210202 for group Èı4-21 (from line 85)
+-- Setting speciality 210202 for group –ò–£4-21 (from line 85)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 210202 for group Èı4-22 (from line 86)
+-- Setting speciality 210202 for group –ò–£4-22 (from line 86)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 210202 for group Èı4-23 (from line 87)
+-- Setting speciality 210202 for group –ò–£4-23 (from line 87)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 2
           AND g.group_num = 3;
 
 
--- Setting speciality 190202 for group ÛÌ9-101 (from line 67)
+-- Setting speciality 190202 for group –°–ú9-101 (from line 67)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190202'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 9
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 210202 for group Èı4-24 (from line 88)
+-- Setting speciality 210202 for group –ò–£4-24 (from line 88)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 2
           AND g.group_num = 4;
 
 
--- Setting speciality 150301 for group ÚÎ5-121 (from line 30)
+-- Setting speciality 150301 for group –†–ö5-121 (from line 30)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150301'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 5
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 190202 for group ÛÌ9-102 (from line 68)
+-- Setting speciality 190202 for group –°–ú9-102 (from line 68)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190202'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 9
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 230401 for group ·Î3-61 (from line 156)
+-- Setting speciality 230401 for group –ê–ö3-61 (from line 156)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230401'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 3
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 190202 for group ÛÌ9-103 (from line 69)
+-- Setting speciality 190202 for group –°–ú9-103 (from line 69)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190202'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 9
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 160803 for group ÛÌ8-21 (from line 65)
+-- Setting speciality 160803 for group –°–ú8-21 (from line 65)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160803'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 8
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ2-21 (from line 110)
+-- Setting speciality 200203 for group –†–õ2-21 (from line 110)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160801 for group ÚÎÙ4-81 (from line 151)
+-- Setting speciality 160801 for group –†–ö–¢4-81 (from line 151)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 4
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 160801 for group ÚÎÙ4-121 (from line 151)
+-- Setting speciality 160801 for group –†–ö–¢4-121 (from line 151)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 4
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 150301 for group ÚÎ5-122 (from line 31)
+-- Setting speciality 150301 for group –†–ö5-122 (from line 31)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150301'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 5
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 140305 for group ¸7-21 (from line 136)
+-- Setting speciality 140305 for group –≠7-21 (from line 136)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140305'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 7
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160803 for group ÛÌ8-22 (from line 66)
+-- Setting speciality 160803 for group –°–ú8-22 (from line 66)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160803'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 8
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 200203 for group ÚÏ2-22 (from line 111)
+-- Setting speciality 200203 for group –†–õ2-22 (from line 111)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 140305 for group ¸7-22 (from line 137)
+-- Setting speciality 140305 for group –≠7-22 (from line 137)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140305'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 7
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 200203 for group ÚÏ2-23 (from line 112)
+-- Setting speciality 200203 for group –†–õ2-23 (from line 112)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 3;
 
 
--- Setting speciality 151001 for group ÚÙ3-21 (from line 159)
+-- Setting speciality 151001 for group –†–¢3-21 (from line 159)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 3
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 080507 for group È‚Ì1-61 (from line 39)
+-- Setting speciality 080507 for group –ò–ë–ú1-61 (from line 39)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 080502 for group È‚Ì6-121 (from line 46)
+-- Setting speciality 080502 for group –ò–ë–ú6-121 (from line 46)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080502'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 6
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 140401 for group ¸4-121 (from line 129)
+-- Setting speciality 140401 for group –≠4-121 (from line 129)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 170102 for group ÛÌ6-121 (from line 58)
+-- Setting speciality 170102 for group –°–ú6-121 (from line 58)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170102'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 6
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 151003 for group ÌÙ2-81 (from line 3)
+-- Setting speciality 151003 for group –ú–¢2-81 (from line 3)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151003'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 230104 for group ÚÎ6-61 (from line 32)
+-- Setting speciality 230104 for group –†–ö6-61 (from line 32)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230104'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 6
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 140401 for group ¸4-81 (from line 130)
+-- Setting speciality 140401 for group –≠4-81 (from line 130)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 140401 for group ¸4-122 (from line 131)
+-- Setting speciality 140401 for group –≠4-122 (from line 131)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 151003 for group ÌÙ2-82 (from line 4)
+-- Setting speciality 151003 for group –ú–¢2-82 (from line 4)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151003'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 230104 for group ÚÎ6-62 (from line 33)
+-- Setting speciality 230104 for group –†–ö6-62 (from line 33)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230104'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 6
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 160302 for group ¸1-41 (from line 122)
+-- Setting speciality 160302 for group –≠1-41 (from line 122)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 151003 for group ÌÙ2-101 (from line 3)
+-- Setting speciality 151003 for group –ú–¢2-101 (from line 3)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151003'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 140401 for group ¸4-82 (from line 131)
+-- Setting speciality 140401 for group –≠4-82 (from line 131)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 140401 for group ¸4-123 (from line 132)
+-- Setting speciality 140401 for group –≠4-123 (from line 132)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 170102 for group ÛÌ6-122 (from line 59)
+-- Setting speciality 170102 for group –°–ú6-122 (from line 59)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170102'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 6
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 230104 for group ÚÎ6-63 (from line 34)
+-- Setting speciality 230104 for group –†–ö6-63 (from line 34)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230104'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 6
           AND g.current_term_number = 6
           AND g.group_num = 3;
 
 
--- Setting speciality 160302 for group ¸1-42 (from line 123)
+-- Setting speciality 160302 for group –≠1-42 (from line 123)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 151003 for group ÌÙ2-102 (from line 4)
+-- Setting speciality 151003 for group –ú–¢2-102 (from line 4)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151003'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 140401 for group ¸4-83 (from line 132)
+-- Setting speciality 140401 for group –≠4-83 (from line 132)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 8
           AND g.group_num = 3;
 
 
--- Setting speciality 230102 for group Èı5-101 (from line 89)
+-- Setting speciality 230102 for group –ò–£5-101 (from line 89)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230102'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 170102 for group ÛÌ6-123 (from line 60)
+-- Setting speciality 170102 for group –°–ú6-123 (from line 60)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170102'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 6
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 210201 for group ÚÙ2-81 (from line 160)
+-- Setting speciality 210201 for group –†–¢2-81 (from line 160)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210201'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 230102 for group Èı5-102 (from line 90)
+-- Setting speciality 230102 for group –ò–£5-102 (from line 90)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230102'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 160403 for group Èı1-61 (from line 77)
+-- Setting speciality 160403 for group –ò–£1-61 (from line 77)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 150502 for group ÛÌ13-81 (from line 76)
+-- Setting speciality 150502 for group –°–ú13-81 (from line 76)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150502'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 13
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 230100 for group Èı5-103 (from line 92)
+-- Setting speciality 230100 for group –ò–£5-103 (from line 92)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230100'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 200402 for group ‚ÌÙ2-61 (from line 120)
+-- Setting speciality 200402 for group –ë–ú–¢2-61 (from line 120)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200402'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 160403 for group Èı1-62 (from line 78)
+-- Setting speciality 160403 for group –ò–£1-62 (from line 78)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 230100 for group Èı5-104 (from line 93)
+-- Setting speciality 230100 for group –ò–£5-104 (from line 93)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230100'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 10
           AND g.group_num = 4;
 
 
--- Setting speciality 150501 for group ÌÙ8-121 (from line 16)
+-- Setting speciality 150501 for group –ú–¢8-121 (from line 16)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150501'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 8
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 090105 for group Èı8-21 (from line 102)
+-- Setting speciality 090105 for group –ò–£8-21 (from line 102)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 8
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 210201 for group ÚÏ6-121 (from line 116)
+-- Setting speciality 210201 for group –†–õ6-121 (from line 116)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210201'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 6
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 150501 for group ÌÙ8-122 (from line 17)
+-- Setting speciality 150501 for group –ú–¢8-122 (from line 17)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150501'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 8
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 160801 for group ·Î2-101 (from line 155)
+-- Setting speciality 160801 for group –ê–ö2-101 (from line 155)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 090105 for group Èı8-22 (from line 103)
+-- Setting speciality 090105 for group –ò–£8-22 (from line 103)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 8
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 150207 for group ÌÙ13-41 (from line 23)
+-- Setting speciality 150207 for group –ú–¢13-41 (from line 23)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150207'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 13
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 080507 for group È‚Ì4-41 (from line 43)
+-- Setting speciality 080507 for group –ò–ë–ú4-41 (from line 43)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 4
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 150204 for group ÌÙ5-61 (from line 9)
+-- Setting speciality 150204 for group –ú–¢5-61 (from line 9)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150204'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 5
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÚÎ9-41 (from line 35)
+-- Setting speciality 220402 for group –†–ö9-41 (from line 35)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 9
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160802 for group ÛÌ2-21 (from line 49)
+-- Setting speciality 160802 for group –°–ú2-21 (from line 49)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160802'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÚÎ10-41 (from line 37)
+-- Setting speciality 220402 for group –†–ö10-41 (from line 37)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 10
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 090105 for group Èı8-23 (from line 104)
+-- Setting speciality 090105 for group –ò–£8-23 (from line 104)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 8
           AND g.current_term_number = 2
           AND g.group_num = 3;
 
 
--- Setting speciality 150204 for group ÌÙ5-62 (from line 10)
+-- Setting speciality 150204 for group –ú–¢5-62 (from line 10)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150204'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 5
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 220402 for group ÚÎ9-42 (from line 36)
+-- Setting speciality 220402 for group –†–ö9-42 (from line 36)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 9
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 220402 for group ÚÎ10-42 (from line 38)
+-- Setting speciality 220402 for group –†–ö10-42 (from line 38)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 10
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 010200 for group ÊÓ2-101 (from line 26)
+-- Setting speciality 010200 for group –§–ù2-101 (from line 26)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '010200'
-WHERE     f.short_name = 'ÊÓ'
+WHERE     f.short_name = '–§–ù'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 230105 for group Èı7-81 (from line 98)
+-- Setting speciality 230105 for group –ò–£7-81 (from line 98)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 200401 for group ‚ÌÙ1-101 (from line 117)
+-- Setting speciality 200401 for group –ë–ú–¢1-101 (from line 117)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200401'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 230401 for group ÊÓ2-102 (from line 25)
+-- Setting speciality 230401 for group –§–ù2-102 (from line 25)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230401'
-WHERE     f.short_name = 'ÊÓ'
+WHERE     f.short_name = '–§–ù'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 230105 for group Èı7-82 (from line 100)
+-- Setting speciality 230105 for group –ò–£7-82 (from line 100)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 200401 for group ‚ÌÙ1-102 (from line 118)
+-- Setting speciality 200401 for group –ë–ú–¢1-102 (from line 118)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200401'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 210201 for group ÚÏ6-21 (from line 116)
+-- Setting speciality 210201 for group –†–õ6-21 (from line 116)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210201'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 6
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 210202 for group Èı4-41 (from line 85)
+-- Setting speciality 210202 for group –ò–£4-41 (from line 85)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 230105 for group Èı7-83 (from line 101)
+-- Setting speciality 230105 for group –ò–£7-83 (from line 101)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 8
           AND g.group_num = 3;
 
 
--- Setting speciality 220402 for group ÛÌ11-61 (from line 74)
+-- Setting speciality 220402 for group –°–ú11-61 (from line 74)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 11
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 160403 for group ·Î4-21 (from line 157)
+-- Setting speciality 160403 for group –ê–ö4-21 (from line 157)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 4
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 210202 for group Èı4-42 (from line 86)
+-- Setting speciality 210202 for group –ò–£4-42 (from line 86)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 210202 for group Èı4-43 (from line 87)
+-- Setting speciality 210202 for group –ò–£4-43 (from line 87)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 4
           AND g.group_num = 3;
 
 
--- Setting speciality 190202 for group ÛÌ9-121 (from line 67)
+-- Setting speciality 190202 for group –°–ú9-121 (from line 67)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190202'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 9
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 151001 for group ÚÙ3-101 (from line 159)
+-- Setting speciality 151001 for group –†–¢3-101 (from line 159)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 3
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 190202 for group ÛÌ9-122 (from line 68)
+-- Setting speciality 190202 for group –°–ú9-122 (from line 68)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190202'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 9
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 080507 for group È‚Ì2-21 (from line 40)
+-- Setting speciality 080507 for group –ò–ë–ú2-21 (from line 40)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 230401 for group ·Î3-81 (from line 156)
+-- Setting speciality 230401 for group –ê–ö3-81 (from line 156)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230401'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 3
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 140305 for group ¸7-41 (from line 136)
+-- Setting speciality 140305 for group –≠7-41 (from line 136)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140305'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 7
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 190202 for group ÛÌ9-123 (from line 69)
+-- Setting speciality 190202 for group –°–ú9-123 (from line 69)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190202'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 9
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 160803 for group ÛÌ8-41 (from line 65)
+-- Setting speciality 160803 for group –°–ú8-41 (from line 65)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160803'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 8
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ2-41 (from line 110)
+-- Setting speciality 200203 for group –†–õ2-41 (from line 110)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 090105 for group Èı8-101 (from line 102)
+-- Setting speciality 090105 for group –ò–£8-101 (from line 102)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 8
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 140305 for group ¸7-42 (from line 137)
+-- Setting speciality 140305 for group –≠7-42 (from line 137)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140305'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 7
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 160803 for group ÛÌ8-42 (from line 66)
+-- Setting speciality 160803 for group –°–ú8-42 (from line 66)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160803'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 8
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 200203 for group ÚÏ2-42 (from line 111)
+-- Setting speciality 200203 for group –†–õ2-42 (from line 111)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 090105 for group Èı8-102 (from line 103)
+-- Setting speciality 090105 for group –ò–£8-102 (from line 103)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 8
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 140501 for group ¸2-101 (from line 124)
+-- Setting speciality 140501 for group –≠2-101 (from line 124)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140501'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ2-43 (from line 112)
+-- Setting speciality 200203 for group –†–õ2-43 (from line 112)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 3;
 
 
--- Setting speciality 090105 for group Èı8-103 (from line 104)
+-- Setting speciality 090105 for group –ò–£8-103 (from line 104)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 8
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 140501 for group ¸2-102 (from line 125)
+-- Setting speciality 140501 for group –≠2-102 (from line 125)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140501'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 151001 for group ÚÙ3-41 (from line 159)
+-- Setting speciality 151001 for group –†–¢3-41 (from line 159)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 3
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160302 for group ÚÎÙ5-21 (from line 150)
+-- Setting speciality 160302 for group –†–ö–¢5-21 (from line 150)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 5
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Èı2-21 (from line 80)
+-- Setting speciality 160402 for group –ò–£2-21 (from line 80)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 080507 for group È‚Ì1-81 (from line 39)
+-- Setting speciality 080507 for group –ò–ë–ú1-81 (from line 39)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Èı2-22 (from line 81)
+-- Setting speciality 160402 for group –ò–£2-22 (from line 81)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 230104 for group ÚÎ6-81 (from line 32)
+-- Setting speciality 230104 for group –†–ö6-81 (from line 32)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230104'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 6
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 230104 for group ÚÎ6-82 (from line 33)
+-- Setting speciality 230104 for group –†–ö6-82 (from line 33)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230104'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 6
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 160302 for group ¸1-61 (from line 122)
+-- Setting speciality 160302 for group –≠1-61 (from line 122)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 151003 for group ÌÙ2-121 (from line 3)
+-- Setting speciality 151003 for group –ú–¢2-121 (from line 3)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151003'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 140305 for group ¸7-101 (from line 136)
+-- Setting speciality 140305 for group –≠7-101 (from line 136)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140305'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 7
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 230104 for group ÚÎ6-83 (from line 34)
+-- Setting speciality 230104 for group –†–ö6-83 (from line 34)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230104'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 6
           AND g.current_term_number = 8
           AND g.group_num = 3;
 
 
--- Setting speciality 160302 for group ¸1-62 (from line 123)
+-- Setting speciality 160302 for group –≠1-62 (from line 123)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 151003 for group ÌÙ2-122 (from line 4)
+-- Setting speciality 151003 for group –ú–¢2-122 (from line 4)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151003'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 230102 for group Èı5-121 (from line 89)
+-- Setting speciality 230102 for group –ò–£5-121 (from line 89)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230102'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 140305 for group ¸7-102 (from line 137)
+-- Setting speciality 140305 for group –≠7-102 (from line 137)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140305'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 7
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 230102 for group Èı5-122 (from line 90)
+-- Setting speciality 230102 for group –ò–£5-122 (from line 90)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230102'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 160403 for group Èı1-81 (from line 77)
+-- Setting speciality 160403 for group –ò–£1-81 (from line 77)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 230102 for group Èı5-123 (from line 91)
+-- Setting speciality 230102 for group –ò–£5-123 (from line 91)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230102'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 200402 for group ‚ÌÙ2-81 (from line 120)
+-- Setting speciality 200402 for group –ë–ú–¢2-81 (from line 120)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200402'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 160403 for group Èı1-82 (from line 78)
+-- Setting speciality 160403 for group –ò–£1-82 (from line 78)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 230100 for group Èı5-124 (from line 93)
+-- Setting speciality 230100 for group –ò–£5-124 (from line 93)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230100'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 12
           AND g.group_num = 4;
 
 
--- Setting speciality 220402 for group ÚÎ10-101 (from line 37)
+-- Setting speciality 220402 for group –†–ö10-101 (from line 37)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 10
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 090105 for group Èı8-41 (from line 102)
+-- Setting speciality 090105 for group –ò–£8-41 (from line 102)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 8
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÚÎ10-102 (from line 38)
+-- Setting speciality 220402 for group –†–ö10-102 (from line 38)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 10
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 090105 for group Èı8-42 (from line 103)
+-- Setting speciality 090105 for group –ò–£8-42 (from line 103)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 8
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 150207 for group ÌÙ13-61 (from line 23)
+-- Setting speciality 150207 for group –ú–¢13-61 (from line 23)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150207'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 13
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 160302 for group ÚÎÙ5-101 (from line 150)
+-- Setting speciality 160302 for group –†–ö–¢5-101 (from line 150)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 5
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 080507 for group È‚Ì4-61 (from line 43)
+-- Setting speciality 080507 for group –ò–ë–ú4-61 (from line 43)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 4
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 160801 for group ·Î2-122 (from line 155)
+-- Setting speciality 160801 for group –ê–ö2-122 (from line 155)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 150204 for group ÌÙ5-81 (from line 9)
+-- Setting speciality 150204 for group –ú–¢5-81 (from line 9)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150204'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 5
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 150404 for group ÌÙ10-21 (from line 18)
+-- Setting speciality 150404 for group –ú–¢10-21 (from line 18)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150404'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 10
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÚÎ9-61 (from line 35)
+-- Setting speciality 220402 for group –†–ö9-61 (from line 35)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 9
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 160802 for group ÛÌ2-41 (from line 49)
+-- Setting speciality 160802 for group –°–ú2-41 (from line 49)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160802'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÚÎ10-61 (from line 37)
+-- Setting speciality 220402 for group –†–ö10-61 (from line 37)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 10
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 230401 for group ÊÓ2-121 (from line 24)
+-- Setting speciality 230401 for group –§–ù2-121 (from line 24)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230401'
-WHERE     f.short_name = 'ÊÓ'
+WHERE     f.short_name = '–§–ù'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 150204 for group ÌÙ5-82 (from line 10)
+-- Setting speciality 150204 for group –ú–¢5-82 (from line 10)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150204'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 5
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 150404 for group ÌÙ10-22 (from line 19)
+-- Setting speciality 150404 for group –ú–¢10-22 (from line 19)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150404'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 10
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 220402 for group ÚÎ9-62 (from line 36)
+-- Setting speciality 220402 for group –†–ö9-62 (from line 36)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 9
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 220402 for group ÚÎ10-62 (from line 38)
+-- Setting speciality 220402 for group –†–ö10-62 (from line 38)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 10
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 230401 for group ÊÓ2-122 (from line 25)
+-- Setting speciality 230401 for group –§–ù2-122 (from line 25)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230401'
-WHERE     f.short_name = 'ÊÓ'
+WHERE     f.short_name = '–§–ù'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 200401 for group ‚ÌÙ1-121 (from line 117)
+-- Setting speciality 200401 for group –ë–ú–¢1-121 (from line 117)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200401'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 150801 for group ¸5-101 (from line 133)
+-- Setting speciality 150801 for group –≠5-101 (from line 133)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150801'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 5
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 200401 for group ‚ÌÙ1-122 (from line 118)
+-- Setting speciality 200401 for group –ë–ú–¢1-122 (from line 118)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200401'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 210201 for group ÚÏ6-41 (from line 116)
+-- Setting speciality 210201 for group –†–õ6-41 (from line 116)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210201'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 6
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 210202 for group Èı4-61 (from line 85)
+-- Setting speciality 210202 for group –ò–£4-61 (from line 85)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 150801 for group ¸5-102 (from line 134)
+-- Setting speciality 150801 for group –≠5-102 (from line 134)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150801'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 5
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 220402 for group ÛÌ7-101 (from line 61)
+-- Setting speciality 220402 for group –°–ú7-101 (from line 61)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 7
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÛÌ11-81 (from line 74)
+-- Setting speciality 220402 for group –°–ú11-81 (from line 74)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 11
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 160403 for group ·Î4-41 (from line 157)
+-- Setting speciality 160403 for group –ê–ö4-41 (from line 157)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 4
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 210202 for group Èı4-62 (from line 86)
+-- Setting speciality 210202 for group –ò–£4-62 (from line 86)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 220402 for group ÛÌ7-102 (from line 62)
+-- Setting speciality 220402 for group –°–ú7-102 (from line 62)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 7
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 210202 for group Èı4-63 (from line 87)
+-- Setting speciality 210202 for group –ò–£4-63 (from line 87)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 6
           AND g.group_num = 3;
 
 
--- Setting speciality 220402 for group ÛÌ7-103 (from line 63)
+-- Setting speciality 220402 for group –°–ú7-103 (from line 63)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 7
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 220402 for group ÛÌ7-104 (from line 64)
+-- Setting speciality 220402 for group –°–ú7-104 (from line 64)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 7
           AND g.current_term_number = 10
           AND g.group_num = 4;
 
 
--- Setting speciality 151001 for group ÚÙ3-121 (from line 159)
+-- Setting speciality 151001 for group –†–¢3-121 (from line 159)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 3
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 080507 for group È‚Ì2-41 (from line 40)
+-- Setting speciality 080507 for group –ò–ë–ú2-41 (from line 40)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 090105 for group Èı8-121 (from line 102)
+-- Setting speciality 090105 for group –ò–£8-121 (from line 102)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 8
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 140305 for group ¸7-61 (from line 136)
+-- Setting speciality 140305 for group –≠7-61 (from line 136)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140305'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 7
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 160803 for group ÛÌ8-61 (from line 65)
+-- Setting speciality 160803 for group –°–ú8-61 (from line 65)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160803'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 8
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ2-61 (from line 110)
+-- Setting speciality 200203 for group –†–õ2-61 (from line 110)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 090105 for group Èı8-122 (from line 103)
+-- Setting speciality 090105 for group –ò–£8-122 (from line 103)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 8
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 140305 for group ¸7-62 (from line 137)
+-- Setting speciality 140305 for group –≠7-62 (from line 137)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140305'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 7
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 220203 for group ÛÌ5-21 (from line 55)
+-- Setting speciality 220203 for group –°–ú5-21 (from line 55)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220203'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 5
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160803 for group ÛÌ8-62 (from line 66)
+-- Setting speciality 160803 for group –°–ú8-62 (from line 66)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160803'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 8
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 200203 for group ÚÏ2-62 (from line 111)
+-- Setting speciality 200203 for group –†–õ2-62 (from line 111)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 220203 for group ÛÌ5-22 (from line 56)
+-- Setting speciality 220203 for group –°–ú5-22 (from line 56)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220203'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 5
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 140501 for group ¸2-121 (from line 124)
+-- Setting speciality 140501 for group –≠2-121 (from line 124)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140501'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ2-63 (from line 112)
+-- Setting speciality 200203 for group –†–õ2-63 (from line 112)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 3;
 
 
--- Setting speciality 140501 for group ¸2-122 (from line 125)
+-- Setting speciality 140501 for group –≠2-122 (from line 125)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140501'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 151001 for group ÚÙ3-61 (from line 159)
+-- Setting speciality 151001 for group –†–¢3-61 (from line 159)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 3
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 160302 for group ÚÎÙ5-41 (from line 150)
+-- Setting speciality 160302 for group –†–ö–¢5-41 (from line 150)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 5
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Èı2-41 (from line 80)
+-- Setting speciality 160402 for group –ò–£2-41 (from line 80)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Èı2-42 (from line 81)
+-- Setting speciality 160402 for group –ò–£2-42 (from line 81)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 160302 for group ¸1-81 (from line 122)
+-- Setting speciality 160302 for group –≠1-81 (from line 122)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 140305 for group ¸7-121 (from line 136)
+-- Setting speciality 140305 for group –≠7-121 (from line 136)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140305'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 7
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 160302 for group ¸1-82 (from line 123)
+-- Setting speciality 160302 for group –≠1-82 (from line 123)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 140305 for group ¸7-122 (from line 137)
+-- Setting speciality 140305 for group –≠7-122 (from line 137)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140305'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 7
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 140305 for group ¸7-123 (from line 138)
+-- Setting speciality 140305 for group –≠7-123 (from line 138)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140305'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 7
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 080502 for group È‚Ì5-21 (from line 44)
+-- Setting speciality 080502 for group –ò–ë–ú5-21 (from line 44)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080502'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 5
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 080507 for group È‚Ì1-101 (from line 39)
+-- Setting speciality 080507 for group –ò–ë–ú1-101 (from line 39)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 150802 for group ¸10-21 (from line 143)
+-- Setting speciality 150802 for group –≠10-21 (from line 143)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150802'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 10
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÚÎ10-121 (from line 37)
+-- Setting speciality 220402 for group –†–ö10-121 (from line 37)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 10
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 150802 for group ¸10-22 (from line 144)
+-- Setting speciality 150802 for group –≠10-22 (from line 144)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150802'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 10
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 090105 for group Èı8-61 (from line 102)
+-- Setting speciality 090105 for group –ò–£8-61 (from line 102)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 8
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÚÎ10-122 (from line 38)
+-- Setting speciality 220402 for group –†–ö10-122 (from line 38)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 10
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 160801 for group ÛÌ1-101 (from line 47)
+-- Setting speciality 160801 for group –°–ú1-101 (from line 47)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 160302 for group ÚÎÙ5-121 (from line 150)
+-- Setting speciality 160302 for group –†–ö–¢5-121 (from line 150)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 5
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 090105 for group Èı8-62 (from line 103)
+-- Setting speciality 090105 for group –ò–£8-62 (from line 103)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 8
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 150207 for group ÌÙ13-81 (from line 23)
+-- Setting speciality 150207 for group –ú–¢13-81 (from line 23)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150207'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 13
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 160801 for group ÛÌ1-102 (from line 48)
+-- Setting speciality 160801 for group –°–ú1-102 (from line 48)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 230102 for group Èı5-21 (from line 89)
+-- Setting speciality 230102 for group –ò–£5-21 (from line 89)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230102'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 080507 for group È‚Ì4-81 (from line 43)
+-- Setting speciality 080507 for group –ò–ë–ú4-81 (from line 43)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 4
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 230101 for group ·Î5-101 (from line 158)
+-- Setting speciality 230101 for group –ê–ö5-101 (from line 158)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 5
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 160802 for group ÛÌ2-61 (from line 49)
+-- Setting speciality 160802 for group –°–ú2-61 (from line 49)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160802'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÚÎ10-81 (from line 37)
+-- Setting speciality 220402 for group –†–ö10-81 (from line 37)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 10
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 230102 for group Èı5-22 (from line 90)
+-- Setting speciality 230102 for group –ò–£5-22 (from line 90)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230102'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 150404 for group ÌÙ10-41 (from line 18)
+-- Setting speciality 150404 for group –ú–¢10-41 (from line 18)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150404'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 10
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÚÎ9-81 (from line 35)
+-- Setting speciality 220402 for group –†–ö9-81 (from line 35)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 9
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÚÎ10-82 (from line 38)
+-- Setting speciality 220402 for group –†–ö10-82 (from line 38)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 10
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 230102 for group Èı5-23 (from line 91)
+-- Setting speciality 230102 for group –ò–£5-23 (from line 91)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230102'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 2
           AND g.group_num = 3;
 
 
--- Setting speciality 150404 for group ÌÙ10-42 (from line 19)
+-- Setting speciality 150404 for group –ú–¢10-42 (from line 19)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150404'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 10
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 220402 for group ÚÎ9-82 (from line 36)
+-- Setting speciality 220402 for group –†–ö9-82 (from line 36)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 9
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 230100 for group Èı5-24 (from line 93)
+-- Setting speciality 230100 for group –ò–£5-24 (from line 93)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230100'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 2
           AND g.group_num = 4;
 
 
--- Setting speciality 210201 for group ÚÏ6-61 (from line 116)
+-- Setting speciality 210201 for group –†–õ6-61 (from line 116)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210201'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 6
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 210202 for group Èı4-81 (from line 85)
+-- Setting speciality 210202 for group –ò–£4-81 (from line 85)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 150801 for group ¸5-121 (from line 133)
+-- Setting speciality 150801 for group –≠5-121 (from line 133)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150801'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 5
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 160403 for group ·Î4-61 (from line 157)
+-- Setting speciality 160403 for group –ê–ö4-61 (from line 157)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 4
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 151001 for group ÌÙ3-101 (from line 5)
+-- Setting speciality 151001 for group –ú–¢3-101 (from line 5)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 3
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 160303 for group ¸8-21 (from line 139)
+-- Setting speciality 160303 for group –≠8-21 (from line 139)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160303'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 8
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 210202 for group Èı4-82 (from line 86)
+-- Setting speciality 210202 for group –ò–£4-82 (from line 86)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 190202 for group ÛÌ9-21 (from line 67)
+-- Setting speciality 190202 for group –°–ú9-21 (from line 67)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190202'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 9
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 150801 for group ¸5-122 (from line 134)
+-- Setting speciality 150801 for group –≠5-122 (from line 134)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150801'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 5
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 220402 for group ÛÌ7-121 (from line 61)
+-- Setting speciality 220402 for group –°–ú7-121 (from line 61)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 7
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ3-21 (from line 114)
+-- Setting speciality 200203 for group –†–õ3-21 (from line 114)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 3
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 150201 for group ÌÙ6-21 (from line 11)
+-- Setting speciality 150201 for group –ú–¢6-21 (from line 11)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150201'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 6
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 151001 for group ÌÙ3-102 (from line 6)
+-- Setting speciality 151001 for group –ú–¢3-102 (from line 6)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 3
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 160303 for group ¸8-22 (from line 140)
+-- Setting speciality 160303 for group –≠8-22 (from line 140)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160303'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 8
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 190202 for group ÛÌ9-22 (from line 68)
+-- Setting speciality 190202 for group –°–ú9-22 (from line 68)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190202'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 9
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 210304 for group ÚÏ1-101 (from line 106)
+-- Setting speciality 210304 for group –†–õ1-101 (from line 106)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÛÌ7-122 (from line 62)
+-- Setting speciality 220402 for group –°–ú7-122 (from line 62)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 7
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 150201 for group ÌÙ6-22 (from line 12)
+-- Setting speciality 150201 for group –ú–¢6-22 (from line 12)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150201'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 6
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 160802 for group ·Î1-21 (from line 154)
+-- Setting speciality 160802 for group –ê–ö1-21 (from line 154)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160802'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 210202 for group Èı4-83 (from line 87)
+-- Setting speciality 210202 for group –ò–£4-83 (from line 87)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 8
           AND g.group_num = 3;
 
 
--- Setting speciality 210304 for group ÚÏ1-102 (from line 107)
+-- Setting speciality 210304 for group –†–õ1-102 (from line 107)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 230104 for group ÚÎ6-101 (from line 32)
+-- Setting speciality 230104 for group –†–ö6-101 (from line 32)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230104'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 6
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 230101 for group Èı6-102 (from line 95)
+-- Setting speciality 230101 for group –ò–£6-102 (from line 95)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 230104 for group ÚÎ6-102 (from line 33)
+-- Setting speciality 230104 for group –†–ö6-102 (from line 33)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230104'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 6
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 230101 for group Èı6-103 (from line 96)
+-- Setting speciality 230101 for group –ò–£6-103 (from line 96)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 080507 for group È‚Ì2-61 (from line 40)
+-- Setting speciality 080507 for group –ò–ë–ú2-61 (from line 40)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 230104 for group ÚÎ6-103 (from line 34)
+-- Setting speciality 230104 for group –†–ö6-103 (from line 34)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230104'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 6
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 200203 for group ÚÏ2-81 (from line 110)
+-- Setting speciality 200203 for group –†–õ2-81 (from line 110)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 140305 for group ¸7-81 (from line 136)
+-- Setting speciality 140305 for group –≠7-81 (from line 136)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140305'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 7
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 160803 for group ÛÌ8-81 (from line 65)
+-- Setting speciality 160803 for group –°–ú8-81 (from line 65)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160803'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 8
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ2-82 (from line 111)
+-- Setting speciality 200203 for group –†–õ2-82 (from line 111)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 140400 for group ÊÓ4-21 (from line 27)
+-- Setting speciality 140400 for group –§–ù4-21 (from line 27)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140400'
-WHERE     f.short_name = 'ÊÓ'
+WHERE     f.short_name = '–§–ù'
           AND d.department_num = 4
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 140305 for group ¸7-82 (from line 137)
+-- Setting speciality 140305 for group –≠7-82 (from line 137)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140305'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 7
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 220203 for group ÛÌ5-41 (from line 55)
+-- Setting speciality 220203 for group –°–ú5-41 (from line 55)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220203'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 5
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 190205 for group ÚÎ4-21 (from line 28)
+-- Setting speciality 190205 for group –†–ö4-21 (from line 28)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190205'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 4
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160803 for group ÛÌ8-82 (from line 66)
+-- Setting speciality 160803 for group –°–ú8-82 (from line 66)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160803'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 8
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 200203 for group ÚÏ2-83 (from line 112)
+-- Setting speciality 200203 for group –†–õ2-83 (from line 112)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 3;
 
 
--- Setting speciality 220203 for group ÛÌ5-42 (from line 56)
+-- Setting speciality 220203 for group –°–ú5-42 (from line 56)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220203'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 5
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 190205 for group ÚÎ4-22 (from line 29)
+-- Setting speciality 190205 for group –†–ö4-22 (from line 29)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190205'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 4
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 151001 for group ÚÙ3-81 (from line 159)
+-- Setting speciality 151001 for group –†–¢3-81 (from line 159)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 3
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 160302 for group ÚÎÙ5-61 (from line 150)
+-- Setting speciality 160302 for group –†–ö–¢5-61 (from line 150)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 5
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Èı2-61 (from line 80)
+-- Setting speciality 160402 for group –ò–£2-61 (from line 80)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Èı2-62 (from line 81)
+-- Setting speciality 160402 for group –ò–£2-62 (from line 81)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 200402 for group ‚ÌÙ2-101 (from line 119)
+-- Setting speciality 200402 for group –ë–ú–¢2-101 (from line 119)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200402'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Èı2-63 (from line 82)
+-- Setting speciality 160402 for group –ò–£2-63 (from line 82)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 3;
 
 
--- Setting speciality 200402 for group ‚ÌÙ2-102 (from line 120)
+-- Setting speciality 200402 for group –ë–ú–¢2-102 (from line 120)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200402'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 080502 for group È‚Ì5-41 (from line 44)
+-- Setting speciality 080502 for group –ò–ë–ú5-41 (from line 44)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080502'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 5
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 140501 for group ¸2-21 (from line 124)
+-- Setting speciality 140501 for group –≠2-21 (from line 124)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140501'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group Ô¸2-101 (from line 152)
+-- Setting speciality 200203 for group –û–≠2-101 (from line 152)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'Ô¸'
+WHERE     f.short_name = '–û–≠'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 160703 for group ÛÌ3-21 (from line 50)
+-- Setting speciality 160703 for group –°–ú3-21 (from line 50)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160703'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 3
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 080507 for group È‚Ì1-121 (from line 39)
+-- Setting speciality 080507 for group –ò–ë–ú1-121 (from line 39)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 150802 for group ¸10-41 (from line 143)
+-- Setting speciality 150802 for group –≠10-41 (from line 143)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150802'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 10
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 140501 for group ¸2-22 (from line 125)
+-- Setting speciality 140501 for group –≠2-22 (from line 125)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140501'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 160703 for group ÛÌ3-22 (from line 51)
+-- Setting speciality 160703 for group –°–ú3-22 (from line 51)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160703'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 3
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 160801 for group ÛÌ1-121 (from line 47)
+-- Setting speciality 160801 for group –°–ú1-121 (from line 47)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 150802 for group ¸10-42 (from line 144)
+-- Setting speciality 150802 for group –≠10-42 (from line 144)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150802'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 10
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 090105 for group Èı8-81 (from line 102)
+-- Setting speciality 090105 for group –ò–£8-81 (from line 102)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 8
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 160801 for group ÛÌ1-122 (from line 48)
+-- Setting speciality 160801 for group –°–ú1-122 (from line 48)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 090105 for group Èı8-82 (from line 103)
+-- Setting speciality 090105 for group –ò–£8-82 (from line 103)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 8
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 220402 for group ÚÎ9-101 (from line 35)
+-- Setting speciality 220402 for group –†–ö9-101 (from line 35)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 9
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 230102 for group Èı5-41 (from line 89)
+-- Setting speciality 230102 for group –ò–£5-41 (from line 89)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230102'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 090105 for group Èı8-83 (from line 104)
+-- Setting speciality 090105 for group –ò–£8-83 (from line 104)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 8
           AND g.current_term_number = 8
           AND g.group_num = 3;
 
 
--- Setting speciality 220402 for group ÚÎ9-102 (from line 36)
+-- Setting speciality 220402 for group –†–ö9-102 (from line 36)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 9
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 230101 for group ·Î5-21 (from line 158)
+-- Setting speciality 230101 for group –ê–ö5-21 (from line 158)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 5
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160802 for group ÛÌ2-81 (from line 49)
+-- Setting speciality 160802 for group –°–ú2-81 (from line 49)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160802'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 230102 for group Èı5-42 (from line 90)
+-- Setting speciality 230102 for group –ò–£5-42 (from line 90)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230102'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 150404 for group ÌÙ10-61 (from line 18)
+-- Setting speciality 150404 for group –ú–¢10-61 (from line 18)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150404'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 10
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 140503 for group ¸3-101 (from line 126)
+-- Setting speciality 140503 for group –≠3-101 (from line 126)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140503'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 3
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 230102 for group Èı5-43 (from line 91)
+-- Setting speciality 230102 for group –ò–£5-43 (from line 91)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230102'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 4
           AND g.group_num = 3;
 
 
--- Setting speciality 160402 for group Û1-101 (from line 145)
+-- Setting speciality 160402 for group –ü–°1-101 (from line 145)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 150404 for group ÌÙ10-62 (from line 19)
+-- Setting speciality 150404 for group –ú–¢10-62 (from line 19)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150404'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 10
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 140503 for group ¸3-102 (from line 127)
+-- Setting speciality 140503 for group –≠3-102 (from line 127)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140503'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 3
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 230100 for group Èı5-44 (from line 93)
+-- Setting speciality 230100 for group –ò–£5-44 (from line 93)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230100'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 4
           AND g.group_num = 4;
 
 
--- Setting speciality 160402 for group Û1-102 (from line 146)
+-- Setting speciality 160402 for group –ü–°1-102 (from line 146)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 140503 for group ¸3-103 (from line 128)
+-- Setting speciality 140503 for group –≠3-103 (from line 128)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140503'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 3
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 210201 for group ÚÏ6-81 (from line 116)
+-- Setting speciality 210201 for group –†–õ6-81 (from line 116)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210201'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 6
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 080507 for group È‚Ì3-21 (from line 42)
+-- Setting speciality 080507 for group –ò–ë–ú3-21 (from line 42)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 3
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Û1-103 (from line 147)
+-- Setting speciality 160402 for group –ü–°1-103 (from line 147)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 230101 for group ·Î5-125 (from line 158)
+-- Setting speciality 230101 for group –ê–ö5-125 (from line 158)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 5
           AND g.current_term_number = 12
           AND g.group_num = 5;
 
 
--- Setting speciality 160403 for group ·Î4-81 (from line 157)
+-- Setting speciality 160403 for group –ê–ö4-81 (from line 157)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 4
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 150201 for group ÌÙ6-41 (from line 11)
+-- Setting speciality 150201 for group –ú–¢6-41 (from line 11)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150201'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 6
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 151001 for group ÌÙ3-121 (from line 5)
+-- Setting speciality 151001 for group –ú–¢3-121 (from line 5)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 3
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 160303 for group ¸8-41 (from line 139)
+-- Setting speciality 160303 for group –≠8-41 (from line 139)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160303'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 8
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 190202 for group ÛÌ9-41 (from line 67)
+-- Setting speciality 190202 for group –°–ú9-41 (from line 67)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190202'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 9
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ3-41 (from line 114)
+-- Setting speciality 200203 for group –†–õ3-41 (from line 114)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 3
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160303 for group ¸8-101 (from line 139)
+-- Setting speciality 160303 for group –≠8-101 (from line 139)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160303'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 8
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 150201 for group ÌÙ6-42 (from line 12)
+-- Setting speciality 150201 for group –ú–¢6-42 (from line 12)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150201'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 6
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 151001 for group ÌÙ3-122 (from line 6)
+-- Setting speciality 151001 for group –ú–¢3-122 (from line 6)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 3
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 160303 for group ¸8-42 (from line 140)
+-- Setting speciality 160303 for group –≠8-42 (from line 140)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160303'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 8
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 190202 for group ÛÌ9-42 (from line 68)
+-- Setting speciality 190202 for group –°–ú9-42 (from line 68)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190202'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 9
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 210304 for group ÚÏ1-121 (from line 106)
+-- Setting speciality 210304 for group –†–õ1-121 (from line 106)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 160802 for group ·Î1-41 (from line 154)
+-- Setting speciality 160802 for group –ê–ö1-41 (from line 154)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160802'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160303 for group ¸8-102 (from line 140)
+-- Setting speciality 160303 for group –≠8-102 (from line 140)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160303'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 8
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 230104 for group ÚÎ6-121 (from line 32)
+-- Setting speciality 230104 for group –†–ö6-121 (from line 32)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230104'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 6
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 230101 for group Èı6-121 (from line 94)
+-- Setting speciality 230101 for group –ò–£6-121 (from line 94)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 210304 for group ÚÏ1-122 (from line 107)
+-- Setting speciality 210304 for group –†–õ1-122 (from line 107)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 230104 for group ÚÎ6-122 (from line 33)
+-- Setting speciality 230104 for group –†–ö6-122 (from line 33)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230104'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 6
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 230101 for group Èı6-122 (from line 95)
+-- Setting speciality 230101 for group –ò–£6-122 (from line 95)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 230104 for group ÚÎ6-123 (from line 34)
+-- Setting speciality 230104 for group –†–ö6-123 (from line 34)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230104'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 6
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 150202 for group ÚÎÙ6-21 (from line 149)
+-- Setting speciality 150202 for group –†–ö–¢6-21 (from line 149)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 6
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 230101 for group Èı6-123 (from line 96)
+-- Setting speciality 230101 for group –ò–£6-123 (from line 96)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 230201 for group Èı3-21 (from line 83)
+-- Setting speciality 230201 for group –ò–£3-21 (from line 83)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230201'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 3
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 080507 for group È‚Ì2-81 (from line 40)
+-- Setting speciality 080507 for group –ò–ë–ú2-81 (from line 40)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 140400 for group ÊÓ4-41 (from line 27)
+-- Setting speciality 140400 for group –§–ù4-41 (from line 27)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140400'
-WHERE     f.short_name = 'ÊÓ'
+WHERE     f.short_name = '–§–ù'
           AND d.department_num = 4
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 230100 for group Èı6-124 (from line 97)
+-- Setting speciality 230100 for group –ò–£6-124 (from line 97)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230100'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 12
           AND g.group_num = 4;
 
 
--- Setting speciality 230201 for group Èı3-22 (from line 84)
+-- Setting speciality 230201 for group –ò–£3-22 (from line 84)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230201'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 3
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 220203 for group ÛÌ5-61 (from line 55)
+-- Setting speciality 220203 for group –°–ú5-61 (from line 55)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220203'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 5
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 190205 for group ÚÎ4-41 (from line 28)
+-- Setting speciality 190205 for group –†–ö4-41 (from line 28)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190205'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 4
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 220203 for group ÛÌ5-62 (from line 56)
+-- Setting speciality 220203 for group –°–ú5-62 (from line 56)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220203'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 5
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 190205 for group ÚÎ4-42 (from line 29)
+-- Setting speciality 190205 for group –†–ö4-42 (from line 29)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190205'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 4
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 160402 for group Èı2-81 (from line 80)
+-- Setting speciality 160402 for group –ò–£2-81 (from line 80)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 210304 for group ÚÏ1-21 (from line 106)
+-- Setting speciality 210304 for group –†–õ1-21 (from line 106)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160302 for group ÚÎÙ5-81 (from line 150)
+-- Setting speciality 160302 for group –†–ö–¢5-81 (from line 150)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 5
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 210304 for group ÚÏ1-22 (from line 107)
+-- Setting speciality 210304 for group –†–õ1-22 (from line 107)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 160402 for group Èı2-82 (from line 81)
+-- Setting speciality 160402 for group –ò–£2-82 (from line 81)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 210304 for group ÚÏ1-23 (from line 108)
+-- Setting speciality 210304 for group –†–õ1-23 (from line 108)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 3;
 
 
--- Setting speciality 200402 for group ‚ÌÙ2-121 (from line 119)
+-- Setting speciality 200402 for group –ë–ú–¢2-121 (from line 119)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200402'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Èı2-83 (from line 82)
+-- Setting speciality 160402 for group –ò–£2-83 (from line 82)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 3;
 
 
--- Setting speciality 210304 for group ÚÏ1-24 (from line 109)
+-- Setting speciality 210304 for group –†–õ1-24 (from line 109)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 4;
 
 
--- Setting speciality 200402 for group ‚ÌÙ2-122 (from line 120)
+-- Setting speciality 200402 for group –ë–ú–¢2-122 (from line 120)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200402'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 080502 for group È‚Ì5-61 (from line 44)
+-- Setting speciality 080502 for group –ò–ë–ú5-61 (from line 44)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080502'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 5
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group Ô¸2-121 (from line 152)
+-- Setting speciality 200203 for group –û–≠2-121 (from line 152)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'Ô¸'
+WHERE     f.short_name = '–û–≠'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 160703 for group ÛÌ3-41 (from line 50)
+-- Setting speciality 160703 for group –°–ú3-41 (from line 50)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160703'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 3
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 080502 for group È‚Ì5-62 (from line 45)
+-- Setting speciality 080502 for group –ò–ë–ú5-62 (from line 45)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080502'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 5
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 150802 for group ¸10-101 (from line 143)
+-- Setting speciality 150802 for group –≠10-101 (from line 143)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150802'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 10
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 230401 for group ÊÓ2-21 (from line 24)
+-- Setting speciality 230401 for group –§–ù2-21 (from line 24)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230401'
-WHERE     f.short_name = 'ÊÓ'
+WHERE     f.short_name = '–§–ù'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 140501 for group ¸2-41 (from line 124)
+-- Setting speciality 140501 for group –≠2-41 (from line 124)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140501'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160703 for group ÛÌ3-42 (from line 51)
+-- Setting speciality 160703 for group –°–ú3-42 (from line 51)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160703'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 3
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 150802 for group ¸10-102 (from line 144)
+-- Setting speciality 150802 for group –≠10-102 (from line 144)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150802'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 10
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 150802 for group ¸10-61 (from line 143)
+-- Setting speciality 150802 for group –≠10-61 (from line 143)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150802'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 10
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 230401 for group ÊÓ2-22 (from line 25)
+-- Setting speciality 230401 for group –§–ù2-22 (from line 25)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230401'
-WHERE     f.short_name = 'ÊÓ'
+WHERE     f.short_name = '–§–ù'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 140501 for group ¸2-42 (from line 125)
+-- Setting speciality 140501 for group –≠2-42 (from line 125)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140501'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 230401 for group ·Î3-101 (from line 156)
+-- Setting speciality 230401 for group –ê–ö3-101 (from line 156)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230401'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 3
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 150802 for group ¸10-62 (from line 144)
+-- Setting speciality 150802 for group –≠10-62 (from line 144)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150802'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 10
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 080507 for group È‚Ì4-101 (from line 43)
+-- Setting speciality 080507 for group –ò–ë–ú4-101 (from line 43)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 4
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÚÎ9-121 (from line 35)
+-- Setting speciality 220402 for group –†–ö9-121 (from line 35)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 9
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 230102 for group Èı5-61 (from line 89)
+-- Setting speciality 230102 for group –ò–£5-61 (from line 89)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230102'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 170103 for group ÛÌ4-101 (from line 52)
+-- Setting speciality 170103 for group –°–ú4-101 (from line 52)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170103'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 4
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 230101 for group ·Î5-41 (from line 158)
+-- Setting speciality 230101 for group –ê–ö5-41 (from line 158)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 5
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÚÎ9-122 (from line 36)
+-- Setting speciality 220402 for group –†–ö9-122 (from line 36)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 9
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 140503 for group ¸3-121 (from line 126)
+-- Setting speciality 140503 for group –≠3-121 (from line 126)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140503'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 3
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 230102 for group Èı5-62 (from line 90)
+-- Setting speciality 230102 for group –ò–£5-62 (from line 90)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230102'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 170103 for group ÛÌ4-102 (from line 53)
+-- Setting speciality 170103 for group –°–ú4-102 (from line 53)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170103'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 4
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 150404 for group ÌÙ10-81 (from line 18)
+-- Setting speciality 150404 for group –ú–¢10-81 (from line 18)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150404'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 10
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 140503 for group ¸3-122 (from line 127)
+-- Setting speciality 140503 for group –≠3-122 (from line 127)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140503'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 3
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 230102 for group Èı5-63 (from line 91)
+-- Setting speciality 230102 for group –ò–£5-63 (from line 91)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230102'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 6
           AND g.group_num = 3;
 
 
--- Setting speciality 151002 for group ÌÙ1-101 (from line 1)
+-- Setting speciality 151002 for group –ú–¢1-101 (from line 1)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151002'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 170103 for group ÛÌ4-103 (from line 54)
+-- Setting speciality 170103 for group –°–ú4-103 (from line 54)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170103'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 4
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 160402 for group Û1-121 (from line 145)
+-- Setting speciality 160402 for group –ü–°1-121 (from line 145)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group Ô¸2-21 (from line 152)
+-- Setting speciality 200203 for group –û–≠2-21 (from line 152)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'Ô¸'
+WHERE     f.short_name = '–û–≠'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 150404 for group ÌÙ10-82 (from line 19)
+-- Setting speciality 150404 for group –ú–¢10-82 (from line 19)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150404'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 10
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 140503 for group ¸3-123 (from line 128)
+-- Setting speciality 140503 for group –≠3-123 (from line 128)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140503'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 3
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 230100 for group Èı5-64 (from line 93)
+-- Setting speciality 230100 for group –ò–£5-64 (from line 93)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230100'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 6
           AND g.group_num = 4;
 
 
--- Setting speciality 151002 for group ÌÙ1-102 (from line 2)
+-- Setting speciality 151002 for group –ú–¢1-102 (from line 2)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151002'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 160402 for group Û1-122 (from line 146)
+-- Setting speciality 160402 for group –ü–°1-122 (from line 146)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 080507 for group È‚Ì3-41 (from line 42)
+-- Setting speciality 080507 for group –ò–ë–ú3-41 (from line 42)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 3
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Û1-123 (from line 147)
+-- Setting speciality 160402 for group –ü–°1-123 (from line 147)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 200203 for group ÚÏ3-61 (from line 114)
+-- Setting speciality 200203 for group –†–õ3-61 (from line 114)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 3
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 160303 for group ¸8-121 (from line 139)
+-- Setting speciality 160303 for group –≠8-121 (from line 139)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160303'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 8
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 150201 for group ÌÙ6-61 (from line 11)
+-- Setting speciality 150201 for group –ú–¢6-61 (from line 11)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150201'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 6
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 160303 for group ¸8-61 (from line 139)
+-- Setting speciality 160303 for group –≠8-61 (from line 139)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160303'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 8
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 190202 for group ÛÌ9-61 (from line 67)
+-- Setting speciality 190202 for group –°–ú9-61 (from line 67)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190202'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 9
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ3-62 (from line 115)
+-- Setting speciality 200203 for group –†–õ3-62 (from line 115)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 3
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 150201 for group ÌÙ6-62 (from line 12)
+-- Setting speciality 150201 for group –ú–¢6-62 (from line 12)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150201'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 6
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 150801 for group ¸5-21 (from line 133)
+-- Setting speciality 150801 for group –≠5-21 (from line 133)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150801'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 5
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160303 for group ¸8-62 (from line 140)
+-- Setting speciality 160303 for group –≠8-62 (from line 140)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160303'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 8
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 170102 for group ÛÌ6-21 (from line 58)
+-- Setting speciality 170102 for group –°–ú6-21 (from line 58)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170102'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 6
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 150201 for group ÌÙ6-101 (from line 11)
+-- Setting speciality 150201 for group –ú–¢6-101 (from line 11)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150201'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 6
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 190202 for group ÛÌ9-62 (from line 68)
+-- Setting speciality 190202 for group –°–ú9-62 (from line 68)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190202'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 9
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 160802 for group ·Î1-61 (from line 154)
+-- Setting speciality 160802 for group –ê–ö1-61 (from line 154)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160802'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 151001 for group ÌÙ3-21 (from line 5)
+-- Setting speciality 151001 for group –ú–¢3-21 (from line 5)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 3
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160303 for group ¸8-122 (from line 140)
+-- Setting speciality 160303 for group –≠8-122 (from line 140)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160303'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 8
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 150801 for group ¸5-22 (from line 134)
+-- Setting speciality 150801 for group –≠5-22 (from line 134)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150801'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 5
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 170102 for group ÛÌ6-22 (from line 59)
+-- Setting speciality 170102 for group –°–ú6-22 (from line 59)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170102'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 6
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 150201 for group ÌÙ6-102 (from line 12)
+-- Setting speciality 150201 for group –ú–¢6-102 (from line 12)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150201'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 6
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 151001 for group ÌÙ3-22 (from line 6)
+-- Setting speciality 151001 for group –ú–¢3-22 (from line 6)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 3
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 151001 for group ÌÙ3-23 (from line 7)
+-- Setting speciality 151001 for group –ú–¢3-23 (from line 7)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 3
           AND g.current_term_number = 2
           AND g.group_num = 3;
 
 
--- Setting speciality 150202 for group ÚÎÙ6-41 (from line 149)
+-- Setting speciality 150202 for group –†–ö–¢6-41 (from line 149)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 6
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 230201 for group Èı3-41 (from line 83)
+-- Setting speciality 230201 for group –ò–£3-41 (from line 83)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230201'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 3
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 140400 for group ÊÓ4-61 (from line 27)
+-- Setting speciality 140400 for group –§–ù4-61 (from line 27)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140400'
-WHERE     f.short_name = 'ÊÓ'
+WHERE     f.short_name = '–§–ù'
           AND d.department_num = 4
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 230201 for group Èı3-42 (from line 84)
+-- Setting speciality 230201 for group –ò–£3-42 (from line 84)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230201'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 3
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 190205 for group ÚÎ4-61 (from line 28)
+-- Setting speciality 190205 for group –†–ö4-61 (from line 28)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190205'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 4
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 220203 for group ÛÌ5-81 (from line 55)
+-- Setting speciality 220203 for group –°–ú5-81 (from line 55)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220203'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 5
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 190205 for group ÚÎ4-62 (from line 29)
+-- Setting speciality 190205 for group –†–ö4-62 (from line 29)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190205'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 4
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 160801 for group ÛÌ12-101 (from line 75)
+-- Setting speciality 160801 for group –°–ú12-101 (from line 75)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 12
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 220203 for group ÛÌ5-82 (from line 56)
+-- Setting speciality 220203 for group –°–ú5-82 (from line 56)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220203'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 5
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 220203 for group ÛÌ5-83 (from line 57)
+-- Setting speciality 220203 for group –°–ú5-83 (from line 57)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220203'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 5
           AND g.current_term_number = 8
           AND g.group_num = 3;
 
 
--- Setting speciality 210304 for group ÚÏ1-41 (from line 106)
+-- Setting speciality 210304 for group –†–õ1-41 (from line 106)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 210304 for group ÚÏ1-42 (from line 107)
+-- Setting speciality 210304 for group –†–õ1-42 (from line 107)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 210304 for group ÚÏ1-43 (from line 108)
+-- Setting speciality 210304 for group –†–õ1-43 (from line 108)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 3;
 
 
--- Setting speciality 230101 for group Èı6-21 (from line 94)
+-- Setting speciality 230101 for group –ò–£6-21 (from line 94)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 080502 for group È‚Ì5-81 (from line 44)
+-- Setting speciality 080502 for group –ò–ë–ú5-81 (from line 44)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080502'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 5
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 150802 for group ¸10-121 (from line 143)
+-- Setting speciality 150802 for group –≠10-121 (from line 143)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150802'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 10
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 140501 for group ¸2-61 (from line 124)
+-- Setting speciality 140501 for group –≠2-61 (from line 124)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140501'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 160703 for group ÛÌ3-61 (from line 50)
+-- Setting speciality 160703 for group –°–ú3-61 (from line 50)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160703'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 3
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 230101 for group Èı6-22 (from line 95)
+-- Setting speciality 230101 for group –ò–£6-22 (from line 95)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 080502 for group È‚Ì5-82 (from line 45)
+-- Setting speciality 080502 for group –ò–ë–ú5-82 (from line 45)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080502'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 5
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 150802 for group ¸10-122 (from line 144)
+-- Setting speciality 150802 for group –≠10-122 (from line 144)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150802'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 10
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 230401 for group ÊÓ2-41 (from line 24)
+-- Setting speciality 230401 for group –§–ù2-41 (from line 24)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230401'
-WHERE     f.short_name = 'ÊÓ'
+WHERE     f.short_name = '–§–ù'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 140501 for group ¸2-62 (from line 125)
+-- Setting speciality 140501 for group –≠2-62 (from line 125)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140501'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 160703 for group ÛÌ3-62 (from line 51)
+-- Setting speciality 160703 for group –°–ú3-62 (from line 51)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160703'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 3
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 230101 for group Èı6-23 (from line 96)
+-- Setting speciality 230101 for group –ò–£6-23 (from line 96)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 2
           AND g.group_num = 3;
 
 
--- Setting speciality 150802 for group ¸10-81 (from line 143)
+-- Setting speciality 150802 for group –≠10-81 (from line 143)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150802'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 10
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 230401 for group ÊÓ2-42 (from line 25)
+-- Setting speciality 230401 for group –§–ù2-42 (from line 25)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230401'
-WHERE     f.short_name = 'ÊÓ'
+WHERE     f.short_name = '–§–ù'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 080507 for group È‚Ì4-121 (from line 43)
+-- Setting speciality 080507 for group –ò–ë–ú4-121 (from line 43)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 4
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 150202 for group ÚÎÙ6-101 (from line 149)
+-- Setting speciality 150202 for group –†–ö–¢6-101 (from line 149)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 6
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 150802 for group ¸10-82 (from line 144)
+-- Setting speciality 150802 for group –≠10-82 (from line 144)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150802'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 10
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 230102 for group Èı5-81 (from line 89)
+-- Setting speciality 230102 for group –ò–£5-81 (from line 89)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230102'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 170103 for group ÛÌ4-121 (from line 52)
+-- Setting speciality 170103 for group –°–ú4-121 (from line 52)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170103'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 4
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 230101 for group ·Î5-61 (from line 158)
+-- Setting speciality 230101 for group –ê–ö5-61 (from line 158)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 5
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 230401 for group ·Î3-123 (from line 156)
+-- Setting speciality 230401 for group –ê–ö3-123 (from line 156)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230401'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 3
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 090107 for group ˙È1-21 (from line 121)
+-- Setting speciality 090107 for group –ó–ò1-21 (from line 121)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090107'
-WHERE     f.short_name = '˙È'
+WHERE     f.short_name = '–ó–ò'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Û1-21 (from line 145)
+-- Setting speciality 160402 for group –ü–°1-21 (from line 145)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 150202 for group ÌÙ7-21 (from line 13)
+-- Setting speciality 150202 for group –ú–¢7-21 (from line 13)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 7
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 280201 for group ¸9-21 (from line 141)
+-- Setting speciality 280201 for group –≠9-21 (from line 141)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '280201'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 9
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 230102 for group Èı5-82 (from line 90)
+-- Setting speciality 230102 for group –ò–£5-82 (from line 90)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230102'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 170103 for group ÛÌ4-122 (from line 53)
+-- Setting speciality 170103 for group –°–ú4-122 (from line 53)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170103'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 4
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 160402 for group Û1-22 (from line 146)
+-- Setting speciality 160402 for group –ü–°1-22 (from line 146)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 150202 for group ÌÙ7-22 (from line 14)
+-- Setting speciality 150202 for group –ú–¢7-22 (from line 14)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 7
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 280201 for group ¸9-22 (from line 142)
+-- Setting speciality 280201 for group –≠9-22 (from line 142)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '280201'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 9
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 230102 for group Èı5-83 (from line 91)
+-- Setting speciality 230102 for group –ò–£5-83 (from line 91)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230102'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 8
           AND g.group_num = 3;
 
 
--- Setting speciality 170103 for group ÛÌ4-123 (from line 54)
+-- Setting speciality 170103 for group –°–ú4-123 (from line 54)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170103'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 4
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 160801 for group ·Î2-21 (from line 155)
+-- Setting speciality 160801 for group –ê–ö2-21 (from line 155)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 230201 for group Èı3-101 (from line 84)
+-- Setting speciality 230201 for group –ò–£3-101 (from line 84)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230201'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 3
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 140402 for group ¸6-101 (from line 135)
+-- Setting speciality 140402 for group –≠6-101 (from line 135)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140402'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 6
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 151002 for group ÌÙ1-121 (from line 1)
+-- Setting speciality 151002 for group –ú–¢1-121 (from line 1)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151002'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Û1-141 (from line 145)
+-- Setting speciality 160402 for group –ü–°1-141 (from line 145)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 14
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group Ô¸2-41 (from line 152)
+-- Setting speciality 200203 for group –û–≠2-41 (from line 152)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'Ô¸'
+WHERE     f.short_name = '–û–≠'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Û1-23 (from line 147)
+-- Setting speciality 160402 for group –ü–°1-23 (from line 147)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 3;
 
 
--- Setting speciality 230100 for group Èı5-84 (from line 93)
+-- Setting speciality 230100 for group –ò–£5-84 (from line 93)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230100'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 5
           AND g.current_term_number = 8
           AND g.group_num = 4;
 
 
--- Setting speciality 151002 for group ÌÙ1-122 (from line 2)
+-- Setting speciality 151002 for group –ú–¢1-122 (from line 2)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151002'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 150206 for group ÌÙ12-101 (from line 22)
+-- Setting speciality 150206 for group –ú–¢12-101 (from line 22)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150206'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 12
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 080507 for group È‚Ì3-61 (from line 42)
+-- Setting speciality 080507 for group –ò–ë–ú3-61 (from line 42)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 3
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 190202 for group ÛÌ9-81 (from line 67)
+-- Setting speciality 190202 for group –°–ú9-81 (from line 67)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190202'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 9
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ3-81 (from line 114)
+-- Setting speciality 200203 for group –†–õ3-81 (from line 114)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 3
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 150201 for group ÌÙ6-81 (from line 11)
+-- Setting speciality 150201 for group –ú–¢6-81 (from line 11)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150201'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 6
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 210107 for group ÌÙ11-21 (from line 20)
+-- Setting speciality 210107 for group –ú–¢11-21 (from line 20)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210107'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 11
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160303 for group ¸8-81 (from line 139)
+-- Setting speciality 160303 for group –≠8-81 (from line 139)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160303'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 8
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 160802 for group ·Î1-81 (from line 154)
+-- Setting speciality 160802 for group –ê–ö1-81 (from line 154)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160802'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 150301 for group ÚÎ5-21 (from line 30)
+-- Setting speciality 150301 for group –†–ö5-21 (from line 30)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150301'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 5
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 190202 for group ÛÌ9-82 (from line 68)
+-- Setting speciality 190202 for group –°–ú9-82 (from line 68)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190202'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 9
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 151001 for group ÌÙ3-41 (from line 5)
+-- Setting speciality 151001 for group –ú–¢3-41 (from line 5)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 3
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ3-82 (from line 115)
+-- Setting speciality 200203 for group –†–õ3-82 (from line 115)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 3
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 150201 for group ÌÙ6-82 (from line 12)
+-- Setting speciality 150201 for group –ú–¢6-82 (from line 12)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150201'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 6
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 210107 for group ÌÙ11-22 (from line 21)
+-- Setting speciality 210107 for group –ú–¢11-22 (from line 21)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210107'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 11
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 150801 for group ¸5-41 (from line 133)
+-- Setting speciality 150801 for group –≠5-41 (from line 133)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150801'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 5
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160303 for group ¸8-82 (from line 140)
+-- Setting speciality 160303 for group –≠8-82 (from line 140)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160303'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 8
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 170102 for group ÛÌ6-41 (from line 58)
+-- Setting speciality 170102 for group –°–ú6-41 (from line 58)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170102'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 6
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 150201 for group ÌÙ6-121 (from line 11)
+-- Setting speciality 150201 for group –ú–¢6-121 (from line 11)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150201'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 6
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 150301 for group ÚÎ5-22 (from line 31)
+-- Setting speciality 150301 for group –†–ö5-22 (from line 31)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150301'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 5
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 151001 for group ÌÙ3-42 (from line 6)
+-- Setting speciality 151001 for group –ú–¢3-42 (from line 6)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 3
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 150801 for group ¸5-42 (from line 134)
+-- Setting speciality 150801 for group –≠5-42 (from line 134)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150801'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 5
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 170102 for group ÛÌ6-42 (from line 59)
+-- Setting speciality 170102 for group –°–ú6-42 (from line 59)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170102'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 6
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 150201 for group ÌÙ6-122 (from line 12)
+-- Setting speciality 150201 for group –ú–¢6-122 (from line 12)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150201'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 6
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 230101 for group Èı9-121 (from line 105)
+-- Setting speciality 230101 for group –ò–£9-121 (from line 105)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 9
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 230201 for group Èı3-61 (from line 83)
+-- Setting speciality 230201 for group –ò–£3-61 (from line 83)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230201'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 3
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 150202 for group ÚÎÙ6-61 (from line 149)
+-- Setting speciality 150202 for group –†–ö–¢6-61 (from line 149)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 6
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 230201 for group Èı3-62 (from line 84)
+-- Setting speciality 230201 for group –ò–£3-62 (from line 84)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230201'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 3
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 190205 for group ÚÎ4-81 (from line 28)
+-- Setting speciality 190205 for group –†–ö4-81 (from line 28)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190205'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 4
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 160801 for group ÛÌ12-121 (from line 75)
+-- Setting speciality 160801 for group –°–ú12-121 (from line 75)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 12
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 190205 for group ÚÎ4-82 (from line 29)
+-- Setting speciality 190205 for group –†–ö4-82 (from line 29)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190205'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 4
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 210304 for group ÚÏ1-61 (from line 106)
+-- Setting speciality 210304 for group –†–õ1-61 (from line 106)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 140503 for group ¸3-21 (from line 126)
+-- Setting speciality 140503 for group –≠3-21 (from line 126)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140503'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 3
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 170103 for group ÛÌ4-21 (from line 52)
+-- Setting speciality 170103 for group –°–ú4-21 (from line 52)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170103'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 4
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 210304 for group ÚÏ1-62 (from line 107)
+-- Setting speciality 210304 for group –†–õ1-62 (from line 107)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 140503 for group ¸3-22 (from line 128)
+-- Setting speciality 140503 for group –≠3-22 (from line 128)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140503'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 3
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 170103 for group ÛÌ4-22 (from line 53)
+-- Setting speciality 170103 for group –°–ú4-22 (from line 53)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170103'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 4
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 151002 for group ÌÙ1-21 (from line 1)
+-- Setting speciality 151002 for group –ú–¢1-21 (from line 1)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151002'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 210304 for group ÚÙ1-101 (from line 161)
+-- Setting speciality 210304 for group –†–¢1-101 (from line 161)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 151002 for group ÌÙ1-22 (from line 2)
+-- Setting speciality 151002 for group –ú–¢1-22 (from line 2)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151002'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 210304 for group ÚÙ1-21 (from line 161)
+-- Setting speciality 210304 for group –†–¢1-21 (from line 161)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 230401 for group ÊÓ2-61 (from line 24)
+-- Setting speciality 230401 for group –§–ù2-61 (from line 24)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230401'
-WHERE     f.short_name = 'ÊÓ'
+WHERE     f.short_name = '–§–ù'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 080507 for group È‚Ì2-101 (from line 40)
+-- Setting speciality 080507 for group –ò–ë–ú2-101 (from line 40)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 230101 for group Èı6-41 (from line 94)
+-- Setting speciality 230101 for group –ò–£6-41 (from line 94)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160802 for group ÛÌ2-101 (from line 49)
+-- Setting speciality 160802 for group –°–ú2-101 (from line 49)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160802'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 230401 for group ÊÓ2-62 (from line 25)
+-- Setting speciality 230401 for group –§–ù2-62 (from line 25)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230401'
-WHERE     f.short_name = 'ÊÓ'
+WHERE     f.short_name = '–§–ù'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 160801 for group ÛÌ12-21 (from line 75)
+-- Setting speciality 160801 for group –°–ú12-21 (from line 75)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 12
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 140501 for group ¸2-81 (from line 124)
+-- Setting speciality 140501 for group –≠2-81 (from line 124)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140501'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 080507 for group È‚Ì2-102 (from line 41)
+-- Setting speciality 080507 for group –ò–ë–ú2-102 (from line 41)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 160703 for group ÛÌ3-81 (from line 50)
+-- Setting speciality 160703 for group –°–ú3-81 (from line 50)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160703'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 3
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 230101 for group Èı6-42 (from line 95)
+-- Setting speciality 230101 for group –ò–£6-42 (from line 95)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 150202 for group ÚÎÙ6-121 (from line 149)
+-- Setting speciality 150202 for group –†–ö–¢6-121 (from line 149)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 6
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 140501 for group ¸2-82 (from line 125)
+-- Setting speciality 140501 for group –≠2-82 (from line 125)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140501'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 160703 for group ÛÌ3-82 (from line 51)
+-- Setting speciality 160703 for group –°–ú3-82 (from line 51)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160703'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 3
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 230101 for group Èı6-43 (from line 96)
+-- Setting speciality 230101 for group –ò–£6-43 (from line 96)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 4
           AND g.group_num = 3;
 
 
--- Setting speciality 080502 for group È‚Ì6-21 (from line 46)
+-- Setting speciality 080502 for group –ò–ë–ú6-21 (from line 46)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080502'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 6
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 230101 for group ·Î5-81 (from line 158)
+-- Setting speciality 230101 for group –ê–ö5-81 (from line 158)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 5
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 090107 for group ˙È1-41 (from line 121)
+-- Setting speciality 090107 for group –ó–ò1-41 (from line 121)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090107'
-WHERE     f.short_name = '˙È'
+WHERE     f.short_name = '–ó–ò'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Û1-41 (from line 145)
+-- Setting speciality 160402 for group –ü–°1-41 (from line 145)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 150202 for group ÌÙ7-41 (from line 13)
+-- Setting speciality 150202 for group –ú–¢7-41 (from line 13)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 7
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 280201 for group ¸9-41 (from line 141)
+-- Setting speciality 280201 for group –≠9-41 (from line 141)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '280201'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 9
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Û1-42 (from line 146)
+-- Setting speciality 160402 for group –ü–°1-42 (from line 146)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 150202 for group ÌÙ7-42 (from line 14)
+-- Setting speciality 150202 for group –ú–¢7-42 (from line 14)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 7
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 280201 for group ¸9-42 (from line 142)
+-- Setting speciality 280201 for group –≠9-42 (from line 142)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '280201'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 9
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 160801 for group ·Î2-41 (from line 155)
+-- Setting speciality 160801 for group –ê–ö2-41 (from line 155)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group Ô¸2-61 (from line 152)
+-- Setting speciality 200203 for group –û–≠2-61 (from line 152)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'Ô¸'
+WHERE     f.short_name = '–û–≠'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Û1-43 (from line 147)
+-- Setting speciality 160402 for group –ü–°1-43 (from line 147)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 3;
 
 
--- Setting speciality 230201 for group Èı3-121 (from line 83)
+-- Setting speciality 230201 for group –ò–£3-121 (from line 83)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230201'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 3
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 140402 for group ¸6-121 (from line 135)
+-- Setting speciality 140402 for group –≠6-121 (from line 135)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140402'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 6
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 200503 for group ÌÙ4-101 (from line 8)
+-- Setting speciality 200503 for group –ú–¢4-101 (from line 8)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200503'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 4
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 230201 for group Èı3-122 (from line 84)
+-- Setting speciality 230201 for group –ò–£3-122 (from line 84)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230201'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 3
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 080507 for group È‚Ì3-81 (from line 42)
+-- Setting speciality 080507 for group –ò–ë–ú3-81 (from line 42)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 3
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 150206 for group ÌÙ12-121 (from line 22)
+-- Setting speciality 150206 for group –ú–¢12-121 (from line 22)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150206'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 12
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ2-101 (from line 110)
+-- Setting speciality 200203 for group –†–õ2-101 (from line 110)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 210107 for group ÌÙ11-41 (from line 20)
+-- Setting speciality 210107 for group –ú–¢11-41 (from line 20)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210107'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 11
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ2-102 (from line 111)
+-- Setting speciality 200203 for group –†–õ2-102 (from line 111)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 170102 for group ÛÌ6-61 (from line 58)
+-- Setting speciality 170102 for group –°–ú6-61 (from line 58)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170102'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 6
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 150301 for group ÚÎ5-41 (from line 30)
+-- Setting speciality 150301 for group –†–ö5-41 (from line 30)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150301'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 5
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 151001 for group ÌÙ3-61 (from line 5)
+-- Setting speciality 151001 for group –ú–¢3-61 (from line 5)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 3
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 210107 for group ÌÙ11-42 (from line 21)
+-- Setting speciality 210107 for group –ú–¢11-42 (from line 21)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210107'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 11
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 150801 for group ¸5-61 (from line 133)
+-- Setting speciality 150801 for group –≠5-61 (from line 133)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150801'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 5
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ2-103 (from line 112)
+-- Setting speciality 200203 for group –†–õ2-103 (from line 112)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 170102 for group ÛÌ6-62 (from line 59)
+-- Setting speciality 170102 for group –°–ú6-62 (from line 59)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170102'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 6
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 150301 for group ÚÎ5-42 (from line 31)
+-- Setting speciality 150301 for group –†–ö5-42 (from line 31)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150301'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 5
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 151001 for group ÌÙ3-62 (from line 6)
+-- Setting speciality 151001 for group –ú–¢3-62 (from line 6)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 3
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 150801 for group ¸5-62 (from line 134)
+-- Setting speciality 150801 for group –≠5-62 (from line 134)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150801'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 5
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 230201 for group Èı3-81 (from line 83)
+-- Setting speciality 230201 for group –ò–£3-81 (from line 83)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230201'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 3
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 190201 for group ÛÌ10-101 (from line 70)
+-- Setting speciality 190201 for group –°–ú10-101 (from line 70)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190201'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 10
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ2-104 (from line 113)
+-- Setting speciality 200203 for group –†–õ2-104 (from line 113)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 4;
 
 
--- Setting speciality 150202 for group ÚÎÙ6-81 (from line 149)
+-- Setting speciality 150202 for group –†–ö–¢6-81 (from line 149)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 6
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 190201 for group ÛÌ10-102 (from line 71)
+-- Setting speciality 190201 for group –°–ú10-102 (from line 71)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190201'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 10
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 230201 for group Èı3-82 (from line 84)
+-- Setting speciality 230201 for group –ò–£3-82 (from line 84)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230201'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 3
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 160403 for group ·Î4-101 (from line 157)
+-- Setting speciality 160403 for group –ê–ö4-101 (from line 157)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 4
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 080502 for group È‚Ì5-101 (from line 44)
+-- Setting speciality 080502 for group –ò–ë–ú5-101 (from line 44)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080502'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 5
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 080502 for group È‚Ì5-102 (from line 45)
+-- Setting speciality 080502 for group –ò–ë–ú5-102 (from line 45)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080502'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 5
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 220203 for group ÛÌ5-101 (from line 55)
+-- Setting speciality 220203 for group –°–ú5-101 (from line 55)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220203'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 5
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 210304 for group ÚÏ1-81 (from line 106)
+-- Setting speciality 210304 for group –†–õ1-81 (from line 106)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 220203 for group ÛÌ5-102 (from line 56)
+-- Setting speciality 220203 for group –°–ú5-102 (from line 56)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220203'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 5
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 140503 for group ¸3-41 (from line 126)
+-- Setting speciality 140503 for group –≠3-41 (from line 126)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140503'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 3
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 170103 for group ÛÌ4-41 (from line 52)
+-- Setting speciality 170103 for group –°–ú4-41 (from line 52)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170103'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 4
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 210304 for group ÚÏ1-82 (from line 107)
+-- Setting speciality 210304 for group –†–õ1-82 (from line 107)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 220203 for group ÛÌ5-103 (from line 57)
+-- Setting speciality 220203 for group –°–ú5-103 (from line 57)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220203'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 5
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 140503 for group ¸3-42 (from line 128)
+-- Setting speciality 140503 for group –≠3-42 (from line 128)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140503'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 3
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 170103 for group ÛÌ4-42 (from line 53)
+-- Setting speciality 170103 for group –°–ú4-42 (from line 53)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170103'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 4
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 151002 for group ÌÙ1-41 (from line 1)
+-- Setting speciality 151002 for group –ú–¢1-41 (from line 1)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151002'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 210304 for group ÚÙ1-121 (from line 161)
+-- Setting speciality 210304 for group –†–¢1-121 (from line 161)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 151002 for group ÌÙ1-42 (from line 2)
+-- Setting speciality 151002 for group –ú–¢1-42 (from line 2)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151002'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 200203 for group Ô¸3-101 (from line 153)
+-- Setting speciality 200203 for group –û–≠3-101 (from line 153)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'Ô¸'
+WHERE     f.short_name = '–û–≠'
           AND d.department_num = 3
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 230101 for group Èı6-61 (from line 94)
+-- Setting speciality 230101 for group –ò–£6-61 (from line 94)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 210304 for group ÚÙ1-41 (from line 161)
+-- Setting speciality 210304 for group –†–¢1-41 (from line 161)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 150202 for group ÌÙ7-101 (from line 13)
+-- Setting speciality 150202 for group –ú–¢7-101 (from line 13)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 7
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 230401 for group ÊÓ2-81 (from line 24)
+-- Setting speciality 230401 for group –§–ù2-81 (from line 24)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230401'
-WHERE     f.short_name = 'ÊÓ'
+WHERE     f.short_name = '–§–ù'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 080507 for group È‚Ì2-121 (from line 40)
+-- Setting speciality 080507 for group –ò–ë–ú2-121 (from line 40)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 230101 for group Èı6-62 (from line 95)
+-- Setting speciality 230101 for group –ò–£6-62 (from line 95)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 150202 for group ÌÙ7-102 (from line 14)
+-- Setting speciality 150202 for group –ú–¢7-102 (from line 14)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 7
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 160802 for group ÛÌ2-121 (from line 49)
+-- Setting speciality 160802 for group –°–ú2-121 (from line 49)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160802'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 230401 for group ÊÓ2-82 (from line 25)
+-- Setting speciality 230401 for group –§–ù2-82 (from line 25)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230401'
-WHERE     f.short_name = 'ÊÓ'
+WHERE     f.short_name = '–§–ù'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 160801 for group ÛÌ12-41 (from line 75)
+-- Setting speciality 160801 for group –°–ú12-41 (from line 75)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 12
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 150202 for group ÌÙ7-103 (from line 15)
+-- Setting speciality 150202 for group –ú–¢7-103 (from line 15)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 7
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 200203 for group Ô¸3-21 (from line 153)
+-- Setting speciality 200203 for group –û–≠3-21 (from line 153)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'Ô¸'
+WHERE     f.short_name = '–û–≠'
           AND d.department_num = 3
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 200401 for group ‚ÌÙ1-21 (from line 117)
+-- Setting speciality 200401 for group –ë–ú–¢1-21 (from line 117)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200401'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 230101 for group Èı6-63 (from line 96)
+-- Setting speciality 230101 for group –ò–£6-63 (from line 96)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 6
           AND g.group_num = 3;
 
 
--- Setting speciality 160403 for group Èı1-101 (from line 77)
+-- Setting speciality 160403 for group –ò–£1-101 (from line 77)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 080502 for group È‚Ì6-41 (from line 46)
+-- Setting speciality 080502 for group –ò–ë–ú6-41 (from line 46)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080502'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 6
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160403 for group Èı1-102 (from line 78)
+-- Setting speciality 160403 for group –ò–£1-102 (from line 78)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 090107 for group ˙È1-61 (from line 121)
+-- Setting speciality 090107 for group –ó–ò1-61 (from line 121)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090107'
-WHERE     f.short_name = '˙È'
+WHERE     f.short_name = '–ó–ò'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Û1-61 (from line 145)
+-- Setting speciality 160402 for group –ü–°1-61 (from line 145)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 150202 for group ÌÙ7-61 (from line 13)
+-- Setting speciality 150202 for group –ú–¢7-61 (from line 13)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 7
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 200401 for group Û2-101 (from line 148)
+-- Setting speciality 200401 for group –ü–°2-101 (from line 148)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200401'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 280201 for group ¸9-61 (from line 141)
+-- Setting speciality 280201 for group –≠9-61 (from line 141)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '280201'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 9
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÛÌ7-21 (from line 61)
+-- Setting speciality 220402 for group –°–ú7-21 (from line 61)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 7
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160403 for group Èı1-103 (from line 79)
+-- Setting speciality 160403 for group –ò–£1-103 (from line 79)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 200503 for group ÌÙ4-21 (from line 8)
+-- Setting speciality 200503 for group –ú–¢4-21 (from line 8)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200503'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 4
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Û1-62 (from line 146)
+-- Setting speciality 160402 for group –ü–°1-62 (from line 146)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 150202 for group ÌÙ7-62 (from line 14)
+-- Setting speciality 150202 for group –ú–¢7-62 (from line 14)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 7
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 150502 for group ÛÌ13-101 (from line 76)
+-- Setting speciality 150502 for group –°–ú13-101 (from line 76)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150502'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 13
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 150404 for group ÌÙ10-101 (from line 18)
+-- Setting speciality 150404 for group –ú–¢10-101 (from line 18)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150404'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 10
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 140402 for group ¸6-21 (from line 135)
+-- Setting speciality 140402 for group –≠6-21 (from line 135)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140402'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 6
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 280201 for group ¸9-62 (from line 142)
+-- Setting speciality 280201 for group –≠9-62 (from line 142)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '280201'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 9
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 160801 for group ·Î2-61 (from line 155)
+-- Setting speciality 160801 for group –ê–ö2-61 (from line 155)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 2
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÛÌ7-22 (from line 62)
+-- Setting speciality 220402 for group –°–ú7-22 (from line 62)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 7
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 200203 for group Ô¸2-81 (from line 152)
+-- Setting speciality 200203 for group –û–≠2-81 (from line 152)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'Ô¸'
+WHERE     f.short_name = '–û–≠'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Û1-63 (from line 147)
+-- Setting speciality 160402 for group –ü–°1-63 (from line 147)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 3;
 
 
--- Setting speciality 150404 for group ÌÙ10-102 (from line 19)
+-- Setting speciality 150404 for group –ú–¢10-102 (from line 19)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150404'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 10
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 200503 for group ÌÙ4-121 (from line 8)
+-- Setting speciality 200503 for group –ú–¢4-121 (from line 8)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200503'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 4
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ2-121 (from line 110)
+-- Setting speciality 200203 for group –†–õ2-121 (from line 110)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 280201 for group ¸9-101 (from line 141)
+-- Setting speciality 280201 for group –≠9-101 (from line 141)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '280201'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 9
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ2-122 (from line 111)
+-- Setting speciality 200203 for group –†–õ2-122 (from line 111)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 280201 for group ¸9-102 (from line 142)
+-- Setting speciality 280201 for group –≠9-102 (from line 142)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '280201'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 9
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 190201 for group ÛÌ10-21 (from line 70)
+-- Setting speciality 190201 for group –°–ú10-21 (from line 70)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190201'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 10
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 210107 for group ÌÙ11-61 (from line 20)
+-- Setting speciality 210107 for group –ú–¢11-61 (from line 20)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210107'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 11
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 150801 for group ¸5-81 (from line 133)
+-- Setting speciality 150801 for group –≠5-81 (from line 133)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150801'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 5
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ2-123 (from line 112)
+-- Setting speciality 200203 for group –†–õ2-123 (from line 112)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 170102 for group ÛÌ6-81 (from line 58)
+-- Setting speciality 170102 for group –°–ú6-81 (from line 58)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170102'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 6
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 150301 for group ÚÎ5-61 (from line 30)
+-- Setting speciality 150301 for group –†–ö5-61 (from line 30)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150301'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 5
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 151001 for group ÌÙ3-81 (from line 5)
+-- Setting speciality 151001 for group –ú–¢3-81 (from line 5)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 3
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 190201 for group ÛÌ10-22 (from line 71)
+-- Setting speciality 190201 for group –°–ú10-22 (from line 71)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190201'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 10
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 210107 for group ÌÙ11-62 (from line 21)
+-- Setting speciality 210107 for group –ú–¢11-62 (from line 21)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210107'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 11
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 150801 for group ¸5-82 (from line 134)
+-- Setting speciality 150801 for group –≠5-82 (from line 134)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150801'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 5
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 200203 for group ÚÏ2-124 (from line 113)
+-- Setting speciality 200203 for group –†–õ2-124 (from line 113)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 4;
 
 
--- Setting speciality 170102 for group ÛÌ6-82 (from line 59)
+-- Setting speciality 170102 for group –°–ú6-82 (from line 59)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170102'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 6
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 150301 for group ÚÎ5-62 (from line 31)
+-- Setting speciality 150301 for group –†–ö5-62 (from line 31)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150301'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 5
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 151001 for group ÌÙ3-82 (from line 6)
+-- Setting speciality 151001 for group –ú–¢3-82 (from line 6)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151001'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 3
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 190201 for group ÛÌ10-121 (from line 71)
+-- Setting speciality 190201 for group –°–ú10-121 (from line 71)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190201'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 10
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 190201 for group ÛÌ10-122 (from line 72)
+-- Setting speciality 190201 for group –°–ú10-122 (from line 72)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190201'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 10
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 190201 for group ÛÌ10-123 (from line 73)
+-- Setting speciality 190201 for group –°–ú10-123 (from line 73)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190201'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 10
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 080502 for group È‚Ì5-121 (from line 44)
+-- Setting speciality 080502 for group –ò–ë–ú5-121 (from line 44)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080502'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 5
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 220203 for group ÛÌ5-121 (from line 55)
+-- Setting speciality 220203 for group –°–ú5-121 (from line 55)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220203'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 5
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 080502 for group È‚Ì5-122 (from line 45)
+-- Setting speciality 080502 for group –ò–ë–ú5-122 (from line 45)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080502'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 5
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 230101 for group Èı9-21 (from line 105)
+-- Setting speciality 230101 for group –ò–£9-21 (from line 105)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 9
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 220203 for group ÛÌ5-122 (from line 56)
+-- Setting speciality 220203 for group –°–ú5-122 (from line 56)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220203'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 5
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 160403 for group ·Î4-124 (from line 157)
+-- Setting speciality 160403 for group –ê–ö4-124 (from line 157)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 4
           AND g.current_term_number = 12
           AND g.group_num = 4;
 
 
--- Setting speciality 151002 for group ÌÙ1-61 (from line 1)
+-- Setting speciality 151002 for group –ú–¢1-61 (from line 1)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151002'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 220203 for group ÛÌ5-123 (from line 57)
+-- Setting speciality 220203 for group –°–ú5-123 (from line 57)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220203'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 5
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 140503 for group ¸3-61 (from line 126)
+-- Setting speciality 140503 for group –≠3-61 (from line 126)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140503'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 3
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 190205 for group ÚÎ4-101 (from line 28)
+-- Setting speciality 190205 for group –†–ö4-101 (from line 28)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190205'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 4
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 170103 for group ÛÌ4-61 (from line 52)
+-- Setting speciality 170103 for group –°–ú4-61 (from line 52)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170103'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 4
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 210202 for group Èı4-101 (from line 85)
+-- Setting speciality 210202 for group –ò–£4-101 (from line 85)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 151002 for group ÌÙ1-62 (from line 2)
+-- Setting speciality 151002 for group –ú–¢1-62 (from line 2)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151002'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 140503 for group ¸3-62 (from line 128)
+-- Setting speciality 140503 for group –≠3-62 (from line 128)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140503'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 3
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 190205 for group ÚÎ4-102 (from line 29)
+-- Setting speciality 190205 for group –†–ö4-102 (from line 29)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190205'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 4
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 160801 for group ÛÌ1-21 (from line 47)
+-- Setting speciality 160801 for group –°–ú1-21 (from line 47)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 170103 for group ÛÌ4-62 (from line 53)
+-- Setting speciality 170103 for group –°–ú4-62 (from line 53)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170103'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 4
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 210202 for group Èı4-102 (from line 86)
+-- Setting speciality 210202 for group –ò–£4-102 (from line 86)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 160801 for group ÛÌ1-22 (from line 48)
+-- Setting speciality 160801 for group –°–ú1-22 (from line 48)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 150207 for group ÌÙ13-101 (from line 23)
+-- Setting speciality 150207 for group –ú–¢13-101 (from line 23)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150207'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 13
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 210202 for group Èı4-103 (from line 87)
+-- Setting speciality 210202 for group –ò–£4-103 (from line 87)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 10
           AND g.group_num = 3;
 
 
--- Setting speciality 230101 for group Èı6-81 (from line 94)
+-- Setting speciality 230101 for group –ò–£6-81 (from line 94)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group Ô¸3-121 (from line 153)
+-- Setting speciality 200203 for group –û–≠3-121 (from line 153)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'Ô¸'
+WHERE     f.short_name = '–û–≠'
           AND d.department_num = 3
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 210304 for group ÚÙ1-61 (from line 161)
+-- Setting speciality 210304 for group –†–¢1-61 (from line 161)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 230101 for group Èı6-82 (from line 95)
+-- Setting speciality 230101 for group –ò–£6-82 (from line 95)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 150202 for group ÌÙ7-121 (from line 13)
+-- Setting speciality 150202 for group –ú–¢7-121 (from line 13)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 7
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 200401 for group Û2-21 (from line 148)
+-- Setting speciality 200401 for group –ü–°2-21 (from line 148)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200401'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 150501 for group ÌÙ8-21 (from line 16)
+-- Setting speciality 150501 for group –ú–¢8-21 (from line 16)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150501'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 8
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 230101 for group Èı6-83 (from line 96)
+-- Setting speciality 230101 for group –ò–£6-83 (from line 96)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 6
           AND g.current_term_number = 8
           AND g.group_num = 3;
 
 
--- Setting speciality 150202 for group ÌÙ7-122 (from line 14)
+-- Setting speciality 150202 for group –ú–¢7-122 (from line 14)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 7
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 150501 for group ÌÙ8-22 (from line 17)
+-- Setting speciality 150501 for group –ú–¢8-22 (from line 17)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150501'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 8
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 160801 for group ÛÌ12-61 (from line 75)
+-- Setting speciality 160801 for group –°–ú12-61 (from line 75)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 12
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 150202 for group ÌÙ7-123 (from line 15)
+-- Setting speciality 150202 for group –ú–¢7-123 (from line 15)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 7
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 200203 for group Ô¸3-41 (from line 153)
+-- Setting speciality 200203 for group –û–≠3-41 (from line 153)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'Ô¸'
+WHERE     f.short_name = '–û–≠'
           AND d.department_num = 3
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 200401 for group ‚ÌÙ1-41 (from line 117)
+-- Setting speciality 200401 for group –ë–ú–¢1-41 (from line 117)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200401'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160403 for group Èı1-121 (from line 77)
+-- Setting speciality 160403 for group –ò–£1-121 (from line 77)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 080502 for group È‚Ì6-61 (from line 46)
+-- Setting speciality 080502 for group –ò–ë–ú6-61 (from line 46)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080502'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 6
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 280201 for group ¸9-81 (from line 141)
+-- Setting speciality 280201 for group –≠9-81 (from line 141)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '280201'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 9
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 160403 for group Èı1-122 (from line 78)
+-- Setting speciality 160403 for group –ò–£1-122 (from line 78)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 090107 for group ˙È1-81 (from line 121)
+-- Setting speciality 090107 for group –ó–ò1-81 (from line 121)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '090107'
-WHERE     f.short_name = '˙È'
+WHERE     f.short_name = '–ó–ò'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Û1-81 (from line 145)
+-- Setting speciality 160402 for group –ü–°1-81 (from line 145)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 150202 for group ÌÙ7-81 (from line 13)
+-- Setting speciality 150202 for group –ú–¢7-81 (from line 13)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 7
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 150206 for group ÌÙ12-21 (from line 22)
+-- Setting speciality 150206 for group –ú–¢12-21 (from line 22)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150206'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 12
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 150502 for group ÛÌ13-121 (from line 76)
+-- Setting speciality 150502 for group –°–ú13-121 (from line 76)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150502'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 13
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 200401 for group Û2-121 (from line 148)
+-- Setting speciality 200401 for group –ü–°2-121 (from line 148)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200401'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 160801 for group ·Î2-81 (from line 155)
+-- Setting speciality 160801 for group –ê–ö2-81 (from line 155)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 2
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 280201 for group ¸9-82 (from line 142)
+-- Setting speciality 280201 for group –≠9-82 (from line 142)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '280201'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 9
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 220402 for group ÛÌ7-41 (from line 61)
+-- Setting speciality 220402 for group –°–ú7-41 (from line 61)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 7
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160403 for group Èı1-123 (from line 79)
+-- Setting speciality 160403 for group –ò–£1-123 (from line 79)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160403'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 200503 for group ÌÙ4-41 (from line 8)
+-- Setting speciality 200503 for group –ú–¢4-41 (from line 8)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200503'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 4
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160402 for group Û1-82 (from line 146)
+-- Setting speciality 160402 for group –ü–°1-82 (from line 146)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 150202 for group ÌÙ7-82 (from line 14)
+-- Setting speciality 150202 for group –ú–¢7-82 (from line 14)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 7
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 150404 for group ÌÙ10-121 (from line 18)
+-- Setting speciality 150404 for group –ú–¢10-121 (from line 18)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150404'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 10
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 140402 for group ¸6-41 (from line 135)
+-- Setting speciality 140402 for group –≠6-41 (from line 135)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140402'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 6
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÛÌ7-42 (from line 62)
+-- Setting speciality 220402 for group –°–ú7-42 (from line 62)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 7
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 160402 for group Û1-83 (from line 147)
+-- Setting speciality 160402 for group –ü–°1-83 (from line 147)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160402'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 3;
 
 
--- Setting speciality 150202 for group ÌÙ7-83 (from line 15)
+-- Setting speciality 150202 for group –ú–¢7-83 (from line 15)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150202'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 7
           AND g.current_term_number = 8
           AND g.group_num = 3;
 
 
--- Setting speciality 150404 for group ÌÙ10-122 (from line 19)
+-- Setting speciality 150404 for group –ú–¢10-122 (from line 19)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150404'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 10
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 210107 for group ÌÙ11-81 (from line 20)
+-- Setting speciality 210107 for group –ú–¢11-81 (from line 20)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210107'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 11
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 280201 for group ¸9-121 (from line 141)
+-- Setting speciality 280201 for group –≠9-121 (from line 141)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '280201'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 9
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 280201 for group ¸9-122 (from line 142)
+-- Setting speciality 280201 for group –≠9-122 (from line 142)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '280201'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 9
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 160801 for group ÚÎÙ4-21 (from line 151)
+-- Setting speciality 160801 for group –†–ö–¢4-21 (from line 151)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 4
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 190201 for group ÛÌ10-41 (from line 70)
+-- Setting speciality 190201 for group –°–ú10-41 (from line 70)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190201'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 10
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 210201 for group ÚÙ2-101 (from line 160)
+-- Setting speciality 210201 for group –†–¢2-101 (from line 160)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210201'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 2
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 210107 for group ÌÙ11-82 (from line 21)
+-- Setting speciality 210107 for group –ú–¢11-82 (from line 21)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210107'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 11
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 150301 for group ÚÎ5-81 (from line 30)
+-- Setting speciality 150301 for group –†–ö5-81 (from line 30)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150301'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 5
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 190201 for group ÛÌ10-42 (from line 71)
+-- Setting speciality 190201 for group –°–ú10-42 (from line 71)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190201'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 10
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 150301 for group ÚÎ5-82 (from line 31)
+-- Setting speciality 150301 for group –†–ö5-82 (from line 31)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150301'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 5
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 080507 for group È‚Ì3-101 (from line 42)
+-- Setting speciality 080507 for group –ò–ë–ú3-101 (from line 42)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 3
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 160302 for group ¸1-101 (from line 122)
+-- Setting speciality 160302 for group –≠1-101 (from line 122)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 160703 for group ÛÌ3-101 (from line 50)
+-- Setting speciality 160703 for group –°–ú3-101 (from line 50)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160703'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 3
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 160302 for group ¸1-102 (from line 123)
+-- Setting speciality 160302 for group –≠1-102 (from line 123)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 140401 for group ¸4-21 (from line 130)
+-- Setting speciality 140401 for group –≠4-21 (from line 130)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160703 for group ÛÌ3-102 (from line 51)
+-- Setting speciality 160703 for group –°–ú3-102 (from line 51)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160703'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 3
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 140401 for group ¸4-22 (from line 131)
+-- Setting speciality 140401 for group –≠4-22 (from line 131)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 151003 for group ÌÙ2-21 (from line 3)
+-- Setting speciality 151003 for group –ú–¢2-21 (from line 3)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151003'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 140401 for group ¸4-23 (from line 132)
+-- Setting speciality 140401 for group –≠4-23 (from line 132)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 2
           AND g.group_num = 3;
 
 
--- Setting speciality 151003 for group ÌÙ2-22 (from line 4)
+-- Setting speciality 151003 for group –ú–¢2-22 (from line 4)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151003'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 230101 for group Èı9-41 (from line 105)
+-- Setting speciality 230101 for group –ò–£9-41 (from line 105)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230101'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 9
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 210201 for group ÚÙ2-21 (from line 160)
+-- Setting speciality 210201 for group –†–¢2-21 (from line 160)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210201'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 2
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 190205 for group ÚÎ4-121 (from line 28)
+-- Setting speciality 190205 for group –†–ö4-121 (from line 28)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190205'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 4
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 160803 for group ÛÌ8-101 (from line 65)
+-- Setting speciality 160803 for group –°–ú8-101 (from line 65)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160803'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 8
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 210202 for group Èı4-121 (from line 85)
+-- Setting speciality 210202 for group –ò–£4-121 (from line 85)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 151002 for group ÌÙ1-81 (from line 1)
+-- Setting speciality 151002 for group –ú–¢1-81 (from line 1)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151002'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 150502 for group ÛÌ13-21 (from line 76)
+-- Setting speciality 150502 for group –°–ú13-21 (from line 76)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150502'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 13
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 140503 for group ¸3-81 (from line 126)
+-- Setting speciality 140503 for group –≠3-81 (from line 126)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140503'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 3
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 190205 for group ÚÎ4-122 (from line 29)
+-- Setting speciality 190205 for group –†–ö4-122 (from line 29)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190205'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 4
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 160803 for group ÛÌ8-102 (from line 66)
+-- Setting speciality 160803 for group –°–ú8-102 (from line 66)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160803'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 8
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 170103 for group ÛÌ4-81 (from line 52)
+-- Setting speciality 170103 for group –°–ú4-81 (from line 52)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170103'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 4
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 210202 for group Èı4-122 (from line 86)
+-- Setting speciality 210202 for group –ò–£4-122 (from line 86)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 151002 for group ÌÙ1-82 (from line 2)
+-- Setting speciality 151002 for group –ú–¢1-82 (from line 2)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151002'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 140503 for group ¸3-82 (from line 128)
+-- Setting speciality 140503 for group –≠3-82 (from line 128)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140503'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 3
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 150204 for group ÌÙ5-101 (from line 9)
+-- Setting speciality 150204 for group –ú–¢5-101 (from line 9)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150204'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 5
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 160801 for group ÛÌ1-41 (from line 47)
+-- Setting speciality 160801 for group –°–ú1-41 (from line 47)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 170103 for group ÛÌ4-82 (from line 53)
+-- Setting speciality 170103 for group –°–ú4-82 (from line 53)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '170103'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 4
           AND g.current_term_number = 8
           AND g.group_num = 2;
 
 
--- Setting speciality 210202 for group Èı4-123 (from line 87)
+-- Setting speciality 210202 for group –ò–£4-123 (from line 87)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210202'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 4
           AND g.current_term_number = 12
           AND g.group_num = 3;
 
 
--- Setting speciality 200203 for group ÚÏ3-101 (from line 114)
+-- Setting speciality 200203 for group –†–õ3-101 (from line 114)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 3
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 150204 for group ÌÙ5-102 (from line 10)
+-- Setting speciality 150204 for group –ú–¢5-102 (from line 10)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150204'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 5
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 160801 for group ÛÌ1-42 (from line 48)
+-- Setting speciality 160801 for group –°–ú1-42 (from line 48)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 1
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 150207 for group ÌÙ13-121 (from line 23)
+-- Setting speciality 150207 for group –ú–¢13-121 (from line 23)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150207'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 13
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group ÚÏ3-102 (from line 115)
+-- Setting speciality 200203 for group –†–õ3-102 (from line 115)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'ÚÏ'
+WHERE     f.short_name = '–†–õ'
           AND d.department_num = 3
           AND g.current_term_number = 10
           AND g.group_num = 2;
 
 
--- Setting speciality 210304 for group ÚÙ1-81 (from line 161)
+-- Setting speciality 210304 for group –†–¢1-81 (from line 161)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210304'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 1
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 200401 for group Û2-41 (from line 148)
+-- Setting speciality 200401 for group –ü–°2-41 (from line 148)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200401'
-WHERE     f.short_name = 'Û'
+WHERE     f.short_name = '–ü–°'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 150501 for group ÌÙ8-41 (from line 16)
+-- Setting speciality 150501 for group –ú–¢8-41 (from line 16)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150501'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 8
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 150501 for group ÌÙ8-42 (from line 17)
+-- Setting speciality 150501 for group –ú–¢8-42 (from line 17)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150501'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 8
           AND g.current_term_number = 4
           AND g.group_num = 2;
 
 
--- Setting speciality 160801 for group ÛÌ12-81 (from line 75)
+-- Setting speciality 160801 for group –°–ú12-81 (from line 75)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 12
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 200401 for group ‚ÌÙ1-61 (from line 117)
+-- Setting speciality 200401 for group –ë–ú–¢1-61 (from line 117)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200401'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÛÌ11-101 (from line 74)
+-- Setting speciality 220402 for group –°–ú11-101 (from line 74)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 11
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 200203 for group Ô¸3-61 (from line 153)
+-- Setting speciality 200203 for group –û–≠3-61 (from line 153)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200203'
-WHERE     f.short_name = 'Ô¸'
+WHERE     f.short_name = '–û–≠'
           AND d.department_num = 3
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 200401 for group ‚ÌÙ1-62 (from line 118)
+-- Setting speciality 200401 for group –ë–ú–¢1-62 (from line 118)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200401'
-WHERE     f.short_name = '‚ÌÙ'
+WHERE     f.short_name = '–ë–ú–¢'
           AND d.department_num = 1
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 230105 for group Èı7-21 (from line 98)
+-- Setting speciality 230105 for group –ò–£7-21 (from line 98)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 080502 for group È‚Ì6-81 (from line 46)
+-- Setting speciality 080502 for group –ò–ë–ú6-81 (from line 46)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080502'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 6
           AND g.current_term_number = 8
           AND g.group_num = 1;
 
 
--- Setting speciality 150206 for group ÌÙ12-41 (from line 22)
+-- Setting speciality 150206 for group –ú–¢12-41 (from line 22)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '150206'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 12
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 230105 for group Èı7-22 (from line 100)
+-- Setting speciality 230105 for group –ò–£7-22 (from line 100)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 140402 for group ¸6-61 (from line 135)
+-- Setting speciality 140402 for group –≠6-61 (from line 135)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140402'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 6
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÛÌ7-61 (from line 61)
+-- Setting speciality 220402 for group –°–ú7-61 (from line 61)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 7
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 230105 for group Èı7-23 (from line 101)
+-- Setting speciality 230105 for group –ò–£7-23 (from line 101)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230105'
-WHERE     f.short_name = 'Èı'
+WHERE     f.short_name = '–ò–£'
           AND d.department_num = 7
           AND g.current_term_number = 2
           AND g.group_num = 3;
 
 
--- Setting speciality 200503 for group ÌÙ4-61 (from line 8)
+-- Setting speciality 200503 for group –ú–¢4-61 (from line 8)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '200503'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 4
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 220402 for group ÛÌ7-62 (from line 62)
+-- Setting speciality 220402 for group –°–ú7-62 (from line 62)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '220402'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 7
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 160801 for group ÚÎÙ4-41 (from line 151)
+-- Setting speciality 160801 for group –†–ö–¢4-41 (from line 151)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160801'
-WHERE     f.short_name = 'ÚÎÙ'
+WHERE     f.short_name = '–†–ö–¢'
           AND d.department_num = 4
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 190201 for group ÛÌ10-61 (from line 70)
+-- Setting speciality 190201 for group –°–ú10-61 (from line 70)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190201'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 10
           AND g.current_term_number = 6
           AND g.group_num = 1;
 
 
--- Setting speciality 210201 for group ÚÙ2-121 (from line 160)
+-- Setting speciality 210201 for group –†–¢2-121 (from line 160)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '210201'
-WHERE     f.short_name = 'ÚÙ'
+WHERE     f.short_name = '–†–¢'
           AND d.department_num = 2
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 230401 for group ·Î3-21 (from line 156)
+-- Setting speciality 230401 for group –ê–ö3-21 (from line 156)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230401'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 3
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160802 for group ·Î1-101 (from line 154)
+-- Setting speciality 160802 for group –ê–ö1-101 (from line 154)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160802'
-WHERE     f.short_name = '·Î'
+WHERE     f.short_name = '–ê–ö'
           AND d.department_num = 1
           AND g.current_term_number = 10
           AND g.group_num = 1;
 
 
--- Setting speciality 190201 for group ÛÌ10-62 (from line 71)
+-- Setting speciality 190201 for group –°–ú10-62 (from line 71)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '190201'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 10
           AND g.current_term_number = 6
           AND g.group_num = 2;
 
 
--- Setting speciality 080507 for group È‚Ì3-121 (from line 42)
+-- Setting speciality 080507 for group –ò–ë–ú3-121 (from line 42)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 3
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 160302 for group ¸1-121 (from line 122)
+-- Setting speciality 160302 for group –≠1-121 (from line 122)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 160703 for group ÛÌ3-121 (from line 50)
+-- Setting speciality 160703 for group –°–ú3-121 (from line 50)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160703'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 3
           AND g.current_term_number = 12
           AND g.group_num = 1;
 
 
--- Setting speciality 080507 for group È‚Ì1-21 (from line 39)
+-- Setting speciality 080507 for group –ò–ë–ú1-21 (from line 39)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '080507'
-WHERE     f.short_name = 'È‚Ì'
+WHERE     f.short_name = '–ò–ë–ú'
           AND d.department_num = 1
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 151003 for group ÌÙ2-41 (from line 3)
+-- Setting speciality 151003 for group –ú–¢2-41 (from line 3)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '151003'
-WHERE     f.short_name = 'ÌÙ'
+WHERE     f.short_name = '–ú–¢'
           AND d.department_num = 2
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 230104 for group ÚÎ6-21 (from line 32)
+-- Setting speciality 230104 for group –†–ö6-21 (from line 32)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230104'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 6
           AND g.current_term_number = 2
           AND g.group_num = 1;
 
 
--- Setting speciality 160302 for group ¸1-122 (from line 123)
+-- Setting speciality 160302 for group –≠1-122 (from line 123)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160302'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 1
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 140401 for group ¸4-41 (from line 130)
+-- Setting speciality 140401 for group –≠4-41 (from line 130)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 4
           AND g.group_num = 1;
 
 
--- Setting speciality 160703 for group ÛÌ3-122 (from line 51)
+-- Setting speciality 160703 for group –°–ú3-122 (from line 51)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '160703'
-WHERE     f.short_name = 'ÛÌ'
+WHERE     f.short_name = '–°–ú'
           AND d.department_num = 3
           AND g.current_term_number = 12
           AND g.group_num = 2;
 
 
--- Setting speciality 230104 for group ÚÎ6-22 (from line 33)
+-- Setting speciality 230104 for group –†–ö6-22 (from line 33)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '230104'
-WHERE     f.short_name = 'ÚÎ'
+WHERE     f.short_name = '–†–ö'
           AND d.department_num = 6
           AND g.current_term_number = 2
           AND g.group_num = 2;
 
 
--- Setting speciality 140401 for group ¸4-42 (from line 131)
+-- Setting speciality 140401 for group –≠4-42 (from line 131)
 UPDATE    student s
           INNER JOIN `group` g USING (group_id)
           INNER JOIN department d USING (department_id)
           INNER JOIN faculty f USING (faculty_id)
 SET       s.profession_code = '140401'
-WHERE     f.short_name = '¸'
+WHERE     f.short_name = '–≠'
           AND d.department_num = 4
           AND g.current_term_number = 4
           AND g.group_num = 2;

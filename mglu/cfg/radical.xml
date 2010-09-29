@@ -19,7 +19,7 @@
 			<Param name="minWorkers" value="1" />
 			<Param name="maxWorkers" value="30" />
 			<Param name="host" value="contingent.bmstu.ru" />
-			<Param name="port" value="7004" />
+			<Param name="port" value="7000" />
 		</Service>
 
 		<!-- uncomment this to enable FastCGI
@@ -32,9 +32,9 @@
 
 	<Handlers>
 		<!-- TODO: move outside radical.xml { -->
-		<Handler id="contingent_static" type="general" >
+<!--		<Handler id="contingent_static" type="general" >
 			<Param name="rootdir" value="apps/contingent/static" />
-		</Handler>
+		</Handler>-->
 		<Handler id="contingent_scripts" type="webruby">
 			<Param name="rootdir" value="apps/contingent/scripts" />
 			<Param name="load_path" value="apps/contingent/share:apps/contingent/scripts:apps/contingent" />
@@ -44,11 +44,12 @@
 			<Param name="init" value="apps/contingent/xmlrpc/_init.rb" />
 			<Param name="load_path" value="apps/contingent/share" />
 		</Handler>
-		<Handler id="contingent_soap" type="soap">
+<!--		<Handler id="contingent_soap" type="soap">
 			<Param name="class" value="StudentsSrvPort" />
 			<Param name="load_path" value="apps/contingent/soap" />
 			<Param name="namespace" value="urn:webservices.bmstu.org" />
-		</Handler>
+		</Handler>-->
+		<!-- } -->
 	</Handlers>
 
 	<Mapping>
@@ -57,8 +58,8 @@
 			<Uri target="/" handler="contingent_static">
 				<File ext="rb" handler="contingent_scripts" />
 				<File ext="rbx" handler="contingent_scripts" />
-<!--				<Uri target="RPC2" handler="contingent_xmlrpc" />-->
-				<Uri target="SOAP" handler="contingent_soap" />
+<!--				<Uri target="RPC2" handler="contingent_xmlrpc" />
+				<Uri target="SOAP" handler="contingent_soap" />-->
 			</Uri>
 			<!-- } -->
 		</Host>

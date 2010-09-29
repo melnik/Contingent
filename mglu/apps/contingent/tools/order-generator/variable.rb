@@ -16,7 +16,8 @@ module Generator
 			@name = node.attribute('name'); @name &&= @name.to_s
 			@type = node.attribute('type'); @type &&= @type.to_s
 			@condition = node.attribute('condition'); @condition &&= @condition.to_s
-			@default = node.attribute('default'); @default &&= @default.to_s.from_html.from_html
+			@default = node.attribute('default'); @default &&= @default.to_s.from_html
+			@optional = node.attribute('optional').to_s.enabled? || @default == 'nil'
 			@html_attrs = node.attributes.collect { |k,v|
 				if k =~ /^['"]?html_(.*?)["']?$/
 					"#{$1}='#{v.to_html}'"
@@ -35,6 +36,10 @@ module Generator
 		
 		def hidden?
 			@hidden
+		end
+		
+		def optional?
+			@optional
 		end
 
 		def title

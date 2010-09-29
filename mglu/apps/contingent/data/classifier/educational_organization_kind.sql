@@ -6,14 +6,14 @@ CREATE TABLE `educational_organization_kind` (
   PRIMARY KEY  (`educational_organization_kind_id`)
 ) TYPE=MyISAM;
 
-INSERT INTO `educational_organization_kind` VALUES (1,'школа','31 19');
-INSERT INTO `educational_organization_kind` VALUES (2,'специальная (коррекционная) школа','31 62');
-INSERT INTO `educational_organization_kind` VALUES (3,'гимназия','31 17');
-INSERT INTO `educational_organization_kind` VALUES (4,'лицей','31 18');
-INSERT INTO `educational_organization_kind` VALUES (5,'профессиональное училище','31 31');
-INSERT INTO `educational_organization_kind` VALUES (6,'профессиональный лицей','');
-INSERT INTO `educational_organization_kind` VALUES (7,'техникум (училище)','31 42');
-INSERT INTO `educational_organization_kind` VALUES (8,'колледж','31 43');
-INSERT INTO `educational_organization_kind` VALUES (9,'институт','31 54');
-INSERT INTO `educational_organization_kind` VALUES (10,'академия','31 56');
-INSERT INTO `educational_organization_kind` VALUES (11,'университет','31 55');
+INSERT INTO `educational_organization_kind` VALUES (1,'я┬п╨п╬п╩п╟','31 19');
+INSERT INTO `educational_organization_kind` VALUES (2,'я│п©п╣я├п╦п╟п╩я▄п╫п╟я▐ (п╨п╬я─я─п╣п╨я├п╦п╬п╫п╫п╟я▐) я┬п╨п╬п╩п╟','31 62');
+INSERT INTO `educational_organization_kind` VALUES (3,'пЁп╦п╪п╫п╟п╥п╦я▐','31 17');
+INSERT INTO `educational_organization_kind` VALUES (4,'п╩п╦я├п╣п╧','31 18');
+INSERT INTO `educational_organization_kind` VALUES (5,'п©я─п╬я└п╣я│я│п╦п╬п╫п╟п╩я▄п╫п╬п╣ я┐я┤п╦п╩п╦я┴п╣','31 31');
+INSERT INTO `educational_organization_kind` VALUES (6,'п©я─п╬я└п╣я│я│п╦п╬п╫п╟п╩я▄п╫я▀п╧ п╩п╦я├п╣п╧','');
+INSERT INTO `educational_organization_kind` VALUES (7,'я┌п╣я┘п╫п╦п╨я┐п╪ (я┐я┤п╦п╩п╦я┴п╣)','31 42');
+INSERT INTO `educational_organization_kind` VALUES (8,'п╨п╬п╩п╩п╣п╢п╤','31 43');
+INSERT INTO `educational_organization_kind` VALUES (9,'п╦п╫я│я┌п╦я┌я┐я┌','31 54');
+INSERT INTO `educational_organization_kind` VALUES (10,'п╟п╨п╟п╢п╣п╪п╦я▐','31 56');
+INSERT INTO `educational_organization_kind` VALUES (11,'я┐п╫п╦п╡п╣я─я│п╦я┌п╣я┌','31 55');

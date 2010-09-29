@@ -135,12 +135,6 @@ class StudentsSrvPort
 			)
 			obj.add_element('disabled').text = s.category[:disabled].to_s
 			obj.add_element('foreign').text = s.category[:foreign].to_s
-			add_classifier(
-				obj,
-				'militaryState',
-				s.military_state_id.to_uuid('military'),
-				s.military_state.utf_encode
-			) if s.military_state_id and s.military_state
 			obj.add_element('photo').text = "http://contingent.bmstu.ru/photo/#{s.oid.to_s[-2..-1]}/#{s.oid}.jpg"
 
 		when :order
@@ -275,7 +269,7 @@ class StudentsSrvPort
 	end
 
 	ALLOWED_CLASSIFIERS = %w(
-		Gender OrderType StudentState Military
+		Gender OrderType StudentState
 	)
 
 	def listClassifier(req)
@@ -320,14 +314,12 @@ class StudentsSrvPort
 		'gender' => 'gender',
 		'cardNumber' => 'card_number',
 		'studentState' => 'student_state',
-		'militaryState' => 'military',
 		'timestampStart' => 'min_last_update',
 		'timestampEnd' => 'max_last_update',
 	}
 	
 	CRITERIA_MAPPING_UUID = {
 		'studentState' => 'student_state_id',
-		'militaryState' => 'military_id',
 		'gender' => 'gender_id',
 	}
 
@@ -391,8 +383,8 @@ class StudentsSrvPort
 		$KCODE = 'NONE'
 		Student.list(
 			criteria,
-			%w(student_id first_name father_name last_name faculty department group group_id dormitory gender_id gender study_type_id study_type liabilities card_number student_state_id student_state category profession profession_code specialization specialization_code degree degree_code military military_id)
-		) { |student_id, first_name, father_name, last_name, faculty, department, group, group_id, dormitory, gender_id, gender, study_type_id, study_type, liabilities, card_number, student_state_id, student_state, category, profession, profession_code, specialization, specialization_code, degree, degree_code, military, military_id|
+			%w(student_id first_name father_name last_name faculty department group group_id dormitory gender_id gender study_type_id study_type liabilities card_number student_state_id student_state category profession profession_code specialization specialization_code degree degree_code)
+		) { |student_id, first_name, father_name, last_name, faculty, department, group, group_id, dormitory, gender_id, gender, study_type_id, study_type, liabilities, card_number, student_state_id, student_state, category, profession, profession_code, specialization, specialization_code, degree, degree_code|
 
 			obj = REXML::Element.new('student')
 			obj.attributes['xsi:type'] = 'ns1:Student'
@@ -450,13 +442,6 @@ class StudentsSrvPort
 			obj.add_element('disabled').text = category[:disabled].to_s
 			obj.add_element('foreign').text = category[:foreign].to_s
 
-			add_classifier(
-				obj,
-				'militaryState',
-				military_id.to_uuid('military'),
-				military.utf_encode
-			) if military_id
-
 #			p obj
 			arr << obj
 		}
@@ -497,9 +482,9 @@ class StudentsSrvPort
 				s.qualification = attr['qualification'].utf_encode if attr['qualification']
 				s.qualificationCode = 65
 				# case attr['qualification']
-#				when /âÁËÁÌÁ×Ò/ then 62
-#				when /éÎÖÅÎÅÒ/ then 65
-#				when /íÁÇÉÓÔÒ/ then 68					
+#				when /Ð‘Ð°ÐºÐ°Ð»Ð°Ð²Ñ€/ then 62
+#				when /Ð˜Ð½Ð¶ÐµÐ½ÐµÑ€/ then 65
+#				when /ÐœÐ°Ð³Ð¸ÑÑ‚Ñ€/ then 68					
 #				end
 				s.diplomaType = attr['diploma_type']
 				if attr['protocol']
@@ -538,9 +523,6 @@ class StudentsSrvPort
 		}
 		res.gsub!(/<study_type_id>(.*?)<\/study_type_id>/) {
 			'<studyType>' + $1.to_i.to_uuid('study_type') + '</studyType>'
-		}
-		res.gsub!(/<military_id>(.*?)<\/military_id>/) {
-			'<military>' + $1.to_i.to_uuid('military') + '</military>'
 		}
 
 		# Convert the rest of identifiers to camelCase

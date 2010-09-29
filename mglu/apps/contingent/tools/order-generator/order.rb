@@ -127,8 +127,8 @@ class DetailsFor#{@classname}
 		DalAttributes = {
 			'student' => %w(
 				name card_number group_id student_state_id student_status_id
-				study_type_id gender_id dormitory birth_date citizenship_id
-				liabilities profession_code category scholarship_id military_id
+				study_type_id study_form_id gender_id dormitory birth_date citizenship_id
+				liabilities profession_code category scholarship_id
 				specialization_code degree_code special_enrollment_code
 			),
 			'group' => %w(
@@ -212,13 +212,13 @@ def _activate
 			stream.indent
 			affected.each_pair { |entity, attributes|
 				next if (attrs = attributes[:common]).empty?
-				stream << "set :#{entity}, #{make_action(attrs)}"
+				stream << "set :#{entity}, #{make_action(attrs)}.compact"
 			}
 			stream.puts ''
 			affected.each_pair { |entity, attributes|
 				next if (attrs = attributes[:private]).empty?
 				stream.puts "each_#{entity} #{if entity == 'student' then ':all, ' end}%w( #{entity}_id attributes ) do |#{entity}_id, attributes|"
-				stream.indent; stream << "set :#{entity}, #{make_action(attrs)}, [ #{entity}_id ]"; stream.unindent
+				stream.indent; stream << "set :#{entity}, #{make_action(attrs)}.compact, [ #{entity}_id ]"; stream.unindent
 				stream.puts "end"
 			}
 
@@ -336,6 +336,7 @@ end"
 		def make_check(stream, attributes)
 			attributes.each { |attr|
 				var = @templates.inject(nil) { |r,c| r || c.variable(attr) }
+				next if var and var.optional?
 				title = var && var.title
 				
 				if title.empty?

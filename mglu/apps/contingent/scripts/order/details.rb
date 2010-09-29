@@ -47,7 +47,7 @@ klass = Kernel::const_get("DetailsFor#{o.class}")
 subtmpl = template "order/details/nodetails"
 
 if s then # Student details
-	tmpl.full_name = "#{s.status.to_s.capitalize.to_html} <b>#{s.name.to_html}</b> (форма обучения: <b>#{s.study_type.to_html}</b>)"
+	tmpl.full_name = "#{s.status.to_s.capitalize.to_html} <b>#{s.name.to_html}</b> (основа обучения: <b>#{s.study_type.to_html}</b>)"
 	klass.render_student o, s.oid, para, ( subtmpl = template "order/details/#{o.class.file_name}/student#{para}" ) if klass.has_student? para
 	subtmpl.__conditions__ = klass.student_conditions(o, s) if subtmpl.respond_to? :__conditions__
 elsif g then # Group details

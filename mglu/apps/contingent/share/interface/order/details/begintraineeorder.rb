@@ -27,15 +27,34 @@ class DetailsForBeginTraineeOrder
 
 	def self.fix_order(o)
 		attributes = o.attributes.dup
+		attributes['country_id'] ||= Proc.new { first_value(Classifier::Country) }.call
+		attributes['save_scholarship'] ||= 1
+		attributes['teaching_paying_party'] ||= Proc.new { '' }.call
+		attributes['habitation_paying_party'] ||= Proc.new { '' }.call
+		attributes['nutrition_paying_party'] ||= Proc.new { '' }.call
 		attributes
 	end
 
 	def self.render_order(o, tmpl)
 		attributes = fix_order(o)
+		tmpl.country_id = attributes['country_id']
+		tmpl.city = attributes['city']
+		tmpl.university = attributes['university']
+		tmpl.save_scholarship = attributes['save_scholarship']
+		tmpl.teaching_paying_party = attributes['teaching_paying_party']
+		tmpl.habitation_paying_party = attributes['habitation_paying_party']
+		tmpl.nutrition_paying_party = attributes['nutrition_paying_party']
 	end
 
 	def self.save_order(o, params)
 		attributes = o.attributes.dup
+		attributes['country_id'] = params["country_id_id"].to_s.split(':')[0].to_i
+		attributes['city'] = params["city"]
+		attributes['university'] = params["university"]
+		attributes['save_scholarship'] = params["save_scholarship"].to_i
+		attributes['teaching_paying_party'] = params["teaching_paying_party"]
+		attributes['habitation_paying_party'] = params["habitation_paying_party"]
+		attributes['nutrition_paying_party'] = params["nutrition_paying_party"]
 		attributes.each_pair { |k,v| o.attributes[k] = v }
 		o.save
 	end
@@ -64,8 +83,7 @@ class DetailsForBeginTraineeOrder
 		attributes = fix_student(o, eid, paragraph, o.get_student_attributes(eid))
 		case paragraph
 		when 0
-			tmpl.start_at = attributes['start_at']
-			tmpl.order = attributes['order']
+			tmpl.trainee_range = attributes['trainee_range']
 		end
 	end
 	
@@ -73,8 +91,7 @@ class DetailsForBeginTraineeOrder
 		attributes = o.get_student_attributes(eid)
 		case paragraph
 		when 0
-			attributes['start_at'] = params["start_at"].to_d
-			attributes['order'] = Document.new(params["order_date"].to_d, params["order_num"])
+			attributes['trainee_range'] = DateRange.new(params["trainee_range_from"].to_d, params["trainee_range_till"].to_d)
 		end
 		o.set_student_attributes(eid, attributes)
 	end

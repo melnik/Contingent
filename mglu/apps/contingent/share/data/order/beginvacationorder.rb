@@ -2,7 +2,7 @@ require 'data/order/studentsorder'
 require 'expression'
 
 class BeginVacationOrder < StudentsOrder
-	TYPE = 'О предоставлении академических отпусков'
+	TYPE = 'О предоставлении академического отпуска'
 	PARAGRAPH_NAME = [ 'В приказе' ]
 
 	AFFECTED_ATTRIBUTES = {
@@ -31,7 +31,7 @@ class BeginVacationOrder < StudentsOrder
 		super
 		set :student, {
 			'student_state_id' => Classifier::StudentState::VACATION
-		}
+		}.compact
 
 	end
 

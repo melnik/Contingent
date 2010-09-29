@@ -1,5 +1,22 @@
+#!/usr/bin/env ruby
 
-@insert_id = 22 # Update this ID every term
+Standalone = !$LOAD_PATH.find { |x| x =~ /share$/ }
+
+require 'net/http'
+require 'rexml/document'
+
+require '../../context' if Standalone
+require 'data/classifier'
+
+unless Standalone then
+	response.sendHeaders
+	response << "<html><body><b>Processing, please wait...</b><br/>"
+	response.flush
+end
+
+Date = ::Date
+
+@insert_id = 25 # Update this ID every term
 
 @group_cache = {}
 @faculty_cache = {}
@@ -7,7 +24,25 @@
 
 @messages = []
 
+class Date
+	def inspect
+		"\"#{to_s}\".to_date"
+	end
+end
+
 CREATOR_ID = $sql.execute("SELECT user_id FROM user WHERE login = 'enrollment'").fetch_hash['user_id'].to_i
+
+@classifiers = {}
+def classifier_lookup(classifier, name)
+	hash = @classifiers[classifier]
+	unless hash then
+		@classifiers[classifier] = hash = {}
+		classifier.new.each { |row|
+			hash[row[:name]] = row[:id]
+		}
+	end
+	hash[name]
+end
 
 def get_group_id(group_name)
 
@@ -15,7 +50,7 @@ def get_group_id(group_name)
         return cached
     end
 
-    unless group_name =~ /^(\W+)(\d*)-(\d+)(\d)$/
+    unless group_name =~ /^(\W+)(\d*)-(\d+)-(\d+)$/
         raise "Cannot parse group '#{group_name}' (#{group_name.inspect})"
     end
     faculty, department, term, num = $1, $2, $3, $4
@@ -57,7 +92,7 @@ def get_group_id(group_name)
         VALUES (#{Date.today.year}, #{num}, #{department_id}, #{term}, #{@insert_id})"
 
     gid = @group_cache[group_name] = $sql.insert_id
-    @messages << "Created group #{gid} = #{faculty}#{department}-#{term}#{num}"
+    message "Created group #{gid} = #{faculty}#{department}-#{term}#{num}"
     @group_names[gid] = group_name
     return gid
 end
@@ -77,228 +112,160 @@ def rollback(insert_id)
 	$sql.execute "DELETE FROM student WHERE __insert_id = #{insert_id}"
 end
 
+#SERVER = "http://195.19.59.96:8090/exist/rest"
+#SERVER = "http://127.0.0.1:8123/exist/rest"
+def query(request)
+	url = URI.parse(request)
+	res = Net::HTTP.start(url.host, url.port) { |http| http.get(url.path) }
+	message "GET #{request} => #{res.code.to_i}"
+	(res.code.to_i == 200) ? REXML::Document.new(res.body).root : nil
+end
+
 
 def message(msg)
-	response << msg.gsub("\n", "<br/>")
-	response.flush
+	if Standalone
+		$stderr.puts msg
+	else
+		response << msg.gsub('\t', '&nbsp;&nbsp;&nbsp;&nbsp;') << "<br/>\n"
+		response.flush
+	end
 end
-response.sendHeaders
-
-response << "<html><body><b>Processing, please wait...</b><hr/>\n"
-response.flush
 
 begin
 
-file = request.files['data']
-filename = file.original_filename
+#message "Rolling back previous upload"
+#rollback(@insert_id)
 
-raw_data = file.read
-if raw_data[0..4] == '<?xml'
-	message "Reading #{filename} as XML dump... "
-	@data = REXML::Document.new(
-		'<?xml version="1.0" encoding="windows-1251"?><__root__ class="Hash">' +
-		raw_data + '</__root__>'
-	).root.deserialize
-else
-	message "Reading #{filename} as Ruby Marshal dump... "
-	@data = Marshal.load raw_data
-	message "done.\nConverting to utf-8..."
-	iconv = Iconv.new('utf-8', 'windows-1251')
-	count = 0
-	@data.each_pair { |table_name, table|
-		table.each { |row|
-			row.each_key { |column|
-				if row[column].is_a? String
-					str = row[column]
-					attempts = str.length + 10
-					begin
-						row[column] = iconv.iconv(str)
-					rescue Iconv::IllegalSequence => e
-						if attempts == 0
-							message "In table #{table_name}, row #{row.inspect}:"
-							raise
-						end
-						attempts -= 1
-						str[e.failed] = '?'
-						retry
-					end
-					count += 1
-					message "." if (count % 10000 == 0)
-				end
-			}
-		}
-	}
-	message "done.\n"
-end
+date = Date.today - 2
 
-
-message "Hashing tables... "
-
-# hashing tables
-@hashes = {}
-tables = {
-	:person_info => :Person_ID,
-	:person_infol => :Person_ID,
-	:pasport => :Person_ID,
-	:person_to_prikaz => :Person_ID,
-	:person_to_grupa => :Person_ID,
-	:grupa => :Grupa_ID
-}
-tables.each_pair { |table_name, hashed_fields|
-	hashed_fields = [hashed_fields] unless hashed_fields.is_a? Array
-	hashed_fields.each { |field|
-		hash = {}
-		(@data[table_name] || []).each { |row| (hash[row[field]] ||= []) << row }
-		(@hashes[table_name] ||= {})[field] = hash
-	}
+@citizenship_convert = {
+	"a115db60-d635-11dc-bb0c-003048351d16" => 1,
+	"a115ef92-d635-11dc-84aa-003048351d16" => 2,
+	"ec106dca-32a3-11df-8128-003048c6b34e" => 5,
+	"f5dd1981-32a3-11df-8128-003048c6b34e" => 7
 }
 
-def find_row(table, keyname, keyvalue)
-	rows = (@hashes[table][keyname][keyvalue] || [])
-	raise "Duplicates for table #{table}, #{keyname} = #{keyvalue}" if rows.length > 1 and rows.inject(false) { |a,r| a or (r != rows[0]) }
-	rows[0]
-end
+@gender_convert = {
+	"d0475c5a-d596-11dc-ae45-003048351d16" => 1,
+	"db7cd564-d596-11dc-b2f1-003048351d16" => 2
+}
 
-message "done.\nRolling back previous upload... "
-rollback(@insert_id)
+@study_type_convert = {
+	"14179986-d597-11dc-85d7-003048351d16" => Classifier::StudyType::BUDGET,
+	"18d90e28-d597-11dc-8426-003048351d16" => Classifier::StudyType::CONTRACT
+}
 
-message "done.\nProcessing students (#{@data[:person].length} total)..."
+urls = if Standalone then STDIN.read else post_values['orders'] end
+urls = urls.strip.split(/\s+/)
+urls.each { |url|
+	xo = query(url)
 
-@orders = {}
+	message "Processing order #{xo.elements['uuid'].text}"
 
-def find_order(order_row, student)
-	return @orders[order_row[:Prikaz_num]] if @orders[order_row[:Prikaz_num]]
+	study_form = xo.elements["content/body/studyForm/name"]
+	
+	order_attributes = {
+		'student_state_id' => Classifier::StudentState::STUDYING,
+		'enrollment_date' => Date.new(Date.today.year, 9, 1),
+		'study_type' => nil,
+		'degree_code' => nil,
+		'category' => '',
+		'students' => []
+	}
+	reason = xo.elements['content/body/reason/reason']
+	if reason
+		reason_text = reason.text
+		order_attributes['resolution'] = Document.new(
+			Date.new($3.to_i, $2.to_i, $1.to_i),
+			$4
+		) if reason_text =~ /На основании решения отборочной комиссии факультета \S* от (\d+)\.(\d+)\.(\d+) протокол №\s*(.*?),/
+		order_attributes['approval'] = Document.new(
+			Date.new($3.to_i, $2.to_i, $1.to_i),
+			$4
+		) if reason_text =~ /утвержденного на заседании Приемной комиссии МГТУ им. Н. Э. Баумана от\s+(\d+).(\d+).(\d+) протокол №\s*(.*)$/
+	end				
 	
 	order = {
 		:__insert_id => @insert_id,
-	
 		:order_type_id => 8,
-		
-		:order_status_id => if order_row[:locked].to_i == 1 then
-			Classifier::OrderStatus::FROZEN
-		else
-			Classifier::OrderStatus::PROJECT
-		end,
-		
-		:faculty_id => Group.load(student['group_id']).department.instance_variable_get('@faculty_id'),
-		
-		:number => order_row[:Prikaz_num],
-		
-		:date_created => order_row[:dt].to_s.split(' ')[0].gsub('/', '-').to_date,
-		
-		:creator_id => auth_user_current.user_id,
-				
-		:attributes => {
-		
-			'student_state_id' => Classifier::StudentState::STUDYING,
+		:order_status_id => Classifier::OrderStatus::FROZEN,
+		:faculty_id => nil, # TODO: restore
+		:date_created => xo.elements["created"].text.gsub(/T.*$/, '').to_date,
+		:date_activated => xo.elements["content/registration/registered"].text.to_date,
+		:number => xo.elements["content/registration/number"].text,
+		:creator_id => CREATOR_ID,
+		:attributes => order_attributes,
+	}
+
+	faculty = nil
+
+	xo.elements["content/body/paragraphs"].each_element("paragraph") { |xs|
+		xs = xs.elements["newStudent"]
+		message "    #{xs.elements["lastname"].text} #{xs.elements["firstname"].text} #{xs.elements["middlename"].text}"
+
+		#puts xs.to_s
+
+		faculty = xs.elements["group/titleshort"].text.tr('ABCEHKMOPT', 'АВСЕНКМОРТ').gsub(/[0-9\-]*/, '')
+
+		student = {
+			'name' => {
+				'first'  => xs.elements["firstname"].text,
+				'last'   => xs.elements["lastname"].text,
+				'father' => xs.elements["middlename"].text
+			},
 			
-			'enrollment_date' => Date.new(Date.today.year, 9, 1),
+			'card_number' => xs.elements["cardNumber"].text,
 			
-			'resolution' => Document.new(
-				order_row[:ProtokolDate].to_s.split(' ')[0].gsub('/', '-').to_date,
-				order_row[:ProtokolNum].to_s.strip
+			'gender_id' => @gender_convert[xs.elements["gender/uuid"].text],
+			
+			'birth_date' => xs.elements["birthDate"].text.gsub(/\+.*$/, '').to_date,
+			
+			'citizenship_id' => @citizenship_convert[xs.elements["citizenship/uuid"].text],
+			
+			'profession_code' => xs.elements["speciality/name"].text[0...6],
+			
+			'specialization_code' => xs.elements["speciality/name"].text[6...8],
+			
+			'country' => classifier_lookup(Classifier::Country, xs.elements["citizenship/country"].text),
+			
+			'passport' => (xs.elements["passport/series"].text || '') + ' ' + (xs.elements["passport/number"].text || ''),
+			
+			'group_id' => get_group_id(xs.elements["group/titleshort"].text. \
+				gsub(/(ЗИ|ЮР)[0-9]*/, '\1'). \
+				gsub(/\$$/, ''). \
+				tr('ABCEHKMOPT', 'АВСЕНКМОРТ')
 			),
 			
-			'approval' => Document.new(
-				order_row[:ProtokolDate1].to_s.split(' ')[0].to_s.gsub('/', '-').to_date,
-				order_row[:ProtokolNum1].to_s.strip
-			),
-			
-			'study_type_id' => if student['agreement'][:num].to_s.empty? then
-				Classifier::StudyType::BUDGET
-			else
-				Classifier::StudyType::CONTRACT
-			end,
-			
-			'degree_code' => '65',
-			
-			'category' => '',
-			
-			'students' => []
+			'paragraph_id' => 0
 		}
+		
+		order[:faculty_id] ||= get_faculty_id(xs.elements["group/titleshort"].text.tr('ABCEHKMOPT', 'АВСЕНКМОРТ').gsub(/[0-9\-]*/, ''))
+		
+		order[:attributes]['study_type_id'] ||= @study_type_convert[xs.elements["studyType/uuid"].text]
+		
+		order[:attributes]['degree_code'] ||= xs.elements["speciality/name"].text[8...10]
+		
+		xs.each_element("agreements") { |agr|
+			agrtype = agr.elements["agreementType/uuid"]
+			if agrtype && agrtype.text == "3e6b946f-3342-11df-8128-003048c6b34e" then
+				student['agreement'] = Document.new(
+					agr.elements["date"].text.gsub(/\+.*$/, '').to_date,
+					agr.elements["name"].text
+				)
+				break
+			end
+		}
+		
+		order[:attributes]['students'] << student
 	}
 	
-	@messages << "Creating order #{order_row[:Prikaz_num]} by student #{student.inspect}"
-	
-	@orders[order_row[:Prikaz_num]] = order
-	order
-end
-
-count = 0
-real_count = 0
-@data[:person].each_with_index { |person, count|
-	pid = person[:Person_ID]
-	person_info = find_row(:person_info, :Person_ID, pid)
-	person_infol = find_row(:person_infol, :Person_ID, pid)
-	passport = find_row(:pasport, :Person_ID, pid)
-	
-	order = find_row(:person_to_prikaz, :Person_ID, pid); next unless order
-	person_group = find_row(:person_to_grupa, :Person_ID, pid); next unless person_group
-	group = find_row(:grupa, :Grupa_ID, person_group[:Grupa_ID]); next unless group
-	
-	s = {}
-	
-	s['name'] = {
-		'first' => person[:Imya].to_s.strip,
-		'last' => person[:Familiya].to_s.strip,
-		'father' => person[:Otchestvo].to_s.strip
-	}
-	
-	s['card_number'] = person_infol[:Zachnum].to_s.strip
-	
-	s['gender_id'] = person_info[:Pol] == 'Ж' ? 2 : 1
-	
-	s['birth_date'] = person[:Rojd].to_s.split(' ')[0].gsub('/','-').to_d
-	
-	s['citizenship_id'] = case person_infol[:Grazhdanstvo].to_i
-	when 1 then 1
-	when 3 then 3
-	else 5
-	end
-	
-	profession_code = (if group[:Unspsc_spec].to_s.strip.empty? then
-		group[:Unspsc_napr]
-	else
-		group[:Unspsc_spec]
-	end).to_s.strip 
-	s['profession_code'] = profession_code unless profession_code.to_s.empty?
-	
-	passport = (
-		passport[:Pasport_Ser].to_s.gsub(/[ -]/, '') +
-		'-' + passport[:Pasport_Nom].to_s.gsub(/[ -]/, '')
-	).strip
-	s['passport'] = passport unless passport.empty? or passport == '-'
-	
-	s['group_id'] = get_group_id(group[:Grupa_Name].to_s.strip. \
-		gsub(/(ЗИ|ЮР)[0-9]*/, '\1'). \
-		gsub(/\$$/, ''). \
-		tr('ABCEHKMOPT', 'АВСЕНКМОРТ')
-	)
-	
-	agreement = Document.new(
-		if person_infol[:AgreementDate].to_s.strip =~ /^(\d{4})\/(\d{2})\/(\d{2}) / then "#{$1}-#{$2}-#{$3}" else Date.new(Date.today.year, 9, 1) end,
-		person_infol[:AgreementNum].to_s.strip.sub(/ от .*$/, '')
-	)
-	s['agreement'] = agreement unless agreement['num'].empty?
-	
-	s['paragraph_id'] = 0
-	
-	find_order(order, s)[:attributes]['students'] << s
-	
-	message "." if count % 25 == 0
-	real_count += 1
-}
-
-message "done (#{real_count} real students).\n"
-message "Writing orders to database (#{@orders.values.length} total)..."
-
-count = 0
-@orders.each_value { |order|
-
 	order[:attributes]['students'].sort! { |a,b|
 		"#{@group_names[a['group_id']]} #{a['name']['last']} #{a['name']['first']} #{a['name']['father']}" <=>
 		"#{@group_names[b['group_id']]} #{b['name']['last']} #{b['name']['first']} #{b['name']['father']}"
 	}
+	
+	#File.open('data.rb', 'w') { |f| f << "DATA = " << order.inspect << "\n" }
+	
 	order[:attributes] = order[:attributes].to_xml
 	order[:creator_id] = CREATOR_ID
 	
@@ -310,30 +277,19 @@ count = 0
 	statement = "INSERT INTO `order` (#{fields.join(', ')}) VALUES (#{values.join(', ')})"
 	$sql.execute statement
 	
-	@messages << "Created order #{order[:number]}"
-	
-	count += 1
-	message "." if ( count % 2 == 0 )
+	message "<b>Created order <a href=\"/order/item_fs.rb?order_id=#{$sql.insert_id}\">#{$sql.insert_id}</a> (#{faculty})</b>"
 }
-
-message " done.\n"
-
-response << "<hr/><b>All OK.</b>
-<script language='javascript'><!--
-function show_debug()
-{
-	document.getElementById('debug').style.display = '';
-}
---></script>
-(<a href='javascript:show_debug();'>Show debug stuff</a>)<hr/>
-<blockquote id='debug' style='display: none'>#{@messages.join("<br/>\n")}</blockquote>
-</body></html>"
-
+message "=== Done ==="
 
 rescue Exception => e
 
-	response << "<hr/><b>Exception</b>: #{e.message} (#{e.class})<br/>" + e.backtrace.join("<br/>\n")
+	message "=== Exception: #{e.message} (#{e.class}) ==="
+	e.backtrace.each { |line| message line }
 	rollback(@insert_id)
-	message "\n\nNo students were added"
+	message "<b>Nothing added</b>"
 	
+end
+
+unless Standalone then
+	response << "</body></html>"
 end

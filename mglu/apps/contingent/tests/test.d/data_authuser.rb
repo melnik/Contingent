@@ -10,13 +10,13 @@ class Test_AuthUser < Test::Unit::TestCase
 		assert_equal 1, u.faculty_id
 		assert_equal [ 'student_edit', 'order_project', 'order_activate', 'user_edit', 'student_view_short' ], u.perms
 		assert_equal 17, u.user_id
-		assert_equal 'éõ', u.faculty
+		assert_equal 'Ð˜Ð£', u.faculty
 
 		u = AuthUser.current(session)
 
 		assert_equal 1, u.faculty_id
 		assert_equal [ 'student_edit', 'order_project', 'order_activate', 'user_edit', 'student_view_short' ], u.perms
 		assert_equal 17, u.user_id
-		assert_equal 'éõ', u.faculty
+		assert_equal 'Ð˜Ð£', u.faculty
 	end
 end

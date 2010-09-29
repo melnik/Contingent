@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 pushd ..
 irb -I share -r ../../plugins/radical-core/extensions -r extensions
 popd

@@ -6,14 +6,43 @@ require "#{Dir.pwd.gsub(/\/apps.*$/, '')}/apps/contingent/tools/context"
 
 require 'extensions'
 
-$sql.execute("SELECT s.student_id, f.letter, (2009 - g.current_term_number/2)%100 AS start_year, s.card_number
+$sql.execute("SELECT s.student_id, f.letter, CAST(2009-g.current_term_number/2 AS UNSIGNED)%100 AS start_year, s.card_number
               FROM   student s
                      INNER JOIN `group` g USING (group_id)
                      INNER JOIN department d USING (department_id)
                      INNER JOIN faculty f USING (faculty_id)").fetch_array do |student_id, faculty, start_year, old_card_number|
 
 	next if old_card_number.empty? or faculty.empty?
-	puts "-- #{[old_card_number, faculty].inspect}"
-	card_number = old_card_number[0..1] + faculty + old_card_number[2...(old_card_number.length)]
-	puts "UPDATE student SET card_number = '#{card_number}' WHERE student_id = #{student_id};"
+	card_number = case old_card_number
+	when /^(\d{2}\D)\d+/ then $1
+	else ('%02d' % start_year) + faculty
+	end + old_card_number[-3..-1]
+	puts "-- #{card_number} <- #{old_card_number}"
+	puts "UPDATE student SET card_number = #{card_number.quote} WHERE student_id = #{student_id};"
 end
+
+#--- reset-student-cards 2009-04-01 17:36:15 +0400
+#+++ reset-student-cards 2009-09-01 19:15:00 +0400
+#@@ -6,17 +6,14 @@
+
+# require 'extensions'
+ 
+#+$sql.execute("SELECT s.student_id, f.letter, (2009 - g.current_term_number/2)%100 AS start_year, s.card_number
+#-$sql.execute("SELECT s.student_id, f.letter, CAST(2009-g.current_term_number/2 AS UNSIGNED)%100 AS start_year, s.card_number
+#               FROM   student s
+#                      INNER JOIN `group` g USING (group_id)
+#                      INNER JOIN department d USING (department_id)
+#                      INNER JOIN faculty f USING (faculty_id)").fetch_array do |student_id, faculty, start_year, old_card_number|
+#										  
+# 	next if old_card_number.empty? or faculty.empty?
+#-	puts "-- #{[old_card_number, faculty].inspect}"
+#-	card_number = old_card_number[0..1] + faculty + old_card_number[2...(old_card_number.length)]
+#-	puts "UPDATE student SET card_number = '#{card_number}' WHERE student_id = #{student_id};"
+#+	card_number = case old_card_number
+#+      when /^(\d{2}\D)\d+/ then $1
+#+	else ('%02d' % start_year) + faculty
+#+	end + old_card_number[-3..-1]
+#+	puts "-- #{card_number} <- #{old_card_number}"
+#+	puts "UPDATE student SET card_number = #{card_number.quote} WHERE student_id = #{student_id};"
+# end
+											   

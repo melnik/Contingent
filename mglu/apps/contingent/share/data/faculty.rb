@@ -41,15 +41,22 @@ class Faculty
 	##
 	# Категория студентов (Set)
 	attr_reader :category
+	
+	##
+	# Правильное название должности декана
+	def dean_position
+		@dean_position ||= "Декан #{name}"
+	end
 
 	def initialize oid, params = nil
 		@oid = oid
 
 		if params.is_a? Hash then
-			@name      = params['short_name']
-			@full_name = params['name']
+			@name          = params['short_name']
+			@full_name     = params['name']
+			@dean_position = params['dean_position']
 
-			@category  = params['category'].to_set
+			@category      = params['category'].to_set
 		end
 	end
 

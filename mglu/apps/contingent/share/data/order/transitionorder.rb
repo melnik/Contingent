@@ -55,14 +55,9 @@ class TransitionOrder < CourseOrder
 	#avfix: since no web service in available, restored capability of moving students
 	#private :move # приказ сам распределяет студентов по параграфам
 
-	def initialize *args
-		super
-
-		# avhack: Evil hack for demonstration's purposes.
-		# (if current term is to be over soon, assume the order
-		# being created for the current term, not previous one)
-		@term = if Date.today.month.in? [5,6,11,12] then Term.current else Term.prev end
-		#@term = Term.prev
+	def term
+		# 3 first months of a new term acts as at previous one
+		@term ||= Term.new date_created - 3*30
 	end
 
 	def search_available params = {}
@@ -74,37 +69,19 @@ class TransitionOrder < CourseOrder
 		end
 	end
 
-	def add course
-		super
-
-		each_group %w(group_id department_id department current_term_number group_num) do |group_id, department_id, department, term_number, group_number|
-			set_group_attributes group_id, {
-				:next_id => begin # TODO: ask external service
-					Group.load "#{department}-#{term_number+1}#{group_number}"
-				rescue
-					$sql.execute "INSERT INTO `group` (department_id, current_term_number, group_num)
-					              VALUES (#{department_id}, #{term_number+1}, #{group_number})"
-					retry
-				end.oid
-			}
-		end
-
+	def add_students student_ids = nil, paragraph_id = nil
 		## avfix: Disabled web service usage.
 
-		#student_ids = []; $sql.execute("SELECT student_id
-		#                                FROM student s INNER JOIN `group` g USING (group_id) INNER JOIN department d USING (department_id)
-		#                                WHERE faculty_id = #{@faculty_id} AND current_term_number = #{@term.number @attributes['course']} AND student_state_id = #{Classifier::StudentState::STUDYING}").fetch do |row|
-		#	student_ids << row['student_id'].to_i
-		#end
-		#
-		#add_students student_ids rescue nil
+		return super
 
-		save; @auto_fix = true; check # unwanted students may happen
-	end
+		unless student_ids then
+			student_ids = []; $sql.execute("SELECT student_id
+			                                FROM student s INNER JOIN `group` g USING (group_id) INNER JOIN department d USING (department_id)
+			                                WHERE faculty_id = #{@faculty_id} AND current_term_number = #{term_number} AND student_state_id = #{Classifier::StudentState::STUDYING}").fetch do |row|
+				student_ids << row['student_id'].to_i
+			end
+		end
 
-	alias_method :<<, :add
-
-	def add_students student_ids, paragraph_id = nil
 		for student in [ SessionPortType.new.listMarks(ListMarksRequest.new(student_ids.collect do |student_id|
 			student_id.to_uuid :student
 		end)).response ].flatten do
@@ -140,16 +117,31 @@ class TransitionOrder < CourseOrder
 			              VALUES (#{@oid}, #{student_id}, #{paragraph_id}, #{attributes.quote})" rescue next
 		end
 	end
-	
-	# avfix
-	private :add_students
+
+	def add_groups group_ids = nil
+		super
+
+		each_group %w(group_id department_id department current_term_number group_num) do |group_id, department_id, department, term_number, group_number|
+			next if group_ids and not group_id.in? group_ids
+
+			set_group_attributes group_id, {
+				:next_id => begin # TODO: ask external service
+					Group.load "#{department}-#{term_number+1}-#{group_number}"
+				rescue
+					$sql.execute "INSERT INTO `group` (department_id, current_term_number, group_num)
+					              VALUES (#{department_id}, #{term_number+1}, #{group_number})"
+					retry
+				end.oid
+			}
+		end
+	end
 
 	def each_student paragraph_id = :all, fields = %w( student_id last_name first_name father_name card_number group_id group )
 		student_ids = []; case paragraph_id
 		when 2 then # в академ. отпуске
 			$sql.execute("SELECT *, s.category AS s_category, f.category AS f_category
 			              FROM student s INNER JOIN `group` g USING (group_id) INNER JOIN department d USING (department_id) INNER JOIN faculty f USING (faculty_id)
-			              WHERE f.faculty_id = #{@faculty_id} AND current_term_number = #{@term.number @attributes['course']} AND s.student_state_id = #{Classifier::StudentState::VACATION}
+			              WHERE f.faculty_id = #{@faculty_id} AND current_term_number = #{term_number} AND s.student_state_id = #{Classifier::StudentState::VACATION}
 			              ORDER BY f.short_name, d.department_num, current_term_number, g.group_num, last_name, first_name, father_name").fetch do |row|
 				yield *( convert_sql_result row, fields ) if block_given?
 
@@ -158,7 +150,7 @@ class TransitionOrder < CourseOrder
 		when 3 then # на стажировке
 			$sql.execute("SELECT *, s.category AS s_category, f.category AS f_category
 			              FROM student s INNER JOIN `group` g USING (group_id) INNER JOIN department d USING (department_id) INNER JOIN faculty f USING (faculty_id)
-			              WHERE f.faculty_id = #{@faculty_id} AND current_term_number = #{@term.number @attributes['course']} AND s.student_state_id = #{Classifier::StudentState::TRAINEE}
+			              WHERE f.faculty_id = #{@faculty_id} AND current_term_number = #{term_number} AND s.student_state_id = #{Classifier::StudentState::TRAINEE}
 			              ORDER BY f.short_name, d.department_num, current_term_number, g.group_num, last_name, first_name, father_name").fetch do |row|
 				yield *( convert_sql_result row, fields ) if block_given?
 

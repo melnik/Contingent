@@ -2,7 +2,7 @@
 
 <order classname="KeepDownOrder" base="StudentsOrder">
 
-	<type>О предоставлении повторного обучения на платной основе</type>
+	<type>О предоставлении повторного обучения</type>
 
 	<condition name="contract_now">
 		<student__citizenship_id class="Array">
@@ -13,23 +13,39 @@
 		<student__study_type_id class="Expression">Classifier::StudyType::CONTRACT</student__study_type_id>
 	</condition>
 
+	<condition name="transition">
+		<order__transition class="Fixnum">1</order__transition>
+	</condition>
+
 	<qualified_students class="Hash">
 		<student_state_id class="Expression">Classifier::StudentState::STUDYING</student_state_id>
 	</qualified_students>
 
 	<template entity="order">
-		<const type="int" name="study_type_id" value="Classifier::StudyType::CONTRACT" />
+		<select type="int" name="transition" default="0" title="Повторное обучение">
+			<option value="0" title="да"/>
+			<option value="1" title="нет"/>
+		</select>
+
+		<classifier type="study_type" title="Основа обучения"/>
+
+		<classifier type="study_form" title="Форма обучения"/>
 	</template>
 
 	<template entity="student">
 
 		<input type="group" name="group_id" title="Числить в группе" default="Student.load(eid).group.oid"/>
 
-		<input type="text" name="card_number" title="Присвоить номер л.д." default="Student.load(eid).card_number"/>
+		<select name="term_count" title="Количество семестров">
+			<option displayed="--" printable=""/>
+			<option displayed="2 семестра" printable="двух семестров"/>
+			<option displayed="3 семестра" printable="трех семестров"/>
+		</select>
 
 		<select type="int" name="change_speciality" default="0">
 			<option value="0" title="Без смены специальности">
 				<classifier type="profession" title="Код направления / специальности (новый)" default="Student.load(eid).profession_code" hidden="1"/>
+
 				<classifier type="degree" title="Новая ступень образования" default="Student.load(eid).degree_code" hidden="1" />
 			</option>
 
@@ -52,6 +68,7 @@
 			<input type="text" name="subject" title="Название" />
 			<select type="text" name="type" title="Отчетность">
 				<option title="зачет" />
+				<option title="диф.зачет" />
 				<option title="экзамен" />
 			</select>
 		</list>
@@ -64,12 +81,10 @@
 
 		<p><![CDATA[
 		<% unless conditions['contract_now'] then %>
-		Отчислить с бюджетной формы (основы) обучения и предоставить повторное обучение
-		на платной основе (форме) нижеперечисленным лицам, обучающимся в МГЛУ,
-		установить срок сдачи задолженностей, образовавшихся вследствие
-		расхождения учебных планов, в приведенные сроки:
+		Разрешить повторное обучение с полным выполнением учебного плана на договорной основе
+		с оплатой стоимости обучения нижеперечисленным лицам, обучающимся в МГЛУ:
 		<% else %>
-		Предоставить повторное обучение на платной форме (основе) нижеперечисленным
+		Предоставить <% unless conditions['transition'] %>повторное<% end %> обучение на платной основе нижеперечисленным
 		лицам, обучающимся в МГЛУ, и установить срок сдачи академических
 		задолженностей, образовавшихся вследствие расхождения учебных планов, в приведенные
 		сроки:
@@ -78,18 +93,19 @@
 
 		<list style="text">
 			<column source="student" name="name"/>
+			<column source="student" name="course"/>
 			<column source="student" name="student_status"/>
 			<column source="student" name="card_number"/>
+			<column source="student" name="study_form"/>
 			<column source="student" name="group"/>
 			<column soruce="student" name="study_type_id" hidden="1"/>
 			<column><![CDATA[
 				<% if attributes['start_at'] %>
 					<% unless conditions['contract_now'] then %>
-					Отчислить с бюджетной формы (основы) обучения и предоставить повторное
-					обучение с
-					<% else %>
-					Повторное обучение с
+					разрешить повторное обучение с полным выполнением учебного плана
+					<& attributes['term_count'] &> на договорной основе <& attributes['start_at'] &>;
 					<% end %>
+					<% unless conditions['transition'] %>повторное<% end %> обучение с
 					<&attributes['start_at']&>;
 				<% end %>
 			]]></column>
@@ -97,34 +113,34 @@
 			<column source="order" name="agreement" title="Договор (контракт) о предоставлении платных образовательных услуг"/>
 			<column source="order" name="profession_code"/>
 			<column source="order" name="degree_code"/>
-			<column source="order" name="card_number"/>
 			<column><![CDATA[
 				<% unless attributes['additional_agreement'].empty? then %>
 				дополнительное соглашение <&attributes['additional_agreement']&>
 				к договору (контракту) о предоставлении платных образовательных услуг <&attributes['agreement']&>
 				<% end %>
 			]]></column>
-			<column source="order" name="liabilities" empty_text="академических задолженностей нет."/>
+			<column source="order" name="liabilities"/>
 			<column source="order" name="deadline"/>
-			<column title="Основания приказа"><![CDATA[
-личное заявление обучающегося с визой декана факультета<% if conditions['foreign'] then %>,
-декана ФОИГ <% end %> и резолюцией проректора по учебной работе Университета,
+			<column><![CDATA[
+<br/><br/>Основание приказа:
+личное заявление обучающегося с визой декана факультета и резолюцией ректора,
 договор/контракт о предоставлении платных образовательных услуг <&attributes['agreement']&>
 			]]></column>
 		</list>
-
+		
 		<signatures>
 			<signature name="rector"/>
 			<signature name="prorector"/>
+			<signature name="accountant"/>
+			<signature name="financing"/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract and not foreign" /> -->
 			<signature name="personnel"/>
-			<signature name="prorector-international" condition="foreign" />
-			<signature name="prorector-security" condition="foreign" />
-			<signature name="dean" condition="not disabled"/>
+			<signature name="dean" condition="not disabled and not foreign"/>
 			<signature name="rehabilitation" condition="disabled"/>
 			<signature name="deanreceiver"/>
-			<signature name="marketing" condition="contract and not foreign" />
-			<signature name="financing" condition="contract and not foreign"/>
 			<signature name="foreign" condition="foreign" />
+			<signature name="legal-councilor"/>
 		</signatures>
 
 	</printable>

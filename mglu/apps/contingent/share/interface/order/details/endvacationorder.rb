@@ -9,6 +9,8 @@ class DetailsForEndVacationOrder
 	extend DetailsCommon
 
 	CONDITIONS = [
+		DetailsCommon::Condition.new('trainee', {"order:circumstance"=>3}),
+		DetailsCommon::Condition.new('has_deadline2', {"order:deadline2"=>Empty.new(false)}),
 		DetailsCommon::Condition.new('contract', {"study_type_id"=>Classifier::StudyType::CONTRACT}),
 		DetailsCommon::Condition.new('foreign', {"citizenship_id"=>[4, 5, 6, 7]}),
 		DetailsCommon::Condition.new('disabled', {"category"=>:disabled})
@@ -71,6 +73,8 @@ class DetailsForEndVacationOrder
 			case attributes['circumstance']
 			when '0'.to_i
 				tmpl.resolution = attributes['resolution']
+			when '3'.to_i
+				tmpl.deadline2 = attributes['deadline2']
 			end
 			tmpl.group_id = attributes['group_id']
 			tmpl.card_number = attributes['card_number']
@@ -87,9 +91,12 @@ class DetailsForEndVacationOrder
 		when 0
 			attributes['circumstance'] = params["circumstance"].to_i
 			attributes['resolution'] = nil
+			attributes['deadline2'] = nil
 			case attributes['circumstance']
 			when '0'.to_i
 				attributes['resolution'] = Document.new(params["resolution_date"].to_d, params["resolution_num"])
+			when '3'.to_i
+				attributes['deadline2'] = params["deadline2"].to_d
 			end
 			attributes['group_id'] = params["group_id"].to_i
 			attributes['card_number'] = params["card_number"]

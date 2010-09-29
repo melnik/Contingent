@@ -6,7 +6,7 @@ class CitizenshipSwitchingOrder < StudentsOrder
 	PARAGRAPH_NAME = [ 'В приказе' ]
 
 	AFFECTED_ATTRIBUTES = {
-		:student => %w( category citizenship_id study_type_id group_id card_number ),
+		:student => %w( category citizenship_id study_type_id card_number group_id ),
 	}
 
 	public_class_method :new
@@ -26,13 +26,13 @@ class CitizenshipSwitchingOrder < StudentsOrder
 			'category' => Expression.new('category & ~1'),
 			'citizenship_id' => 1,
 			'study_type_id' => attributes['study_type_id']
-		}
+		}.compact
 
 		each_student :all, %w( student_id attributes ) do |student_id, attributes|
 			set :student, {
-				'group_id' => attributes['group_id'],
-				'card_number' => attributes['card_number']
-			}, [ student_id ]
+				'card_number' => attributes['card_number'],
+				'group_id' => attributes['group_id']
+			}.compact, [ student_id ]
 		end
 	end
 
@@ -48,15 +48,15 @@ class CitizenshipSwitchingOrder < StudentsOrder
 				save
 			end
 
-			raise error(:activation, fixed_attrs['study_type_id'].empty?), 'Поле "Новая форма (основа) обучения" не определено' if attributes['study_type_id'].empty?
+			raise error(:activation, fixed_attrs['study_type_id'].empty?), 'Поле "Новая основа обучения" не определено' if attributes['study_type_id'].empty?
 		end
 
 		each_student :all, %w( student_id paragraph_id attributes ) do |student_id, paragraph_id, attributes|
 			fixed_attrs = DetailsForCitizenshipSwitchingOrder.fix_student(self, student_id, paragraph_id, attributes)
 			set_student_attributes(student_id, attributes = fixed_attrs) if @auto_fix and attributes != fixed_attrs
 
-			raise error(:activation, fixed_attrs['group_id'].empty?), 'Поле "Числить в группе" не определено' if attributes['group_id'].empty?
 			raise error(:activation, fixed_attrs['card_number'].empty?), 'Поле "Присвоить номер личного дела" не определено' if attributes['card_number'].empty?
+			raise error(:activation, fixed_attrs['group_id'].empty?), 'Поле "Числить в группе" не определено' if attributes['group_id'].empty?
 		end
 	end
 end

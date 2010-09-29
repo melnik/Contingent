@@ -9,10 +9,8 @@ header.conditions = conditions = _CONDITIONS_
 <&header&>
 <p>
 
-<p>На основании решения отборочной комиссии факультета "<&order.faculty.name&>"
-от <&order.attributes['resolution'][:date]&> протокол &#x2116;<&order.attributes['resolution'][:num]&>,
-утвержденного на заседании Приемной комиссии МГЛУ
-от <&order.attributes['approval'][:date]&> протокол &#x2116;<&order.attributes['approval'][:num]&>,</p>
+<p>На основании решения Приемной комиссии МГЛУ
+от <&order.attributes['resolution'][:date]&> протокол &#x2116;<&order.attributes['resolution'][:num]&>,</p>
 
 		</p>
 <div style="text-align: center"><h3>ПРИКАЗЫВАЮ:</h3></div>
@@ -44,7 +42,7 @@ self.class.class_eval {
 _SETS_ = []
 _GROUPS_ = nil
 @students = list.new(
-	  fetch(order, :each_student, :all, %w( student_id name student_status card_number profession_code specialization_code degree_code attributes ))
+	  fetch(order, :each_student, :all, %w( student_id name course student_status card_number study_form profession_code specialization_code degree_code attributes ))
 )
 _LIST_ = [@students]
 
@@ -58,12 +56,12 @@ _LIST_ = [@students]
 
 Восстановить нижеперечисленных лиц, обучавшихся в
 МГЛУ, для обучения на факультете
-"<&order.faculty.full_name&>" по указанным направлениям и специальностям
+<&order.faculty.name&> по указанным направлениям и специальностям
 подготовки <&Classifier::Degree[order.attributes['degree_code']][:name].to_s.gsub(/ый /, 'ых ')&>ов
 
-<%= case order.attributes['study_type_id']
-when 1 then 'на места, финансируемые из федерального бюджета,'
-when 2 then 'на основе договоров с оплатой стоимости обучения'
+<%= case (@students[0] ? Student.load(@students[0][:student_id]).study_type_id : Classifier::StudyType::BUDGET)
+when Classifier::StudyType::BUDGET then 'на места, финансируемые из федерального бюджета,'
+when Classifier::StudyType::CONTRACT then 'на основе договоров с оплатой стоимости обучения'
 end %>
 
 и установить индивидуальный график сдачи академических задолженностей, образовавшихся
@@ -75,8 +73,10 @@ end %>
 <% _LIST_[-1].each { |_ITEM_|
 	student_id = _ITEM_[:student_id]
 	name = _ITEM_[:name]
+	course = _ITEM_[:course]
 	student_status = _ITEM_[:student_status]
 	card_number = _ITEM_[:card_number]
+	study_form = _ITEM_[:study_form]
 	profession_code = _ITEM_[:profession_code]
 	specialization_code = _ITEM_[:specialization_code]
 	degree_code = _ITEM_[:degree_code]
@@ -89,11 +89,17 @@ end %>
 	<% unless name.empty? then %><% if _HAS_FIELDS_ then %>; <% end %>
 	<& name &><% _HAS_FIELDS_ = true;
 	 end %>
+	<% unless course.empty? then %><% if _HAS_FIELDS_ then %>; <% end %>
+	Курс: <& course &><% _HAS_FIELDS_ = true;
+	 end %>
 	<% unless student_status.empty? then %><% if _HAS_FIELDS_ then %>; <% end %>
 	<& student_status &><% _HAS_FIELDS_ = true;
 	 end %>
 	<% unless card_number.empty? then %><% if _HAS_FIELDS_ then %>; <% end %>
 	Л.д. &#x2116;: <& card_number &><% _HAS_FIELDS_ = true;
+	 end %>
+	<% unless study_form.empty? then %><% if _HAS_FIELDS_ then %>; <% end %>
+	Форма обучения: <& study_form &><% _HAS_FIELDS_ = true;
 	 end %>
 	<% unless false then %><% if _HAS_FIELDS_ then %>; <% end %>
 	Приказ на отчисление:  <& require 'data/student';
@@ -105,13 +111,13 @@ end %>
 	<% _HAS_FIELDS_ = true;
 	 end %>
 	<% unless profession_code.empty? then %><% if _HAS_FIELDS_ then %>; <% end %>
-	Направление подготовки/специальность.специализация.квалификация: <%= profession_code %><%= specialization_code || '00' %><%= degree_code || '00' %> <%= Classifier::Profession[profession_code][:name] %><% _HAS_FIELDS_ = true;
+	Направление подготовки/специальность, специализация, ступень образования: <%= profession_code %><%= specialization_code || '00' %><%= degree_code || '00' %> <%= Classifier::Profession[profession_code][:name] %><% _HAS_FIELDS_ = true;
 	 end %>
 	<% unless attributes['profession_code'].empty? && attributes['specialization_code'].empty? && attributes['degree_code'].empty? then %><% if _HAS_FIELDS_ then %>; <% end %>
-	Новое направление подготовки/специальность.специализация.квалификация: <%= (!attributes['profession_code'].empty? && attributes['profession_code']) || order.attributes['profession_code'] || profession_code %><%= attributes['specialization_code'] || order.attributes['specialization_code'] || specialization_code || '00' %><%= attributes['degree_code'] || order.attributes['degree_code'] || degree_code || '00' %> <%= Classifier::Profession[attributes['profession_code'] || profession_code][:name] %><% _HAS_FIELDS_ = true;
+	Новое направление подготовки/специальность, специализация, ступень образования: <%= (!attributes['profession_code'].empty? && attributes['profession_code']) || order.attributes['profession_code'] || profession_code %><%= attributes['specialization_code'] || order.attributes['specialization_code'] || specialization_code || '00' %><%= attributes['degree_code'] || order.attributes['degree_code'] || degree_code || '00' %> <%= Classifier::Profession[attributes['profession_code'] || profession_code][:name] %><% _HAS_FIELDS_ = true;
 	 end %>
 	<% unless attributes['card_number'].empty? then %><% if _HAS_FIELDS_ then %>; <% end %>
-	Новый &#x2116; л.д.: <&attributes['card_number']&>
+	Новый № л.д.: <&attributes['card_number']&>
 	<% _HAS_FIELDS_ = true;
 	 end %>
 	<% if _CONDITIONS_['contract'] or _CONDITIONS_['foreign'] then %>
@@ -138,7 +144,7 @@ end %>
 	<% } %>
 	</tbody></table></div><% _HAS_FIELDS_ = false
 	else %><% if _HAS_FIELDS_ then %>;<% end %>
-	академических задолженностей нет.<%
+	академической задолженности нет.<%
 	end %>
 	<% unless attributes['deadline'].empty? then %><% if _HAS_FIELDS_ then %>; <% end %>
 	Срок сдачи задолженностей: <&attributes['deadline']&>
@@ -151,12 +157,14 @@ end %>
 	 end %>
 	<% end %>
 	<% unless false then %><% if _HAS_FIELDS_ then %>; <% end %>
-	Основания приказа:
-					Личное заявление отчисленного с визой декана факультета<% if conditions['foreign'] then %>,
-					декана ФОИГ<% end %> и резолюцией проректора по учебной работе Университета
-	<% if order.attributes['study_type_id'] == Classifier::StudyType::CONTRACT then %>
-	, договор (контракт) о предоставлении платных образовательных услуг <& attributes['agreement'] &>
-	<% end %>
+
+					<br/><br/>Основания приказа:
+					<% unless order.attributes['resolution'].empty? then %>
+					протокол <& order.attributes['resolution'] &>, утвержденный на заседании Приемной комиссии МГЛУ, <% end %>
+					личное заявление отчисленного с визой декана факультета<% if conditions['foreign'] then %>,
+					декана ФОИГ<% end %> и резолюцией ректора<% if s.study_type_id == Classifier::StudyType::CONTRACT then %>,
+					договор (контракт) о предоставлении платных образовательных услуг <& attributes['agreement'] &>
+					<% end %>
 				<% _HAS_FIELDS_ = true;
 	 end %>
 	<% if _HAS_FIELDS_ then %>.<% end %>
@@ -167,29 +175,30 @@ end %>
 <table class="signatures">
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Ректор МГЛУ</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">И. И. Халеева</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+	<tr><td>Ректор</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">И. И. Халеева</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
 	<tr><td>Проректор по учебной работе</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">И. В. Манохин</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
+	<tr><td>Начальник управления бухгалтерского учета и финансового контроля</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Л. В. Куренкова</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+
+	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
+	<tr><td>Начальник планово-финансового управления</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Л. Н. Ермакова</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+
+	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
+	<tr><td>Начальник учебно-методического управления</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">А. И. Коробко</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+
+	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
 	<tr><td>Начальник управления кадров</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Ю. И. Вторушин</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
 
-	<% if _CONDITIONS_['foreign'] then %>
+	<% if not _CONDITIONS_['foreign'] then %>
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Проректор по международным связям</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
-	<% end %>
-
-	<% if _CONDITIONS_['foreign'] then %>
-	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Проректор по безопасности</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
+	<tr><td><%=order.faculty.dean_position%></td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
 	<% end %>
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Советник ректора по правовым вопросам</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
-
-	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Декан факультета &laquo;<%=order.faculty.name%>&raquo;</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
+	<tr><td>Советник ректора по правовым вопросам</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Н. А. Шулепов</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
 
 	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
 	<%
@@ -197,25 +206,9 @@ end %>
 	order.each_student(:all, ['attributes']) { |a|
 		new_group_id = a['group_id'].to_i
 	}
-	receiver = Group.load(new_group_id).faculty.name
-	if receiver != order.faculty.name then %>
-	<tr><td>Декан факультета &laquo;<%=receiver%>&raquo;</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
-	<% end %>
-
-	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Ответственный секретарь приемной комиссии</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
-
-	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Председатель отборочной комиссии &laquo;<%=order.faculty.name%>&raquo;</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
-
-	<% if _CONDITIONS_['contract'] and not _CONDITIONS_['foreign'] then %>
-	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Начальник учебно-организационного отдела</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
-	<% end %>
-
-	<% if _CONDITIONS_['contract'] and not _CONDITIONS_['foreign'] then %>
-	<% if (_SIGNATURE_INDEX_ += 1) == 2 then %><tr><td colspan="3"><b>Согласовано:</b></td></tr><% end %>
-	<tr><td>Начальник планово-финансового управления</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">Л. Н. Ермакова</td><tr><tr><td></td><td class="small">(подпись)</td></tr>
+	receiver = Group.load(new_group_id).faculty
+	if receiver.name != order.faculty.name then %>
+	<tr><td><%=receiver.dean_position%></td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder-unknown">&nbsp;</td><tr><tr><td></td><td class="small">(подпись)</td><td class="signspacer"/><td class="small">(расшифровка подписи)</td></tr>
 	<% end %>
 
 	<% if _CONDITIONS_['foreign'] then %>

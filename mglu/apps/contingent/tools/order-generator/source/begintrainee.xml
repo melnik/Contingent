@@ -10,24 +10,80 @@
 
 	<template entity="order">
 		<const type="int" name="student_state_id" value="Classifier::StudentState::TRAINEE"/>
+
+		<classifier type="country" title="В стране" />
+		<input type="text" name="city" title="Город" />
+		<input type="text" name="university" title="Название университета" />
+		
+		<select type="int" name="save_scholarship">
+			<option value="1" title="С сохранением стипендии"/>
+			<option value="0" title="Без сохранения стипендии"/>
+		</select>
+		
+		<select type="text" name="teaching_paying_party" title="С оплатой обучения за счет">
+			<option title=""/>
+			<option title="отправляющей стороны"/>
+			<option title="принимающей стороны"/>
+		</select>
+
+		<select type="text" name="habitation_paying_party" title="С оплатой проживания за счет">
+			<option title=""/>
+			<option title="отправляющей стороны"/>
+			<option title="принимающей стороны"/>
+		</select>
+
+		<select type="text" name="nutrition_paying_party" title="С оплатой питания за счет">
+			<option title=""/>
+			<option title="отправляющей стороны"/>
+			<option title="принимающей стороны"/>
+		</select>
+
 	</template>
 
 	<template entity="student">
-		<input type="date" name="start_at" title="Считать на стажировке с" />
-		<input type="document" name="order" title="Приказ" />
+		<input type="daterange" name="trainee_range" title="Считать на стажировке" />
 	</template>
 
 	<printable>
 
-		<p>Считать нижеперечисленных лиц, обучающихся в МГЛУ, находящимися на стажировке за границей:</p>
+		<p><![CDATA[
+		Считать нижеперечисленных лиц, обучающихся в МГЛУ, находящимися на стажировке в стране
+		<& Classifier::Country[order.attributes['country_id']][:name] &>, город <& order.attributes['city'] &>,
+		название университета <& order.attributes['university'] &>,
+		<% case order.attributes['save_scholarship']
+		when 1 then %>с сохранением стипендии<%	when 0 then %>без сохранения стипендии<% end %>,
+		<% unless order.attributes['teaching_paying_party'  ].empty? then %>с оплатой обучения   за счет <& order.attributes['teaching_paying_party'  ] &>,<% end %>
+		<% unless order.attributes['habitation_paying_party'].empty? then %>с оплатой проживания за счет <& order.attributes['habitation_paying_party'] &>,<% end %>
+		<% unless order.attributes['nutrition_paying_party' ].empty? then %>с оплатой питания    за счет <& order.attributes['nutrition_paying_party' ] &>,<% end %>
+		транспортные расходы, консульский сбор, медицинская страховка &mdash; за счет направляемых студентов:
+		]]></p>
 
 		<list style="text">
 			<column source="student" name="name"/>
+			<column source="student" name="profession"/>
+			<column source="student" name="course"/>
 			<column source="student" name="card_number"/>
+			<column source="student" name="study_form"/>
 			<column source="student" name="group"/>
-			<column source="order" name="start_at"/>
-			<column source="order" name="order"/>
+			<column source="order" name="trainee_range"/>
+			<column><![CDATA[
+				<br/><br/>Основания приказа: Соглашение между университетами,
+				служебная записка декана факультета с
+				<% if conditions['foreign'] then %>визой декана ФОИГ и<% end %>
+				резолюцией ректора.
+			]]></column>
 		</list>
+		
+		<signatures>
+			<signature name="rector"/>
+			<signature name="prorector-international"/>
+			<signature name="accountant"/>
+			<signature name="financing"/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract"/> -->
+			<signature name="personnel"/>
+			<signature name="dean" condition="not foreign"/>
+		</signatures>
 
 	</printable>
 

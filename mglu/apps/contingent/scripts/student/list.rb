@@ -32,8 +32,6 @@ add_row = tmpl.method(tmpl.has_details ? :add_row : :add_row_wo_link)
 if u.faculty_id and not criteria.empty? then
 	if !u.faculty_category.empty? then
 		criteria['category'] = u.faculty_category
-	elsif u.faculty_id == -2
-		criteria['military_year'] = [1,2,3]
 	else
 		criteria['faculty_id'] = u.faculty_id
 	end
@@ -42,11 +40,10 @@ end
 tmpl.criteria = criteria
 
 if u.has_permissions('student_view') then
-	stats = Student.list criteria, %w( student_id name group card_number category study_type_id student_state_id dormitory scholarship military_id degree_code profession_code special_enrollment_code) do |student_id, name, group, card_number, category, study_type_id, student_state_id, dormitory, scholarship, military_id, degree_code, profession_code, special_enrollment_code|
+	stats = Student.list criteria, %w( student_id name group card_number category study_type_id student_state_id dormitory scholarship degree_code profession_code special_enrollment_code) do |student_id, name, group, card_number, category, study_type_id, student_state_id, dormitory, scholarship, degree_code, profession_code, special_enrollment_code|
 		add_row.call student_id, name, group, card_number, {
 			:foreign     => category[:foreign],
 			:disabled    => category[:disabled],
-			:military    => Classifier::Military[military_id],
 			:contract    => study_type_id == Classifier::StudyType::CONTRACT,
 			:vacation    => student_state_id == Classifier::StudentState::VACATION,
 			:trainee     => student_state_id == Classifier::StudentState::TRAINEE,

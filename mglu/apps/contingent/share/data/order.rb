@@ -409,7 +409,6 @@ class Order
 			'dormitory'         => s.dormitory,
 
 			'student_state_id'  => s.state_id,
-			'military_id'       => s.military_state_id,
 
 			'profession_code'   => s.profession_code,
 			'degree_code'       => s.degree_code,
@@ -446,8 +445,16 @@ class Order
 		else
 			res = parts[0] + '<h3>&#167;' + parts[part] + footer
 		end
-		res.gsub!(/^<\/body>$/, "<p>Верно: ____________ " + User.load(user_id).name + " </p>\n</body>\n")
+#		res.gsub!(/^<\/body>$/, "<p>Верно: ____________ " + User.load(user_id).name + " </p>\n</body>\n")
 		res.gsub!(/<\/body>(.*?)<body>/m, '<br style="page-break-after:always;" />')
+		
+		res.gsub!(/Общежитие:\s*[^;]+;\s*;/m, '')
+		res.gsub!(/Основание отчисления:\s*[^;]+;/m, '')
+		res.gsub!(/Основания приказа: /, 'Основания: ')
+		res.gsub!(/Основание приказа: /, 'Основание: ')
+		res.gsub!(/<table class="signatures">.*?<\/table>/m, '<table class="signatures"><tr><td colspan="3"><b>Выписка верна:</b></td></tr><tr><td>Начальник отдела по работе со студенческим составом управления кадров</td><td class="signature">&nbsp;</td><td class="signspacer"/><td class="holder">С.А. Власова</td><tr><tr><td></td><td class="small">(подпись)</td></tr></table>')
+		res.gsub!(/<div style="font-size: 80%; padding-top: 1cm">.*?<\/div>/m, '')
+
 		return res
 	end
 

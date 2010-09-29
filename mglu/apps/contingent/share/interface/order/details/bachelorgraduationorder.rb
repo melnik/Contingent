@@ -36,7 +36,7 @@ class DetailsForBachelorGraduationOrder
 		when 0
 			attributes['mark'] ||= 4
 			attributes['diploma_type'] ||= 1
-			attributes['qualification'] ||= Proc.new { 'бакалавр техники и технологи' }.call
+			attributes['qualification'] ||= Proc.new { 'бакалавр техники и технологии' }.call
 			attributes['country_id'] ||= Proc.new { first_value(Classifier::Country) }.call
 		end
 		attributes

@@ -15,7 +15,29 @@ class DetailsForAdjustVacationOrder
 	]
 
 	def self.has_order?
-		false
+		true
+	end
+
+	def self.init_order(o)
+		attributes = o.attributes.dup
+		attributes['hide_study_type'] = 1
+		attributes.each_pair { |k,v| o.attributes[k] = v }
+		o.save
+	end
+
+	def self.fix_order(o)
+		attributes = o.attributes.dup
+		attributes
+	end
+
+	def self.render_order(o, tmpl)
+		attributes = fix_order(o)
+	end
+
+	def self.save_order(o, params)
+		attributes = o.attributes.dup
+		attributes.each_pair { |k,v| o.attributes[k] = v }
+		o.save
 	end
 
 	def self.has_student?(paragraph)
@@ -36,7 +58,16 @@ class DetailsForAdjustVacationOrder
 		when 0
 			attributes['group_id'] ||= Proc.new {
 						g = Student.load(eid).group
-						Group.load(g.department.name + (g.term_number - 2).to_s + g.number.to_s)
+						# One year younger group
+						Group.load(%(#{g.department}-#{g.term_number - 2}-#{g.number})).oid rescue nil ||
+						# One term younger group
+						Group.load(%(#{g.department}-#{g.term_number - 1}-#{g.number})).oid rescue nil ||
+						# The first group that is one year younger
+						Group.load(%(#{g.department}-#{g.term_number - 2}-1)).oid rescue nil ||
+						# The first group that is one term younger
+						Group.load(%(#{g.department}-#{g.term_number - 1}-1)).oid rescue nil ||
+						# Fallback: unchanged group
+						g.oid
 					 }.call.to_i
 		end
 		attributes

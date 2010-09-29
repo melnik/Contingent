@@ -19,5 +19,4 @@ $UUID_MAPPING_PREFIX = {
 	'student_state' => '9e32657c-61c5-4e58-8ca6-',
 	'gender'        => '2c4fdb64-0c14-4dd1-81c1-',
 	'study_type'    => 'f3fd113a-e251-4816-b411-',
-	'military'      => 'a6d7fb86-4925-4aed-89bf-',
 }

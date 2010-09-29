@@ -24,7 +24,7 @@ class DormitoryOccupancyOrder < StudentsOrder
 		super
 		set :student, {
 			'dormitory' => 1
-		}
+		}.compact
 
 	end
 

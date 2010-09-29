@@ -23,7 +23,7 @@
 
 		<const type="int" name="citizenship" value="2"/>
 		
-		<classifier type="study_type" title="Новая форма (основа) обучения" />
+		<classifier type="study_type" title="Новая основа обучения" />
 
 		<!-- Hack to clear 'foreign' flag -->
 		<const type="expression" name="category" value="Expression.new('category & ~1')"/>
@@ -55,17 +55,18 @@
 		Признать факт изменения гражданства иностранного
 		гражданина на гражданство Российской Федерации<%
 unless conditions['was_contract']
-		%> и перевести с бюджетной формы (основы) обучения для иностранных граждан<%
+		%> и перевести с бюджетной основы обучения для иностранных граждан<%
 else
-		%>, отчислить с платной формы (основы) обучения для иностранных граждан	и зачислить<%
+		%>, отчислить с платной основы обучения для иностранных граждан	и зачислить<%
 end
 		%> на <& Classifier::StudyType[order.attributes['study_type_id']][:name].gsub('ая', 'ую') &>
-		форму (основу) обучения для российских граждан
+		основу обучения для российских граждан
 		нижеперечисленных лиц, обучающихся в МГЛУ:
 		]]></p>
 
 		<list style="text">
 			<column source="student" name="name"/>
+			<column source="student" name="profession"/>
 			<column source="student" name="student_status"/>
 			<column source="student" name="citizenship" title="Гражданство прежнее"/>
 			<column source="order" name="country_id" />
@@ -73,6 +74,7 @@ end
 			<column source="order" name="contract"/>
 			<column source="order" name="assignment"/>
 			<column source="student" name="card_number"/>
+			<column source="student" name="study_form"/>
 			<column source="student" name="course"/>
 			<column source="student" name="group"/>
 			<column source="order" name="group_id"/>
@@ -80,10 +82,10 @@ end
 			<column source="order" name="agreement" title="Договор (контракт) о предоставлении платных образовательных услуг (новый)"/>
 			<column source="order" name="card_number"/>
 			<column source="order" name="start_at"/>
-			<column title="Основания приказа"><![CDATA[
+			<column><![CDATA[
+				<br/><br/>Основания приказа:
 				личное заявление обучающегося с визами декана факультета, декана ФОИГ
-				и резолюцией проректора по международным связям,
-				копия паспорта гражданина Российской Федерации<%
+				и резолюцией ректора, копия паспорта гражданина Российской Федерации<%
 			if order.attributes['study_type_id'] == Classifier::StudyType::CONTRACT then
 				%>, договор (контракт) о предоставлении образовательных услуг <&attributes['agreement']&><%
 			end %>.
@@ -93,14 +95,14 @@ end
 		<signatures>
 			<signature name="rector"/>
 			<signature name="prorector"/>
+			<signature name="accountant"/>
+			<signature name="financing"/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="became_contract"/> -->
 			<signature name="personnel"/>
-			<signature name="prorector-international"/>
-			<signature name="prorector-security"/>
-			<signature name="dean" condition="not disabled"/>
+			<signature name="dean" condition="not disabled and not foreign"/>
 			<signature name="rehabilitation" condition="disabled"/>
 			<signature name="foreign"/>
-			<signature name="marketing" condition="became_contract"/>
-			<signature name="financing" condition="became_contract"/>
 		</signatures>
 
 	</printable>

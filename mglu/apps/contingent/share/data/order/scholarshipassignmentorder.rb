@@ -2,7 +2,7 @@ require 'data/order/studentsorder'
 
 class ScholarshipAssignmentOrder < StudentsOrder
 	TYPE = 'О назначении на стипендию (академическую)'
-	PARAGRAPH_NAME = [ 'На повышенную стипендию', 'На стипендию' ]
+	PARAGRAPH_NAME = [ 'Отл', 'Отл+хор', 'Хор' ]
 
 	AFFECTED_ATTRIBUTES = {
 		:student => %w( scholarship_id ),
@@ -33,6 +33,12 @@ class ScholarshipAssignmentOrder < StudentsOrder
 		end
 
 		each_student 1, %w( student_id attributes ) do |student_id, attributes|
+			set :student, {
+				'scholarship_id' => 1
+			}, [ student_id ]
+		end
+
+		each_student 2, %w( student_id attributes ) do |student_id, attributes|
 			set :student, {
 				'scholarship_id' => 1
 			}, [ student_id ]

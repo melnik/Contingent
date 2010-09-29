@@ -31,7 +31,10 @@
 			<list style="list">
 				<column source="student" name="group_id" hidden="1"/>
 				<column source="student" name="name"/>
+			<column source="student" name="profession"/>
+			<column source="student" name="course"/>
 				<column source="student" name="card_number"/>
+				<column source="student" name="study_form"/>
 			</list>	
 
 		</group>
@@ -41,11 +44,13 @@
 		<signatures>
 			<signature name="rector"/>
 			<signature name="prorector"/>
-			<signature name="personnel"/>
-			<signature name="dean"/>
-			<signature name="deputy_dean"/>
-			<signature name="financing"/> 
 			<signature name="accountant"/>
+			<signature name="financing"/> 
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract"/> -->
+			<signature name="personnel"/>
+			<signature name="dean" condition="not foreign"/>
+			<signature name="deputy_dean"/>
 			<signature name="foreign" condition="foreign"/>
 		</signatures>
 	</printable>

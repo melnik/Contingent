@@ -6,7 +6,7 @@ CREATE TABLE `educational_organization_type` (
   PRIMARY KEY  (`educational_organization_type_id`)
 ) TYPE=MyISAM;
 
-INSERT INTO `educational_organization_type` VALUES (1,'общеобразовательное','31 10');
-INSERT INTO `educational_organization_type` VALUES (2,'начального профессионального образования','31 30');
-INSERT INTO `educational_organization_type` VALUES (3,'среднего профессионального образования','31 40');
-INSERT INTO `educational_organization_type` VALUES (4,'высшего профессионального образования','31 50');
+INSERT INTO `educational_organization_type` VALUES (1,'п╬п╠я┴п╣п╬п╠я─п╟п╥п╬п╡п╟я┌п╣п╩я▄п╫п╬п╣','31 10');
+INSERT INTO `educational_organization_type` VALUES (2,'п╫п╟я┤п╟п╩я▄п╫п╬пЁп╬ п©я─п╬я└п╣я│я│п╦п╬п╫п╟п╩я▄п╫п╬пЁп╬ п╬п╠я─п╟п╥п╬п╡п╟п╫п╦я▐','31 30');
+INSERT INTO `educational_organization_type` VALUES (3,'я│я─п╣п╢п╫п╣пЁп╬ п©я─п╬я└п╣я│я│п╦п╬п╫п╟п╩я▄п╫п╬пЁп╬ п╬п╠я─п╟п╥п╬п╡п╟п╫п╦я▐','31 40');
+INSERT INTO `educational_organization_type` VALUES (4,'п╡я▀я│я┬п╣пЁп╬ п©я─п╬я└п╣я│я│п╦п╬п╫п╟п╩я▄п╫п╬пЁп╬ п╬п╠я─п╟п╥п╬п╡п╟п╫п╦я▐','31 50');

@@ -1,12 +1,21 @@
 <html>
 	<head>
 		<title>Upload applicants</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	</head>
+	<style type="text/css"><!--
+	td { vertical-align: top; }	
+	--></style>
 	<body>
 		<p>Upload applicants archive</p>
-		<form action="process-applicants.rb" method="post" enctype="multipart/form-data">
+		<form action="process-applicants.rb" method="post">
 			<table>
-				<tr><td>Archive (DAT or XML):</td><td><input type="file" name="data"/></td></tr>
+				<tr><td>Список URL</td><td>
+					<textarea name="orders" style="width: 30em; height: 10em"></textarea><br/>
+					<small>(например, http://127.0.0.1/tools/sample.xml &mdash; обратите внимание,
+что сервер работает в виртуальной сети мейнфрейма 192.168.0.0/24 (IP самого сервера - 192.168.0.12) и имеет доступ ко
+всем остальным сетям только через роутер 192.168.0.111); исходник скрипта - <a href="process-applicants.rb.txt">process-applicants.rb</a></small>
+				</td></tr>
 				<tr><td></td><td><input type="submit" value="Submit"/></td></tr>
 			</table>
 		</form>

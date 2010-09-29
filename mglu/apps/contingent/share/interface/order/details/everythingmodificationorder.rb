@@ -38,9 +38,10 @@ class DetailsForEverythingModificationOrder
 			attributes['gender_id'] ||= Proc.new { Student.load(eid).gender_id }.call
 			attributes['card_number'] ||= Proc.new { Student.load(eid).card_number }.call
 			attributes['group_id'] ||= Proc.new { Student.load(eid).group_id }.call.to_i
-			attributes['citizenship_id'] ||= Proc.new { first_value(Classifier::Citizenship) }.call
-			attributes['profession_code'] ||= Proc.new { first_value(Classifier::Profession) }.call
-			attributes['degree_code'] ||= Proc.new { first_value(Classifier::Degree) }.call
+			attributes['study_type_id'] ||= Proc.new { Student.load(eid).study_type_id }.call
+			attributes['citizenship_id'] ||= Proc.new { Student.load(eid).citizenship_id }.call
+			attributes['profession_code'] ||= Proc.new { Student.load(eid).profession_code }.call
+			attributes['degree_code'] ||= Proc.new { Student.load(eid).degree_code }.call
 		end
 		attributes
 	end
@@ -59,6 +60,8 @@ class DetailsForEverythingModificationOrder
 			tmpl.group_basics = attributes['group_basics']
 			tmpl.birth_date = attributes['birth_date']
 			tmpl.birth_date_basics = attributes['birth_date_basics']
+			tmpl.study_type_id = attributes['study_type_id']
+			tmpl.study_type_basics = attributes['study_type_basics']
 			tmpl.citizenship_id = attributes['citizenship_id']
 			tmpl.citizenship_basics = attributes['citizenship_basics']
 			tmpl.profession_code = attributes['profession_code']
@@ -88,6 +91,8 @@ class DetailsForEverythingModificationOrder
 			attributes['group_basics'] = params["group_basics"]
 			attributes['birth_date'] = params["birth_date"].to_d
 			attributes['birth_date_basics'] = params["birth_date_basics"]
+			attributes['study_type_id'] = params["study_type_id_id"].to_s.split(':')[0].to_i
+			attributes['study_type_basics'] = params["study_type_basics"]
 			attributes['citizenship_id'] = params["citizenship_id_id"].to_s.split(':')[0].to_i
 			attributes['citizenship_basics'] = params["citizenship_basics"]
 			attributes['profession_code'] = params["profession_code_code"]

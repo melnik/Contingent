@@ -13,7 +13,6 @@ when 'student' then
 	(tmpl.place_student_status      Classifier::StudentStatus.new     ).wide = true
 	(tmpl.place_study_type          Classifier::StudyType.new         ).wide = true
 	(tmpl.place_study_form          Classifier::StudyForm.new         ).wide = true
-	(tmpl.place_military            Classifier::Military.new          ).wide = true
 	(tmpl.place_degree              Classifier::Degree.new            ).wide = true
 when 'applicant' then
 	(tmpl.place_gender              Classifier::Gender.new            ).wide = true

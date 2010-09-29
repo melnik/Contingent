@@ -30,16 +30,19 @@
 
 		<list style="text">
 			<column source="student" name="name"/>
+			<column source="student" name="profession"/>
 			<column source="student" name="student_status"/>
 			<column source="student" name="citizenship"/>
 			<column source="order" name="country_id" />
 			<column source="student" name="birth_date"/>
+			<column source="student" name="study_form"/>
 			<column source="student" name="card_number"/>
 			<column source="student" name="course"/>
 			<column source="student" name="group"/>
 			<column>Фамилия, имя, отчество (новые):</column>
 			<column source="order" name="name" />
-			<column title="Основания приказа"><![CDATA[
+			<column><![CDATA[
+			<br/><br/>Основание приказа:
 			личное заявление студента с визой декана факультета<% if conditions['foreign'] then %>, декана ФОИГ<%
 			end %><%= (s = attributes['document']; if s.empty? then '' else ", #{s}" end) %>;
 			копия нового паспорта
@@ -49,13 +52,13 @@
 		<signatures>
 			<signature name="rector"/>
 			<signature name="prorector"/>
+			<signature name="accountant"/>
+			<signature name="financing"/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract and not foreign" /> -->
 			<signature name="personnel"/>
-			<signature name="prorector-international" condition="foreign" />
-			<signature name="prorector-security" condition="foreign" />
-			<signature name="dean" condition="not disabled"/>
+			<signature name="dean" condition="not disabled and not foreign"/>
 			<signature name="rehabilitation" condition="disabled"/>
-			<signature name="marketing" condition="contract and not foreign" />
-			<signature name="financing" condition="contract and not foreign"/>
 			<signature name="foreign" condition="foreign" />
 		</signatures>
 

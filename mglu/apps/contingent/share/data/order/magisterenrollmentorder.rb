@@ -24,14 +24,14 @@ class MagisterEnrollmentOrder < StudentsOrder
 		super
 		set :student, {
 			'study_type_id' => attributes['study_type_id']
-		}
+		}.compact
 
 		each_student :all, %w( student_id attributes ) do |student_id, attributes|
 			set :student, {
 				'degree_code' => '68',
 				'specialization_code' => attributes['specialization_code'],
 				'profession_code' => attributes['profession_code']
-			}, [ student_id ]
+			}.compact, [ student_id ]
 		end
 	end
 
@@ -47,7 +47,7 @@ class MagisterEnrollmentOrder < StudentsOrder
 				save
 			end
 
-			raise error(:activation, fixed_attrs['study_type_id'].empty?), 'Поле "Форма (основа) обучения" не определено' if attributes['study_type_id'].empty?
+			raise error(:activation, fixed_attrs['study_type_id'].empty?), 'Поле "Основа обучения" не определено' if attributes['study_type_id'].empty?
 		end
 
 		each_student :all, %w( student_id paragraph_id attributes ) do |student_id, paragraph_id, attributes|
@@ -55,7 +55,7 @@ class MagisterEnrollmentOrder < StudentsOrder
 			set_student_attributes(student_id, attributes = fixed_attrs) if @auto_fix and attributes != fixed_attrs
 
 			raise error(:activation, fixed_attrs['specialization_code'].empty?), 'Поле "Код специализации" не определено' if attributes['specialization_code'].empty?
-			raise error(:activation, fixed_attrs['profession_code'].empty?), 'Поле "Направление подготовки/специальность.специализация.квалификация" не определено' if attributes['profession_code'].empty?
+			raise error(:activation, fixed_attrs['profession_code'].empty?), 'Поле "Направление подготовки/специальность, специализация, ступень образования" не определено' if attributes['profession_code'].empty?
 		end
 	end
 end

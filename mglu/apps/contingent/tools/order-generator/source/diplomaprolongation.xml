@@ -21,27 +21,30 @@
 
 		<list style="text">
 			<column source="student" name="name"/>
+			<column source="student" name="profession"/>
+			<column source="student" name="course"/>
 			<column source="student" name="student_status"/>
 			<column source="student" name="card_number"/>
+			<column source="student" name="study_form"/>
 			<column source="student" name="group"/>
 			<column source="order" name="deadline"/>
 			<column><![CDATA[
-				Основание приказа: личное заявление студента с визой декана
+				<br/><br/>Основание приказа: личное заявление студента с визой декана
 				факультета<% if conditions['foreign'] then %>, декана ФОИГ<% end %>
-				и резолюцией проректора по учебной работе
+				и резолюцией ректора
 			]]></column>
 		</list>
 
 		<signatures>
 			<signature name="rector"/>
 			<signature name="prorector"/>
+			<signature name="accountant"/>
+			<signature name="financing"/>
+			<signature name="educational"/>
+			<!-- <signature name="marketing" condition="contract and not foreign" /> -->
 			<signature name="personnel"/>
-			<signature name="prorector-international" condition="foreign"/>
-			<signature name="prorector-security" condition="foreign"/>
-			<signature name="dean" condition="not disabled"/>
+			<signature name="dean" condition="not disabled and not foreign"/>
 			<signature name="rehabilitation" condition="disabled"/>
-			<signature name="marketing" condition="contract and not foreign" />
-			<signature name="financing" condition="contract and not foreign"/>
 			<signature name="foreign" condition="foreign" />
 		</signatures>
 
