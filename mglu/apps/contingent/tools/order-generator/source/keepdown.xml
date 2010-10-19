@@ -102,7 +102,7 @@
 			<column><![CDATA[
 				<% if attributes['start_at'] %>
 					<% unless conditions['contract_now'] then %>
-					разрешить повторное обучение с полным выполнением учебного плана
+					Разрешить повторное обучение с полным выполнением учебного плана
 					<& attributes['term_count'] &> на договорной основе <& attributes['start_at'] &>;
 					<% end %>
 					<% unless conditions['transition'] %>повторное<% end %> обучение с

@@ -4,6 +4,14 @@
 
 	<type>Об отчислении</type>
 	
+	<qualified_students class="Hash">
+		<<student_state_id class="Array">
+			<item class="Expression">Classifier::StudentState::STUDYING</item>
+			<item class="Expression">Classifier::StudentState::TRAINEE</item>
+		</student_state_id>
+	</qualified_students>
+	
+	
 	<condition name="rules_violation">
 		<order__reason class="Array">
 			<item class="Fixnum">3</item>
@@ -15,12 +23,10 @@
 		<order__reason class="Fixnum">10</order__reason>
 	</condition>
 	
+	
 	<title condition="dead">Об исключении из списочного состава</title>
 
 
-	<qualified_students class="Hash">
-		<student_state class="String">studying</student_state>
-	</qualified_students>
 
 	<template entity="order">
 		<const type="int" name="student_state_id" value="Classifier::StudentState::EXPELLED" />

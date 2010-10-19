@@ -12,8 +12,11 @@
 
 		<const type="int" name="student_state_id" value="Classifier::StudentState::STUDYING" />
 
+		
 		<input type="document" name="resolution" title="Протокол заседания Приемной комиссии МГЛУ" />
 
+		
+		
 		<classifier type="degree" title="Ступень высшего профессионального образования" />
 
 		<classifier type="study_type" title="Основа обучения" />

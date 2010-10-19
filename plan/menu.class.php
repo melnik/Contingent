@@ -514,7 +514,7 @@ class menu extends html {
 					$this->_th("<a href=index.php".$this->href."&subfaculty=".$_GET["subfaculty"]."&action=".$action."&sort=title>Название</a>");
 					$this->_th("<a href=index.php".$this->href."&subfaculty=".$_GET["subfaculty"]."&action=".$action."&sort=semester>Семестр</a>");
 					$this->_th("Для кафедры");
-					$this->_th("Для специальности");
+					$this->_th("Направление подготовки (специальности)");
 					if (auth(8) || auth(1)) $this->_th("Действие","","","colspan='4'");
 					if (auth(8) || auth(1)) $this->_th("Номер служебной записки");
 				$this->_utr();		
@@ -819,7 +819,7 @@ class menu extends html {
 					$this->_th("Название","","","rowspan='2'");
 					$this->_th("Семестр","","","rowspan='2'");
 					$this->_th("Для кафедры","","","rowspan='2'");
-					$this->_th("Для специальности","","","colspan='3'");
+					$this->_th("Направление подготовки (специальности)","","","colspan='3'");
 					$this->_th("Добавить","","","rowspan='2'");
 					$this->_th("Действие","","","rowspan='2'");
 				$this->_utr();
@@ -901,7 +901,7 @@ class menu extends html {
 					$this->_th("Название","","","rowspan='2'");
 					$this->_th("Семестр","","","rowspan='2'");
 					$this->_th("Для кафедры","","","rowspan='2'");
-					$this->_th("Для специальности","","","colspan='3'");
+					$this->_th("Направление подготовки (специальности)","","","colspan='3'");
 					$this->_th("Копировать","","","colspan='2'");
 				//	$this->_th("Начало учебного года","","","rowspan='2'");
 				$this->_utr();		
@@ -950,7 +950,7 @@ class menu extends html {
 					$this->_th("Название","","","rowspan='2'");
 					$this->_th("Семестр","","","rowspan='2'");
 					$this->_th("Для кафедры","","","rowspan='2'");
-					$this->_th("Для специальности","","","colspan='3'");
+					$this->_th("Направление подготовки (специальности)","","","colspan='3'");
 					$this->_th("Индекс","","","rowspan='2'");
 				//	$this->_th("Начало учебного года","","","rowspan='2'");
 				$this->_utr();		
@@ -1163,7 +1163,7 @@ class menu extends html {
 		$this->_utable();
 		$this->_table();
 			$this->_tr();
-				$this->_ctd(($action=="view")?"Для специальности":"<a href='#' onClick=\"specSelect();\">Для специальности</a>");	
+				$this->_ctd(($action=="view")?"Направление подготовки (специальности)":"<a href='#' onClick=\"specSelect();\">Направление подготовки (специальности)</a>");	
 				$this->_cText($action, "spec", $spec, "", 10, 10, '',"class='speciality' onChange='groupUpdate()'",'',$this->colorCmp($spec,$pspec));		
 //				$this->_cText($action, "spec", $spec, "", 10, 10, '',"class='speciality' onMouseOver='showInfoGroup(\"speciality\",\"spec\",\"spec\",\"semester\",\"lang_first\",\"lang_second\");' onChange='showInfo(\"speciality\",\"spec\");'",'',$this->colorCmp($spec,$pspec));		
 //				$this->_cText($action, "subfac", $subfac, "", 7, 7,'',"onMouseOver='showInfo(\"subfaculty\",\"subfac\");'",'',$this->colorCmp($subfac,$psubfac));		
